@@ -24,6 +24,16 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 - **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"). Keep all three in step.
 - **Photos:** `assets/img/<room>/`. Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
 
+## Photo correction
+
+`tools/enhance_photo.py` applies the gentle correction used on the current photos: partial white balance (removes the orange cast from the warm LED strips), levels, shadow lift and light sharpening. It needs only Pillow.
+
+```bash
+python3 tools/enhance_photo.py original.jpg corrected.jpg
+```
+
+Check every result by eye. It can blow out bright windows (it was skipped for `property-04` and `property-17` for that reason), and the originals are in git history if an edit needs undoing.
+
 ## Run locally
 
 ```bash
