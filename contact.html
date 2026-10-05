@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | 22 Jalan Elok</title>
+  <meta name="description" content="Get in touch with 22 Jalan Elok by WhatsApp, email or the enquiry form.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap reveal">
+        <span class="eyebrow">Contact</span>
+        <h1>Get in <em>touch.</em></h1>
+        <p class="lede">This could be your launchpad into Singapore and South-East Asia.</p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap contact-grid">
+        <div class="contact-card reveal">
+          <dl>
+            <dt>Property manager</dt>
+            <dd>Kevin</dd>
+            <dt>Phone &amp; WhatsApp</dt>
+            <dd><a href="tel:+6580167691">+65 8016 7691</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@22je.sg">info@22je.sg</a></dd>
+            <dt>Address</dt>
+            <dd>22 Jalan Elok<br>Singapore 229060</dd>
+          </dl>
+          <div class="btn-row">
+            <a class="btn" data-wa="Good day! I'd like to enquire about a stay at 22 Jalan Elok. Could you please share availability and rates?" href="#">WhatsApp</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/dir//22+Jln+Elok,+Singapore+229060" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+
+        <form class="form reveal" id="enquiry" novalidate>
+          <span class="eyebrow">Enquiry</span>
+          <h3>Tell us about your stay</h3>
+          <div class="form__row">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-room">Room</label>
+              <select id="f-room" name="room">
+                <option>Any room</option>
+                <option value="elysia">Elysia Suite</option>
+                <option value="aurelia">Aurelia Suite</option>
+                <option value="deluxe-queen">Deluxe Queen Room</option>
+                <option value="deluxe-twin">Deluxe Twin Room</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-movein">Move-in date</label><input id="f-movein" name="movein" type="date"></div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-length">Length of stay</label>
+              <select id="f-length" name="length">
+                <option>3 months</option>
+                <option>4–6 months</option>
+                <option>7–12 months</option>
+                <option>More than 12 months</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-pass">Residency / pass</label>
+              <select id="f-pass" name="pass">
+                <option>Singapore citizen / PR</option>
+                <option>Employment Pass</option>
+                <option>S Pass</option>
+                <option>Work Permit</option>
+                <option>Other / not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg">Anything else?</label><textarea id="f-msg" name="message" placeholder="Number of guests, questions, special requests…"></textarea></div>
+          <div class="btn-row">
+            <button class="btn" type="submit">Send via WhatsApp</button>
+            <button class="btn btn--ghost" type="button" data-email>Send by email</button>
+          </div>
+          <p class="form__note">Opens WhatsApp or your email app with your details filled in — nothing is stored on this site.</p>
+        </form>
+      </div>
+    </section>
+
+    <section aria-label="Map">
+      <iframe class="map" title="Map of 22 Jalan Elok" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=22+Jalan+Elok,+Singapore+229060&amp;z=16&amp;output=embed"></iframe>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
