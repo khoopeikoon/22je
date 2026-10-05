@@ -1,5 +1,9 @@
 /* 22 Jalan Elok — shared header/footer, galleries, lightbox, enquiry form.
    Contact details live in SITE below; change them once here. */
+// Site root, worked out from this script's own URL, so pages in
+// subfolders (e.g. calendar/) and project URLs (/22je/) both resolve.
+const ROOT = document.currentScript.src.replace(/assets\/js\/main\.js.*$/, "");
+
 const SITE = {
   name: "22 Jalan Elok",
   phone: "+65 8016 7691",
@@ -7,7 +11,7 @@ const SITE = {
   email: "info@22je.sg",
   manager: "Kevin",
   address: ["22 Jalan Elok", "Singapore 229060"],
-  occupancy: "https://stay.22je.sg",
+  occupancy: ROOT + "calendar/",
   directions: "https://www.google.com/maps/dir//22+Jln+Elok,+Singapore+229060",
 };
 
@@ -15,6 +19,7 @@ const NAV = [
   ["index.html", "Home"],
   ["rooms.html", "Rooms"],
   ["features.html", "Features"],
+  ["calendar/", "Availability"],
   ["faqs.html", "FAQs"],
   ["contact.html", "Contact"],
 ];
@@ -25,7 +30,8 @@ const waLink = (text) =>
 const WA_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24s8.24 3.7 8.24 8.24-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>`;
 
 function renderChrome() {
-  const here = location.pathname.split("/").pop() || "index.html";
+  const norm = (h) => h.replace(/index\.html$/, "");
+  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, ""));
 
   const header = document.querySelector("[data-header]");
   if (header) {
@@ -34,15 +40,15 @@ function renderChrome() {
         <div class="wrap">
           <nav class="nav" id="site-nav" aria-label="Main">
             ${NAV.map(([href, label]) =>
-              `<a href="${href}"${href === here ? ' aria-current="page"' : ""}>${label}</a>`
+              `<a href="${ROOT + href}"${norm(href) === here ? ' aria-current="page"' : ""}>${label}</a>`
             ).join("")}
           </nav>
           <button class="menu-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
-          <a class="brand" href="index.html">
+          <a class="brand" href="${ROOT}index.html">
             <span class="brand__name">22 Jalan Elok</span>
             <span class="brand__sub">Residences · Singapore</span>
           </a>
-          <div class="header-cta"><a class="btn" href="contact.html">Enquire</a></div>
+          <div class="header-cta"><a class="btn" href="${ROOT}contact.html">Enquire</a></div>
         </div>
       </header>`;
   }
@@ -54,7 +60,7 @@ function renderChrome() {
         <div class="wrap">
           <div class="footer-grid">
             <div>
-              <a class="brand" href="index.html" style="text-align:left">
+              <a class="brand" href="${ROOT}index.html" style="text-align:left">
                 <span class="brand__name">22 Jalan Elok</span>
                 <span class="brand__sub">Residences · Singapore</span>
               </a>
@@ -76,8 +82,7 @@ function renderChrome() {
             <div>
               <h4>Explore</h4>
               <ul>
-                ${NAV.slice(1).map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}
-                <li><a href="${SITE.occupancy}" target="_blank" rel="noopener">Availability</a></li>
+                ${NAV.slice(1).map(([href, label]) => `<li><a href="${ROOT + href}">${label}</a></li>`).join("")}
               </ul>
             </div>
           </div>

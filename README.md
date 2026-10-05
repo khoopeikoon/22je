@@ -12,12 +12,14 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 | `rooms.html` | All four rooms with galleries, specs, monthly price, WhatsApp + occupancy links. Each room has a shareable anchor (`rooms.html#elysia`, `#aurelia`, `#deluxe-queen`, `#deluxe-twin`) |
 | `features.html` | Amenities (rooms / suites / services) and location |
 | `faqs.html` | FAQ accordion: booking process, inclusions, documents, tenancy agreement, deposit |
+| `calendar/index.html` | Room availability calendar at `/calendar/` (moved from stay.22je.sg). Tap check-in/check-out dates and send them on WhatsApp. Deep links per room: `calendar/#elysia`, `#aurelia`, `#dq1`, `#dq3`, `#dq4`, `#dt1`, `#dt3`, `#dt4` |
 | `contact.html` | Contact details, an enquiry form that composes a WhatsApp message or email (no backend), and a map |
 
 ## Editing
 
 - **Colours and fonts:** the tokens at the top of `assets/css/style.css` (`--ivory`, `--espresso`, `--brass`, … and `--serif` / `--sans`).
 - **Phone, WhatsApp, email, address:** the `SITE` object at the top of `assets/js/main.js`. The header, footer and floating WhatsApp button are rendered from it on every page.
+- **Bookings:** edit the `ROOMS` list at the top of the script in `calendar/index.html`. Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
 - **Navigation:** the `NAV` list in `assets/js/main.js`.
 - **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"). Keep all three in step.
 - **Photos:** `assets/img/<room>/`. Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
