@@ -457,3 +457,102 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   line-height: 1.3;
 }
 .placeholder small { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+/* Availability calendar (calendar/) */
+.room-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 0;
+  position: sticky;
+  top: var(--header-h);
+  z-index: 40;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+}
+.room-tab {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.75em 1.3em;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--espresso);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.room-tab:hover { border-color: var(--brass); }
+.room-tab.active { background: var(--espresso); color: var(--ivory); border-color: var(--espresso); }
+.cal-legend { display: flex; gap: 24px; flex-wrap: wrap; padding: 22px 0 0; font-size: 0.85rem; color: var(--umber); }
+.cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.swatch { width: 14px; height: 14px; display: inline-block; }
+.swatch.avail { background: var(--linen); border: 1px solid var(--line); }
+.swatch.booked { background: var(--umber); }
+.swatch.today { background: var(--linen); outline: 2px solid var(--brass); outline-offset: -2px; }
+.swatch.selected { background: var(--brass); }
+.room-title { margin: 36px 0 0; }
+.room-sub { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.year-label {
+  font-family: var(--serif);
+  font-size: 2rem;
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0 8px;
+  margin-bottom: 22px;
+}
+.cal-months { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cal-month { background: var(--linen); border: 1px solid var(--line); padding: 18px; }
+.cal-month h4 { font-family: var(--serif); font-weight: 500; font-size: 1.25rem; text-align: center; margin: 0 0 12px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-dow { font-size: 0.66rem; letter-spacing: 0.12em; color: var(--muted); text-align: center; padding-bottom: 4px; }
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  color: var(--espresso);
+}
+.cal-day.blank { background: transparent; border: 0; }
+.cal-day.booked { background: var(--umber); color: var(--sand); border-color: var(--umber); }
+.cal-day.past { opacity: 0.3; }
+.cal-day.today { outline: 2px solid var(--brass); outline-offset: -2px; font-weight: 500; }
+.cal-day.selectable { cursor: pointer; }
+.cal-day.selectable:hover { border-color: var(--brass); background: var(--cream); }
+.cal-day.in-range { background: var(--sand); border-color: var(--sand); }
+.cal-day.range-start, .cal-day.range-end { background: var(--brass); border-color: var(--brass); color: var(--linen); font-weight: 500; }
+.date-fab {
+  position: fixed;
+  right: 92px;
+  bottom: 20px;
+  z-index: 70;
+  display: none;
+  align-items: center;
+  gap: 14px;
+  background: var(--linen);
+  border: 1px solid var(--line);
+  padding: 10px 12px 10px 20px;
+  box-shadow: 0 10px 30px rgba(42, 33, 27, 0.18);
+  max-width: calc(100vw - 112px);
+}
+.date-fab.visible { display: flex; }
+.date-fab-text { font-size: 0.85rem; line-height: 1.35; white-space: nowrap; }
+.date-fab-text small { display: block; color: var(--muted); font-size: 0.72rem; }
+.date-fab-clear { background: none; border: 0; color: var(--muted); font-size: 1.2rem; cursor: pointer; padding: 4px; line-height: 1; }
+.date-fab-clear:hover { color: var(--espresso); }
+.date-fab .btn { padding: 0.8em 1.2em; white-space: nowrap; }
+.date-fab .btn.disabled { background: var(--sand); border-color: var(--sand); color: var(--muted); pointer-events: none; }
+@media (max-width: 1000px) { .cal-months { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .cal-months { grid-template-columns: 1fr; }
+  .room-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .room-tabs::-webkit-scrollbar { display: none; }
+  .room-tab { flex: none; }
+  .date-fab { left: 16px; right: 16px; max-width: none; bottom: 88px; flex-wrap: wrap; gap: 10px; padding: 14px 16px; }
+  .date-fab-text { flex: 1 1 0; white-space: normal; }
+  .date-fab .btn { flex: 1 0 100%; }
+}
