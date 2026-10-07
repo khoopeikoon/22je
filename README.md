@@ -9,10 +9,10 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 | File | What it is |
 |---|---|
 | `index.html` | Home: hero, photo strip, about, highlights, room cards, banner |
-| `rooms.html` | All four room types (8 rooms: 2 suites, 3 Deluxe Queen, 3 Deluxe Twin) with galleries, specs, monthly price, WhatsApp + occupancy links. Each room has a shareable anchor (`rooms.html#elysia`, `#aurelia`, `#deluxe-queen`, `#deluxe-twin`) |
+| `rooms.html` | All four room types (9 rooms: 2 Elysia Suites, 1 Aurelia Suite, 3 Deluxe Queen, 3 Deluxe Twin) with galleries, specs, monthly price, WhatsApp + occupancy links. Each room has a shareable anchor (`rooms.html#elysia`, `#aurelia`, `#deluxe-queen`, `#deluxe-twin`) |
 | `features.html` | Amenities (rooms / suites / services) and location |
 | `faqs.html` | FAQ accordion: booking process, inclusions, documents, tenancy agreement, deposit |
-| `calendar/index.html` | Room availability calendar at `/calendar/` (moved from stay.22je.sg). Tap check-in/check-out dates and send them on WhatsApp. Deep links per room: `calendar/#elysia`, `#aurelia`, `#dq1`, `#dq3`, `#dq4`, `#dt1`, `#dt3`, `#dt4` |
+| `calendar/index.html` | Room availability calendar at `/calendar/` (moved from stay.22je.sg). Tap check-in/check-out dates and send them on WhatsApp. Deep links per room: `calendar/#elysia` (Elysia 4, queen), `#elysia3` (Elysia 3, twin), `#aurelia`, `#dq1`, `#dq3`, `#dq4`, `#dt1`, `#dt3`, `#dt4` |
 | `contact.html` | Contact details, an enquiry form that composes a WhatsApp message or email (no backend), and a map |
 
 ## Editing

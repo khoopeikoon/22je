@@ -223,7 +223,7 @@ function initEnquiry() {
       ``,
       `Name: ${f.name || "-"}`,
       f.email ? `Email: ${f.email}` : null,
-      `Room: ${f.room}`,
+      `Room: ${form.room.selectedOptions[0].text}`,
       `Move-in: ${f.movein || "flexible"}`,
       `Length of stay: ${f.length}`,
       `Residency / pass: ${f.pass}`,
