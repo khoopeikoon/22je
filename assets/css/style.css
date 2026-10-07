@@ -578,3 +578,10 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   padding: 8px 14px; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--muted); background: rgba(255, 255, 255, 0.92);
 }
+
+/* Side-by-side before/after pair (features: blackout curtains) */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pair figure { margin: 0; }
+.pair img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; cursor: zoom-in; }
+.pair figcaption { margin-top: 10px; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
