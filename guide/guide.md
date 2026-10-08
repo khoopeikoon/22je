@@ -56,6 +56,7 @@ We'll send you the network name and password, together with the main door code, 
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
 - **Housekeeping** comes **every Saturday** and includes laundry.
+  - **Weekly housekeeping is part of every stay and isn't optional.** It keeps every room clean and in good condition. We'll always knock before entering, but if there's no answer, we will still come in.
   - Put the clothes you'd like washed in the **laundry bag labelled with your room**, and leave the bag in the **laundry basket in your room**. Keep the basket inside your room; housekeeping will collect from there.
   - Need extra laundry bags? Just ask us.
   - We take care with every load, but we can't accept responsibility for shrinking, colours running or other damage that can happen in washing and drying. Please check care labels, and keep delicate, valuable or dry-clean-only items out of your laundry bag.
