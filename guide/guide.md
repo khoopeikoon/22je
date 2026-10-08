@@ -55,7 +55,7 @@ We'll send you the network name and password, together with the main door code, 
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
-- **Housekeeping** comes **every Friday** and includes laundry. [to confirm: how residents hand over laundry]
+- **Housekeeping** comes **every Saturday** and includes laundry. [to confirm: how residents hand over laundry]
 
 ## Shared spaces
 
@@ -63,7 +63,7 @@ You're welcome to use the **living room, dining area and kitchen**, the **open b
 
 - Wash, dry and put away anything you use in the kitchen.
 - There are **two shared fridges** and no fridges in the rooms. Clear out anything expired.
-- **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Friday.
+- **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Saturday.
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
 
