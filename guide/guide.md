@@ -91,7 +91,7 @@ The laundry room is on the 5th floor, across the lift landing from the Aurelia S
 
 ![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.jpg)
 
-Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a front-loader) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer) is **on top**. Each has three controls:
+Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a 9 kg front-loader, model WW90DB8U94GBSP) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer, model DV10BB9440GBSP) is **on top**. Each has three controls:
 
 | Control | What it does |
 |---|---|
@@ -103,13 +103,15 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 1. **Prepare:** empty pockets (tissues and coins cause the most trouble), close zips, and put delicates and bras in a mesh bag. Wash darks and whites separately.
 2. **Load:** fill the drum loosely, no more than about **three-quarters full**. Close the door until it clicks.
-3. **Add detergent:** pull out the drawer at the top left of the washer and pour in liquid detergent. **Detergent is provided**: use the bottle on the shelf beside the machines. One capful is plenty, because front-loaders need very little.
+3. **Detergent:** the washer measures and adds detergent and softener **automatically** from its built-in tanks (Auto Dispense), so you don't need to add any. **Detergent is provided**: if the display says the detergent is low, top up the tank from the bottle on the shelf beside the machines. [to confirm: Auto Dispense is switched on and the tanks are filled]
 4. Press **⏻ Power**.
 5. **Turn the dial** to choose a cycle:
    - **AI Wash** or **Cotton**: everyday clothes, towels and bedding
    - **Synthetics**: sportswear, polyester
    - **Delicates** or **Wool**: anything you'd normally hand-wash
-   - **Quick Wash**: a small, lightly worn load
+   - **Quick Wash 15'**: a small, lightly worn load
+   - **Super Speed**: a normal load in a hurry (about 39 minutes)
+   - **Bedding** and **Towels**: as named
 6. Press **▷‖ Start**. The door locks while the machine runs.
 7. When it finishes, take your clothes out promptly and **leave the door slightly open** so the drum can air.
 
