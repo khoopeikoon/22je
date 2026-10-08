@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House Guide | 22 Jalan Elok</title>
+  <meta name="description" content="Living at 22 Jalan Elok: contacts, shared spaces, rubbish and recycling, and how to use the washer and dryer.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">For residents</span>
+        <h1>House <em>guide.</em></h1>
+        <p class="lede">Everything you need to know about day-to-day life at 22 Jalan Elok.</p>
+        <p class="guide-actions"><button type="button" class="btn btn--ghost" onclick="window.print()">Print or save as PDF</button></p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap guide-layout">
+        <nav class="guide-toc" aria-label="Contents"><strong>Contents</strong><ol id="guide-toc"></ol></nav>
+        <article class="guide" id="guide"><p>Loading the guide…</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="../assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script>
+    // The guide's text lives in guide.md (same folder): edit that file, not this one.
+    (async () => {
+      const el = document.getElementById("guide");
+      try {
+        const res = await fetch("guide.md", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        el.innerHTML = marked.parse(await res.text());
+      } catch (e) {
+        el.innerHTML = "<p>Sorry, the guide couldn’t load. Please message us on WhatsApp.</p>";
+        return;
+      }
+      // Highlight unfinished bits
+      el.innerHTML = el.innerHTML.replace(/\[to confirm(:[^\]]*)?\]/gi, m => `<mark class="tbc">${m.slice(1, -1)}</mark>`);
+      // Wrap tables so they scroll on phones; give headings ids; build contents
+      el.querySelectorAll("table").forEach(t => { const w = document.createElement("div"); w.className = "guide-table"; t.before(w); w.append(t); });
+      const toc = document.getElementById("guide-toc");
+      el.querySelectorAll("h2").forEach(h => {
+        h.id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+        toc.append(li);
+      });
+      el.querySelectorAll("img").forEach(img => {
+        const fig = document.createElement("figure"), cap = document.createElement("figcaption");
+        cap.textContent = img.alt; img.loading = "lazy";
+        img.closest("p").replaceWith(fig); fig.append(img, cap);
+      });
+      if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+    })();
+  </script>
+</body>
+</html>
