@@ -50,7 +50,8 @@ We'll send you the network name and password, together with the main door code, 
 
 - **Air-con:** keep the windows and door closed while it's on, and switch it off when you go out.
 - **Blackout curtains:** close them fully for a dark room at any hour.
-- **Ensuite bathroom:** run the exhaust fan or leave the door open after showering to keep mould away. Only toilet paper goes down the toilet.
+- **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
+- **Night light:** if you'd like one, just ask and we'll provide it.
 - **Housekeeping** comes **every Friday** and includes laundry. [to confirm: how residents hand over laundry]
 
 ## Shared spaces
