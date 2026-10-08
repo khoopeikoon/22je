@@ -59,7 +59,7 @@ We'll send you the network name and password, together with the main door code, 
 You're welcome to use the **living room, dining area and kitchen**, the **open balcony off the living room** (2nd floor) and the **front terrace**.
 
 - Wash, dry and put away anything you use in the kitchen.
-- Label your food in the fridge, and clear out anything expired. [to confirm: fridge shelf per room?]
+- There are **two shared fridges** and no fridges in the rooms. Label your food, and clear out anything expired.
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
 
@@ -69,31 +69,16 @@ You're welcome to use the **living room, dining area and kitchen**, the **open b
 - Don't exceed the load shown inside the lift. For heavy luggage, take one trip at a time.
 - If the lift stops between floors, press the alarm button inside and WhatsApp us. Don't try to climb out.
 
-## Rubbish and recycling
+## Rubbish
 
-Singapore takes rubbish seriously, and loose rubbish attracts ants and pests quickly in the heat.
+Singapore takes rubbish seriously, and loose rubbish attracts ants and pests quickly in the heat. **There's no shared rubbish bin inside the house**, so please take your own rubbish out.
 
-### General rubbish
-
-1. Bag all rubbish and **tie the bag tightly**. No loose rubbish in the bins.
+1. Bag all rubbish and **tie the bag tightly**.
 2. Wrap wet food waste in its own small bag first, so the bag doesn't leak.
-3. Take full bags to the main bin at [to confirm: where the outdoor bin is, e.g. by the front gate].
+3. Take it to the **bin by the front gate**. Don't leave rubbish bags anywhere in the house, including the kitchen.
 4. Close the bin lid fully. Never leave bags beside the bin, even for a night.
 
-Rubbish is collected **every day**. Kitchen bin bags are kept [to confirm: where spare bin bags are].
-
-### Recycling (the blue bin)
-
-The blue recycling bin is at [to confirm: location]. It takes **paper, plastic, glass and metal**.
-
-- Empty and rinse bottles, cans and containers. They must be **clean and dry**.
-- Flatten cardboard boxes.
-- **Not recyclable:** food, liquids, tissues and paper towels, food-stained containers or pizza boxes, nappies.
-- If you're unsure, put it in general rubbish. One dirty item can spoil the whole bin.
-
-### Anything else
-
-- **Batteries, light bulbs, electronics, bulky items (furniture, boxes from moving in):** don't put them in either bin. Message us and we'll arrange it.
+Rubbish is collected **every day**.
 
 ## Laundry room (5th floor)
 
@@ -149,7 +134,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 ## Quiet hours and house rules
 
-- **Quiet hours:** [to confirm: e.g. 10 pm – 8 am]. Keep voices, music and calls low in the shared spaces during these hours.
+- **Quiet hours:** 10 pm – 8 am. Keep voices, music and calls low in the shared spaces during these hours.
 - **No smoking or vaping anywhere in the house**, including the balcony and the front terrace.
 - **No additional guests.** Only the people named on your tenancy agreement may stay in the house.
 - **No pets.**
@@ -158,6 +143,6 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 ## Moving out
 
 1. Let us know your move-out date and time in advance.
-2. Leave the room tidy, with the fridge shelf cleared and your rubbish bagged and thrown out.
+2. Leave the room tidy, clear your food out of the fridges, and take your rubbish out to the bin by the front gate.
 3. Return both room keys, and the gate remote if you hold it. Any that are missing are charged at S$10 per key and S$50 per remote.
 4. We inspect the room with you and refund your deposit within 7 days.
