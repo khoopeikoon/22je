@@ -55,7 +55,10 @@ We'll send you the network name and password, together with the main door code, 
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
-- **Housekeeping** comes **every Saturday** and includes laundry. [to confirm: how residents hand over laundry]
+- **Housekeeping** comes **every Saturday** and includes laundry.
+  - Put the clothes you'd like washed in the **laundry bag labelled with your room**, and leave the bag in the **laundry basket** [to confirm: where the laundry basket is].
+  - Need extra laundry bags? Just ask us.
+  - We take care with every load, but we can't accept responsibility for shrinking, colours running or other damage that can happen in washing and drying. Please check care labels, and keep delicate, valuable or dry-clean-only items out of your laundry bag.
 
 ## Shared spaces
 
