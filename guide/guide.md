@@ -24,7 +24,7 @@ Welcome home. This guide covers the everyday things about living at 22 Jalan Elo
 
 | Who | How |
 |---|---|
-| **Kevin (house manager)** | [WhatsApp Kevin](https://wa.me/6580167691?text=Hi%20Kevin%2C%20I%27m%20staying%20at%2022%20Jalan%20Elok.%20) (+65 8016 7691) · [info@22je.sg](mailto:info@22je.sg) |
+| **Kevin (house manager)** | [WhatsApp Kevin](https://wa.me/6580167691?text=Hi%20Kevin%2C%20I%27m%20staying%20at%2022%20Jalan%20Elok.%20) · call [+65 8016 7691](tel:+6580167691) · [info@22je.sg](mailto:info@22je.sg) |
 | **Ambulance / fire** | [**995**](tel:995) |
 | **Police (emergency)** | [**999**](tel:999) |
 | **Police (non-emergency)** | [1800 255 0000](tel:18002550000) |
