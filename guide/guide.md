@@ -56,7 +56,7 @@ We'll send you the network name and password, together with the main door code, 
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
 - **Housekeeping** comes **every Saturday** and includes laundry.
-  - Put the clothes you'd like washed in the **laundry bag labelled with your room**, and leave the bag in the **laundry basket** [to confirm: where the laundry basket is].
+  - Put the clothes you'd like washed in the **laundry bag labelled with your room**, and leave the bag in the **laundry basket in your room**. Keep the basket inside your room; housekeeping will collect from there.
   - Need extra laundry bags? Just ask us.
   - We take care with every load, but we can't accept responsibility for shrinking, colours running or other damage that can happen in washing and drying. Please check care labels, and keep delicate, valuable or dry-clean-only items out of your laundry bag.
 
@@ -90,7 +90,9 @@ Rubbish is collected **every day**.
 
 ## Laundry room (5th floor)
 
-The laundry room is on the 5th floor, across the lift landing from the Aurelia Suite. You can use it at any time, but please keep the noise down late at night and early in the morning.
+The laundry room is on the 5th floor, across the lift landing from the Aurelia Suite. It's **free to use, at any time**, so you can wash your own clothes whenever you like. Please keep the noise down late at night and early in the morning.
+
+**Not sure how the machines work?** Just ask us. We're happy to show you.
 
 ![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.jpg)
 
