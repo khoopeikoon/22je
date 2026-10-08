@@ -60,7 +60,8 @@ We'll send you the network name and password, together with the main door code, 
 You're welcome to use the **living room, dining area and kitchen**, the **open balcony off the living room** (2nd floor) and the **front terrace**.
 
 - Wash, dry and put away anything you use in the kitchen.
-- There are **two shared fridges** and no fridges in the rooms. Label your food, and clear out anything expired.
+- There are **two shared fridges** and no fridges in the rooms. Clear out anything expired.
+- **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Friday.
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
 
