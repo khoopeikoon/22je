@@ -88,7 +88,7 @@ The laundry room is on the 5th floor, across the lift landing from the Aurelia S
 
 ![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.jpg)
 
-Both machines are **Samsung Bespoke AI** models with a single dial. The **washer is the bottom machine** and the **dryer is on top**. Each has three controls:
+Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a front-loader) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer) is **on top**. Each has three controls:
 
 | Control | What it does |
 |---|---|
