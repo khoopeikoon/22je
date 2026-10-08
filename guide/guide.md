@@ -48,7 +48,7 @@ The network name and password are given to you at move-in. [to confirm: card in 
 - **Air-con:** keep the windows and door closed while it's on, and switch it off when you go out.
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** run the exhaust fan or leave the door open after showering to keep mould away. Only toilet paper goes down the toilet.
-- **Housekeeping** comes **once a week** and includes laundry. [to confirm: which day, and how residents hand over laundry]
+- **Housekeeping** comes **every Friday** and includes laundry. [to confirm: how residents hand over laundry]
 
 ## Shared spaces
 
@@ -76,7 +76,7 @@ Singapore takes rubbish seriously, and loose rubbish attracts ants and pests qui
 3. Take full bags to the main bin at [to confirm: where the outdoor bin is, e.g. by the front gate].
 4. Close the bin lid fully. Never leave bags beside the bin, even for a night.
 
-Rubbish is collected on [to confirm: collection days and time]. Kitchen bin bags are kept [to confirm: where spare bin bags are].
+Rubbish is collected **every day**. Kitchen bin bags are kept [to confirm: where spare bin bags are].
 
 ### Recycling (the blue bin)
 
@@ -93,7 +93,7 @@ The blue recycling bin is at [to confirm: location]. It takes **paper, plastic, 
 
 ## Laundry room (5th floor)
 
-The laundry room is on the 5th floor, across the lift landing from the Aurelia Suite. Please keep the noise down there late at night and early in the morning. [to confirm: laundry hours]
+The laundry room is on the 5th floor, across the lift landing from the Aurelia Suite. You can use it at any time, but please keep the noise down late at night and early in the morning.
 
 ![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.jpg)
 
@@ -109,7 +109,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 1. **Prepare:** empty pockets (tissues and coins cause the most trouble), close zips, and put delicates and bras in a mesh bag. Wash darks and whites separately.
 2. **Load:** fill the drum loosely, no more than about **three-quarters full**. Close the door until it clicks.
-3. **Add detergent:** pull out the drawer at the top left of the washer and pour in liquid detergent. One capful is plenty, because front-loaders need very little. [to confirm: whether detergent is provided (the bottle on the shelf) or residents bring their own; whether the auto-dispense tank is filled for you]
+3. **Add detergent:** pull out the drawer at the top left of the washer and pour in liquid detergent. **Detergent is provided**: use the bottle on the shelf beside the machines. One capful is plenty, because front-loaders need very little.
 4. Press **⏻ Power**.
 5. **Turn the dial** to choose a cycle:
    - **AI Wash** or **Cotton**: everyday clothes, towels and bedding
