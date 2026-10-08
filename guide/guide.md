@@ -103,7 +103,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 1. **Prepare:** empty pockets (tissues and coins cause the most trouble), close zips, and put delicates and bras in a mesh bag. Wash darks and whites separately.
 2. **Load:** fill the drum loosely, no more than about **three-quarters full**. Close the door until it clicks.
-3. **Detergent:** the washer measures and adds detergent and softener **automatically** from its built-in tanks (Auto Dispense), so you don't need to add any. **Detergent is provided**: if the display says the detergent is low, top up the tank from the bottle on the shelf beside the machines. [to confirm: Auto Dispense is switched on and the tanks are filled]
+3. **Add detergent:** pull out the drawer at the top left of the washer and pour one capful of liquid detergent into the detergent compartment. Don't use the large Auto Dispense tanks, as we don't fill them. **Detergent is provided**: use the bottle on the shelf beside the machines. One capful is plenty, because front-loaders need very little.
 4. Press **⏻ Power**.
 5. **Turn the dial** to choose a cycle:
    - **AI Wash** or **Cotton**: everyday clothes, towels and bedding
