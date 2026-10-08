@@ -44,7 +44,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
 
 ## Wi-Fi
 
-We'll send you the network name and password, together with the main door code, closer to your move-in date. If the Wi-Fi drops, message us. Please don't unplug or reset the router yourself.
+We'll send you the network name and password, together with the main door code, closer to your move-in date. The house runs on Wi-Fi access points rather than a router you can reach, so if the Wi-Fi drops or is slow, just let us know and we'll sort it out.
 
 ## Your room
 
