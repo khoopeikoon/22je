@@ -83,6 +83,7 @@ function renderChrome() {
               <h4>Explore</h4>
               <ul>
                 ${NAV.slice(1).map(([href, label]) => `<li><a href="${ROOT + href}">${label}</a></li>`).join("")}
+                <li><a href="${ROOT}guide/">House guide</a></li>
               </ul>
             </div>
           </div>

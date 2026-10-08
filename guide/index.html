@@ -63,6 +63,7 @@
         cap.textContent = img.alt; img.loading = "lazy";
         img.closest("p").replaceWith(fig); fig.append(img, cap);
       });
+      el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });
       if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
     })();
   </script>
