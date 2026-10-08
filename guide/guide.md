@@ -35,13 +35,16 @@ In an emergency, call the emergency number first, then message us.
 
 ## Getting in and out
 
-- Keys / access: [to confirm: how residents get in: key, digital lock, gate remote]
+- **Main door:** it has a code lock. We'll send you the code together with the Wi-Fi details, closer to your move-in date.
+- **Your room:** you get **two keys** to your room.
+- **Gate:** a gate remote is provided to **one person**.
 - Always close the front gate and lock the main door behind you, even when popping out.
-- If you lose a key or card, tell us straight away so we can secure the house. [to confirm: replacement charge, if any]
+- Never share the main door code with anyone else.
+- If you lose a key or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key** and **S$50 per remote**.
 
 ## Wi-Fi
 
-The network name and password are given to you at move-in. [to confirm: card in each room / sent by WhatsApp]. If the Wi-Fi drops, message us. Please don't unplug or reset the router yourself.
+We'll send you the network name and password, together with the main door code, closer to your move-in date. If the Wi-Fi drops, message us. Please don't unplug or reset the router yourself.
 
 ## Your room
 
@@ -146,14 +149,14 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 ## Quiet hours and house rules
 
 - **Quiet hours:** [to confirm: e.g. 10 pm – 8 am]. Keep voices, music and calls low in the shared spaces during these hours.
-- **No smoking or vaping** inside the house. [to confirm: whether the front terrace is allowed]
-- **Guests:** [to confirm: visitor and overnight-guest policy]
-- **Pets:** [to confirm]
+- **No smoking or vaping anywhere in the house**, including the balcony and the front terrace.
+- **No additional guests.** Only the people named on your tenancy agreement may stay in the house.
+- **No pets.**
 - Please don't move furniture between rooms or put anything up on the walls without asking us first.
 
 ## Moving out
 
 1. Let us know your move-out date and time in advance.
 2. Leave the room tidy, with the fridge shelf cleared and your rubbish bagged and thrown out.
-3. Return all keys and access cards. [to confirm]
+3. Return both room keys, and the gate remote if you hold it. Any that are missing are charged at S$10 per key and S$50 per remote.
 4. We inspect the room with you and refund your deposit within 7 days.
