@@ -28,7 +28,7 @@ Welcome home. This guide covers the everyday things about living at 22 Jalan Elo
 | **Ambulance / fire** | **995** |
 | **Police (emergency)** | **999** |
 | **Police (non-emergency)** | 1800 255 0000 |
-| **Lift faults (ELETEC Elevators Singapore)** | **+65 9839 1913** |
+| **Lift faults (ELETEC Elevators hotline)** | **+65 8128 9615** |
 
 Kevin is your first point of contact for anything about the house. In an emergency, call the emergency number first, then message Kevin.
 
@@ -68,7 +68,7 @@ You're welcome to use the **living room, dining area and kitchen**, the **open b
 
 - Keep the lift doors clear, and never force them open.
 - Don't exceed the load shown inside the lift. For heavy luggage, take one trip at a time.
-- If the lift stops between floors, press the alarm button inside and call **ELETEC Elevators on +65 9839 1913**, then message Kevin. Don't try to climb out.
+- If the lift stops between floors, press the alarm button inside and call **ELETEC Elevators on +65 8128 9615**, then message Kevin. Don't try to climb out.
 - If the lift isn't working, call ELETEC on the same number and let Kevin know.
 
 ## Rubbish
