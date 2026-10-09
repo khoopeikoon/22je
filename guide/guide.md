@@ -119,7 +119,7 @@ This is a microwave that can also grill and bake.
 
 1. Scrape leftover food into the bin first.
 2. Load plates in the bottom rack facing the middle, and cups and glasses upside down in the top rack. Make sure nothing blocks the spinning spray arms.
-3. Put **one dishwasher tablet** in the dispenser on the inside of the door and close its lid. [to confirm: where the dishwasher tablets are kept]
+3. Put **one dishwasher tablet** in the dispenser on the inside of the door and close its lid. **Tablets are provided**: you'll find them under the sink.
 4. Close the door, choose a programme on the controls along the top edge of the door, and start it.
 5. When it's finished, put the clean dishes away. If you find the dishwasher full of clean dishes, please empty it before loading yours.
 
