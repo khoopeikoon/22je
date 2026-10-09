@@ -38,6 +38,8 @@ Kevin is your first point of contact for anything about the house. In an emergen
 
 ## Getting in and out
 
+![22 Jalan Elok from the street. The house number, 22, is on the gate post on the left.](../assets/img/guide/facade.jpg)
+
 - **Main door:** it has a code lock. We'll send you the code together with the Wi-Fi details, closer to your move-in date.
 - **Your room:** you get **two keys** to your room.
 - **Gate:** a gate remote is provided to **one person**.
@@ -84,10 +86,18 @@ Singapore takes rubbish seriously, and loose rubbish attracts ants and pests qui
 
 1. Bag all rubbish and **tie the bag tightly**.
 2. Wrap wet food waste in its own small bag first, so the bag doesn't leak.
-3. Take it to the **bin by the front gate**. Don't leave rubbish bags anywhere in the house, including the kitchen.
+3. Take it to the **green bin by the front gate**. Don't leave rubbish bags anywhere in the house, including the kitchen.
 4. Close the bin lid fully. Never leave bags beside the bin, even for a night.
 
 Rubbish is collected **every day**.
+
+![The bins outside the front gate. Rubbish goes in the green bin; the blue bin is for recyclables only.](../assets/img/guide/bins.jpg)
+
+## Luggage storage
+
+There's a luggage storeroom at [to confirm: which floor / where], so you can keep empty suitcases out of your room. Please label your suitcases with your room.
+
+![The luggage storeroom](../assets/img/guide/luggage-storage.jpg)
 
 ## Laundry room (5th floor)
 
