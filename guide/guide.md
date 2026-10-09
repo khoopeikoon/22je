@@ -73,6 +73,58 @@ You're welcome to use the **living room, dining area and kitchen**, the **open b
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
 
+## Kitchen appliances
+
+All the kitchen appliances are Samsung. Please wipe them down after use and leave them as you found them.
+
+### Induction hob
+
+![The induction hob. The controls are along the front edge.](../assets/img/guide/induction-hob.jpg)
+
+1. **Use induction-compatible pans only.** The base must be flat and magnetic: if a fridge magnet sticks to it, it works.
+2. Touch **⏻** to switch the hob on, put the pan on one of the **three cooking zones**, then slide your finger along the **0–9 bar** to set the heat (**Max** is the strongest). The large zone has a double ring that adjusts to the size of your pan.
+3. Switch on the **cooker hood** above the hob while you cook.
+4. **Need to stop everything quickly?** Touch **‖** to pause all zones at once.
+5. Touch **⏻** again when you've finished. The glass stays hot for a while after cooking, so don't touch it.
+6. **If the controls don't respond,** the child lock may be on: touch and hold the lock key for 3 seconds.
+
+Lift pans rather than sliding them, so the glass doesn't scratch. Wipe up spills once the hob has cooled.
+
+### Oven
+
+![The built-in oven. The left dial chooses the cooking mode; the right dial sets the temperature.](../assets/img/guide/oven.jpg)
+
+1. Turn the **left dial** to the cooking mode you want, such as fan or grill.
+2. Turn the **right dial** to set the temperature, then touch **OK**.
+3. Let the oven heat up before putting food in, and always use oven gloves.
+4. When you've finished, turn the **left dial** back to the **off** position.
+
+Please don't line the bottom of the oven with foil.
+
+### Combination microwave
+
+![The compact combination microwave.](../assets/img/guide/combi-microwave.jpg)
+
+This is a microwave that can also grill and bake.
+
+- **Quick heat-up:** put the food in a microwave-safe dish, close the door and press **Start / +30s**. Each press adds 30 seconds at full power.
+- **Other modes:** touch the mode you want, set the time with **▲ ▼**, touch **OK**, then press **Start**.
+- **Stop / Eco:** press once to pause, twice to cancel.
+- **Never put metal, foil or sealed containers in** when microwaving. In grill or bake mode, the dish and the inside get very hot.
+- **If the buttons don't respond,** the child lock may be on: touch and hold the padlock for 3 seconds.
+
+### Dishwasher
+
+![The dishwasher](../assets/img/guide/dishwasher.jpg)
+
+1. Scrape leftover food into the bin first.
+2. Load plates in the bottom rack facing the middle, and cups and glasses upside down in the top rack. Make sure nothing blocks the spinning spray arms.
+3. Put **one dishwasher tablet** in the dispenser on the inside of the door and close its lid. [to confirm: where the dishwasher tablets are kept]
+4. Close the door, choose a programme on the controls along the top edge of the door, and start it.
+5. When it's finished, put the clean dishes away. If you find the dishwasher full of clean dishes, please empty it before loading yours.
+
+Keep wooden boards and utensils, non-stick pans and anything not marked "dishwasher safe" out of the dishwasher; wash those by hand.
+
 ## The lift
 
 - Keep the lift doors clear, and never force them open.
