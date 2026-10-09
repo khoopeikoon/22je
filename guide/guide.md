@@ -91,11 +91,13 @@ Singapore takes rubbish seriously, and loose rubbish attracts ants and pests qui
 
 Rubbish is collected **every day**.
 
+**Recycling:** clean, dry paper, plastic, glass and metal can go in the **blue bin**. If you're not sure whether something can be recycled, put it in the green bin with the rest of the rubbish.
+
 ![The bins outside the front gate. Rubbish goes in the green bin; the blue bin is for recyclables only.](../assets/img/guide/bins.jpg)
 
 ## Luggage storage
 
-There's a luggage storeroom at [to confirm: which floor / where], so you can keep empty suitcases out of your room. Please label your suitcases with your room.
+There's a luggage storeroom **by the entrance on the 1st floor**, so you can keep empty suitcases out of your room. Please label your suitcases with your room.
 
 ![The luggage storeroom](../assets/img/guide/luggage-storage.jpg)
 
