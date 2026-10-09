@@ -89,7 +89,7 @@ function renderChrome() {
           </div>
           <div class="footer-base">
             <span>© ${new Date().getFullYear()} 22 Jalan Elok</span>
-            <span>Minimum stay 3 months · CEA standard tenancy agreement</span>
+            <span>Powered with love ♥</span>
           </div>
         </div>
       </footer>
