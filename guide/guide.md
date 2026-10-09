@@ -140,9 +140,8 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 1. **Check the care labels.** Don't tumble-dry wool, silk, lace, or anything marked "do not tumble dry". Never put shoes, rubber-backed mats or anything with rubber or foam inside.
 2. **Clean the lint filter, every single load.** It sits inside the door opening. Lift it out, open it, wipe the lint off with your fingers, then close it and slide it back in. A clogged filter makes drying slow and uses more power.
 3. Load the clothes loosely and close the door.
-4. Press **⏻ Power**, **turn the dial** to choose a cycle (**AI Dry** or **Cotton** suits most loads, and **Synthetics** suits sportswear), then press **▷‖ Start**.
-5. **Empty the water tank if its light comes on.** This is a heat-pump dryer, so it collects water from your clothes. Pull out the drawer at the top left of the dryer, empty it into the sink, and push it back in. [to confirm: if the dryer drains straight into the plumbing, delete this step]
-6. Take your clothes out as soon as the cycle ends. They'll wrinkle less.
+4. Press **⏻ Power**, **turn the dial** to choose a cycle (**AI Dry** or **Cotton** suits most loads, and **Synthetics** suits sportswear), then press **▷‖ Start**. There's no water tank to empty: the dryer drains straight into the plumbing.
+5. Take your clothes out as soon as the cycle ends. They'll wrinkle less.
 
 ### Please don't
 
