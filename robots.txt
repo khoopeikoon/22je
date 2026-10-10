@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /tools/
+Disallow: /22JE
+
+Sitemap: https://22je.sg/sitemap.xml
