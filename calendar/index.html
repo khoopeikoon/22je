@@ -20,6 +20,7 @@
         <span class="eyebrow">Availability</span>
         <h1>Room <em>availability.</em></h1>
         <p class="lede">Choose a room, tap your check-in and check-out dates, then send them to us on WhatsApp. This calendar is indicative — always confirm exact dates with us before making plans.</p>
+        <p id="calChecked" style="margin-top:14px;font-size:0.78rem;letter-spacing:0.08em;color:var(--muted)"></p>
       </div>
     </header>
 
@@ -55,7 +56,10 @@
    "YYYY-MM-DD". The end date is shown as booked too, e.g.
      bookings: [{ start: "2026-11-01", end: "2027-01-31" }]
    The id is the link anchor: calendar/#aurelia opens that room.
+   Bump LAST_CHECKED on every edit, and whenever the calendar is
+   confirmed still correct (aim for every week or two).
    ============================================================ */
+const LAST_CHECKED = "2026-10-10";
 const ROOMS = [
   { id: "elysia3", name: "Elysia Suite 3 (Twin)",  sub: "Suite",     bookings: [] },
   { id: "elysia",  name: "Elysia Suite 4 (Queen)", sub: "Suite",     bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
@@ -75,6 +79,9 @@ const ROOMS = [
    ============================================================ */
 const CAL_END_YEAR = 2028;
 const CAL_END_MONTH = 11; // 0 = Jan ... 11 = Dec
+
+document.getElementById("calChecked").textContent = "Availability last checked: " +
+  new Date(LAST_CHECKED + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
 /* ------------------------------------------------------------
    No edits needed below this line.
