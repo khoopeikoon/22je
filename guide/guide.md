@@ -189,16 +189,12 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 ### Using the dryer (top machine)
 
-> **⚠️ Clean the lint filter before every load.** It takes ten seconds: see step 2 below. If it's skipped:
+> **⚠️ Clean the lint filter before every load, or your clothes will come out damp.**
 >
-> - **Your clothes come out damp.** Air can't flow through a clogged filter, so cycles run longer and may finish with clothes still wet.
-> - **It wastes electricity** and makes the dryer work harder.
-> - **Lint gets past it into the dryer's heat-pump parts.** That can trigger a filter warning, stop the dryer mid-cycle, or need a technician to fix, and then nobody can use it.
->
-> Please clean it even if the person before you didn't.
+> A full filter blocks the airflow, so the dryer runs longer and still finishes with wet clothes. It only takes ten seconds: see step 2 below. Please clean it even if the person before you didn't.
 
 1. **Check the care labels.** Don't tumble-dry wool, silk, lace, or anything marked "do not tumble dry". Never put shoes, rubber-backed mats or anything with rubber or foam inside.
-2. **Clean the lint filter, before every load.** It sits inside the door opening. Lift it out, open it, wipe the lint off with your fingers, then close it and slide it back in. A clogged filter makes drying slow and uses more power.
+2. **Clean the lint filter, before every load.** It sits inside the door opening. Lift it out, open it, wipe the lint off with your fingers, then close it and slide it back in. Skip it and your clothes come out damp.
 3. Load the clothes loosely and close the door.
 4. Press **⏻ Power**, **turn the dial** to choose a cycle (**AI Dry** or **Cotton** suits most loads, and **Synthetics** suits sportswear), then press **▷‖ Start**. There's no water tank to empty: the dryer drains straight into the plumbing.
 5. Take your clothes out as soon as the cycle ends. They'll wrinkle less.
