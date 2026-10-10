@@ -76,7 +76,7 @@ function renderChrome() {
               <ul>
                 <li><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></li>
                 <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-                <li><a href="${waLink("Good day! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a href="${waLink("Hello! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener">WhatsApp</a></li>
               </ul>
             </div>
             <div>
@@ -93,7 +93,7 @@ function renderChrome() {
           </div>
         </div>
       </footer>
-      <a class="wa-float" href="${waLink("Good day! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener" aria-label="WhatsApp us">${WA_ICON}</a>
+      <a class="wa-float" href="${waLink("Hello! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener" aria-label="WhatsApp us">${WA_ICON}</a>
       <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
         <button class="lightbox__close" aria-label="Close">×</button>
         <button class="lightbox__prev" aria-label="Previous photo">‹</button>
@@ -220,7 +220,7 @@ function initEnquiry() {
   const compose = () => {
     const f = Object.fromEntries(new FormData(form));
     return [
-      `Good day! I'd like to enquire about a stay at 22 Jalan Elok.`,
+      `Hello! I'd like to enquire about a stay at 22 Jalan Elok.`,
       ``,
       `Name: ${f.name || "-"}`,
       f.email ? `Email: ${f.email}` : null,

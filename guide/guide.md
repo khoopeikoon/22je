@@ -11,7 +11,7 @@
   - Anything written as [to confirm] is highlighted in yellow on the page,
     so you can see at a glance what still needs filling in.
   - Photos: put the file in assets/img/guide/ and write
-    ![Caption](../assets/img/guide/your-photo.jpg)
+    ![Caption](../assets/img/guide/your-photo.webp)
   - This page is PUBLIC. Never put door codes, Wi-Fi passwords or
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
@@ -38,7 +38,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
 
 ## Getting in and out
 
-![22 Jalan Elok from the street. The house number, 22, is on the gate post on the left.](../assets/img/guide/facade.jpg)
+![22 Jalan Elok from the street. The house number, 22, is on the gate post on the left.](../assets/img/guide/facade.webp)
 
 - **Main door:** it has a code lock. We'll send you the code together with the Wi-Fi details, closer to your move-in date.
 - **Your room:** you get **two keys** to your room.
@@ -79,7 +79,7 @@ All the kitchen appliances are Samsung. Please wipe them down after use and leav
 
 ### Induction hob
 
-![The induction hob. The controls are along the front edge.](../assets/img/guide/induction-hob.jpg)
+![The induction hob. The controls are along the front edge.](../assets/img/guide/induction-hob.webp)
 
 1. **Use induction-compatible pans only.** The base must be flat and magnetic: if a fridge magnet sticks to it, it works.
 2. Touch **⏻** to switch the hob on, put the pan on one of the **three cooking zones**, then slide your finger along the **0–9 bar** to set the heat (**Max** is the strongest). The large zone has a double ring that adjusts to the size of your pan.
@@ -92,7 +92,7 @@ Lift pans rather than sliding them, so the glass doesn't scratch. Wipe up spills
 
 ### Oven
 
-![The built-in oven. The left dial chooses the cooking mode; the right dial sets the temperature.](../assets/img/guide/oven.jpg)
+![The built-in oven. The left dial chooses the cooking mode; the right dial sets the temperature.](../assets/img/guide/oven.webp)
 
 1. Turn the **left dial** to the cooking mode you want, such as fan or grill.
 2. Turn the **right dial** to set the temperature, then touch **OK**.
@@ -103,7 +103,7 @@ Please don't line the bottom of the oven with foil.
 
 ### Combination microwave
 
-![The compact combination microwave.](../assets/img/guide/combi-microwave.jpg)
+![The compact combination microwave.](../assets/img/guide/combi-microwave.webp)
 
 This is a microwave that can also grill and bake.
 
@@ -115,7 +115,7 @@ This is a microwave that can also grill and bake.
 
 ### Dishwasher
 
-![The dishwasher](../assets/img/guide/dishwasher.jpg)
+![The dishwasher](../assets/img/guide/dishwasher.webp)
 
 1. Scrape leftover food into the bin first.
 2. Load plates in the bottom rack facing the middle, and cups and glasses upside down in the top rack. Make sure nothing blocks the spinning spray arms.
@@ -145,13 +145,13 @@ Rubbish is collected **every day**.
 
 **Recycling:** clean, dry paper, plastic, glass and metal can go in the **blue bin**. If you're not sure whether something can be recycled, put it in the green bin with the rest of the rubbish.
 
-![The bins outside the front gate. Rubbish goes in the green bin; the blue bin is for recyclables only.](../assets/img/guide/bins.jpg)
+![The bins outside the front gate. Rubbish goes in the green bin; the blue bin is for recyclables only.](../assets/img/guide/bins.webp)
 
 ## Luggage storage
 
 There's a luggage storeroom **by the entrance on the 1st floor**, so you can keep empty suitcases out of your room. Please label your suitcases with your room.
 
-![The luggage storeroom](../assets/img/guide/luggage-storage.jpg)
+![The luggage storeroom](../assets/img/guide/luggage-storage.webp)
 
 ## Laundry room (5th floor)
 
@@ -159,7 +159,7 @@ The laundry room is on the 5th floor, across the lift landing from the Aurelia S
 
 **Not sure how the machines work?** Just ask us. We're happy to show you.
 
-![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.jpg)
+![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.webp)
 
 Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a 9 kg front-loader, model WW90DB8U94GBSP) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer, model DV10BB9440GBSP) is **on top**. Each has three controls:
 

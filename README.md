@@ -22,14 +22,15 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 - **Bookings:** edit the `ROOMS` list at the top of the script in `calendar/index.html`. Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
 - **Navigation:** the `NAV` list in `assets/js/main.js`.
 - **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"). Keep all three in step.
-- **Photos:** `assets/img/<room>/`. Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
+- **Photos:** `assets/img/<room>/`, as **WebP, max 1600 px** (converted 2026-10-10; the site was 25 MB of JPEGs, now ~9 MB). Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
 
 ## Photo correction
 
 `tools/enhance_photo.py` applies the gentle correction used on the current photos: partial white balance (removes the orange cast from the warm LED strips), levels, shadow lift and light sharpening. It needs only Pillow.
 
 ```bash
-python3 tools/enhance_photo.py original.jpg corrected.jpg
+sips -s format jpeg IMG_1234.HEIC --out /tmp/IMG_1234.jpg      # Pillow can't read HEIC
+python3 tools/enhance_photo.py /tmp/IMG_1234.jpg assets/img/<room>/<name>.webp
 ```
 
 Check every result by eye. It can blow out bright windows (it was skipped for `property-04` and `property-17` for that reason), and the originals are in git history if an edit needs undoing.

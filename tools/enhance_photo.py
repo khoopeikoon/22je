@@ -1,7 +1,7 @@
 """Gentle real-estate photo correction using Pillow only: partial white
 balance, levels, shadow lift, mild contrast, sharpening. Never overwrites originals."""
 import sys
-from PIL import Image, ImageFilter, ImageStat
+from PIL import Image, ImageFilter, ImageOps, ImageStat
 
 def _percentile(hist, frac):
     total = sum(hist); acc = 0
@@ -12,7 +12,8 @@ def _percentile(hist, frac):
     return 255
 
 def enhance(path, wb_strength=0.55, shadow_gamma=0.82, contrast=0.08):
-    im = Image.open(path).convert("RGB")
+    im = ImageOps.exif_transpose(Image.open(path)).convert("RGB")   # iPhone shots carry rotation in EXIF
+    im.thumbnail((1600, 1600), Image.LANCZOS)                       # web size
     small = im.copy(); small.thumbnail((400, 400))
     means = ImageStat.Stat(small).mean
     grey = sum(means) / 3
@@ -33,4 +34,8 @@ def enhance(path, wb_strength=0.55, shadow_gamma=0.82, contrast=0.08):
     return out.filter(ImageFilter.UnsharpMask(radius=1.6, percent=55, threshold=3))
 
 if __name__ == "__main__":
-    enhance(sys.argv[1]).save(sys.argv[2], quality=84, optimize=True, progressive=True)
+    out = sys.argv[2]
+    if out.lower().endswith(".webp"):
+        enhance(sys.argv[1]).save(out, "WEBP", quality=78, method=6)
+    else:
+        enhance(sys.argv[1]).save(out, quality=84, optimize=True, progressive=True)
