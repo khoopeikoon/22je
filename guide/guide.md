@@ -99,7 +99,7 @@ Lift pans rather than sliding them, so the glass doesn't scratch. Wipe up spills
 3. Let the oven heat up before putting food in, and always use oven gloves.
 4. When you've finished, turn the **left dial** back to the **off** position.
 
-Please don't line the bottom of the oven with foil.
+Please don't line the bottom of the oven with foil, and keep the oven door closed when you're not using it: the dishwasher next to it can't open while the oven door is open.
 
 ### Combination microwave
 
@@ -116,6 +116,12 @@ This is a microwave that can also grill and bake.
 ### Dishwasher
 
 ![The dishwasher](../assets/img/guide/dishwasher.webp)
+
+> **⚠️ Close the oven door before you open the dishwasher.**
+>
+> The dishwasher and the oven meet at the corner, so the dishwasher door can't open while the oven door is open.
+
+![The dishwasher open, with the oven beside it at the corner. The oven door must be closed for the dishwasher door to open.](../assets/img/guide/dishwasher-open.webp)
 
 1. Scrape leftover food into the bin first.
 2. Load plates in the bottom rack facing the middle, and cups and glasses upside down in the top rack. Make sure nothing blocks the spinning spray arms.
