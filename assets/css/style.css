@@ -607,6 +607,9 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
 .guide table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
 .guide th, .guide td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .guide th { font-weight: 500; color: var(--espresso); background: var(--cream); }
+.guide blockquote { margin: 1.2em 0 1.4em; padding: 14px 18px; background: var(--cream); border-left: 3px solid var(--brass); }
+.guide blockquote p { margin: 0.3em 0; }
+.guide blockquote ul { margin: 0.4em 0 0.2em; }
 .guide figure { margin: 1.6em 0; }
 .guide figure img { width: 100%; max-width: 440px; display: block; border-radius: 2px; }
 .guide figcaption { font-size: 0.88rem; color: var(--umber); opacity: 0.85; margin-top: 8px; }
