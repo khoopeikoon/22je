@@ -101,6 +101,52 @@
   "makesOffer": [
     {
       "@type": "Offer",
+      "price": 7000,
+      "priceCurrency": "SGD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 7000,
+        "priceCurrency": "SGD",
+        "unitCode": "MON",
+        "unitText": "per month"
+      },
+      "itemOffered": {
+        "@type": "HotelRoom",
+        "name": "Aurelia Suite",
+        "description": "Top-floor suite with a private balcony and rain shower.",
+        "bed": "Queen bed",
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 220,
+          "unitCode": "FTK"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "price": 5000,
+      "priceCurrency": "SGD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 5000,
+        "priceCurrency": "SGD",
+        "unitCode": "MON",
+        "unitText": "per month"
+      },
+      "itemOffered": {
+        "@type": "HotelRoom",
+        "name": "Elysia Suite",
+        "description": "Suite with a Juliet balcony; 2 suites.",
+        "bed": "Queen bed or two single beds",
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 252,
+          "unitCode": "FTK"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
       "price": 3000,
       "priceCurrency": "SGD",
       "priceSpecification": {
@@ -141,52 +187,6 @@
         "floorSize": {
           "@type": "QuantitativeValue",
           "value": 187,
-          "unitCode": "FTK"
-        }
-      }
-    },
-    {
-      "@type": "Offer",
-      "price": 5000,
-      "priceCurrency": "SGD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": 5000,
-        "priceCurrency": "SGD",
-        "unitCode": "MON",
-        "unitText": "per month"
-      },
-      "itemOffered": {
-        "@type": "HotelRoom",
-        "name": "Elysia Suite",
-        "description": "Suite with a Juliet balcony; 2 suites.",
-        "bed": "Queen bed or two single beds",
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "value": 252,
-          "unitCode": "FTK"
-        }
-      }
-    },
-    {
-      "@type": "Offer",
-      "price": 7000,
-      "priceCurrency": "SGD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": 7000,
-        "priceCurrency": "SGD",
-        "unitCode": "MON",
-        "unitText": "per month"
-      },
-      "itemOffered": {
-        "@type": "HotelRoom",
-        "name": "Aurelia Suite",
-        "description": "Top-floor suite with a private balcony and rain shower.",
-        "bed": "Queen bed",
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "value": 220,
           "unitCode": "FTK"
         }
       }
@@ -282,17 +282,17 @@
           <p class="lede">Three suites, three Deluxe Queen rooms and three Deluxe Twin rooms, each with its own bathroom, workspace and storage. Stays from three months.</p>
         </div>
         <div class="cards">
-          <a class="card reveal" href="rooms.html#elysia">
-            <div class="card__img"><img src="assets/img/elysia/elysia-main.webp" alt="Elysia Suite" loading="lazy"></div>
-            <h3>Elysia Suite</h3>
-            <p class="card__meta">2 suites · 252 sq ft · Queen or 2 twins · Juliet balcony</p>
-            <p class="price">S$5,000 <small>/ month · negotiable</small></p>
-          </a>
           <a class="card reveal" href="rooms.html#aurelia">
             <div class="card__img"><img src="assets/img/aurelia/aurelia-balcony-2.webp" alt="Aurelia Suite private balcony" loading="lazy"></div>
             <h3>Aurelia Suite</h3>
             <p class="card__meta">Top floor · 220 sq ft · Queen · Private balcony</p>
             <p class="price">S$7,000 <small>/ month · negotiable</small></p>
+          </a>
+          <a class="card reveal" href="rooms.html#elysia">
+            <div class="card__img"><img src="assets/img/elysia/elysia-main.webp" alt="Elysia Suite" loading="lazy"></div>
+            <h3>Elysia Suite</h3>
+            <p class="card__meta">2 suites · 252 sq ft · Queen or 2 twins · Juliet balcony</p>
+            <p class="price">S$5,000 <small>/ month · negotiable</small></p>
           </a>
           <a class="card reveal" href="rooms.html#deluxe-queen">
             <div class="card__img"><img src="assets/img/deluxe-queen/deluxe-queen-main.webp" alt="Deluxe Queen Room" loading="lazy"></div>
