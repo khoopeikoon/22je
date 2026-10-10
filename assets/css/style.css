@@ -136,13 +136,14 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
 }
 .brand {
   grid-area: brand;
+  display: inline-block;
   justify-self: center;
   text-decoration: none;
   text-align: center;
   line-height: 1;
 }
 .brand__name { font-family: var(--serif); font-size: 2.2rem; letter-spacing: 0.02em; display: block; }
-.brand__sub { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); }
+.brand__sub { display: block; text-align: center; padding-left: 0.4em; /* offsets the trailing letter-spacing so the word sits truly centred */ font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); }
 .nav { grid-area: nav; display: flex; justify-content: center; align-items: center; align-self: stretch; gap: 36px; border-top: 1px solid var(--line); }
 .nav a {
   font-size: 0.76rem;

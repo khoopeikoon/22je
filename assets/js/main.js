@@ -46,7 +46,7 @@ function renderChrome() {
           <button class="menu-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
           <a class="brand" href="${ROOT}index.html">
             <span class="brand__name">22 Jalan Elok</span>
-            <span class="brand__sub">Residences · Singapore</span>
+            <span class="brand__sub">Singapore</span>
           </a>
           <div class="header-cta"><a class="btn" href="${ROOT}contact.html">Enquire</a></div>
         </div>
@@ -62,7 +62,7 @@ function renderChrome() {
             <div>
               <a class="brand" href="${ROOT}index.html" style="text-align:left">
                 <span class="brand__name">22 Jalan Elok</span>
-                <span class="brand__sub">Residences · Singapore</span>
+                <span class="brand__sub">Singapore</span>
               </a>
               <p style="margin-top:20px;max-width:22em;font-size:.92rem">Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.</p>
             </div>
