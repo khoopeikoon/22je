@@ -159,9 +159,9 @@ There's a luggage storeroom **by the entrance on the 1st floor**, so you can kee
 
 ![The luggage storeroom](../assets/img/guide/luggage-storage.webp)
 
-## Laundry room (5th floor)
+## Laundry terrace (5th floor)
 
-The laundry room is on the 5th floor, across the lift landing from the Aurelia Suite. It's **free to use, at any time**, so you can wash your own clothes whenever you like. Please keep the noise down late at night and early in the morning.
+The laundry terrace is an open terrace on the 5th floor, across the lift landing from the Aurelia Suite. It's **free to use, at any time**, so you can wash your own clothes whenever you like. Please keep the noise down late at night and early in the morning.
 
 **Not sure how the machines work?** Just ask us. We're happy to show you.
 
