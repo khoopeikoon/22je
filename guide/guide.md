@@ -57,11 +57,8 @@ We'll send you the network name and password, together with the main door code, 
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
-- **Housekeeping** comes **every Saturday** and includes laundry.
+- **Housekeeping** comes **every Saturday** to clean your room. **It doesn't include laundry:** laundry is self-service, on the [laundry terrace](#laundry-terrace-5th-floor).
   - **Weekly housekeeping is part of every stay and isn't optional.** It keeps every room clean and in good condition. We'll always knock before entering, but if there's no answer, we will still come in.
-  - Put the clothes you'd like washed in the **laundry bag labelled with your room**, and leave the bag in the **laundry basket in your room**. Keep the basket inside your room; housekeeping will collect from there.
-  - Need extra laundry bags? Just ask us.
-  - We take care with every load, but we can't accept responsibility for shrinking, colours running or other damage that can happen in washing and drying. Please check care labels, and keep delicate, valuable or dry-clean-only items out of your laundry bag.
 
 ## Shared spaces
 
@@ -161,7 +158,7 @@ There's a luggage storeroom **by the entrance on the 1st floor**, so you can kee
 
 ## Laundry terrace (5th floor)
 
-The laundry terrace is an open terrace on the 5th floor, across the lift landing from the Aurelia Suite. It's **free to use, at any time**, so you can wash your own clothes whenever you like. Please keep the noise down late at night and early in the morning.
+The laundry terrace is an open terrace on the 5th floor, across the lift landing from the Aurelia Suite. **Laundry is self-service:** housekeeping doesn't wash clothes, so please do your own here. It's **free to use, at any time**. Please keep the noise down late at night and early in the morning.
 
 **Not sure how the machines work?** Just ask us. We're happy to show you.
 
