@@ -21,6 +21,7 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 - **Colours and fonts:** the tokens at the top of `assets/css/style.css` (`--ivory`, `--espresso`, `--brass`, … and `--serif` / `--sans`).
 - **Phone, WhatsApp, email, address:** the `SITE` object at the top of `assets/js/main.js`. The header, footer and floating WhatsApp button are rendered from it on every page.
 - **Bookings:** edit the `ROOMS` list at the top of `assets/js/calendar.js` (moved out of `calendar/index.html` on 2026-10-13 so the English and Chinese calendars share one list). Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
+- **After editing `style.css`, `main.js` or `calendar.js`:** bump the `?v=` stamp on their links in every page (all pages use the same value), or browsers keep the old copy and new pages render with the old header. One command: `grep -rl '?v=' --include='*.html' . | xargs sed -i '' 's/?v=[0-9]*/?v=NEWDATE/g'`
 - **Navigation, header and footer text:** `NAV` and `STRINGS` (English + Chinese) in `assets/js/main.js`.
 - **Chinese pages:** any text change on an English page needs the same change in its `zh/` twin. Prefilled WhatsApp/email messages from the Chinese pages are in Chinese (Kevin reads Chinese — PK, 2026-10-13).
 - **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"), and the same three pages under `zh/`. Keep all six in step.

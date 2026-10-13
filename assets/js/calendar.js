@@ -13,9 +13,9 @@
    ============================================================ */
 const LAST_CHECKED = "2026-10-10";
 const ROOMS = [
-  { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 套房",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
-  { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 套房 3（双床）", sub: "Suite",        bookings: [] },
-  { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 套房 4（大床）", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
+  { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 金曦套房",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
+  { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 怡境套房 3（双床）", sub: "Suite",        bookings: [] },
+  { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 怡境套房 4（大床）", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
   { id: "dq1",     name: "Deluxe Queen Room 1",    zh: "豪华大床房 1",         sub: "Deluxe Queen", bookings: [] },
   { id: "dq3",     name: "Deluxe Queen Room 3",    zh: "豪华大床房 3",         sub: "Deluxe Queen", bookings: [] },
   { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-10-09", end: "2026-10-15" }] },
