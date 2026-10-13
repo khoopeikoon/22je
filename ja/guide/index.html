@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%A0</text></svg>">
+  <title>入居者ガイド | 22 Jalan Elok</title>
+  <meta name="description" content="22 Jalan Elok での暮らし：連絡先、共用スペース、ゴミとリサイクル、洗濯機と乾燥機の使い方。">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026101303">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">入居者の方へ</span>
+        <h1>入居者<em>ガイド</em>。</h1>
+        <p class="lede">22 Jalan Elok での毎日の暮らしに必要なことを、すべてまとめました。</p>
+        <p class="guide-actions"><button type="button" class="btn btn--ghost" onclick="window.print()">印刷 / PDF で保存</button></p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap guide-layout">
+        <nav class="guide-toc" aria-label="目次"><strong>目次</strong><ol id="guide-toc"></ol></nav>
+        <article class="guide" id="guide"><p>ガイドを読み込んでいます…</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="../../assets/js/main.js?v=2026101303"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script>
+    // The Japanese guide's text lives in guide.md (same folder): edit that file, not this one.
+    (async () => {
+      const el = document.getElementById("guide");
+      try {
+        const res = await fetch("guide.md", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        el.innerHTML = marked.parse(await res.text());
+      } catch (e) {
+        el.innerHTML = "<p>申し訳ありません。ガイドを読み込めませんでした。WhatsApp でご連絡ください。</p>";
+        return;
+      }
+      // Highlight unfinished bits
+      el.innerHTML = el.innerHTML.replace(/\[to confirm(:[^\]]*)?\]/gi, m => `<mark class="tbc">${m.slice(1, -1)}</mark>`);
+      // Wrap tables so they scroll on phones; give headings ids; build contents
+      el.querySelectorAll("table").forEach(t => { const w = document.createElement("div"); w.className = "guide-table"; t.before(w); w.append(t); });
+      const toc = document.getElementById("guide-toc");
+      el.querySelectorAll("h2").forEach(h => {
+        h.id = h.textContent.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+        toc.append(li);
+      });
+      el.querySelectorAll("img").forEach(img => {
+        const fig = document.createElement("figure"), cap = document.createElement("figcaption");
+        cap.textContent = img.alt; img.loading = "lazy";
+        img.closest("p").replaceWith(fig); fig.append(img, cap);
+      });
+      el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });
+      if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+    })();
+  </script>
+</body>
+</html>

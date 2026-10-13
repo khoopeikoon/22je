@@ -10,12 +10,12 @@
     // Old addresses (from the previous site, bookmarks or search results) → the page that replaced them.
     (function () {
       var path = location.pathname.toLowerCase().replace(/\/+$/, "");
-      // One 404 page serves the whole site: show it in Chinese for missing pages under /zh/.
-      var zh = /^\/zh(\/|$)/.test(path);
-      if (zh) {
-        document.documentElement.lang = "zh-Hans";
-        document.title = "页面不存在 | 22 Jalan Elok";
-        path = path.replace(/^\/zh/, "");
+      // One 404 page serves the whole site: show it in the language of the folder (/zh/, /ja/).
+      var m = path.match(/^\/(zh|ja)(\/|$)/), dir = m ? "/" + m[1] : "";
+      if (m) {
+        document.documentElement.lang = { zh: "zh-Hans", ja: "ja" }[m[1]];
+        document.title = { zh: "页面不存在", ja: "ページが見つかりません" }[m[1]] + " | 22 Jalan Elok";
+        path = path.slice(dir.length);
       }
       var moved = {
         "/home": "/", "/index": "/", "/about": "/", "/about-us": "/",
@@ -28,15 +28,16 @@
       };
       var to = moved[path];
       if (!to && /^\/(rooms|elysia|aurelia|deluxe)/.test(path)) to = "/rooms.html";
-      if (to) location.replace((zh ? "/zh" : "") + to + location.hash);
+      if (to) location.replace(dir + to + location.hash);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=2026101302">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026101303">
   <style>
-    html[lang^="zh"] .page-head > [lang="en"], html:not([lang^="zh"]) .page-head > [lang="zh-Hans"] { display: none; }
+    .page-head > [lang] { display: none; }
+    html[lang="en"] .page-head > [lang="en"], html[lang="zh-Hans"] .page-head > [lang="zh-Hans"], html[lang="ja"] .page-head > [lang="ja"] { display: block; }
   </style>
 </head>
 <body>
@@ -64,10 +65,20 @@
           <a class="btn btn--ghost" href="/zh/">首页</a>
         </p>
       </div>
+      <div class="wrap" lang="ja">
+        <span class="eyebrow">ページが見つかりません</span>
+        <h1>このページは<em>移動</em>しました。</h1>
+        <p class="lede">お使いのリンクは、以前のウェブサイトのものかもしれません。すべての情報はこちらにあります：</p>
+        <p style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="/ja/rooms.html">お部屋と料金</a>
+          <a class="btn btn--ghost" href="/ja/calendar/">空室状況</a>
+          <a class="btn btn--ghost" href="/ja/">ホーム</a>
+        </p>
+      </div>
     </header>
   </main>
 
   <div data-footer></div>
-  <script src="/assets/js/main.js?v=2026101302"></script>
+  <script src="/assets/js/main.js?v=2026101303"></script>
 </body>
 </html>

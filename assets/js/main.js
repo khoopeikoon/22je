@@ -15,17 +15,23 @@ const SITE = {
   directions: "https://www.google.com/maps/dir//22+Jln+Elok,+Singapore+229060",
 };
 
-// Language: English pages sit at the root, Chinese copies under zh/.
-// Each page declares its language in <html lang>; the header link swaps between the two.
-const LANG = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
-const BASE = ROOT + (LANG === "zh" ? "zh/" : "");
+// Languages: English pages sit at the root, translations in their own folder (zh/, ja/).
+// Each page declares its language in <html lang>; the header dropdown lists them all.
+// To add a language: add it here and to STRINGS, then copy the pages into its folder.
+const LANGS = {
+  en: { dir: "", name: "English", short: "EN", tag: "en" },
+  zh: { dir: "zh/", name: "中文", short: "中文", tag: "zh-Hans" },
+  ja: { dir: "ja/", name: "日本語", short: "日本語", tag: "ja" },
+};
+const LANG = Object.keys(LANGS).find((k) => k !== "en" && document.documentElement.lang.startsWith(k)) || "en";
+const BASE = ROOT + LANGS[LANG].dir;
 
 const STRINGS = {
   en: {
     nav: ["Home", "Rooms", "Features", "Availability", "FAQs", "Contact"],
     brandSub: "Singapore",
     enquire: "Enquire",
-    other: { label: "中文", lang: "zh-Hans", title: "阅读中文版" },
+    language: "Language",
     menu: "Open menu",
     tagline: "Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.",
     visit: "Visit", directions: "Get directions →", contact: "Contact", explore: "Explore",
@@ -39,7 +45,7 @@ const STRINGS = {
     nav: ["首页", "房间", "设施", "空房", "常见问题", "联系"],
     brandSub: "新加坡",
     enquire: "咨询",
-    other: { label: "EN", lang: "en", title: "Read in English" },
+    language: "语言",
     menu: "打开菜单",
     tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
@@ -48,6 +54,21 @@ const STRINGS = {
     copied: "链接已复制", copyPrompt: "复制此链接：",
     subject: "咨询 — 22 Jalan Elok",
     f: { sep: "：", name: "姓名", email: "电邮", room: "房间", movein: "入住日期", flexible: "灵活", length: "租期", pass: "居留身份 / 准证" },
+  },
+  ja: {
+    nav: ["ホーム", "お部屋", "設備", "空室状況", "よくある質問", "お問い合わせ"],
+    brandSub: "シンガポール",
+    enquire: "お問い合わせ",
+    language: "言語",
+    menu: "メニューを開く",
+    tagline: "バスルーム付きの家具付きルーム。3か月以上のご滞在に。直接予約で仲介手数料なし。",
+    visit: "所在地", directions: "道順を見る →", contact: "連絡先", explore: "サイト内",
+    guide: "入居者ガイド", love: "心を込めて ♥", waAria: "WhatsApp でお問い合わせ",
+    // Messages from Japanese pages carry English too, so the manager can always read them.
+    hello: "こんにちは。22 Jalan Elok への滞在について問い合わせたいです。\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    copied: "リンクをコピーしました", copyPrompt: "このリンクをコピーしてください：",
+    subject: "お問い合わせ Enquiry — 22 Jalan Elok",
+    f: { sep: ": ", name: "お名前 / Name", email: "メール / Email", room: "お部屋 / Room", movein: "入居希望日 / Move-in", flexible: "未定 / flexible", length: "滞在期間 / Length of stay", pass: "在留資格 / Residency / pass" },
   },
 };
 const T = STRINGS[LANG];
@@ -62,11 +83,11 @@ const WA_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
 
 function renderChrome() {
   const norm = (h) => h.replace(/index\.html$/, "");
-  // This page's path within its language, e.g. "rooms.html" on both rooms.html and zh/rooms.html.
-  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^zh\//, ""));
-  // Pages with a twin in the other language; anything else (e.g. the 404) switches to its home page.
+  // This page's path within its language, e.g. "rooms.html" on rooms.html, zh/rooms.html and ja/rooms.html.
+  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^(zh|ja)\//, ""));
+  // Pages that exist in every language; anything else (e.g. the 404) switches to that language's home page.
   const translated = [...NAV.map(([href]) => href), "guide/"].some((href) => norm(href) === here);
-  const otherHref = ROOT + (LANG === "zh" ? "" : "zh/") + (translated ? here : "");
+  const langHref = (k) => ROOT + LANGS[k].dir + (translated ? here : "");
 
   const header = document.querySelector("[data-header]");
   if (header) {
@@ -84,7 +105,14 @@ function renderChrome() {
             <span class="brand__sub">${T.brandSub}</span>
           </a>
           <div class="header-cta">
-            <a class="lang-switch" href="${otherHref}" hreflang="${T.other.lang}" lang="${T.other.lang}" title="${T.other.title}">${T.other.label}</a>
+            <div class="lang-menu">
+              <button class="lang-menu__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="${T.language}: ${LANGS[LANG].name}">${LANGS[LANG].short}<span aria-hidden="true">▾</span></button>
+              <ul class="lang-menu__list">
+                ${Object.entries(LANGS).map(([k, l]) =>
+                  `<li><a href="${langHref(k)}" hreflang="${l.tag}" lang="${l.tag}"${k === LANG ? ' aria-current="true"' : ""}>${l.name}</a></li>`
+                ).join("")}
+              </ul>
+            </div>
             <a class="btn" href="${BASE}contact.html">${T.enquire}</a>
           </div>
         </div>
@@ -142,9 +170,6 @@ function renderChrome() {
       <div class="toast" role="status"></div>`;
   }
 
-  // Keep the reader's place (e.g. rooms.html#elysia) when switching language.
-  const sw = document.querySelector(".lang-switch");
-  if (sw && translated) sw.addEventListener("click", () => { sw.href = otherHref + location.hash; });
 
   // Fill any element carrying data-wa="message" with a WhatsApp deep link.
   document.querySelectorAll("[data-wa]").forEach((a) => {
@@ -152,6 +177,20 @@ function renderChrome() {
     a.target = "_blank";
     a.rel = "noopener";
   });
+}
+
+function initLangMenu() {
+  const menu = document.querySelector(".lang-menu");
+  if (!menu) return;
+  const btn = menu.querySelector(".lang-menu__btn");
+  const set = (open) => { menu.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", open); };
+  btn.addEventListener("click", (e) => { e.stopPropagation(); set(!menu.classList.contains("is-open")); });
+  document.addEventListener("click", (e) => { if (!menu.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") set(false); });
+  // Keep the reader's place (e.g. rooms.html#elysia) when switching language.
+  menu.querySelectorAll(".lang-menu__list a").forEach((a) =>
+    a.addEventListener("click", () => { if (location.hash) a.href = a.href.replace(/#.*$/, "") + location.hash; })
+  );
 }
 
 function initMenu() {
@@ -262,15 +301,20 @@ function initEnquiry() {
   const compose = () => {
     const f = Object.fromEntries(new FormData(form));
     const L = T.f;
+    // Japanese options carry their English name in data-en, so the manager can read the message.
+    const pick = (sel) => {
+      const o = sel.selectedOptions[0];
+      return o.dataset.en ? `${o.text} / ${o.dataset.en}` : o.text;
+    };
     return [
       T.hello,
       ``,
       `${L.name}${L.sep}${f.name || "-"}`,
       f.email ? `${L.email}${L.sep}${f.email}` : null,
-      `${L.room}${L.sep}${form.room.selectedOptions[0].text}`,
+      `${L.room}${L.sep}${pick(form.room)}`,
       `${L.movein}${L.sep}${f.movein || L.flexible}`,
-      `${L.length}${L.sep}${form.length.selectedOptions[0].text}`,
-      `${L.pass}${L.sep}${form.pass.selectedOptions[0].text}`,
+      `${L.length}${L.sep}${pick(form.length)}`,
+      `${L.pass}${L.sep}${pick(form.pass)}`,
       f.message ? `\n${f.message}` : null,
     ].filter((l) => l !== null).join("\n");
   };
@@ -302,6 +346,7 @@ function initReveal() {
 }
 
 renderChrome();
+initLangMenu();
 initMenu();
 initGalleries();
 initLightbox();

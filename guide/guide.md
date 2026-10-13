@@ -16,7 +16,7 @@
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
 
-_Last updated: 8 October 2026_
+_Last updated: 13 October 2026_
 
 Welcome home. This guide covers the everyday things about living at 22 Jalan Elok. If anything here is unclear or out of date, message us. We'd rather you ask than guess.
 

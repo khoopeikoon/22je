@@ -7,21 +7,21 @@
    "YYYY-MM-DD". The end date is shown as booked too, e.g.
      bookings: [{ start: "2026-11-01", end: "2027-01-31" }]
    The id is the link anchor: calendar/#aurelia opens that room.
-   zh is the room's name on the Chinese page.
+   zh / ja are the room's name on the Chinese / Japanese pages.
    Bump LAST_CHECKED on every edit, and whenever the calendar is
    confirmed still correct (aim for every week or two).
    ============================================================ */
 const LAST_CHECKED = "2026-10-10";
 const ROOMS = [
-  { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 金曦套房",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
-  { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 怡境套房 3（双床）", sub: "Suite",        bookings: [] },
-  { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 怡境套房 4（大床）", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
-  { id: "dq1",     name: "Deluxe Queen Room 1",    zh: "豪华大床房 1",         sub: "Deluxe Queen", bookings: [] },
-  { id: "dq3",     name: "Deluxe Queen Room 3",    zh: "豪华大床房 3",         sub: "Deluxe Queen", bookings: [] },
-  { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-10-09", end: "2026-10-15" }] },
-  { id: "dt1",     name: "Deluxe Twin Room 1",     zh: "豪华双床房 1",         sub: "Deluxe Twin",  bookings: [] },
-  { id: "dt3",     name: "Deluxe Twin Room 3",     zh: "豪华双床房 3",         sub: "Deluxe Twin",  bookings: [] },
-  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 金曦套房", ja: "Aurelia スイート",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
+  { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 怡境套房 3（双床）", ja: "Elysia スイート 3（ツイン）", sub: "Suite",        bookings: [] },
+  { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 怡境套房 4（大床）", ja: "Elysia スイート 4（クイーン）", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
+  { id: "dq1",     name: "Deluxe Queen Room 1",    zh: "豪华大床房 1", ja: "デラックスクイーン 1",         sub: "Deluxe Queen", bookings: [] },
+  { id: "dq3",     name: "Deluxe Queen Room 3",    zh: "豪华大床房 3", ja: "デラックスクイーン 3",         sub: "Deluxe Queen", bookings: [] },
+  { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4", ja: "デラックスクイーン 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-10-09", end: "2026-10-15" }] },
+  { id: "dt1",     name: "Deluxe Twin Room 1",     zh: "豪华双床房 1", ja: "デラックスツイン 1",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "dt3",     name: "Deluxe Twin Room 3",     zh: "豪华双床房 3", ja: "デラックスツイン 3",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4", ja: "デラックスツイン 4",         sub: "Deluxe Twin",  bookings: [] },
 ];
 
 /* ============================================================
@@ -49,10 +49,18 @@ const CAL = {
     checkout: "请再点击退房日期", nights: (n) => `${n} 晚`,
     wa: (r, a, b) => `您好！我想查询 ${r.zh} 在 ${a} 至 ${b} 是否有空房。`,
   },
+  ja: {
+    locale: "ja-JP", checked: "空室状況の最終確認：", dows: ["日", "月", "火", "水", "木", "金", "土"],
+    name: (r) => r.ja, sub: (r) => ({ Suite: "スイート", "Deluxe Queen": "デラックスクイーン", "Deluxe Twin": "デラックスツイン" })[r.sub],
+    through: `${CAL_END_YEAR}年12月まで表示`,
+    checkout: "次にチェックアウト日をタップしてください", nights: (n) => `${n}泊`,
+    // Sent in Japanese and English so the manager can always read it.
+    wa: (r, a, b) => `こんにちは。${r.ja}の ${a} から ${b} までの空室状況を確認したいです。\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
+  },
 }[LANG];
 
 document.getElementById("calChecked").textContent = CAL.checked +
-  new Date(LAST_CHECKED + "T00:00:00").toLocaleDateString(LANG === "zh" ? "zh-CN" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+  new Date(LAST_CHECKED + "T00:00:00").toLocaleDateString({ en: "en-GB", zh: "zh-CN", ja: "ja-JP" }[LANG], { day: "numeric", month: "long", year: "numeric" });
 const tabsEl = document.getElementById("roomTabs");
 const titleEl = document.getElementById("roomTitle");
 const subEl = document.getElementById("roomSub");
