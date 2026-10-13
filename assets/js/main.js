@@ -43,7 +43,7 @@ const STRINGS = {
     menu: "打开菜单",
     tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
-    guide: "住户指南（英文）", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
+    guide: "住户指南", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
     hello: "您好！我想咨询入住 22 Jalan Elok。",
     copied: "链接已复制", copyPrompt: "复制此链接：",
     subject: "咨询 — 22 Jalan Elok",
@@ -64,8 +64,8 @@ function renderChrome() {
   const norm = (h) => h.replace(/index\.html$/, "");
   // This page's path within its language, e.g. "rooms.html" on both rooms.html and zh/rooms.html.
   const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^zh\//, ""));
-  // Pages with no translation (house guide, 404) switch to the other language's home page.
-  const translated = NAV.some(([href]) => norm(href) === here);
+  // Pages with a twin in the other language; anything else (e.g. the 404) switches to its home page.
+  const translated = [...NAV.map(([href]) => href), "guide/"].some((href) => norm(href) === here);
   const otherHref = ROOT + (LANG === "zh" ? "" : "zh/") + (translated ? here : "");
 
   const header = document.querySelector("[data-header]");
@@ -121,7 +121,7 @@ function renderChrome() {
               <h4>${T.explore}</h4>
               <ul>
                 ${NAV.slice(1).map(([href, label]) => `<li><a href="${BASE + href}">${label}</a></li>`).join("")}
-                <li><a href="${ROOT}guide/">${T.guide}</a></li>
+                <li><a href="${BASE}guide/">${T.guide}</a></li>
               </ul>
             </div>
           </div>

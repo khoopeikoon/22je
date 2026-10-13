@@ -10,6 +10,13 @@
     // Old addresses (from the previous site, bookmarks or search results) → the page that replaced them.
     (function () {
       var path = location.pathname.toLowerCase().replace(/\/+$/, "");
+      // One 404 page serves the whole site: show it in Chinese for missing pages under /zh/.
+      var zh = /^\/zh(\/|$)/.test(path);
+      if (zh) {
+        document.documentElement.lang = "zh-Hans";
+        document.title = "页面不存在 | 22 Jalan Elok";
+        path = path.replace(/^\/zh/, "");
+      }
       var moved = {
         "/home": "/", "/index": "/", "/about": "/", "/about-us": "/",
         "/room": "/rooms.html", "/our-rooms": "/rooms.html", "/rooms-1": "/rooms.html", "/rates": "/rooms.html", "/pricing": "/rooms.html",
@@ -21,20 +28,23 @@
       };
       var to = moved[path];
       if (!to && /^\/(rooms|elysia|aurelia|deluxe)/.test(path)) to = "/rooms.html";
-      if (to) location.replace(to + location.hash);
+      if (to) location.replace((zh ? "/zh" : "") + to + location.hash);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261013">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026101302">
+  <style>
+    html[lang^="zh"] .page-head > [lang="en"], html:not([lang^="zh"]) .page-head > [lang="zh-Hans"] { display: none; }
+  </style>
 </head>
 <body>
   <div data-header></div>
 
   <main>
     <header class="page-head">
-      <div class="wrap">
+      <div class="wrap" lang="en">
         <span class="eyebrow">Page not found</span>
         <h1>This page has <em>moved.</em></h1>
         <p class="lede">The link you followed may be from our old website. Everything is still here:</p>
@@ -44,10 +54,20 @@
           <a class="btn btn--ghost" href="/">Home</a>
         </p>
       </div>
+      <div class="wrap" lang="zh-Hans">
+        <span class="eyebrow">页面不存在</span>
+        <h1>此页面已<em>移动</em>。</h1>
+        <p class="lede">您点击的链接可能来自我们的旧网站。所有内容都还在：</p>
+        <p style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="/zh/rooms.html">房间与租金</a>
+          <a class="btn btn--ghost" href="/zh/calendar/">空房</a>
+          <a class="btn btn--ghost" href="/zh/">首页</a>
+        </p>
+      </div>
     </header>
   </main>
 
   <div data-footer></div>
-  <script src="/assets/js/main.js?v=20261013"></script>
+  <script src="/assets/js/main.js?v=2026101302"></script>
 </body>
 </html>

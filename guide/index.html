@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20261013">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026101302">
 </head>
 <body>
   <div data-header></div>
@@ -34,7 +34,7 @@
   </main>
 
   <div data-footer></div>
-  <script src="../assets/js/main.js?v=20261013"></script>
+  <script src="../assets/js/main.js?v=2026101302"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
   <script>
     // The guide's text lives in guide.md (same folder): edit that file, not this one.
@@ -54,7 +54,7 @@
       el.querySelectorAll("table").forEach(t => { const w = document.createElement("div"); w.className = "guide-table"; t.before(w); w.append(t); });
       const toc = document.getElementById("guide-toc");
       el.querySelectorAll("h2").forEach(h => {
-        h.id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        h.id = h.textContent.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
         const li = document.createElement("li");
         li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
         toc.append(li);
@@ -65,7 +65,7 @@
         img.closest("p").replaceWith(fig); fig.append(img, cap);
       });
       el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });
-      if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+      if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
     })();
   </script>
 </body>
