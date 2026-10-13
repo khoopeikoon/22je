@@ -15,14 +15,46 @@ const SITE = {
   directions: "https://www.google.com/maps/dir//22+Jln+Elok,+Singapore+229060",
 };
 
-const NAV = [
-  ["index.html", "Home"],
-  ["rooms.html", "Rooms"],
-  ["features.html", "Features"],
-  ["calendar/", "Availability"],
-  ["faqs.html", "FAQs"],
-  ["contact.html", "Contact"],
-];
+// Language: English pages sit at the root, Chinese copies under zh/.
+// Each page declares its language in <html lang>; the header link swaps between the two.
+const LANG = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
+const BASE = ROOT + (LANG === "zh" ? "zh/" : "");
+
+const STRINGS = {
+  en: {
+    nav: ["Home", "Rooms", "Features", "Availability", "FAQs", "Contact"],
+    brandSub: "Singapore",
+    enquire: "Enquire",
+    other: { label: "中文", lang: "zh-Hans", title: "阅读中文版" },
+    menu: "Open menu",
+    tagline: "Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.",
+    visit: "Visit", directions: "Get directions →", contact: "Contact", explore: "Explore",
+    guide: "House guide", love: "Powered with love ♥", waAria: "WhatsApp us",
+    hello: "Hello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    copied: "Link copied", copyPrompt: "Copy this link:",
+    subject: "Enquiry — 22 Jalan Elok",
+    f: { name: "Name", email: "Email", room: "Room", movein: "Move-in", flexible: "flexible", length: "Length of stay", pass: "Residency / pass" },
+  },
+  zh: {
+    nav: ["首页", "房间", "设施", "空房", "常见问题", "联系"],
+    brandSub: "新加坡",
+    enquire: "咨询",
+    other: { label: "EN", lang: "en", title: "Read in English" },
+    menu: "打开菜单",
+    tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
+    visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
+    guide: "住户指南（英文）", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
+    // WhatsApp and email messages go out in both languages so the manager can always read them.
+    hello: "您好！我想咨询入住 22 Jalan Elok。\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    copied: "链接已复制", copyPrompt: "复制此链接：",
+    subject: "咨询 Enquiry — 22 Jalan Elok",
+    f: { name: "姓名 Name", email: "电邮 Email", room: "房间 Room", movein: "入住日期 Move-in", flexible: "灵活 flexible", length: "租期 Length of stay", pass: "居留身份 Residency / pass" },
+  },
+};
+const T = STRINGS[LANG];
+
+const NAV = ["index.html", "rooms.html", "features.html", "calendar/", "faqs.html", "contact.html"]
+  .map((href, i) => [href, T.nav[i]]);
 
 const waLink = (text) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
@@ -31,7 +63,11 @@ const WA_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
 
 function renderChrome() {
   const norm = (h) => h.replace(/index\.html$/, "");
-  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, ""));
+  // This page's path within its language, e.g. "rooms.html" on both rooms.html and zh/rooms.html.
+  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^zh\//, ""));
+  // Pages with no translation (house guide, 404) switch to the other language's home page.
+  const translated = NAV.some(([href]) => norm(href) === here);
+  const otherHref = ROOT + (LANG === "zh" ? "" : "zh/") + (translated ? here : "");
 
   const header = document.querySelector("[data-header]");
   if (header) {
@@ -40,15 +76,18 @@ function renderChrome() {
         <div class="wrap">
           <nav class="nav" id="site-nav" aria-label="Main">
             ${NAV.map(([href, label]) =>
-              `<a href="${ROOT + href}"${norm(href) === here ? ' aria-current="page"' : ""}>${label}</a>`
+              `<a href="${BASE + href}"${norm(href) === here ? ' aria-current="page"' : ""}>${label}</a>`
             ).join("")}
           </nav>
-          <button class="menu-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
-          <a class="brand" href="${ROOT}index.html">
+          <button class="menu-toggle" aria-label="${T.menu}" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
+          <a class="brand" href="${BASE}index.html">
             <span class="brand__name">22 Jalan Elok</span>
-            <span class="brand__sub">Singapore</span>
+            <span class="brand__sub">${T.brandSub}</span>
           </a>
-          <div class="header-cta"><a class="btn" href="${ROOT}contact.html">Enquire</a></div>
+          <div class="header-cta">
+            <a class="lang-switch" href="${otherHref}" hreflang="${T.other.lang}" lang="${T.other.lang}" title="${T.other.title}">${T.other.label}</a>
+            <a class="btn" href="${BASE}contact.html">${T.enquire}</a>
+          </div>
         </div>
       </header>`;
   }
@@ -60,40 +99,40 @@ function renderChrome() {
         <div class="wrap">
           <div class="footer-grid">
             <div>
-              <a class="brand" href="${ROOT}index.html" style="text-align:left">
+              <a class="brand" href="${BASE}index.html" style="text-align:left">
                 <span class="brand__name">22 Jalan Elok</span>
-                <span class="brand__sub">Singapore</span>
+                <span class="brand__sub">${T.brandSub}</span>
               </a>
-              <p style="margin-top:20px;max-width:22em;font-size:.92rem">Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.</p>
+              <p style="margin-top:20px;max-width:22em;font-size:.92rem">${T.tagline}</p>
             </div>
             <div>
-              <h4>Visit</h4>
+              <h4>${T.visit}</h4>
               <ul>${SITE.address.map((l) => `<li>${l}</li>`).join("")}
-                <li><a href="${SITE.directions}" target="_blank" rel="noopener">Get directions →</a></li></ul>
+                <li><a href="${SITE.directions}" target="_blank" rel="noopener">${T.directions}</a></li></ul>
             </div>
             <div>
-              <h4>Contact</h4>
+              <h4>${T.contact}</h4>
               <ul>
                 <li><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></li>
                 <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-                <li><a href="${waLink("Hello! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a href="${waLink(T.hello)}" target="_blank" rel="noopener">WhatsApp</a></li>
               </ul>
             </div>
             <div>
-              <h4>Explore</h4>
+              <h4>${T.explore}</h4>
               <ul>
-                ${NAV.slice(1).map(([href, label]) => `<li><a href="${ROOT + href}">${label}</a></li>`).join("")}
-                <li><a href="${ROOT}guide/">House guide</a></li>
+                ${NAV.slice(1).map(([href, label]) => `<li><a href="${BASE + href}">${label}</a></li>`).join("")}
+                <li><a href="${ROOT}guide/">${T.guide}</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-base">
             <span>© ${new Date().getFullYear()} 22 Jalan Elok</span>
-            <span>Powered with love ♥</span>
+            <span>${T.love}</span>
           </div>
         </div>
       </footer>
-      <a class="wa-float" href="${waLink("Hello! I'd like to enquire about a stay at 22 Jalan Elok.")}" target="_blank" rel="noopener" aria-label="WhatsApp us">${WA_ICON}</a>
+      <a class="wa-float" href="${waLink(T.hello)}" target="_blank" rel="noopener" aria-label="${T.waAria}">${WA_ICON}</a>
       <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
         <button class="lightbox__close" aria-label="Close">×</button>
         <button class="lightbox__prev" aria-label="Previous photo">‹</button>
@@ -103,6 +142,10 @@ function renderChrome() {
       </div>
       <div class="toast" role="status"></div>`;
   }
+
+  // Keep the reader's place (e.g. rooms.html#elysia) when switching language.
+  const sw = document.querySelector(".lang-switch");
+  if (sw && translated) sw.addEventListener("click", () => { sw.href = otherHref + location.hash; });
 
   // Fill any element carrying data-wa="message" with a WhatsApp deep link.
   document.querySelectorAll("[data-wa]").forEach((a) => {
@@ -205,9 +248,9 @@ function initShareLinks() {
       const url = `${location.origin}${location.pathname}#${b.dataset.share}`;
       try {
         await navigator.clipboard.writeText(url);
-        toast("Link copied");
+        toast(T.copied);
       } catch {
-        prompt("Copy this link:", url);
+        prompt(T.copyPrompt, url);
       }
     })
   );
@@ -219,15 +262,18 @@ function initEnquiry() {
   if (!form) return;
   const compose = () => {
     const f = Object.fromEntries(new FormData(form));
+    const L = T.f;
+    // Chinese options carry their English name in data-en, so the message stays readable to the manager.
+    const opt = form.room.selectedOptions[0];
     return [
-      `Hello! I'd like to enquire about a stay at 22 Jalan Elok.`,
+      T.hello,
       ``,
-      `Name: ${f.name || "-"}`,
-      f.email ? `Email: ${f.email}` : null,
-      `Room: ${form.room.selectedOptions[0].text}`,
-      `Move-in: ${f.movein || "flexible"}`,
-      `Length of stay: ${f.length}`,
-      `Residency / pass: ${f.pass}`,
+      `${L.name}: ${f.name || "-"}`,
+      f.email ? `${L.email}: ${f.email}` : null,
+      `${L.room}: ${opt.dataset.en || opt.text}`,
+      `${L.movein}: ${f.movein || L.flexible}`,
+      `${L.length}: ${f.length}`,
+      `${L.pass}: ${f.pass}`,
       f.message ? `\n${f.message}` : null,
     ].filter((l) => l !== null).join("\n");
   };
@@ -238,7 +284,7 @@ function initEnquiry() {
   });
   form.querySelector("[data-email]").addEventListener("click", () => {
     if (!form.reportValidity()) return;
-    location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Enquiry — 22 Jalan Elok")}&body=${encodeURIComponent(compose())}`;
+    location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(T.subject)}&body=${encodeURIComponent(compose())}`;
   });
   const room = new URLSearchParams(location.search).get("room");
   if (room) form.room.value = room;

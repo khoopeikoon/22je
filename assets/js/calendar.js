@@ -1,0 +1,252 @@
+/* 22 Jalan Elok — availability calendar, shared by calendar/ and zh/calendar/.
+   Needs main.js loaded first (LANG, waLink).
+
+   ============================================================
+   EDIT ME #1 — Rooms and bookings
+   For each room, list the date ranges that are BOOKED using
+   "YYYY-MM-DD". The end date is shown as booked too, e.g.
+     bookings: [{ start: "2026-11-01", end: "2027-01-31" }]
+   The id is the link anchor: calendar/#aurelia opens that room.
+   zh is the room's name on the Chinese page.
+   Bump LAST_CHECKED on every edit, and whenever the calendar is
+   confirmed still correct (aim for every week or two).
+   ============================================================ */
+const LAST_CHECKED = "2026-10-10";
+const ROOMS = [
+  { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 套房",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
+  { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 套房 3（双床）", sub: "Suite",        bookings: [] },
+  { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 套房 4（大床）", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
+  { id: "dq1",     name: "Deluxe Queen Room 1",    zh: "豪华大床房 1",         sub: "Deluxe Queen", bookings: [] },
+  { id: "dq3",     name: "Deluxe Queen Room 3",    zh: "豪华大床房 3",         sub: "Deluxe Queen", bookings: [] },
+  { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-10-09", end: "2026-10-15" }] },
+  { id: "dt1",     name: "Deluxe Twin Room 1",     zh: "豪华双床房 1",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "dt3",     name: "Deluxe Twin Room 3",     zh: "豪华双床房 3",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4",         sub: "Deluxe Twin",  bookings: [] },
+];
+
+/* ============================================================
+   EDIT ME #2 — Calendar range
+   Calendars run from the current month through this end point.
+   (The WhatsApp number comes from SITE in assets/js/main.js.)
+   ============================================================ */
+const CAL_END_YEAR = 2028;
+const CAL_END_MONTH = 11; // 0 = Jan ... 11 = Dec
+
+/* ------------------------------------------------------------
+   No edits needed below this line.
+   ------------------------------------------------------------ */
+const CAL = {
+  en: {
+    locale: "en-SG", checked: "Availability last checked: ", dows: ["S", "M", "T", "W", "T", "F", "S"],
+    name: (r) => r.name, sub: (r) => r.sub, through: `availability through December ${CAL_END_YEAR}`,
+    checkout: "Now tap a check-out date", nights: (n) => `${n} night${n === 1 ? "" : "s"}`,
+    wa: (r, a, b) => `Hello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
+  },
+  zh: {
+    locale: "zh-CN", checked: "空房情况最后核对：", dows: ["日", "一", "二", "三", "四", "五", "六"],
+    name: (r) => r.zh, sub: (r) => ({ Suite: "套房", "Deluxe Queen": "豪华大床房", "Deluxe Twin": "豪华双床房" })[r.sub],
+    through: `显示至 ${CAL_END_YEAR} 年 12 月`,
+    checkout: "请再点击退房日期", nights: (n) => `${n} 晚`,
+    // Sent in both languages so the manager can always read it.
+    wa: (r, a, b) => `您好！我想查询 ${r.zh} 在 ${a} 至 ${b} 是否有空房。\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
+  },
+}[LANG];
+
+document.getElementById("calChecked").textContent = CAL.checked +
+  new Date(LAST_CHECKED + "T00:00:00").toLocaleDateString(LANG === "zh" ? "zh-CN" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+const tabsEl = document.getElementById("roomTabs");
+const titleEl = document.getElementById("roomTitle");
+const subEl = document.getElementById("roomSub");
+const areaEl = document.getElementById("calendarArea");
+
+const fmtDate = (y, m, d) =>
+  `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+const isBooked = (dateStr, ranges) =>
+  ranges.some((r) => dateStr >= r.start && dateStr <= r.end);
+
+let currentRoom = null;
+let selStart = null;
+let selEnd = null;
+
+function renderRoom(room) {
+  currentRoom = room;
+  selStart = null;
+  selEnd = null;
+
+  titleEl.textContent = CAL.name(room);
+  subEl.textContent = `${CAL.sub(room)} · ${CAL.through}`;
+  areaEl.innerHTML = "";
+
+  const today = new Date();
+  const todayStr = fmtDate(today.getFullYear(), today.getMonth(), today.getDate());
+  const dows = CAL.dows;
+
+  let y = today.getFullYear();
+  let m = today.getMonth();
+  let currentYear = null;
+  let grid = null;
+
+  while (y < CAL_END_YEAR || (y === CAL_END_YEAR && m <= CAL_END_MONTH)) {
+    if (y !== currentYear) {
+      currentYear = y;
+      const label = document.createElement("div");
+      label.className = "year-label";
+      label.textContent = y;
+      areaEl.appendChild(label);
+      grid = document.createElement("div");
+      grid.className = "cal-months";
+      areaEl.appendChild(grid);
+    }
+
+    const monthEl = document.createElement("div");
+    monthEl.className = "cal-month";
+    const title = document.createElement("h4");
+    title.textContent = new Date(y, m, 1).toLocaleDateString(CAL.locale, { month: "long", year: "numeric" });
+    monthEl.appendChild(title);
+
+    const g = document.createElement("div");
+    g.className = "cal-grid";
+    dows.forEach((l) => {
+      const el = document.createElement("div");
+      el.className = "cal-dow";
+      el.textContent = l;
+      g.appendChild(el);
+    });
+    const firstDow = new Date(y, m, 1).getDay();
+    for (let b = 0; b < firstDow; b++) {
+      const el = document.createElement("div");
+      el.className = "cal-day blank";
+      g.appendChild(el);
+    }
+    const totalDays = new Date(y, m + 1, 0).getDate();
+    for (let day = 1; day <= totalDays; day++) {
+      const dateStr = fmtDate(y, m, day);
+      const el = document.createElement("div");
+      el.className = "cal-day";
+      el.dataset.date = dateStr;
+      const booked = isBooked(dateStr, room.bookings);
+      const isPast = dateStr < todayStr;
+      if (booked) el.classList.add("booked");
+      if (isPast) el.classList.add("past");
+      if (dateStr === todayStr) el.classList.add("today");
+      if (!booked && !isPast) {
+        el.classList.add("selectable");
+        el.addEventListener("click", () => handleDayClick(dateStr));
+      }
+      el.textContent = day;
+      g.appendChild(el);
+    }
+    monthEl.appendChild(g);
+    grid.appendChild(monthEl);
+
+    m++;
+    if (m > 11) { m = 0; y++; }
+  }
+
+  applySelectionClasses();
+  updateFab();
+}
+
+/* Date-range selection + WhatsApp handoff */
+const fmtNice = (dateStr) =>
+  new Date(dateStr + "T00:00:00").toLocaleDateString(CAL.locale, { day: "numeric", month: "short", year: "numeric" });
+const nightsBetween = (a, b) =>
+  Math.round((new Date(b + "T00:00:00") - new Date(a + "T00:00:00")) / 86400000);
+
+function rangeHasBooked(start, end, ranges) {
+  const d = new Date(start + "T00:00:00");
+  const endD = new Date(end + "T00:00:00");
+  while (d <= endD) {
+    if (isBooked(fmtDate(d.getFullYear(), d.getMonth(), d.getDate()), ranges)) return true;
+    d.setDate(d.getDate() + 1);
+  }
+  return false;
+}
+
+function handleDayClick(dateStr) {
+  if (!selStart || selEnd) {
+    selStart = dateStr; selEnd = null;
+  } else if (dateStr === selStart) {
+    selStart = null; selEnd = null;
+  } else if (dateStr < selStart || rangeHasBooked(selStart, dateStr, currentRoom.bookings)) {
+    selStart = dateStr; selEnd = null;
+  } else {
+    selEnd = dateStr;
+  }
+  applySelectionClasses();
+  updateFab();
+}
+
+function applySelectionClasses() {
+  document.querySelectorAll(".cal-day[data-date]").forEach((el) => {
+    el.classList.remove("in-range", "range-start", "range-end");
+    const ds = el.dataset.date;
+    if (!selStart) return;
+    if (ds === selStart) el.classList.add("range-start");
+    else if (selEnd && ds === selEnd) el.classList.add("range-end");
+    else if (selEnd && ds > selStart && ds < selEnd) el.classList.add("in-range");
+  });
+}
+
+function updateFab() {
+  const fab = document.getElementById("dateFab");
+  const textEl = document.getElementById("dateFabText");
+  const waBtn = document.getElementById("dateFabWhatsapp");
+
+  if (!selStart) {
+    fab.classList.remove("visible");
+    return;
+  }
+  fab.classList.add("visible");
+
+  if (!selEnd) {
+    textEl.innerHTML = `${fmtNice(selStart)}<small>${CAL.checkout}</small>`;
+    waBtn.classList.add("disabled");
+    waBtn.href = "#";
+  } else {
+    const nights = nightsBetween(selStart, selEnd);
+    textEl.innerHTML = `${fmtNice(selStart)} – ${fmtNice(selEnd)}<small>${CAL.nights(nights)}</small>`;
+    waBtn.classList.remove("disabled");
+    waBtn.href = waLink(CAL.wa(currentRoom, selStart, selEnd));
+  }
+}
+
+document.getElementById("dateFabClear").addEventListener("click", () => {
+  selStart = null; selEnd = null;
+  applySelectionClasses();
+  updateFab();
+});
+
+const tabButtons = [];
+
+function activateRoom(room, updateHash) {
+  tabButtons.forEach((b) => {
+    const on = b.dataset.roomId === room.id;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-selected", on);
+  });
+  renderRoom(room);
+  if (updateHash) history.replaceState(null, "", "#" + room.id);
+}
+
+ROOMS.forEach((room) => {
+  const btn = document.createElement("button");
+  btn.className = "room-tab";
+  btn.textContent = CAL.name(room);
+  btn.dataset.roomId = room.id;
+  btn.setAttribute("role", "tab");
+  btn.addEventListener("click", () => {
+    activateRoom(room, true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  tabsEl.appendChild(btn);
+  tabButtons.push(btn);
+});
+
+/* Deep links — calendar/#aurelia opens straight to that room. */
+const roomFromHash = () => ROOMS.find((r) => r.id === location.hash.slice(1));
+activateRoom(roomFromHash() || ROOMS[0], false);
+window.addEventListener("hashchange", () => {
+  const match = roomFromHash();
+  if (match) activateRoom(match, false);
+});

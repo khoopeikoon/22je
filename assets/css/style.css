@@ -155,7 +155,9 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   border-bottom: 1px solid transparent;
 }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--brass); }
-.header-cta { grid-area: cta; justify-self: end; }
+.header-cta { grid-area: cta; justify-self: end; display: flex; align-items: center; gap: 22px; }
+.lang-switch { font-size: 0.8rem; letter-spacing: 0.12em; text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; }
+.lang-switch:hover { border-bottom-color: var(--brass); }
 .header-cta .btn { padding: 0.8em 1.6em; }
 .menu-toggle {
   grid-area: toggle;
@@ -446,8 +448,7 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   .usp { border-right: 0; border-bottom: 1px solid var(--line); }
   .usp:last-child { border-bottom: 0; }
   .hero__meta { gap: 20px; flex-wrap: wrap; }
-  .header-cta { display: none; }
-  .site-header .wrap { grid-template-columns: auto 1fr; grid-template-areas: "toggle brand"; }
+  .header-cta .btn { display: none; } /* the language link stays */
 }
 
 /* Photo placeholder — swap for an <img> once the shot exists */
@@ -630,3 +631,16 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   .guide figure img { max-width: 260px; }
   .guide a { color: inherit; text-decoration: none; }
 }
+
+/* Chinese pages (zh/): Latin text keeps the house fonts; Chinese falls back to the
+   system's CJK faces. Chinese has no italics or capitals, so ease off both. */
+html[lang^="zh"] {
+  --serif: "Cormorant Garamond", "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --sans: "Jost", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+html[lang^="zh"] body { font-weight: 400; line-height: 1.85; }
+html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { line-height: 1.3; letter-spacing: 0.04em; }
+html[lang^="zh"] h1 { font-size: clamp(2.1rem, 4.8vw, 3.8rem); }
+html[lang^="zh"] h2 { font-size: clamp(1.7rem, 3.4vw, 2.7rem); }
+html[lang^="zh"] h1 em, html[lang^="zh"] h2 em { font-style: normal; }
+html[lang^="zh"] .eyebrow, html[lang^="zh"] .nav a, html[lang^="zh"] .site-footer h4 { letter-spacing: 0.14em; }

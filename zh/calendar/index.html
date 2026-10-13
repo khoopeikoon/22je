@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%A0</text></svg>">
+  <title>空房情况 | 22 Jalan Elok，乌节路旁</title>
+  <meta name="description" content="22 Jalan Elok 至 2028 年 12 月的空房情况。">
+  <link rel="canonical" href="https://22je.sg/zh/calendar/">
+  <link rel="alternate" hreflang="en" href="https://22je.sg/calendar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://22je.sg/zh/calendar/">
+  <link rel="alternate" hreflang="x-default" href="https://22je.sg/calendar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="22 Jalan Elok">
+  <meta property="og:title" content="空房情况 | 22 Jalan Elok，乌节路旁">
+  <meta property="og:description" content="22 Jalan Elok 至 2028 年 12 月的空房情况。">
+  <meta property="og:url" content="https://22je.sg/zh/calendar/">
+  <meta property="og:image" content="https://22je.sg/assets/img/og/og-22je.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head" style="padding-bottom:24px">
+      <div class="wrap">
+        <span class="eyebrow">空房</span>
+        <h1>空房<em>日历</em>。</h1>
+        <p class="lede">选择房间，点击入住和退房日期，然后通过 WhatsApp 发送给我们。此日历仅供参考，安排行程前请务必与我们确认具体日期。</p>
+        <p id="calChecked" style="margin-top:14px;font-size:0.78rem;letter-spacing:0.08em;color:var(--muted)"></p>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <div class="room-tabs" id="roomTabs" role="tablist" aria-label="选择房间"></div>
+
+      <div class="cal-legend">
+        <span><i class="swatch avail"></i> 可预订，点击选择</span>
+        <span><i class="swatch booked"></i> 已订</span>
+        <span><i class="swatch selected"></i> 您的日期</span>
+        <span><i class="swatch today"></i> 今天</span>
+      </div>
+
+      <h2 class="room-title" id="roomTitle"></h2>
+      <p class="room-sub" id="roomSub"></p>
+
+      <div id="calendarArea" style="padding-bottom:96px"></div>
+    </div>
+  </main>
+
+  <div class="date-fab" id="dateFab" role="status">
+    <div class="date-fab-text" id="dateFabText"></div>
+    <button class="date-fab-clear" id="dateFabClear" title="清除选择" aria-label="清除已选日期">×</button>
+    <a class="btn disabled" id="dateFabWhatsapp" href="#" target="_blank" rel="noopener">通过 WhatsApp 发送</a>
+  </div>
+
+  <div data-footer></div>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/calendar.js"></script>
+</body>
+</html>

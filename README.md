@@ -14,14 +14,16 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 | `faqs.html` | FAQ accordion: booking process, inclusions, documents, tenancy agreement, deposit |
 | `calendar/index.html` | Room availability calendar at `/calendar/` (moved from stay.22je.sg). Tap check-in/check-out dates and send them on WhatsApp. Deep links per room: `calendar/#elysia` (Elysia 4, queen), `#elysia3` (Elysia 3, twin), `#aurelia`, `#dq1`, `#dq3`, `#dq4`, `#dt1`, `#dt3`, `#dt4` |
 | `contact.html` | Contact details, an enquiry form that composes a WhatsApp message or email (no backend), and a map |
+| `zh/…` | **Simplified Chinese** copies of the six pages above (`zh/`, `zh/rooms.html`, … `zh/calendar/`). The **EN / 中文** link in the header switches between the two and keeps the reader's place (`rooms.html#elysia` ↔ `zh/rooms.html#elysia`). The house guide and 404 page are English only. Each page carries `hreflang` links to its twin, and all 12 are in `sitemap.xml` |
 
 ## Editing
 
 - **Colours and fonts:** the tokens at the top of `assets/css/style.css` (`--ivory`, `--espresso`, `--brass`, … and `--serif` / `--sans`).
 - **Phone, WhatsApp, email, address:** the `SITE` object at the top of `assets/js/main.js`. The header, footer and floating WhatsApp button are rendered from it on every page.
-- **Bookings:** edit the `ROOMS` list at the top of the script in `calendar/index.html`. Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
-- **Navigation:** the `NAV` list in `assets/js/main.js`.
-- **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"). Keep all three in step.
+- **Bookings:** edit the `ROOMS` list at the top of `assets/js/calendar.js` (moved out of `calendar/index.html` on 2026-10-13 so the English and Chinese calendars share one list). Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
+- **Navigation, header and footer text:** `NAV` and `STRINGS` (English + Chinese) in `assets/js/main.js`.
+- **Chinese pages:** any text change on an English page needs the same change in its `zh/` twin. Prefilled WhatsApp/email messages from the Chinese pages are bilingual (Chinese, then English) so the manager can always read them.
+- **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"), and the same three pages under `zh/`. Keep all six in step.
 - **Photos:** `assets/img/<room>/`, as **WebP, max 1600 px** (converted 2026-10-10; the site was 25 MB of JPEGs, now ~9 MB). Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
 
 ## Photo correction
