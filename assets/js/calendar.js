@@ -11,17 +11,17 @@
    Bump LAST_CHECKED on every edit, and whenever the calendar is
    confirmed still correct (aim for every week or two).
    ============================================================ */
-const LAST_CHECKED = "2026-10-10";
+const LAST_CHECKED = "2026-10-13";
 const ROOMS = [
   { id: "aurelia", name: "Aurelia Suite",          zh: "Aurelia 金曦套房", ja: "Aurelia スイート", es: "Suite Aurelia", fr: "Suite Aurelia",         sub: "Suite",        bookings: [{ start: "2026-11-06", end: "2026-11-23" }] },
   { id: "elysia3", name: "Elysia Suite 3 (Twin)",  zh: "Elysia 怡境套房 3（双床）", ja: "Elysia スイート 3（ツイン）", es: "Suite Elysia 3 (dos camas)", fr: "Suite Elysia 3 (lits jumeaux)", sub: "Suite",        bookings: [] },
   { id: "elysia",  name: "Elysia Suite 4 (Queen)", zh: "Elysia 怡境套房 4（大床）", ja: "Elysia スイート 4（クイーン）", es: "Suite Elysia 4 (queen)", fr: "Suite Elysia 4 (queen)", sub: "Suite",        bookings: [{ start: "2026-10-09", end: "2027-02-08" }] },
   { id: "dq1",     name: "Deluxe Queen Room 1",    zh: "豪华大床房 1", ja: "デラックスクイーン 1", es: "Habitación Deluxe Queen 1", fr: "Chambre Deluxe Queen 1",         sub: "Deluxe Queen", bookings: [] },
   { id: "dq3",     name: "Deluxe Queen Room 3",    zh: "豪华大床房 3", ja: "デラックスクイーン 3", es: "Habitación Deluxe Queen 3", fr: "Chambre Deluxe Queen 3",         sub: "Deluxe Queen", bookings: [] },
-  { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4", ja: "デラックスクイーン 4", es: "Habitación Deluxe Queen 4", fr: "Chambre Deluxe Queen 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-10-09", end: "2026-10-15" }] },
+  { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4", ja: "デラックスクイーン 4", es: "Habitación Deluxe Queen 4", fr: "Chambre Deluxe Queen 4",         sub: "Deluxe Queen", bookings: [] },
   { id: "dt1",     name: "Deluxe Twin Room 1",     zh: "豪华双床房 1", ja: "デラックスツイン 1", es: "Habitación Deluxe Twin 1", fr: "Chambre Deluxe Twin 1",         sub: "Deluxe Twin",  bookings: [] },
   { id: "dt3",     name: "Deluxe Twin Room 3",     zh: "豪华双床房 3", ja: "デラックスツイン 3", es: "Habitación Deluxe Twin 3", fr: "Chambre Deluxe Twin 3",         sub: "Deluxe Twin",  bookings: [] },
-  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4", ja: "デラックスツイン 4", es: "Habitación Deluxe Twin 4", fr: "Chambre Deluxe Twin 4",         sub: "Deluxe Twin",  bookings: [] },
+  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4", ja: "デラックスツイン 4", es: "Habitación Deluxe Twin 4", fr: "Chambre Deluxe Twin 4",         sub: "Deluxe Twin",  bookings: [{ start: "2026-10-09", end: "2026-10-13" }] },
 ];
 
 /* ============================================================
