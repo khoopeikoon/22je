@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%A0</text></svg>">
+  <title>Disponibilités | 22 Jalan Elok, près d'Orchard Road</title>
+  <meta name="description" content="Disponibilités des chambres du 22 Jalan Elok jusqu'en décembre 2028.">
+  <link rel="canonical" href="https://22je.sg/fr/calendar/">
+  <link rel="alternate" hreflang="en" href="https://22je.sg/calendar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://22je.sg/zh/calendar/">
+  <link rel="alternate" hreflang="ja" href="https://22je.sg/ja/calendar/">
+  <link rel="alternate" hreflang="es" href="https://22je.sg/es/calendar/">
+  <link rel="alternate" hreflang="fr" href="https://22je.sg/fr/calendar/">
+  <link rel="alternate" hreflang="x-default" href="https://22je.sg/calendar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="22 Jalan Elok">
+  <meta property="og:title" content="Disponibilités | 22 Jalan Elok, près d'Orchard Road">
+  <meta property="og:description" content="Disponibilités des chambres du 22 Jalan Elok jusqu'en décembre 2028.">
+  <meta property="og:url" content="https://22je.sg/fr/calendar/">
+  <meta property="og:image" content="https://22je.sg/assets/img/og/og-22je.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026101305">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head" style="padding-bottom:24px">
+      <div class="wrap">
+        <span class="eyebrow">Disponibilités</span>
+        <h1>Disponibilités des <em>chambres.</em></h1>
+        <p class="lede">Choisissez une chambre, touchez vos dates d'arrivée et de départ, puis envoyez-les-nous sur WhatsApp. Ce calendrier est indicatif : confirmez toujours les dates exactes avec nous avant de faire vos projets.</p>
+        <p id="calChecked" style="margin-top:14px;font-size:0.78rem;letter-spacing:0.08em;color:var(--muted)"></p>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <div class="room-tabs" id="roomTabs" role="tablist" aria-label="Choisissez une chambre"></div>
+
+      <div class="cal-legend">
+        <span><i class="swatch avail"></i> Disponible : touchez pour choisir</span>
+        <span><i class="swatch booked"></i> Réservé</span>
+        <span><i class="swatch selected"></i> Vos dates</span>
+        <span><i class="swatch today"></i> Aujourd'hui</span>
+      </div>
+
+      <h2 class="room-title" id="roomTitle"></h2>
+      <p class="room-sub" id="roomSub"></p>
+
+      <div id="calendarArea" style="padding-bottom:96px"></div>
+    </div>
+  </main>
+
+  <div class="date-fab" id="dateFab" role="status">
+    <div class="date-fab-text" id="dateFabText"></div>
+    <button class="date-fab-clear" id="dateFabClear" title="Effacer la sélection" aria-label="Effacer les dates choisies">×</button>
+    <a class="btn disabled" id="dateFabWhatsapp" href="#" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
+  </div>
+
+  <div data-footer></div>
+  <script src="../../assets/js/main.js?v=2026101305"></script>
+  <script src="../../assets/js/calendar.js?v=2026101305"></script>
+</body>
+</html>

@@ -11,10 +11,10 @@
     (function () {
       var path = location.pathname.toLowerCase().replace(/\/+$/, "");
       // One 404 page serves the whole site: show it in the language of the folder (/zh/, /ja/).
-      var m = path.match(/^\/(zh|ja|es)(\/|$)/), dir = m ? "/" + m[1] : "";
+      var m = path.match(/^\/(zh|ja|es|fr)(\/|$)/), dir = m ? "/" + m[1] : "";
       if (m) {
-        document.documentElement.lang = { zh: "zh-Hans", ja: "ja", es: "es" }[m[1]];
-        document.title = { zh: "页面不存在", ja: "ページが見つかりません", es: "Página no encontrada" }[m[1]] + " | 22 Jalan Elok";
+        document.documentElement.lang = { zh: "zh-Hans", ja: "ja", es: "es", fr: "fr" }[m[1]];
+        document.title = { zh: "页面不存在", ja: "ページが見つかりません", es: "Página no encontrada", fr: "Page introuvable" }[m[1]] + " | 22 Jalan Elok";
         path = path.slice(dir.length);
       }
       var moved = {
@@ -34,10 +34,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=2026101304">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026101305">
   <style>
     .page-head > [lang] { display: none; }
-    html[lang="en"] .page-head > [lang="en"], html[lang="zh-Hans"] .page-head > [lang="zh-Hans"], html[lang="ja"] .page-head > [lang="ja"], html[lang="es"] .page-head > [lang="es"] { display: block; }
+    html[lang="en"] .page-head > [lang="en"], html[lang="zh-Hans"] .page-head > [lang="zh-Hans"], html[lang="ja"] .page-head > [lang="ja"], html[lang="es"] .page-head > [lang="es"], html[lang="fr"] .page-head > [lang="fr"] { display: block; }
   </style>
 </head>
 <body>
@@ -85,10 +85,20 @@
           <a class="btn btn--ghost" href="/es/">Inicio</a>
         </p>
       </div>
+      <div class="wrap" lang="fr">
+        <span class="eyebrow">Page introuvable</span>
+        <h1>Cette page a <em>déménagé.</em></h1>
+        <p class="lede">Le lien que vous avez suivi provient peut-être de notre ancien site. Tout est toujours là :</p>
+        <p style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="/fr/rooms.html">Chambres et tarifs</a>
+          <a class="btn btn--ghost" href="/fr/calendar/">Disponibilités</a>
+          <a class="btn btn--ghost" href="/fr/">Accueil</a>
+        </p>
+      </div>
     </header>
   </main>
 
   <div data-footer></div>
-  <script src="/assets/js/main.js?v=2026101304"></script>
+  <script src="/assets/js/main.js?v=2026101305"></script>
 </body>
 </html>
