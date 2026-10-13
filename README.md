@@ -22,7 +22,7 @@ This is a static template with no dependencies: plain HTML, CSS and a little van
 - **Phone, WhatsApp, email, address:** the `SITE` object at the top of `assets/js/main.js`. The header, footer and floating WhatsApp button are rendered from it on every page.
 - **Bookings:** edit the `ROOMS` list at the top of `assets/js/calendar.js` (moved out of `calendar/index.html` on 2026-10-13 so the English and Chinese calendars share one list). Add booked ranges as `{ start: "2026-11-01", end: "2027-01-31" }` (the end date shows as booked too). Push, and the calendar updates.
 - **Navigation, header and footer text:** `NAV` and `STRINGS` (English + Chinese) in `assets/js/main.js`.
-- **Chinese pages:** any text change on an English page needs the same change in its `zh/` twin. Prefilled WhatsApp/email messages from the Chinese pages are bilingual (Chinese, then English) so the manager can always read them.
+- **Chinese pages:** any text change on an English page needs the same change in its `zh/` twin. Prefilled WhatsApp/email messages from the Chinese pages are in Chinese (Kevin reads Chinese — PK, 2026-10-13).
 - **Prices:** shown on `index.html` (room cards), `rooms.html` (each room) and `features.html` ("from S$…"), and the same three pages under `zh/`. Keep all six in step.
 - **Photos:** `assets/img/<room>/`, as **WebP, max 1600 px** (converted 2026-10-10; the site was 25 MB of JPEGs, now ~9 MB). Galleries are plain `<figure><img></figure>` lists, so add, remove or reorder freely. Any element with class `placeholder` stands in for a photo that hasn't been taken yet.
 

@@ -47,8 +47,7 @@ const CAL = {
     name: (r) => r.zh, sub: (r) => ({ Suite: "套房", "Deluxe Queen": "豪华大床房", "Deluxe Twin": "豪华双床房" })[r.sub],
     through: `显示至 ${CAL_END_YEAR} 年 12 月`,
     checkout: "请再点击退房日期", nights: (n) => `${n} 晚`,
-    // Sent in both languages so the manager can always read it.
-    wa: (r, a, b) => `您好！我想查询 ${r.zh} 在 ${a} 至 ${b} 是否有空房。\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
+    wa: (r, a, b) => `您好！我想查询 ${r.zh} 在 ${a} 至 ${b} 是否有空房。`,
   },
 }[LANG];
 

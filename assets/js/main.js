@@ -33,7 +33,7 @@ const STRINGS = {
     hello: "Hello! I'd like to enquire about a stay at 22 Jalan Elok.",
     copied: "Link copied", copyPrompt: "Copy this link:",
     subject: "Enquiry — 22 Jalan Elok",
-    f: { name: "Name", email: "Email", room: "Room", movein: "Move-in", flexible: "flexible", length: "Length of stay", pass: "Residency / pass" },
+    f: { sep: ": ", name: "Name", email: "Email", room: "Room", movein: "Move-in", flexible: "flexible", length: "Length of stay", pass: "Residency / pass" },
   },
   zh: {
     nav: ["首页", "房间", "设施", "空房", "常见问题", "联系"],
@@ -44,11 +44,10 @@ const STRINGS = {
     tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
     guide: "住户指南（英文）", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
-    // WhatsApp and email messages go out in both languages so the manager can always read them.
-    hello: "您好！我想咨询入住 22 Jalan Elok。\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    hello: "您好！我想咨询入住 22 Jalan Elok。",
     copied: "链接已复制", copyPrompt: "复制此链接：",
-    subject: "咨询 Enquiry — 22 Jalan Elok",
-    f: { name: "姓名 Name", email: "电邮 Email", room: "房间 Room", movein: "入住日期 Move-in", flexible: "灵活 flexible", length: "租期 Length of stay", pass: "居留身份 Residency / pass" },
+    subject: "咨询 — 22 Jalan Elok",
+    f: { sep: "：", name: "姓名", email: "电邮", room: "房间", movein: "入住日期", flexible: "灵活", length: "租期", pass: "居留身份 / 准证" },
   },
 };
 const T = STRINGS[LANG];
@@ -263,17 +262,15 @@ function initEnquiry() {
   const compose = () => {
     const f = Object.fromEntries(new FormData(form));
     const L = T.f;
-    // Chinese options carry their English name in data-en, so the message stays readable to the manager.
-    const opt = form.room.selectedOptions[0];
     return [
       T.hello,
       ``,
-      `${L.name}: ${f.name || "-"}`,
-      f.email ? `${L.email}: ${f.email}` : null,
-      `${L.room}: ${opt.dataset.en || opt.text}`,
-      `${L.movein}: ${f.movein || L.flexible}`,
-      `${L.length}: ${f.length}`,
-      `${L.pass}: ${f.pass}`,
+      `${L.name}${L.sep}${f.name || "-"}`,
+      f.email ? `${L.email}${L.sep}${f.email}` : null,
+      `${L.room}${L.sep}${form.room.selectedOptions[0].text}`,
+      `${L.movein}${L.sep}${f.movein || L.flexible}`,
+      `${L.length}${L.sep}${form.length.selectedOptions[0].text}`,
+      `${L.pass}${L.sep}${form.pass.selectedOptions[0].text}`,
       f.message ? `\n${f.message}` : null,
     ].filter((l) => l !== null).join("\n");
   };
