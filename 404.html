@@ -11,10 +11,10 @@
     (function () {
       var path = location.pathname.toLowerCase().replace(/\/+$/, "");
       // One 404 page serves the whole site: show it in the language of the folder (/zh/, /ja/).
-      var m = path.match(/^\/(zh|ja)(\/|$)/), dir = m ? "/" + m[1] : "";
+      var m = path.match(/^\/(zh|ja|es)(\/|$)/), dir = m ? "/" + m[1] : "";
       if (m) {
-        document.documentElement.lang = { zh: "zh-Hans", ja: "ja" }[m[1]];
-        document.title = { zh: "页面不存在", ja: "ページが見つかりません" }[m[1]] + " | 22 Jalan Elok";
+        document.documentElement.lang = { zh: "zh-Hans", ja: "ja", es: "es" }[m[1]];
+        document.title = { zh: "页面不存在", ja: "ページが見つかりません", es: "Página no encontrada" }[m[1]] + " | 22 Jalan Elok";
         path = path.slice(dir.length);
       }
       var moved = {
@@ -34,10 +34,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=2026101303">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026101304">
   <style>
     .page-head > [lang] { display: none; }
-    html[lang="en"] .page-head > [lang="en"], html[lang="zh-Hans"] .page-head > [lang="zh-Hans"], html[lang="ja"] .page-head > [lang="ja"] { display: block; }
+    html[lang="en"] .page-head > [lang="en"], html[lang="zh-Hans"] .page-head > [lang="zh-Hans"], html[lang="ja"] .page-head > [lang="ja"], html[lang="es"] .page-head > [lang="es"] { display: block; }
   </style>
 </head>
 <body>
@@ -75,10 +75,20 @@
           <a class="btn btn--ghost" href="/ja/">ホーム</a>
         </p>
       </div>
+      <div class="wrap" lang="es">
+        <span class="eyebrow">Página no encontrada</span>
+        <h1>Esta página se ha <em>trasladado.</em></h1>
+        <p class="lede">Es posible que el enlace que ha seguido sea de nuestra web anterior. Todo sigue aquí:</p>
+        <p style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" href="/es/rooms.html">Habitaciones y precios</a>
+          <a class="btn btn--ghost" href="/es/calendar/">Disponibilidad</a>
+          <a class="btn btn--ghost" href="/es/">Inicio</a>
+        </p>
+      </div>
     </header>
   </main>
 
   <div data-footer></div>
-  <script src="/assets/js/main.js?v=2026101303"></script>
+  <script src="/assets/js/main.js?v=2026101304"></script>
 </body>
 </html>

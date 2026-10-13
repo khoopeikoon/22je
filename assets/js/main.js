@@ -15,13 +15,14 @@ const SITE = {
   directions: "https://www.google.com/maps/dir//22+Jln+Elok,+Singapore+229060",
 };
 
-// Languages: English pages sit at the root, translations in their own folder (zh/, ja/).
+// Languages: English pages sit at the root, translations in their own folder (zh/, ja/, es/).
 // Each page declares its language in <html lang>; the header dropdown lists them all.
 // To add a language: add it here and to STRINGS, then copy the pages into its folder.
 const LANGS = {
   en: { dir: "", name: "English", short: "EN", tag: "en" },
   zh: { dir: "zh/", name: "中文", short: "中文", tag: "zh-Hans" },
   ja: { dir: "ja/", name: "日本語", short: "日本語", tag: "ja" },
+  es: { dir: "es/", name: "Español", short: "ES", tag: "es" },
 };
 const LANG = Object.keys(LANGS).find((k) => k !== "en" && document.documentElement.lang.startsWith(k)) || "en";
 const BASE = ROOT + LANGS[LANG].dir;
@@ -70,6 +71,21 @@ const STRINGS = {
     subject: "お問い合わせ Enquiry — 22 Jalan Elok",
     f: { sep: ": ", name: "お名前 / Name", email: "メール / Email", room: "お部屋 / Room", movein: "入居希望日 / Move-in", flexible: "未定 / flexible", length: "滞在期間 / Length of stay", pass: "在留資格 / Residency / pass" },
   },
+  es: {
+    nav: ["Inicio", "Habitaciones", "Servicios", "Disponibilidad", "Preguntas", "Contacto"],
+    brandSub: "Singapur",
+    enquire: "Consultar",
+    language: "Idioma",
+    menu: "Abrir menú",
+    tagline: "Habitaciones amuebladas con baño privado para estancias de tres meses o más. Reserve directamente, sin comisión de agencia.",
+    visit: "Dirección", directions: "Cómo llegar →", contact: "Contacto", explore: "Explorar",
+    guide: "Guía de la casa", love: "Hecho con cariño ♥", waAria: "Escríbanos por WhatsApp",
+    // Messages from Spanish pages carry English too, so the manager can always read them.
+    hello: "¡Hola! Me gustaría informarme sobre una estancia en 22 Jalan Elok.\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    copied: "Enlace copiado", copyPrompt: "Copie este enlace:",
+    subject: "Consulta / Enquiry — 22 Jalan Elok",
+    f: { sep: ": ", name: "Nombre / Name", email: "Correo / Email", room: "Habitación / Room", movein: "Entrada / Move-in", flexible: "flexible", length: "Duración / Length of stay", pass: "Residencia / Residency / pass" },
+  },
 };
 const T = STRINGS[LANG];
 
@@ -84,7 +100,7 @@ const WA_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
 function renderChrome() {
   const norm = (h) => h.replace(/index\.html$/, "");
   // This page's path within its language, e.g. "rooms.html" on rooms.html, zh/rooms.html and ja/rooms.html.
-  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^(zh|ja)\//, ""));
+  const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^(zh|ja|es)\//, ""));
   // Pages that exist in every language; anything else (e.g. the 404) switches to that language's home page.
   const translated = [...NAV.map(([href]) => href), "guide/"].some((href) => norm(href) === here);
   const langHref = (k) => ROOT + LANGS[k].dir + (translated ? here : "");
@@ -301,10 +317,10 @@ function initEnquiry() {
   const compose = () => {
     const f = Object.fromEntries(new FormData(form));
     const L = T.f;
-    // Japanese options carry their English name in data-en, so the manager can read the message.
+    // Japanese and Spanish options carry their English name in data-en, so the manager can read the message.
     const pick = (sel) => {
       const o = sel.selectedOptions[0];
-      return o.dataset.en ? `${o.text} / ${o.dataset.en}` : o.text;
+      return o.dataset.en && o.dataset.en !== o.text ? `${o.text} / ${o.dataset.en}` : o.text;
     };
     return [
       T.hello,

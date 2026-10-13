@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%A0</text></svg>">
+  <title>Guía de la casa | 22 Jalan Elok</title>
+  <meta name="description" content="Vivir en 22 Jalan Elok: contactos, espacios compartidos, basura y reciclaje, y cómo usar la lavadora y la secadora.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026101304">
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Para residentes</span>
+        <h1>Guía de la <em>casa.</em></h1>
+        <p class="lede">Todo lo que necesita saber sobre la vida diaria en 22 Jalan Elok.</p>
+        <p class="guide-actions"><button type="button" class="btn btn--ghost" onclick="window.print()">Imprimir o guardar como PDF</button></p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap guide-layout">
+        <nav class="guide-toc" aria-label="Índice"><strong>Índice</strong><ol id="guide-toc"></ol></nav>
+        <article class="guide" id="guide"><p>Cargando la guía…</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="../../assets/js/main.js?v=2026101304"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script>
+    // The Spanish guide's text lives in guide.md (same folder): edit that file, not this one.
+    (async () => {
+      const el = document.getElementById("guide");
+      try {
+        const res = await fetch("guide.md", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        el.innerHTML = marked.parse(await res.text());
+      } catch (e) {
+        el.innerHTML = "<p>Lo sentimos, la guía no se ha podido cargar. Escríbanos por WhatsApp.</p>";
+        return;
+      }
+      // Highlight unfinished bits
+      el.innerHTML = el.innerHTML.replace(/\[to confirm(:[^\]]*)?\]/gi, m => `<mark class="tbc">${m.slice(1, -1)}</mark>`);
+      // Wrap tables so they scroll on phones; give headings ids; build contents
+      el.querySelectorAll("table").forEach(t => { const w = document.createElement("div"); w.className = "guide-table"; t.before(w); w.append(t); });
+      const toc = document.getElementById("guide-toc");
+      el.querySelectorAll("h2").forEach(h => {
+        h.id = h.textContent.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+        toc.append(li);
+      });
+      el.querySelectorAll("img").forEach(img => {
+        const fig = document.createElement("figure"), cap = document.createElement("figcaption");
+        cap.textContent = img.alt; img.loading = "lazy";
+        img.closest("p").replaceWith(fig); fig.append(img, cap);
+      });
+      el.querySelectorAll('a[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });
+      if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+    })();
+  </script>
+</body>
+</html>
