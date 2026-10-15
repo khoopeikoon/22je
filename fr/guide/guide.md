@@ -149,7 +149,7 @@ Les déchets sont collectés **tous les jours**.
 
 ## Rangement des bagages
 
-Un local à bagages se trouve **près de l'entrée, au 1er étage** : vous pouvez y ranger vos valises vides pour libérer votre chambre. Merci d'étiqueter vos valises avec votre chambre.
+Un local à bagages se trouve **près de l'entrée, au 1er étage** (c'est l'abri domestique, juste à côté de l'ascenseur) : vous pouvez y ranger vos valises vides pour libérer votre chambre. Merci d'étiqueter vos valises avec votre chambre.
 
 ![Le local à bagages](../../assets/img/guide/luggage-storage.webp)
 

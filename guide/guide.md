@@ -154,7 +154,7 @@ Rubbish is collected **every day**.
 
 ## Luggage storage
 
-There's a luggage storeroom **by the entrance on the 1st floor**, so you can keep empty suitcases out of your room. Please label your suitcases with your room.
+There's a luggage storeroom **by the entrance on the 1st floor** (it's the household shelter, right next to the lift), so you can keep empty suitcases out of your room. Please label your suitcases with your room.
 
 ![The luggage storeroom](../assets/img/guide/luggage-storage.webp)
 
