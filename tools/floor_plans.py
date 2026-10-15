@@ -60,8 +60,9 @@ RELABEL = {
 
 # Highlight polygons (crop pixels). Rooms include their ensuite.
 P = {
-    "dq-ground":  (1, [(270, 70), (1080, 70), (1080, 290), (880, 290), (880, 424), (270, 424)]),
-    "dt-ground":  (1, [(200, 450), (880, 450), (880, 590), (1000, 590), (1000, 790), (200, 790)]),
+    # Deluxe Queen 1: room + entry (as on floors 3/4) + its rear terrace, one outline (PK)
+    "dq-ground":  (1, [(182, 62), (270, 62), (270, 70), (1080, 70), (1080, 295), (995, 295), (995, 424), (140, 424)]),
+    "dt-ground":  (1, [(135, 428), (212, 428), (212, 450), (880, 450), (880, 590), (1000, 590), (1000, 800), (62, 800)]),  # + rear terrace
     "dq-upper":   (None, [(150, 70), (985, 70), (985, 292), (900, 292), (900, 425), (150, 425)]),
     "dt-upper":   (None, [(85, 455), (780, 455), (780, 600), (920, 600), (920, 800), (85, 800)]),
     # Elysia includes its entry lobby left of the ensuite: wardrobe + room door (PK)
@@ -91,10 +92,10 @@ JOBS = {  # output name: (floor, [polygons])
     "plan-aurelia":        (5, ["aurelia"]),
     "plan-elysia-3":       (3, ["el-upper"]),
     "plan-elysia-4":       (4, ["el-upper"]),
-    "plan-deluxe-queen-1": (1, ["dq-ground", "dq1-terr"]),
+    "plan-deluxe-queen-1": (1, ["dq-ground"]),
     "plan-deluxe-queen-3": (3, ["dq-upper"]),
     "plan-deluxe-queen-4": (4, ["dq-upper"]),
-    "plan-deluxe-twin-1":  (1, ["dt-ground", "dt1-terr"]),
+    "plan-deluxe-twin-1":  (1, ["dt-ground"]),
     "plan-deluxe-twin-3":  (3, ["dt-upper"]),
     "plan-deluxe-twin-4":  (4, ["dt-upper"]),
     "floor-1-shared":      (1, ["shared-1"]),
@@ -126,6 +127,11 @@ def relabel(img, floor):
 
 def render(name, floor, polys):
     g = Image.open(f"floor-{floor}.png").convert("L")
+    if floor == 4:
+        # The architect's 4th-floor sheet has a stray second door swing at Deluxe Queen 4's
+        # entry; the 3rd floor is identical there without it, so copy that patch across.
+        patch = (812, 296, 899, 380)
+        g.paste(Image.open("floor-3.png").convert("L").crop(patch), patch[:2])
     relabel(g, floor)
     base = g.convert("RGB")
     faded = Image.blend(base, Image.new("RGB", base.size, (255, 255, 255)), 0.62)
