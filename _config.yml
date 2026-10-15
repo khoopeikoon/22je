@@ -1,0 +1,4 @@
+# GitHub Pages build settings.
+# Files listed here stay in the repository but are not published on 22je.sg.
+exclude:
+  - README.md

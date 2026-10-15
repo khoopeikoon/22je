@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Dernière mise à jour : 13 octobre 2026_
+_Dernière mise à jour : 15 octobre 2026_
 
 Bienvenue chez vous. Ce guide rassemble tout ce qu'il faut savoir sur la vie quotidienne au 22 Jalan Elok. Si quelque chose n'est pas clair ou n'est plus à jour, écrivez-nous. Mieux vaut demander que deviner.
 
@@ -58,6 +58,8 @@ Nous vous enverrons le nom du réseau et le mot de passe, avec le code de la por
 ## Espaces communs
 
 Vous pouvez profiter du **salon, de la salle à manger et de la cuisine**, du **balcon ouvert attenant au salon** (2e étage) et de la **terrasse à l'avant**.
+
+Un **robot aspirateur** nettoie le salon et la salle à manger (2e étage) **tous les jours**. Laisser le sol dégagé (sacs, chaussures, câbles) l'aide à faire un nettoyage complet.
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
 - Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé.

@@ -52,3 +52,5 @@ Then open http://localhost:8000.
 ## Publish with GitHub Pages
 
 Settings → Pages → Deploy from branch → `main` / root.
+
+**Everything in this repository is public.** The repo is public on GitHub, and GitHub Pages serves every file on 22je.sg unless `_config.yml` excludes it. This README is excluded from the site (2026-10-15) but can still be read on GitHub. Keep private documents (floor plans, contracts, codes) out of the repo altogether. The architect's floor-plan PDF was taken out on 2026-10-15, although it remains in the git history. `LICENSE` is "All rights reserved" and replaced the template's CC0 on 2026-10-15.
