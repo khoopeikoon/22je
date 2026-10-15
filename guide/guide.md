@@ -64,7 +64,7 @@ We'll send you the network name and password, together with the main door code, 
 
 You're welcome to use the **living room, dining area and kitchen**, the **open balcony off the living room** (2nd floor) and the **front terrace**.
 
-A **robot vacuum** cleans the living and dining rooms (2nd floor) **every day**. Keeping the floor clear of bags, shoes and cables helps it do a thorough job.
+A **robot vacuum** cleans the living and dining rooms (2nd floor) **every day at 3am**, so it's never in anyone's way. If you can hear it from your room, let us know and we'll move it to another time. Keeping the floor clear of bags, shoes and cables helps it do a thorough job.
 
 - Wash, dry and put away anything you use in the kitchen.
 - There are **two shared fridges** and no fridges in the rooms. Clear out anything expired.

@@ -59,7 +59,7 @@ Le enviaremos el nombre de la red y la contraseña, junto con el código de la p
 
 Puede usar el **salón, el comedor y la cocina**, el **balcón abierto junto al salón** (planta 2) y la **terraza delantera**.
 
-Un **robot aspirador** limpia el salón y el comedor (planta 2) **todos los días**. Si deja el suelo libre de bolsas, zapatos y cables, podrá limpiar a fondo.
+Un **robot aspirador** limpia el salón y el comedor (planta 2) **todos los días a las 3 de la madrugada**, para no molestar a nadie. Si lo oye desde su habitación, avísenos y lo cambiaremos a otra hora. Si deja el suelo libre de bolsas, zapatos y cables, podrá limpiar a fondo.
 
 - Lave, seque y guarde todo lo que use en la cocina.
 - Hay **dos neveras compartidas** y no hay nevera en las habitaciones. Retire lo que esté caducado.
