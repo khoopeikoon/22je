@@ -26,7 +26,7 @@ RELABEL = {
         ([box(769, 610, 866, 643)], ["ENSUITE"], None),
         ([box(1451, 250, 1547, 283), box(1441, 287, 1558, 319)], ["BATH"], None),
         ([box(1673, 306, 1839, 338), box(1698, 342, 1815, 375)], [], None),
-        ([box(1382, 688, 1418, 720)], ["SHELTER"], None),
+        ([box(1382, 688, 1418, 720)], ["LUGGAGE", "STORE"], (1400, 704)),
     ],
     2: [
         ([box(1069, 478, 1180, 511), box(1081, 513, 1167, 546)], ["FOYER"], (1124, 512)),
@@ -54,6 +54,7 @@ RELABEL = {
         ([box(618, 611, 715, 643)], ["ENSUITE"], None),
         ([box(323, 394, 398, 427), box(296, 429, 422, 461)], ["PRIVATE", "BALCONY"], (359, 428)),
                         ([box(1034, 473, 1110, 506), box(1028, 508, 1114, 541)], ["FOYER"], (1070, 507)),
+        ([box(1283, 575, 1381, 607)], ["LAUNDRY"], None),
     ],
 }
 
@@ -69,6 +70,7 @@ P = {
     "lift-1":     (1, [(1010, 590), (1220, 590), (1220, 805), (1010, 805)]),
     "lift-2":     (2, [(1000, 590), (1220, 590), (1220, 790), (1000, 790)]),
     "lift-5":     (5, [(920, 590), (1140, 590), (1140, 790), (920, 790)]),
+    "luggage":    (1, [(1260, 600), (1550, 600), (1550, 790), (1260, 790)]),
     "front-terr": (1, [(1860, 50), (2430, 50), (2430, 410), (1860, 410)]),
     "kitchen":    (2, [(170, 70), (1040, 70), (1040, 450), (730, 450), (730, 790), (170, 790)]),
     "living":     (2, [(1380, 70), (1810, 70), (1810, 790), (1380, 790)]),
@@ -85,8 +87,8 @@ JOBS = {  # output name: (floor, [polygons])
     "plan-deluxe-twin-1":  (1, ["dt-ground"]),
     "plan-deluxe-twin-3":  (3, ["dt-upper"]),
     "plan-deluxe-twin-4":  (4, ["dt-upper"]),
-    "floor-1-shared":      (1, ["front-terr", "lift-1"]),
-    "floor-2-shared":      (2, ["kitchen", "living", "balcony", "lift-2"]),
+    "floor-1-shared":      (1, ["front-terr", "luggage", "lift-1"]),
+    "floor-2-shared":      (2, []),  # the whole floor is shared: no highlight
     "floor-5-laundry":     (5, ["laundry", "lift-5"]),
 }
 
@@ -122,7 +124,7 @@ def render(name, floor, polys):
     md = ImageDraw.Draw(mask)
     for p in polys:
         md.polygon(P[p][1], fill=255)
-    out = Image.composite(tinted, faded, mask)
+    out = Image.composite(tinted, faded, mask) if polys else base
     od = ImageDraw.Draw(out)
     for p in polys:
         pts = P[p][1]
