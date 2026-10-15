@@ -59,7 +59,7 @@ Nous vous enverrons le nom du réseau et le mot de passe, avec le code de la por
 
 Vous pouvez profiter du **salon, de la salle à manger et de la cuisine**, du **balcon ouvert attenant au salon** (2e étage) et de la **terrasse à l'avant**.
 
-Un **robot aspirateur** nettoie le salon et la salle à manger (2e étage) **tous les jours à 3 h du matin**, pour ne gêner personne. Si vous l'entendez depuis votre chambre, dites-le-nous et nous changerons l'horaire. Laisser le sol dégagé (sacs, chaussures, câbles) l'aide à faire un nettoyage complet.
+Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirateur tous les jours à 3 h du matin**. Il n'est pas audible depuis le 4e étage ; il ne devrait donc gêner personne. Si toutefois vous l'entendez depuis votre chambre, merci de nous en informer et nous modifierons l'horaire. Afin de permettre un nettoyage complet, nous vous remercions de laisser le sol dégagé (sacs, chaussures, câbles).
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
 - Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé.
