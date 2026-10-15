@@ -8,6 +8,7 @@ const SITE = {
   name: "22 Jalan Elok",
   phone: "+65 8016 7691",
   whatsapp: "6580167691",
+  telegram: "twentytwoje", // same number as WhatsApp
   email: "info@22je.sg",
   manager: "Kevin",
   address: ["22 Jalan Elok", "Singapore 229060"],
@@ -175,6 +176,7 @@ function renderChrome() {
                 <li><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></li>
                 <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
                 <li><a href="${waLink(T.hello)}" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a href="https://t.me/${SITE.telegram}" target="_blank" rel="noopener">Telegram</a></li>
               </ul>
             </div>
             <div>

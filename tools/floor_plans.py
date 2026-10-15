@@ -65,7 +65,12 @@ P = {
     "dq-upper":   (None, [(150, 70), (985, 70), (985, 292), (900, 292), (900, 425), (150, 425)]),
     "dt-upper":   (None, [(85, 455), (780, 455), (780, 600), (920, 600), (920, 800), (85, 800)]),
     "el-upper":   (None, [(1300, 70), (1740, 70), (1740, 800), (1440, 800), (1440, 600), (1300, 600)]),
-    "aurelia":    (5, [(140, 70), (1000, 70), (1000, 540), (910, 540), (910, 790), (140, 790)]),
+    "aurelia":    (5, [(140, 70), (1000, 70), (1000, 400), (905, 400), (905, 790), (140, 790)]),
+    "foyer-5":    (5, [(905, 400), (1168, 400), (1168, 588), (905, 588)]),
+    "dq1-terr":   (1, [(182, 62), (268, 62), (268, 422), (140, 422)]),
+    "dt1-terr":   (1, [(135, 428), (212, 428), (212, 800), (62, 800)]),
+    "foyer-1":    (1, [(1000, 410), (1850, 410), (1850, 560), (1840, 560), (1840, 800), (1560, 800), (1560, 595), (1000, 595)]),
+    "carporch":   (1, [(1860, 412), (2735, 412), (2735, 805), (1860, 805)]),
     "laundry":    (5, [(1180, 420), (1500, 420), (1500, 70), (1700, 70), (1700, 790), (1180, 790)]),
     "lift-1":     (1, [(1010, 590), (1220, 590), (1220, 805), (1010, 805)]),
     "lift-2":     (2, [(1000, 590), (1220, 590), (1220, 790), (1000, 790)]),
@@ -81,15 +86,15 @@ JOBS = {  # output name: (floor, [polygons])
     "plan-aurelia":        (5, ["aurelia"]),
     "plan-elysia-3":       (3, ["el-upper"]),
     "plan-elysia-4":       (4, ["el-upper"]),
-    "plan-deluxe-queen-1": (1, ["dq-ground"]),
+    "plan-deluxe-queen-1": (1, ["dq-ground", "dq1-terr"]),
     "plan-deluxe-queen-3": (3, ["dq-upper"]),
     "plan-deluxe-queen-4": (4, ["dq-upper"]),
-    "plan-deluxe-twin-1":  (1, ["dt-ground"]),
+    "plan-deluxe-twin-1":  (1, ["dt-ground", "dt1-terr"]),
     "plan-deluxe-twin-3":  (3, ["dt-upper"]),
     "plan-deluxe-twin-4":  (4, ["dt-upper"]),
-    "floor-1-shared":      (1, ["front-terr", "luggage", "lift-1"]),
+    "floor-1-shared":      (1, ["foyer-1", "front-terr", "carporch", "luggage", "lift-1"]),
     "floor-2-shared":      (2, []),  # the whole floor is shared: no highlight
-    "floor-5-laundry":     (5, ["laundry", "lift-5"]),
+    "floor-5-laundry":     (5, ["foyer-5", "laundry", "lift-5"]),
 }
 
 

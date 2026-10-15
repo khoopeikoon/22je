@@ -64,6 +64,8 @@ We'll send you the network name and password, together with the main door code, 
 
 You're welcome to use the **living room, dining area and kitchen**, the **open balcony off the living room** (2nd floor) and the **front terrace**.
 
+Parking is not included in the rent. If you would like to park in the car porch, please ask us first.
+
 The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every day at 3:00 am**. It is not audible from the 4th floor, so we do not expect it to disturb anyone. Should you be able to hear it from your room, please let us know and we will reschedule it. To allow a thorough clean, please keep the floor clear of bags, shoes and cables.
 
 - Wash, dry and put away anything you use in the kitchen.

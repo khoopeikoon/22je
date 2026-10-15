@@ -59,6 +59,8 @@ Nous vous enverrons le nom du réseau et le mot de passe, avec le code de la por
 
 Vous pouvez profiter du **salon, de la salle à manger et de la cuisine**, du **balcon ouvert attenant au salon** (2e étage) et de la **terrasse à l'avant**.
 
+Le stationnement n'est pas compris dans le loyer. Si vous souhaitez vous garer sous l'abri à voiture, merci de nous le demander au préalable.
+
 Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirateur tous les jours à 3 h du matin**. Il n'est pas audible depuis le 4e étage ; il ne devrait donc gêner personne. Si toutefois vous l'entendez depuis votre chambre, merci de nous en informer et nous modifierons l'horaire. Afin de permettre un nettoyage complet, nous vous remercions de laisser le sol dégagé (sacs, chaussures, câbles).
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
