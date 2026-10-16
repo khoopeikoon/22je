@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Dernière mise à jour : 15 octobre 2026_
+_Dernière mise à jour : 16 octobre 2026_
 
 Bienvenue chez vous. Ce guide rassemble tout ce qu'il faut savoir sur la vie quotidienne au 22 Jalan Elok. Si quelque chose n'est pas clair ou n'est plus à jour, écrivez-nous. Mieux vaut demander que deviner.
 
@@ -66,6 +66,7 @@ Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirat
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
 - Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé.
 - **Étiquetez clairement avec votre chambre tout ce que vous rangez dans les réfrigérateurs et les espaces communs.** Ce qui n'est pas clairement étiqueté sera jeté lors du ménage du samedi.
+- **Cuisine légère uniquement :** pas de friture ni de plats à l'odeur forte.
 - Essuyez la plaque et le plan de travail après avoir cuisiné.
 - Fermez les portes du balcon quand il pleut et quand vous êtes le dernier à partir.
 

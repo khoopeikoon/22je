@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Última actualización: 15 de octubre de 2026_
+_Última actualización: 16 de octubre de 2026_
 
 Bienvenido a casa. Esta guía recoge todo lo cotidiano de vivir en 22 Jalan Elok. Si algo no está claro o está desactualizado, escríbanos. Preferimos que pregunte antes que adivinar.
 
@@ -66,6 +66,7 @@ El salón y el comedor (planta 2) se limpian con un **robot aspirador todos los 
 - Lave, seque y guarde todo lo que use en la cocina.
 - Hay **dos neveras compartidas** y no hay nevera en las habitaciones. Retire lo que esté caducado.
 - **Marque claramente con su habitación todo lo que guarde en las neveras y en los espacios compartidos.** Lo que no esté claramente marcado se tirará cuando venga la limpieza el sábado.
+- **Solo cocina ligera:** nada de frituras ni platos de olor fuerte.
 - Limpie la placa y la encimera después de cocinar.
 - Cierre las puertas del balcón cuando llueva y cuando sea el último en salir.
 

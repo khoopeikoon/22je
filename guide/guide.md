@@ -16,7 +16,7 @@
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
 
-_Last updated: 15 October 2026_
+_Last updated: 16 October 2026_
 
 Welcome home. This guide covers the everyday things about living at 22 Jalan Elok. If anything here is unclear or out of date, message us. We'd rather you ask than guess.
 
@@ -71,6 +71,7 @@ The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every da
 - Wash, dry and put away anything you use in the kitchen.
 - There are **two shared fridges** and no fridges in the rooms. Clear out anything expired.
 - **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Saturday.
+- **Light cooking only:** no deep-frying and no strong-smelling dishes.
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
 
