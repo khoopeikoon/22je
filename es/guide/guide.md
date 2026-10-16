@@ -52,7 +52,7 @@ Le enviaremos el nombre de la red y la contraseña, junto con el código de la p
 - **Cortinas opacas:** ciérrelas del todo para tener la habitación a oscuras a cualquier hora.
 - **Baño privado:** el extractor funciona siempre que la luz del baño está encendida. Después de ducharse, deje la luz encendida unos minutos (o la puerta abierta) para que salga el vapor y no aparezca moho. Por el inodoro solo debe ir papel higiénico.
 - **Luz nocturna:** si desea una, pídala y se la proporcionaremos.
-- **La limpieza** se hace **todos los sábados** en su habitación. **No incluye lavar la ropa:** la lavandería es de autoservicio, en la [terraza de lavandería](#terraza-de-lavandería-planta-5).
+- **La limpieza** se hace **todos los sábados, entre las 11:00 y las 17:00,** en su habitación, salvo que haya acordado otra cosa con nosotros. **No incluye lavar la ropa:** la lavandería es de autoservicio, en la [terraza de lavandería](#terraza-de-lavandería-planta-5).
   - **La limpieza semanal forma parte de todas las estancias y no es opcional.** Así se mantienen todas las habitaciones limpias y en buen estado. Siempre llamaremos antes de entrar, pero si nadie responde, entraremos igualmente.
 
 ## Espacios compartidos

@@ -57,7 +57,7 @@ We'll send you the network name and password, together with the main door code, 
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
-- **Housekeeping** comes **every Saturday** to clean your room. **It doesn't include laundry:** laundry is self-service, on the [laundry terrace](#laundry-terrace-5th-floor).
+- **Housekeeping** comes **every Saturday, between 11 am and 5 pm,** to clean your room, unless you've arranged otherwise with us. **It doesn't include laundry:** laundry is self-service, on the [laundry terrace](#laundry-terrace-5th-floor).
   - **Weekly housekeeping is part of every stay and isn't optional.** It keeps every room clean and in good condition. We'll always knock before entering, but if there's no answer, we will still come in.
 
 ## Shared spaces

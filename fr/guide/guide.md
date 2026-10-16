@@ -52,7 +52,7 @@ Nous vous enverrons le nom du réseau et le mot de passe, avec le code de la por
 - **Rideaux occultants :** fermez-les complètement pour une chambre plongée dans le noir à toute heure.
 - **Salle de bains privative :** la ventilation fonctionne dès que la lumière de la salle de bains est allumée. Après la douche, laissez la lumière allumée quelques minutes (ou la porte ouverte) pour évacuer la vapeur et éviter les moisissures. Ne jetez que du papier toilette dans les WC.
 - **Veilleuse :** si vous en souhaitez une, demandez-la-nous.
-- **Le ménage** de votre chambre est fait **chaque samedi**. **Il ne comprend pas le linge :** la buanderie est en libre-service, sur la [terrasse de buanderie](#terrasse-de-buanderie-5e-étage).
+- **Le ménage** de votre chambre est fait **chaque samedi, entre 11 h et 17 h**, sauf autre arrangement convenu avec nous. **Il ne comprend pas le linge :** la buanderie est en libre-service, sur la [terrasse de buanderie](#terrasse-de-buanderie-5e-étage).
   - **Le ménage hebdomadaire fait partie de chaque séjour et n'est pas optionnel.** Il permet de garder chaque chambre propre et en bon état. Nous frappons toujours avant d'entrer, mais s'il n'y a pas de réponse, nous entrons quand même.
 
 ## Espaces communs
