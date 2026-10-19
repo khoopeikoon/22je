@@ -40,6 +40,11 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 - **Portail :** la télécommande du portail est remise à **une seule personne**.
 - Refermez toujours le portail et verrouillez la porte d'entrée derrière vous, même pour sortir un instant.
 - Ne communiquez jamais le code de la porte d'entrée à qui que ce soit.
+- **Piles de la serrure :** si la serrure signale que les piles sont faibles, prévenez-nous et nous les changerons. Si elles sont complètement vides, le clavier ne répond plus. Pour ouvrir la porte :
+  1. Prenez la **pile 9 V** de rechange dans le meuble à chaussures devant la porte d'entrée : elle se trouve dans le **meuble en bas à droite, coin supérieur droit**. Si vous ne pouvez pas y accéder, on en trouve dans toutes les supérettes (pile alcaline 9 V, type 6LF22).
+  2. Appuyez les deux bornes de la pile contre les **contacts de secours en bas du clavier extérieur**.
+  3. Maintenez-la en place et déverrouillez comme d'habitude avec votre code.
+  4. Écrivez-nous pour que nous changions les piles de la serrure.
 - Si vous perdez une clé ou la télécommande, prévenez-nous immédiatement pour que nous puissions sécuriser la maison. Le remplacement coûte **S$10 par clé** et **S$50 par télécommande**.
 
 ## Wifi

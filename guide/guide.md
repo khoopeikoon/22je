@@ -45,6 +45,11 @@ Kevin is your first point of contact for anything about the house. In an emergen
 - **Gate:** a gate remote is provided to **one person**.
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
+- **Door lock batteries:** if the lock warns that its batteries are low, let us know and we'll replace them. If they run out completely, the keypad stops working. To open the door:
+  1. Take the spare **9 V battery** from the shoe cabinet outside the main door: it's in the **bottom-right cabinet, top-right corner**. If you can't get to it, any convenience store sells them (a 9 V alkaline battery, type 6LF22).
+  2. Hold the battery's two terminals against the **emergency contacts at the bottom of the outer keypad**.
+  3. Keep it there and unlock as usual with your code.
+  4. Message us so we can replace the lock's batteries.
 - If you lose a key or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key** and **S$50 per remote**.
 
 ## Wi-Fi

@@ -40,6 +40,11 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 - **Verja:** el mando de la verja se entrega a **una sola persona**.
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
 - No comparta nunca el código de la puerta principal con nadie.
+- **Pilas de la cerradura:** si la cerradura avisa de que las pilas están bajas, avísenos y las cambiaremos. Si se agotan del todo, el teclado deja de funcionar. Para abrir la puerta:
+  1. Coja la **pila de 9 V** de repuesto del zapatero que hay fuera, junto a la puerta principal: está en el **mueble de abajo a la derecha, esquina superior derecha**. Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
+  2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
+  3. Manténgala ahí y abra como siempre con su código.
+  4. Escríbanos para que cambiemos las pilas de la cerradura.
 - Si pierde una llave o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave** y **S$50 por mando**.
 
 ## Wifi
