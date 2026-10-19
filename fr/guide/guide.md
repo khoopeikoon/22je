@@ -36,6 +36,7 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 ![Le 22 Jalan Elok vu de la rue. Le numéro, 22, se trouve sur le pilier du portail à gauche.](../../assets/img/guide/facade.webp)
 
 - **Porte d'entrée :** elle est équipée d'une serrure à code. Nous vous enverrons le code avec les identifiants wifi, peu avant votre date d'arrivée.
+- **Cartes d'accès :** chaque chambre reçoit **deux cartes** pour la porte d'entrée.
 - **Votre chambre :** vous recevez **deux clés** de votre chambre.
 - **Portail :** la télécommande du portail est remise à **une seule personne**.
 - Refermez toujours le portail et verrouillez la porte d'entrée derrière vous, même pour sortir un instant.

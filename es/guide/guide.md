@@ -36,6 +36,7 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 ![22 Jalan Elok desde la calle. El número de la casa, 22, está en el pilar de la verja de la izquierda.](../../assets/img/guide/facade.webp)
 
 - **Puerta principal:** tiene cerradura con código. Le enviaremos el código junto con los datos del wifi poco antes de su fecha de entrada.
+- **Tarjetas de acceso:** cada habitación recibe **dos tarjetas** para la puerta principal.
 - **Su habitación:** recibe **dos llaves** de su habitación.
 - **Verja:** el mando de la verja se entrega a **una sola persona**.
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
