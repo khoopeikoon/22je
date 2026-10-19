@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Dernière mise à jour : 16 octobre 2026_
+_Dernière mise à jour : 19 octobre 2026_
 
 Bienvenue chez vous. Ce guide rassemble tout ce qu'il faut savoir sur la vie quotidienne au 22 Jalan Elok. Si quelque chose n'est pas clair ou n'est plus à jour, écrivez-nous. Mieux vaut demander que deviner.
 
@@ -219,6 +219,7 @@ Les deux machines sont des modèles **Samsung Bespoke AI** à molette unique. Le
 
 - **Heures calmes :** de 22 h à 8 h. Pendant ces heures, baissez le volume des conversations, de la musique et des appels dans les espaces communs.
 - **Interdiction de fumer ou de vapoter dans toute la maison**, balcon et terrasse avant compris.
+- **Les visiteurs** sont les bienvenus dans la limite du raisonnable, mais doivent partir avant **22 h**.
 - **Pas d'invités supplémentaires.** Seules les personnes nommées sur votre bail peuvent séjourner dans la maison.
 - **Pas d'animaux.**
 - Merci de ne pas déplacer de meubles d'une chambre à l'autre ni de fixer quoi que ce soit aux murs sans nous demander d'abord.

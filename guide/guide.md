@@ -16,7 +16,7 @@
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
 
-_Last updated: 16 October 2026_
+_Last updated: 19 October 2026_
 
 Welcome home. This guide covers the everyday things about living at 22 Jalan Elok. If anything here is unclear or out of date, message us. We'd rather you ask than guess.
 
@@ -224,6 +224,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 - **Quiet hours:** 10 pm – 8 am. Keep voices, music and calls low in the shared spaces during these hours.
 - **No smoking or vaping anywhere in the house**, including the balcony and the front terrace.
+- **Visitors** are welcome within reason, but must leave by **10 pm**.
 - **No additional guests.** Only the people named on your tenancy agreement may stay in the house.
 - **No pets.**
 - Please don't move furniture between rooms or put anything up on the walls without asking us first.
