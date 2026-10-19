@@ -41,9 +41,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
 ![22 Jalan Elok from the street. The house number, 22, is on the gate post on the left.](../assets/img/guide/facade.webp)
 
 - **Main door:** it has a code lock. We'll send you the code together with the Wi-Fi details, closer to your move-in date.
-- **Keycards:** each room gets **two keycards** for the main door.
-- **Your room:** you get **two keys** to your room.
-- **Gate:** a gate remote is provided to **one person**.
+- **Keys:** each room gets two room keys and two keycards for the main door. The gate remote is given to one resident only.
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
 - **Door lock batteries:** if the lock warns that its batteries are low, let us know and we'll replace them. If they run out completely, the keypad stops working. To open the door:
