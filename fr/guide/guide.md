@@ -69,7 +69,7 @@ Le stationnement n'est pas compris dans le loyer. Si vous souhaitez vous garer s
 Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirateur tous les jours à 3 h du matin**. Il n'est pas audible depuis le 4e étage ; il ne devrait donc gêner personne. Si toutefois vous l'entendez depuis votre chambre, merci de nous en informer et nous modifierons l'horaire. Afin de permettre un nettoyage complet, nous vous remercions de laisser le sol dégagé (sacs, chaussures, câbles).
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
-- Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé.
+- Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé. **Nous vérifions les réfrigérateurs une fois par semaine** et jetons ce qui n'est pas étiqueté ou est **périmé depuis plus de 2 semaines**.
 - **Étiquetez clairement avec votre chambre tout ce que vous rangez dans les réfrigérateurs et les espaces communs.** Ce qui n'est pas clairement étiqueté sera jeté lors du ménage du samedi.
 - **Cuisine légère uniquement :** pas de friture ni de plats à l'odeur forte.
 - Essuyez la plaque et le plan de travail après avoir cuisiné.

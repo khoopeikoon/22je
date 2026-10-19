@@ -74,7 +74,7 @@ Parking is not included in the rent. If you would like to park in the car porch,
 The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every day at 3:00 am**. It is not audible from the 4th floor, so we do not expect it to disturb anyone. Should you be able to hear it from your room, please let us know and we will reschedule it. To allow a thorough clean, please keep the floor clear of bags, shoes and cables.
 
 - Wash, dry and put away anything you use in the kitchen.
-- There are **two shared fridges** and no fridges in the rooms. Clear out anything expired.
+- There are **two shared fridges** and no fridges in the rooms. Clear out anything expired. **We check the fridges once a week** and throw out anything that isn't labelled or is **more than 2 weeks past its expiry date**.
 - **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Saturday.
 - **Light cooking only:** no deep-frying and no strong-smelling dishes.
 - Wipe down the hob and counter after cooking.
