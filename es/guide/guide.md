@@ -46,7 +46,7 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
   2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
   3. Manténgala ahí y abra como siempre con su código.
   4. Escríbanos para que cambiemos las pilas de la cerradura.
-- Si pierde una llave o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave** y **S$50 por mando**.
+- Si pierde una llave, una tarjeta o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave o tarjeta** y **S$50 por mando**.
 
 ## Wifi
 
@@ -235,5 +235,5 @@ Las dos máquinas son modelos **Samsung Bespoke AI** con un solo mando giratorio
 1. Comuníquenos con antelación la fecha y hora de su salida.
 2. Deje la habitación ordenada, retire su comida de las neveras y saque su basura al contenedor junto a la verja.
 3. **Haga fotos de la habitación antes de irse**, por seguridad. Fotografíe toda la habitación, el baño y cualquier cosa que quiera dejar documentada. Guárdelas hasta que le devolvamos la fianza.
-4. Devuelva las dos llaves de la habitación y, si lo tiene, el mando de la verja. Cualquiera que falte se cobra a S$10 por llave y S$50 por mando.
+4. Devuelva las dos llaves de la habitación, las dos tarjetas de acceso y, si lo tiene, el mando de la verja. Cualquiera que falte se cobra a S$10 por llave o tarjeta y S$50 por mando.
 5. Revisamos la habitación después de su salida y le devolvemos la fianza en un plazo de 7 días.

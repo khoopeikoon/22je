@@ -51,7 +51,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
   2. Hold the battery's two terminals against the **emergency contacts at the bottom of the outer keypad**.
   3. Keep it there and unlock as usual with your code.
   4. Message us so we can replace the lock's batteries.
-- If you lose a key or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key** and **S$50 per remote**.
+- If you lose a key, keycard or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key or keycard** and **S$50 per remote**.
 
 ## Wi-Fi
 
@@ -240,5 +240,5 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 1. Let us know your move-out date and time in advance.
 2. Leave the room tidy, clear your food out of the fridges, and take your rubbish out to the bin by the front gate.
 3. **Take photos of the room before you leave**, to be safe. Get the whole room, the bathroom, and anything you'd want on record. Keep them until your deposit is back.
-4. Return both room keys, and the gate remote if you hold it. Any that are missing are charged at S$10 per key and S$50 per remote.
+4. Return both room keys, both keycards, and the gate remote if you hold it. Any that are missing are charged at S$10 per key or keycard and S$50 per remote.
 5. We inspect the room after you move out and refund your deposit within 7 days.

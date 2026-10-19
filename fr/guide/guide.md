@@ -46,7 +46,7 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
   2. Appuyez les deux bornes de la pile contre les **contacts de secours en bas du clavier extérieur**.
   3. Maintenez-la en place et déverrouillez comme d'habitude avec votre code.
   4. Écrivez-nous pour que nous changions les piles de la serrure.
-- Si vous perdez une clé ou la télécommande, prévenez-nous immédiatement pour que nous puissions sécuriser la maison. Le remplacement coûte **S$10 par clé** et **S$50 par télécommande**.
+- Si vous perdez une clé, une carte d'accès ou la télécommande, prévenez-nous immédiatement pour que nous puissions sécuriser la maison. Le remplacement coûte **S$10 par clé ou carte** et **S$50 par télécommande**.
 
 ## Wifi
 
@@ -235,5 +235,5 @@ Les deux machines sont des modèles **Samsung Bespoke AI** à molette unique. Le
 1. Indiquez-nous à l'avance la date et l'heure de votre départ.
 2. Laissez la chambre en ordre, retirez votre nourriture des réfrigérateurs et sortez vos déchets dans la poubelle près du portail.
 3. **Prenez la chambre en photo avant de partir**, par précaution : toute la chambre, la salle de bains et tout ce que vous voulez garder en mémoire. Conservez ces photos jusqu'au remboursement de votre dépôt.
-4. Rendez les deux clés de la chambre, ainsi que la télécommande du portail si vous l'avez. Toute clé manquante est facturée S$10, toute télécommande manquante S$50.
+4. Rendez les deux clés de la chambre, les deux cartes d'accès, ainsi que la télécommande du portail si vous l'avez. Toute clé ou carte manquante est facturée S$10, toute télécommande manquante S$50.
 5. Nous inspectons la chambre après votre départ et remboursons votre dépôt sous 7 jours.
