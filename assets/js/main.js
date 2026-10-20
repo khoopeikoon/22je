@@ -38,7 +38,7 @@ const STRINGS = {
     menu: "Open menu",
     tagline: "Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.",
     visit: "Visit", directions: "Get directions →", contact: "Contact", explore: "Explore",
-    guide: "House guide", love: "Powered with love ♥", waAria: "WhatsApp us",
+    area: "The area", guide: "House guide", love: "Powered with love ♥", waAria: "WhatsApp us",
     hello: "Hello! I'd like to enquire about a stay at 22 Jalan Elok.",
     copied: "Link copied", copyPrompt: "Copy this link:",
     subject: "Enquiry — 22 Jalan Elok",
@@ -52,7 +52,7 @@ const STRINGS = {
     menu: "打开菜单",
     tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
-    guide: "住户指南", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
+    area: "周边环境", guide: "住户指南", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
     hello: "您好！我想咨询入住 22 Jalan Elok。",
     copied: "链接已复制", copyPrompt: "复制此链接：",
     subject: "咨询 — 22 Jalan Elok",
@@ -66,7 +66,7 @@ const STRINGS = {
     menu: "メニューを開く",
     tagline: "バスルーム付きの家具付きルーム。3か月以上のご滞在に。直接予約で仲介手数料なし。",
     visit: "所在地", directions: "道順を見る →", contact: "連絡先", explore: "サイト内",
-    guide: "入居者ガイド", love: "心を込めて ♥", waAria: "WhatsApp でお問い合わせ",
+    area: "周辺エリア", guide: "入居者ガイド", love: "心を込めて ♥", waAria: "WhatsApp でお問い合わせ",
     // Messages from Japanese pages carry English too, so the manager can always read them.
     hello: "こんにちは。22 Jalan Elok への滞在について問い合わせたいです。\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
     copied: "リンクをコピーしました", copyPrompt: "このリンクをコピーしてください：",
@@ -81,7 +81,7 @@ const STRINGS = {
     menu: "Abrir menú",
     tagline: "Habitaciones amuebladas con baño privado para estancias de tres meses o más. Reserve directamente, sin comisión de agencia.",
     visit: "Dirección", directions: "Cómo llegar →", contact: "Contacto", explore: "Explorar",
-    guide: "Guía de la casa", love: "Hecho con cariño ♥", waAria: "Escríbanos por WhatsApp",
+    area: "La zona", guide: "Guía de la casa", love: "Hecho con cariño ♥", waAria: "Escríbanos por WhatsApp",
     // Messages from Spanish pages carry English too, so the manager can always read them.
     hello: "¡Hola! Me gustaría informarme sobre una estancia en 22 Jalan Elok.\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
     copied: "Enlace copiado", copyPrompt: "Copie este enlace:",
@@ -96,7 +96,7 @@ const STRINGS = {
     menu: "Ouvrir le menu",
     tagline: "Chambres meublées avec salle de bains privative, pour des séjours de trois mois ou plus. Réservez en direct, sans frais d'agence.",
     visit: "Adresse", directions: "Itinéraire →", contact: "Contact", explore: "Explorer",
-    guide: "Guide de la maison", love: "Fait avec amour ♥", waAria: "Écrivez-nous sur WhatsApp",
+    area: "Le quartier", guide: "Guide de la maison", love: "Fait avec amour ♥", waAria: "Écrivez-nous sur WhatsApp",
     // Messages from French pages carry English too, so the manager can always read them.
     hello: "Bonjour ! Je souhaiterais me renseigner sur un séjour au 22 Jalan Elok.\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
     copied: "Lien copié", copyPrompt: "Copiez ce lien :",
@@ -119,7 +119,7 @@ function renderChrome() {
   // This page's path within its language, e.g. "rooms.html" on rooms.html, zh/rooms.html and ja/rooms.html.
   const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^(zh|ja|es|fr)\//, ""));
   // Pages that exist in every language; anything else (e.g. the 404) switches to that language's home page.
-  const translated = [...NAV.map(([href]) => href), "guide/"].some((href) => norm(href) === here);
+  const translated = [...NAV.map(([href]) => href), "area.html", "guide/"].some((href) => norm(href) === here);
   const langHref = (k) => ROOT + LANGS[k].dir + (translated ? here : "");
 
   const header = document.querySelector("[data-header]");
@@ -183,6 +183,7 @@ function renderChrome() {
               <h4>${T.explore}</h4>
               <ul>
                 ${NAV.slice(1).map(([href, label]) => `<li><a href="${BASE + href}">${label}</a></li>`).join("")}
+                <li><a href="${BASE}area.html">${T.area}</a></li>
                 <li><a href="${BASE}guide/">${T.guide}</a></li>
               </ul>
             </div>
