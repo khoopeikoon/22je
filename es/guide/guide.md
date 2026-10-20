@@ -31,6 +31,8 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 
 **Dirección:** 22 Jalan Elok, Singapore 229060
 
+**Plantas:** se numeran como en Singapur: la planta 1 es la planta baja.
+
 ## Entrar y salir
 
 ![22 Jalan Elok desde la calle. El número de la casa, 22, está en el pilar de la verja de la izquierda.](../../assets/img/guide/facade.webp)
@@ -154,7 +156,7 @@ La basura se recoge **todos los días**.
 
 ## Consigna de equipaje
 
-Hay un trastero para equipaje **junto a la entrada, en la planta 1** (es el refugio doméstico, justo al lado del ascensor), para que pueda guardar las maletas vacías fuera de su habitación. Marque sus maletas con su habitación.
+Hay un trastero para equipaje **junto a la entrada, en la planta 1 (planta baja)** (es el refugio doméstico, justo al lado del ascensor), para que pueda guardar las maletas vacías fuera de su habitación. Marque sus maletas con su habitación.
 
 ![El trastero de equipaje](../../assets/img/guide/luggage-storage.webp)
 

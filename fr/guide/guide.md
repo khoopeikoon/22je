@@ -31,6 +31,8 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 
 **Adresse :** 22 Jalan Elok, Singapore 229060
 
+**Étages :** ils sont numérotés à la singapourienne : le 1er étage est le rez-de-chaussée.
+
 ## Entrer et sortir
 
 ![Le 22 Jalan Elok vu de la rue. Le numéro, 22, se trouve sur le pilier du portail à gauche.](../../assets/img/guide/facade.webp)
@@ -154,7 +156,7 @@ Les déchets sont collectés **tous les jours**.
 
 ## Rangement des bagages
 
-Un local à bagages se trouve **près de l'entrée, au 1er étage** (c'est l'abri domestique, juste à côté de l'ascenseur) : vous pouvez y ranger vos valises vides pour libérer votre chambre. Merci d'étiqueter vos valises avec votre chambre.
+Un local à bagages se trouve **près de l'entrée, au 1er étage (rez-de-chaussée)** (c'est l'abri domestique, juste à côté de l'ascenseur) : vous pouvez y ranger vos valises vides pour libérer votre chambre. Merci d'étiqueter vos valises avec votre chambre.
 
 ![Le local à bagages](../../assets/img/guide/luggage-storage.webp)
 
