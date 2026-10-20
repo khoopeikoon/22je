@@ -56,8 +56,6 @@ Nous vous enverrons le nom du réseau et le mot de passe, avec le code de la por
 - **Rideaux occultants :** fermez-les complètement pour une chambre plongée dans le noir à toute heure.
 - **Salle de bains privative :** la ventilation fonctionne dès que la lumière de la salle de bains est allumée. Après la douche, laissez la lumière allumée quelques minutes (ou la porte ouverte) pour évacuer la vapeur et éviter les moisissures. Ne jetez que du papier toilette dans les WC.
 - **Veilleuse :** si vous en souhaitez une, demandez-la-nous.
-- **Le ménage** de votre chambre est fait **chaque samedi, entre 11 h et 17 h**, sauf autre arrangement convenu avec nous. **Il ne comprend pas le linge :** la buanderie est en libre-service, sur la [terrasse de buanderie](#terrasse-de-buanderie-5e-étage).
-  - **Le ménage hebdomadaire fait partie de chaque séjour, mais il est optionnel.** Si vous préférez que nous ne fassions pas le ménage de votre chambre, il suffit de nous le dire. Nous frappons toujours avant d'entrer, mais s'il n'y a pas de réponse, nous entrons quand même.
 
 ## Espaces communs
 
@@ -69,7 +67,7 @@ Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirat
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
 - Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé. **Nous vérifions les réfrigérateurs une fois par semaine** et jetons ce qui n'est pas étiqueté ou est **périmé depuis plus de 2 semaines**.
-- **Étiquetez clairement avec votre chambre tout ce que vous rangez dans les réfrigérateurs et les espaces communs.** Ce qui n'est pas clairement étiqueté sera jeté lors du ménage du samedi.
+- **Étiquetez clairement avec votre chambre tout ce que vous rangez dans les réfrigérateurs et les espaces communs.** Ce qui n'est pas clairement étiqueté sera jeté.
 - **Cuisine légère uniquement :** pas de friture ni de plats à l'odeur forte.
 - Essuyez la plaque et le plan de travail après avoir cuisiné.
 - Fermez les portes du balcon quand il pleut et quand vous êtes le dernier à partir.
@@ -162,7 +160,7 @@ Un local à bagages se trouve **près de l'entrée, au 1er étage** (c'est l'abr
 
 ## Terrasse de buanderie (5e étage)
 
-La terrasse de buanderie est une terrasse ouverte au 5e étage, de l'autre côté du palier de l'ascenseur, face à la Suite Aurelia. **La buanderie est en libre-service :** le ménage ne comprend pas le lavage du linge, merci donc de le faire ici vous-même. Elle est **gratuite et accessible à toute heure**. Merci de rester discret tard le soir et tôt le matin.
+La terrasse de buanderie est une terrasse ouverte au 5e étage, de l'autre côté du palier de l'ascenseur, face à la Suite Aurelia. **La buanderie est en libre-service :** merci de laver votre linge ici vous-même. Elle est **gratuite et accessible à toute heure**. Merci de rester discret tard le soir et tôt le matin.
 
 **Vous ne savez pas comment fonctionnent les machines ?** Demandez-nous, nous vous montrerons volontiers.
 
@@ -211,7 +209,7 @@ Les deux machines sont des modèles **Samsung Bespoke AI** à molette unique. Le
 - Surcharger l'une ou l'autre machine, ni laver ou sécher des tapis à envers caoutchouté ou des chaussures.
 - Laisser votre linge dans les machines après la fin du cycle. D'autres attendent peut-être.
 - Poser quoi que ce soit sur le sèche-linge, ni vous appuyer sur les machines superposées.
-- Ouvrir le capot en bas à l'avant du sèche-linge. Nous nettoyons ce filtre lors du ménage.
+- Ouvrir le capot en bas à l'avant du sèche-linge. Nous nettoyons ce filtre nous-mêmes.
 
 ### En cas de problème
 

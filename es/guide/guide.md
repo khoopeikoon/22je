@@ -56,8 +56,6 @@ Le enviaremos el nombre de la red y la contraseña, junto con el código de la p
 - **Cortinas opacas:** ciérrelas del todo para tener la habitación a oscuras a cualquier hora.
 - **Baño privado:** el extractor funciona siempre que la luz del baño está encendida. Después de ducharse, deje la luz encendida unos minutos (o la puerta abierta) para que salga el vapor y no aparezca moho. Por el inodoro solo debe ir papel higiénico.
 - **Luz nocturna:** si desea una, pídala y se la proporcionaremos.
-- **La limpieza** se hace **todos los sábados, entre las 11:00 y las 17:00,** en su habitación, salvo que haya acordado otra cosa con nosotros. **No incluye lavar la ropa:** la lavandería es de autoservicio, en la [terraza de lavandería](#terraza-de-lavandería-planta-5).
-  - **La limpieza semanal forma parte de todas las estancias, pero es opcional.** Si prefiere que no limpiemos su habitación, avísenos. Siempre llamaremos antes de entrar, pero si nadie responde, entraremos igualmente.
 
 ## Espacios compartidos
 
@@ -69,7 +67,7 @@ El salón y el comedor (planta 2) se limpian con un **robot aspirador todos los 
 
 - Lave, seque y guarde todo lo que use en la cocina.
 - Hay **dos neveras compartidas** y no hay nevera en las habitaciones. Retire lo que esté caducado. **Revisamos las neveras una vez por semana** y tiramos lo que no esté marcado o lleve **más de 2 semanas caducado**.
-- **Marque claramente con su habitación todo lo que guarde en las neveras y en los espacios compartidos.** Lo que no esté claramente marcado se tirará cuando venga la limpieza el sábado.
+- **Marque claramente con su habitación todo lo que guarde en las neveras y en los espacios compartidos.** Lo que no esté claramente marcado se tirará.
 - **Solo cocina ligera:** nada de frituras ni platos de olor fuerte.
 - Limpie la placa y la encimera después de cocinar.
 - Cierre las puertas del balcón cuando llueva y cuando sea el último en salir.
@@ -162,7 +160,7 @@ Hay un trastero para equipaje **junto a la entrada, en la planta 1** (es el refu
 
 ## Terraza de lavandería (planta 5)
 
-La terraza de lavandería es una terraza abierta en la planta 5, al otro lado del rellano del ascensor, frente a la Suite Aurelia. **La lavandería es de autoservicio:** el servicio de limpieza no lava ropa, así que lávela usted aquí. Su uso es **gratuito y a cualquier hora**. Procure no hacer ruido a altas horas de la noche ni a primera hora de la mañana.
+La terraza de lavandería es una terraza abierta en la planta 5, al otro lado del rellano del ascensor, frente a la Suite Aurelia. **La lavandería es de autoservicio:** lave aquí su ropa usted mismo. Su uso es **gratuito y a cualquier hora**. Procure no hacer ruido a altas horas de la noche ni a primera hora de la mañana.
 
 **¿No sabe cómo funcionan las máquinas?** Pregúntenos; le enseñaremos encantados.
 
@@ -211,7 +209,7 @@ Las dos máquinas son modelos **Samsung Bespoke AI** con un solo mando giratorio
 - Sobrecargue ninguna de las dos máquinas, ni lave o seque alfombrillas con base de goma o zapatos.
 - Deje la ropa dentro de las máquinas cuando termine el programa. Puede haber alguien esperando.
 - Ponga nada encima de la secadora ni se apoye en las máquinas apiladas.
-- Abra la tapa de la parte inferior delantera de la secadora. Ese filtro lo limpiamos nosotros durante la limpieza.
+- Abra la tapa de la parte inferior delantera de la secadora. Ese filtro lo limpiamos nosotros.
 
 ### Si algo va mal
 

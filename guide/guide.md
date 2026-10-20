@@ -61,8 +61,6 @@ We'll send you the network name and password, together with the main door code, 
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
-- **Housekeeping** comes **every Saturday, between 11 am and 5 pm,** to clean your room, unless you've arranged otherwise with us. **It doesn't include laundry:** laundry is self-service, on the [laundry terrace](#laundry-terrace-5th-floor).
-  - **Weekly housekeeping is part of every stay, but it's optional.** If you'd rather we didn't clean your room, just let us know. We'll always knock before entering, but if there's no answer, we will still come in.
 
 ## Shared spaces
 
@@ -74,7 +72,7 @@ The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every da
 
 - Wash, dry and put away anything you use in the kitchen.
 - There are **two shared fridges** and no fridges in the rooms. Clear out anything expired. **We check the fridges once a week** and throw out anything that isn't labelled or is **more than 2 weeks past its expiry date**.
-- **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out when housekeeping comes on Saturday.
+- **Label everything you keep in the fridges and shared spaces clearly with your room.** Anything that isn't clearly labelled will be thrown out.
 - **Light cooking only:** no deep-frying and no strong-smelling dishes.
 - Wipe down the hob and counter after cooking.
 - Close the balcony doors when it rains and when you're the last to leave.
@@ -167,7 +165,7 @@ There's a luggage storeroom **by the entrance on the 1st floor** (it's the house
 
 ## Laundry terrace (5th floor)
 
-The laundry terrace is an open terrace on the 5th floor, across the lift landing from the Aurelia Suite. **Laundry is self-service:** housekeeping doesn't wash clothes, so please do your own here. It's **free to use, at any time**. Please keep the noise down late at night and early in the morning.
+The laundry terrace is an open terrace on the 5th floor, across the lift landing from the Aurelia Suite. **Laundry is self-service:** please do your own here. It's **free to use, at any time**. Please keep the noise down late at night and early in the morning.
 
 **Not sure how the machines work?** Just ask us. We're happy to show you.
 
@@ -216,7 +214,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 - Overload either machine, or wash or dry rubber-backed mats or shoes.
 - Leave your laundry sitting in the machines after the cycle ends. Others may be waiting.
 - Put anything on top of the dryer, or lean on the stacked machines.
-- Open the cover at the bottom front of the dryer. We clean that filter during housekeeping.
+- Open the cover at the bottom front of the dryer. We clean that filter ourselves.
 
 ### If something goes wrong
 
