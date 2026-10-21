@@ -589,7 +589,12 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
 .gallery__track figure.plan { background: #fff; position: relative; }
 .gallery__track figure.plan img { object-fit: contain; padding: 14px 14px 34px; }
 .gallery__track figure.plan:hover img { transform: none; }
-.gallery__track figure.plan figcaption {
+/* 3D views (tools/rooms_3d.js): the background matches the render's */
+.gallery__track figure.render { background: #f3ede4; position: relative; }
+.gallery__track figure.render img { object-fit: contain; padding-bottom: 30px; }
+.gallery__track figure.render:hover img { transform: none; }
+.gallery__track figure.plan figcaption,
+.gallery__track figure.render figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 8px 14px; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--muted); background: rgba(255, 255, 255, 0.92);

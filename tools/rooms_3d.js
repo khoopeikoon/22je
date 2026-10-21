@@ -1,0 +1,720 @@
+/* 3D "dollhouse" renders of the rooms for rooms.html.
+
+   Each room is rebuilt from the architect's plan: walls, doors and windows where the plan
+   has them, the plan's furniture layout, and finishes matched to the photos (walnut floor and
+   panelling, white walls, grey marble ensuites, black-framed glazing). The walls nearest the
+   camera are cut low so the room can be seen into.
+
+   Plan coordinates are pixels in a 300-dpi render of the plan, cropped to the drawing with a
+   20 px margin (see render_rooms_3d.py): x runs along the house (rear on the left), y across it.
+   At 1:100, 1 px = 8.47 mm.
+
+   ?room=<id>  one of the ROOMS keys below
+   ?top=1      straight-down orthographic view at 1 px per plan px, to check against the plan
+*/
+import * as THREE from "three";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { GTAOPass } from "three/addons/postprocessing/GTAOPass.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+const M = 0.0254 / 300 * 100;   // metres per plan pixel
+const H = 2.45;                 // walls are cut at this height (no ceiling)
+const LOW = 0.75;               // ...and at this height on the camera side
+const SLAB = 0.16;
+const DOOR = 2.1, SILL = 0.6, HEAD = 2.3;
+const deg = Math.PI / 180;
+
+/* ---------- procedural textures (UVs are in metres) ---------- */
+
+function rng(seed) {
+  return () => {
+    seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// Value noise that repeats every px by py lattice cells, so textures tile without seams:
+// sample at u * F with an integer F and pass F as the period.
+function noise2(seed) {
+  const r = rng(seed), p = new Uint8Array(512), perm = [...Array(256).keys()];
+  for (let i = 255; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [perm[i], perm[j]] = [perm[j], perm[i]]; }
+  for (let i = 0; i < 512; i++) p[i] = perm[i & 255];
+  const wrap = (v, n) => ((v % n) + n) % n;
+  const h = (x, y, px, py) => p[p[wrap(x, px) & 255] + (wrap(y, py) & 255)] / 255;
+  const s = (t) => t * t * (3 - 2 * t);
+  return (x, y, px = 256, py = 256) => {
+    const xi = Math.floor(x), yi = Math.floor(y), u = s(x - xi), v = s(y - yi);
+    const a = h(xi, yi, px, py), b = h(xi + 1, yi, px, py), c = h(xi, yi + 1, px, py), d = h(xi + 1, yi + 1, px, py);
+    return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+  };
+}
+
+function fbm(n, x, y, oct, px, py) {
+  let v = 0, a = 0.5, f = 1;
+  for (let i = 0; i < oct; i++) { v += a * n(x * f, y * f, px * f, py * f); a *= 0.5; f *= 2; }
+  return v / (1 - Math.pow(0.5, oct));
+}
+
+const mix = (a, b, t) => a + (b - a) * t;
+const hex = (c) => [(c >> 16) & 255, (c >> 8) & 255, c & 255];
+
+function texture(size, metres, fn) {
+  const c = document.createElement("canvas");
+  c.width = c.height = size;
+  const ctx = c.getContext("2d"), img = ctx.createImageData(size, size);
+  for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+    const [r, g, b] = fn(x / size, y / size), i = (y * size + x) * 4;
+    img.data[i] = r; img.data[i + 1] = g; img.data[i + 2] = b; img.data[i + 3] = 255;
+  }
+  ctx.putImageData(img, 0, 0);
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  t.repeat.set(1 / metres, 1 / metres);
+  return t;
+}
+
+// Planks along u: `rows` planks across the tile, `cols` plank lengths along it, rows staggered.
+function planks({ seed, dark, light, rows, cols = 2, seam = 0.55 }) {
+  const n = noise2(seed), r = rng(seed + 1), px = 1 / 1024;
+  const off = [...Array(rows)].map(() => r()), tone = [...Array(rows * cols)].map(() => r());
+  const D = hex(dark), L = hex(light);
+  return (u, v) => {
+    const row = Math.min(rows - 1, Math.floor(v * rows)), fv = v * rows - row;
+    const uu = u + off[row], col = Math.floor(uu * cols), fu = uu * cols - col;
+    const t0 = tone[row * cols + (col % cols)];
+    const g = fbm(n, uu * 8 + row * 37, v * 192, 3, 8, 192);
+    const streak = Math.pow(Math.abs(Math.sin((fv * 7 + n(uu * 4, row * 5, 4, 256) * 3) * Math.PI)), 5);
+    const t = Math.max(0, Math.min(1, 0.22 + 0.55 * t0 + (g - 0.5) * 0.9 - streak * 0.16));
+    const edge = Math.min(fv, 1 - fv) / rows < px * 1.2 || Math.min(fu, 1 - fu) / cols < px;
+    const k = edge ? seam : 1;
+    return [mix(D[0], L[0], t) * k, mix(D[1], L[1], t) * k, mix(D[2], L[2], t) * k];
+  };
+}
+
+function veneer({ seed, dark, light }) {
+  const n = noise2(seed), D = hex(dark), L = hex(light);
+  return (u, v) => {
+    const g = fbm(n, u * 96, v * 4, 4, 96, 4);
+    const ring = Math.pow(Math.abs(Math.sin((u * 40 + fbm(n, u * 3, v * 2, 3, 3, 2) * 8) * Math.PI)), 8);
+    const t = Math.max(0, Math.min(1, 0.45 + (g - 0.5) * 1.1 - ring * 0.2));
+    return [mix(D[0], L[0], t), mix(D[1], L[1], t), mix(D[2], L[2], t)];
+  };
+}
+
+function marble({ seed, base, vein }) {
+  const n = noise2(seed), n2 = noise2(seed + 7), B = hex(base), V = hex(vein);
+  return (u, v) => {
+    const wx = u * 3 + fbm(n2, u * 3, v * 3, 4, 3, 3) * 2.2, wy = v * 3 + fbm(n2, u * 3 + 5, v * 3 + 2, 4, 3, 3) * 2.2;
+    const ridge = 1 - Math.abs(fbm(n, wx, wy, 5, 3, 3) * 2 - 1);
+    const ridge2 = 1 - Math.abs(fbm(n2, wx * 2 + 9, wy * 2, 4, 6, 6) * 2 - 1);
+    const veinT = Math.pow(ridge, 34) * 0.6 + Math.pow(ridge2, 60) * 0.35;
+    const cloud = (fbm(n, u * 5 + 3, v * 5, 4, 5, 5) - 0.5) * 22;
+    return [0, 1, 2].map((i) => Math.min(255, mix(B[i] + cloud, V[i], Math.min(1, veinT))));
+  };
+}
+
+function speckle({ seed, base, amount }) {
+  const n = noise2(seed), r = rng(seed), B = hex(base);
+  return (u, v) => {
+    const s = r();
+    const k = s > 1 - amount ? 70 * r() : s < amount ? -18 : 0;
+    const c = (fbm(n, u * 30, v * 30, 3, 30, 30) - 0.5) * 14 + k;
+    return [B[0] + c, B[1] + c, B[2] + c];
+  };
+}
+
+function cloth({ seed, base, amp = 10, scale = 200 }) {
+  const n = noise2(seed), B = hex(base);
+  return (u, v) => {
+    const c = (n(u * scale, v * scale, scale, scale) - 0.5) * amp + (fbm(n, u * 8, v * 8, 3, 8, 8) - 0.5) * amp;
+    return [B[0] + c, B[1] + c, B[2] + c];
+  };
+}
+
+/* ---------- materials ---------- */
+
+function materials() {
+  const std = (o) => new THREE.MeshStandardMaterial(o);
+  const tex = {
+    floor: texture(1024, 2.4, planks({ seed: 3, dark: 0x3e2517, light: 0x7a4b2f, rows: 13 })),   // 18 cm boards
+    deck: texture(1024, 2.4, planks({ seed: 9, dark: 0x8a7766, light: 0xb7a48f, rows: 12, seam: 0.7 })),
+    walnut: texture(1024, 1.2, veneer({ seed: 5, dark: 0x3a2619, light: 0x6e4a32 })),
+    marble: texture(1024, 1.2, marble({ seed: 11, base: 0x9a948d, vein: 0xd9d4cc })),
+    granite: texture(512, 0.6, speckle({ seed: 13, base: 0x2d2c2b, amount: 0.04 })),
+    rug: texture(512, 0.8, cloth({ seed: 17, base: 0xd3c8b8, amp: 9 })),
+    linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
+  };
+  return {
+    wall: std({ color: 0xece7df, roughness: 0.92 }),
+    poche: std({ color: 0x3b3129, roughness: 1 }),
+    floor: std({ map: tex.floor, roughness: 0.5 }),
+    deck: std({ map: tex.deck, roughness: 0.85 }),
+    stone: std({ map: tex.granite, roughness: 0.45 }),
+    walnut: std({ map: tex.walnut, roughness: 0.55 }),
+    walnutDark: std({ map: tex.walnut, color: 0x8a7a70, roughness: 0.55 }),
+    marble: std({ map: tex.marble, roughness: 0.22 }),
+    graniteTop: std({ color: 0x1d1c1b, roughness: 0.3 }),
+    porcelain: std({ color: 0xf6f6f3, roughness: 0.12 }),
+    linen: std({ map: tex.linen, roughness: 0.95 }),
+    pillow: std({ color: 0xf7f5f0, roughness: 0.95 }),
+    throw: std({ color: 0x8c8781, roughness: 1 }),
+    upholstery: std({ color: 0x55504b, roughness: 0.95 }),
+    seat: std({ color: 0x8f8a83, roughness: 0.95 }),
+    oak: std({ color: 0xc8a57a, roughness: 0.6 }),
+    rug: std({ map: tex.rug, roughness: 1 }),
+    curtain: std({ color: 0x9b948b, roughness: 1 }),
+    black: std({ color: 0x1c1c1c, roughness: 0.35, metalness: 0.3 }),
+    tv: std({ color: 0x101010, roughness: 0.15, metalness: 0.2 }),
+    mirror: std({ color: 0xc9d1d3, roughness: 0.08, metalness: 0.55 }),
+    glass: new THREE.MeshStandardMaterial({ color: 0xe2edf1, roughness: 0.05, transparent: true, opacity: 0.38, depthWrite: false }),
+    concrete: std({ color: 0xa9a49c, roughness: 0.95 }),
+    pot: std({ color: 0x4f4b47, roughness: 0.8 }),
+    leaf: std({ color: 0x4a6636, roughness: 0.8, flatShading: true }),
+    leaf2: std({ color: 0x6f8f4e, roughness: 0.8, flatShading: true }),
+  };
+}
+
+/* ---------- builder ---------- */
+
+const px = (v) => v * M;
+
+// Box UVs in metres, so textures keep their real-world scale on any size of box.
+function metricUV(geo, w, h, d) {
+  const uv = geo.attributes.uv, dims = [[d, h], [d, h], [w, d], [w, d], [w, h], [w, h]];
+  for (let f = 0; f < 6; f++) for (let i = 0; i < 4; i++) {
+    const k = f * 4 + i;
+    uv.setXY(k, uv.getX(k) * dims[f][0], uv.getY(k) * dims[f][1]);
+  }
+}
+
+class Builder {
+  constructor(mats) {
+    this.m = mats;
+    this.group = new THREE.Group();
+    this.walls = [];      // collected first: which ones are cut low depends on the camera
+    this.floors = [];
+    this.r = rng(42);
+  }
+
+  add(mesh, shadow = true) {
+    mesh.castShadow = mesh.receiveShadow = shadow;
+    this.group.add(mesh);
+    return mesh;
+  }
+
+  box(x0, y0, x1, y1, h0, h1, mat, { round = 0 } = {}) {
+    const w = px(x1 - x0), d = px(y1 - y0), h = h1 - h0;
+    let geo;
+    if (round) geo = new RoundedBoxGeometry(w, h, d, 4, Math.min(round, w / 2, h / 2, d / 2));
+    else { geo = new THREE.BoxGeometry(w, h, d); metricUV(geo, w, h, d); }
+    const mesh = new THREE.Mesh(geo, typeof mat === "string" ? this.m[mat] : mat);
+    mesh.position.set(px(x0 + x1) / 2, (h0 + h1) / 2, px(y0 + y1) / 2);
+    return this.add(mesh, mat !== "glass");
+  }
+
+  floor(poly, mat = "floor", lift = 0) {
+    const shape = new THREE.Shape(poly.map(([x, y]) => new THREE.Vector2(px(x), px(y))));
+    const geo = new THREE.ExtrudeGeometry(shape, { depth: SLAB, bevelEnabled: false });
+    geo.rotateX(Math.PI / 2);
+    const mesh = new THREE.Mesh(geo, [this.m[mat], this.m.poche]);
+    mesh.position.y = lift;
+    this.floors.push(poly);
+    return this.add(mesh);
+  }
+
+  /* Wall-like pieces (walls, headers, sills, glazing, things fixed to walls) are cut with the wall.
+     faces: material per side, e.g. { n: "marble" } for the side facing north (up the plan).
+     follow: another wall piece whose cut this one shares (a wardrobe's door lines). */
+  wall(x0, y0, x1, y1, { h0 = 0, h1 = H, mat = "wall", faces = {}, low, keep, furniture = false, follow } = {}) {
+    const w = { x0, y0, x1, y1, h0, h1, mat, faces, low, keep, furniture, follow };
+    this.walls.push(w);
+    return w;
+  }
+
+  door(x0, y0, x1, y1, opt = {}) { this.wall(x0, y0, x1, y1, { ...opt, h0: DOOR }); }
+
+  // A window in a wall rectangle. sill 0 makes it a full-height glass door. All its pieces are cut
+  // (or not) together with the header.
+  window(x0, y0, x1, y1, { sill = SILL, head = HEAD, mullions = [], faces = {}, keep } = {}) {
+    const alongY = y1 - y0 > x1 - x0;
+    const header = this.wall(x0, y0, x1, y1, { h0: head, faces, keep });
+    if (sill > 0) this.wall(x0, y0, x1, y1, { h1: sill, faces, follow: header });
+    const f = 6;   // frame profile, px (5 cm)
+    const mid = alongY ? (x0 + x1) / 2 : (y0 + y1) / 2;
+    const span = (a, b, h0, h1, mat) => alongY
+      ? this.wall(mid - (mat === "glass" ? 1 : f / 2), a, mid + (mat === "glass" ? 1 : f / 2), b, { h0, h1, mat, follow: header })
+      : this.wall(a, mid - (mat === "glass" ? 1 : f / 2), b, mid + (mat === "glass" ? 1 : f / 2), { h0, h1, mat, follow: header });
+    const [a, b] = alongY ? [y0, y1] : [x0, x1];
+    span(a, b, sill + 0.05, head - 0.05, "glass");
+    span(a, b, sill, sill + 0.05, "black");
+    span(a, b, head - 0.05, head, "black");
+    for (const p of [a, ...mullions.map((m) => m - f / 2), b - f]) span(p, p + f, sill, head, "black");
+  }
+
+  glass(x0, y0, x1, y1, h0, h1) { this.box(x0, y0, x1, y1, h0, h1, "glass"); }
+
+  balustrade(x0, y0, x1, y1) {
+    this.glass(x0, y0, x1, y1, 0.06, 1.1);
+    this.box(x0 - 1, y0 - 1, x1 + 1, y1 + 1, 0, 0.06, "black");
+  }
+
+  /* ---------- furniture ---------- */
+
+  // Sub-rectangle in bed-local coordinates: u across (0..1), v from the head (0) to the foot (1).
+  local([x0, y0, x1, y1], head) {
+    return (u0, v0, u1, v1) => {
+      const W = x1 - x0, L = y1 - y0;
+      switch (head) {
+        case "n": return [x0 + u0 * W, y0 + v0 * L, x0 + u1 * W, y0 + v1 * L];
+        case "s": return [x0 + u0 * W, y1 - v1 * L, x0 + u1 * W, y1 - v0 * L];
+        case "w": return [x0 + v0 * W, y0 + u0 * L, x0 + v1 * W, y0 + u1 * L];
+        case "e": return [x1 - v1 * W, y0 + u0 * L, x1 - v0 * W, y0 + u1 * L];
+      }
+    };
+  }
+
+  bed(rect, head, { pillows = 2, headboard = "walnutDark" } = {}) {
+    const s = this.local(rect, head);
+    this.box(...s(0, 0, 1, 1), 0, 0.3, "walnutDark");
+    this.box(...s(0.015, 0.01, 0.985, 0.99), 0.3, 0.52, "linen", { round: 0.05 });
+    this.box(...s(-0.012, 0.3, 1.012, 1.008), 0.47, 0.565, "linen", { round: 0.04 });
+    this.box(...s(-0.018, 0.74, 1.018, 0.9), 0.5, 0.58, "throw", { round: 0.02 });
+    const pw = pillows === 2 ? [[0.05, 0.485], [0.515, 0.95]] : [[0.1, 0.9]];
+    for (const [u0, u1] of pw) this.box(...s(u0, 0.035, u1, 0.2), 0.52, 0.67, "pillow", { round: 0.065 });
+    if (headboard) this.box(...s(0, -0.045, 1, 0), 0, 1.05, headboard, { round: 0.015 });
+  }
+
+  nightstand(x0, y0, x1, y1, h = 0.5) {
+    this.box(x0, y0, x1, y1, 0.12, h, "walnut");
+    this.box(x0 + 3, y0 + 3, x1 - 3, y1 - 3, 0, 0.12, "black");
+  }
+
+  desk(x0, y0, x1, y1, drawers, h = 0.75) {
+    this.box(x0, y0, x1, y1, h - 0.035, h, "walnut");
+    const p = 47;  // 40 cm drawer pedestal
+    const ped = { n: [x0, y0, x1, y0 + p], s: [x0, y1 - p, x1, y1], w: [x0, y0, x0 + p, y1], e: [x1 - p, y0, x1, y1] }[drawers];
+    const end = { n: [x0, y1 - 4, x1, y1], s: [x0, y0, x1, y0 + 4], w: [x1 - 4, y0, x1, y1], e: [x0, y0, x0 + 4, y1] }[drawers];
+    this.box(...ped, 0, h - 0.035, "walnut");
+    this.box(...end, 0, h - 0.035, "walnut");
+  }
+
+  stool(cx, cy) {
+    const r = 24;   // 40 cm seat
+    this.box(cx - r, cy - r, cx + r, cy + r, 0.42, 0.49, "seat", { round: 0.03 });
+    for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]])
+      this.box(cx + dx * (r - 4) - 2, cy + dy * (r - 4) - 2, cx + dx * (r - 4) + 2, cy + dy * (r - 4) + 2, 0, 0.42, "oak");
+  }
+
+  bench(x0, y0, x1, y1) {
+    this.box(x0, y0, x1, y1, 0.14, 0.45, "upholstery", { round: 0.04 });
+    this.box(x0 + 4, y0 + 4, x1 - 4, y1 - 4, 0, 0.14, "black");
+  }
+
+  // Full height, so it is cut with the walls when it stands on the camera side.
+  wardrobe(x0, y0, x1, y1, front, h = 2.4) {
+    const body = this.wall(x0, y0, x1, y1, { h1: h, mat: "walnutDark", furniture: true });
+    const alongY = front === "e" || front === "w";
+    const [a, b] = alongY ? [y0, y1] : [x0, x1];
+    const doors = Math.max(2, Math.round(px(b - a) / 0.5));
+    for (let i = 1; i < doors; i++) {
+      const p = a + (b - a) * i / doors;
+      const g = { n: [p - 0.6, y0 - 0.6, p + 0.6, y0 + 1], s: [p - 0.6, y1 - 1, p + 0.6, y1 + 0.6],
+        w: [x0 - 0.6, p - 0.6, x0 + 1, p + 0.6], e: [x1 - 1, p - 0.6, x1 + 0.6, p + 0.6] }[front];
+      this.wall(...g, { h0: 0.02, h1: h - 0.02, mat: "black", furniture: true, follow: body });
+    }
+  }
+
+  rug(x0, y0, x1, y1) { this.box(x0, y0, x1, y1, 0, 0.012, "rug"); }
+
+  // Curtain gathered at the side of a window: a row of vertical folds.
+  curtain(x0, y0, x1, y1) {
+    const alongY = y1 - y0 > x1 - x0;
+    const r = (alongY ? x1 - x0 : y1 - y0) / 2, [a, b] = alongY ? [y0, y1] : [x0, x1];
+    const n = Math.max(2, Math.round((b - a) / (r * 1.4)));
+    for (let i = 0; i < n; i++) {
+      const c = a + r + (b - a - 2 * r) * i / (n - 1);
+      const geo = new THREE.CylinderGeometry(px(r), px(r), H - 0.08, 10);
+      const mesh = new THREE.Mesh(geo, this.m.curtain);
+      mesh.position.set(alongY ? px((x0 + x1) / 2) : px(c), (H - 0.08) / 2 + 0.03, alongY ? px(c) : px((y0 + y1) / 2));
+      this.add(mesh);
+    }
+  }
+
+  vanity(x0, y0, x1, y1, basin, h = 0.85) {
+    this.box(x0, y0, x1, y1, 0.32, h - 0.03, "walnutDark");
+    this.box(x0, y0, x1, y1, h - 0.03, h, "graniteTop");
+    this.box(...basin, h - 0.1, h + 0.002, "porcelain");
+  }
+
+  toilet(x0, y0, x1, y1) {
+    this.box(x0, y0, x1, y1, 0, 0.4, "porcelain", { round: 0.14 });
+    this.box(x0 + 3, y0 + 3, x1 - 3, y1 - 3, 0.36, 0.43, "porcelain", { round: 0.12 });
+  }
+
+  ledge(x0, y0, x1, y1, h = 1.0) { this.box(x0, y0, x1, y1, 0, h, "marble"); }
+
+  // Foliage: many small faceted leaf clusters scattered through an ellipsoid.
+  foliage(x, y, z, rx, ry, rz, n, size) {
+    for (let i = 0; i < n; i++) {
+      let a, b, c;
+      do { a = this.r() * 2 - 1; b = this.r() * 2 - 1; c = this.r() * 2 - 1; } while (a * a + b * b + c * c > 1);
+      const geo = new THREE.IcosahedronGeometry(size * (0.6 + this.r() * 0.6), 0);
+      const leaf = new THREE.Mesh(geo, this.r() > 0.45 ? this.m.leaf : this.m.leaf2);
+      leaf.position.set(x + a * rx, y + b * ry, z + c * rz);
+      leaf.rotation.set(this.r() * 3, this.r() * 3, this.r() * 3);
+      leaf.scale.set(1, 0.55, 1);
+      this.add(leaf);
+    }
+  }
+
+  plant(cx, cy, r) {
+    const R = px(r), x = px(cx), z = px(cy);
+    const pot = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.62, R * 0.5, 0.48, 32), this.m.pot);
+    pot.position.set(x, 0.24, z);
+    this.add(pot);
+    const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.025, 0.7, 8), this.m.oak);
+    stem.position.set(x, 0.75, z);
+    this.add(stem);
+    this.foliage(x, 1.25, z, R * 0.95, 0.42, R * 0.95, 90, 0.07);
+  }
+
+  planter(x0, y0, x1, y1) {
+    this.box(x0, y0, x1, y1, 0, 0.45, "concrete");
+    const x = px((x0 + x1) / 2), z = px((y0 + y1) / 2);
+    this.foliage(x, 0.6, z, px(x1 - x0) * 0.45, 0.16, px(y1 - y0) * 0.48, 140, 0.06);
+  }
+
+  /* ---------- walls, cut for the camera ---------- */
+
+  buildWalls(view) {
+    const xs = this.floors.flat().map((p) => p[0]), ys = this.floors.flat().map((p) => p[1]);
+    const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+    const dx = Math.sin(view.az * deg), dy = Math.cos(view.az * deg);   // towards the camera, in plan
+    for (const w of this.walls) {
+      let { h0, h1 } = w;
+      const front = w.front = w.follow ? w.follow.front : w.low ?? (!w.keep && view.cut !== false &&
+        ((w.x0 + w.x1) / 2 - cx) * dx + ((w.y0 + w.y1) / 2 - cy) * dy > 0);
+      if (front) { if (h0 >= LOW) continue; h1 = Math.min(h1, LOW); }
+      const cut = front || h1 >= H - 1e-6;
+      if (h0 === 0 && w.mat === "wall") h0 = -SLAB;
+      const side = (k) => this.m[w.faces[k] || w.mat];
+      const top = cut && !w.furniture && w.mat !== "glass" && w.mat !== "black" ? this.m.poche : side("top");
+      const geo = new THREE.BoxGeometry(px(w.x1 - w.x0), h1 - h0, px(w.y1 - w.y0));
+      metricUV(geo, px(w.x1 - w.x0), h1 - h0, px(w.y1 - w.y0));
+      const mesh = new THREE.Mesh(geo, [side("e"), side("w"), top, side("w"), side("s"), side("n")]);
+      mesh.position.set(px(w.x0 + w.x1) / 2, (h0 + h1) / 2, px(w.y0 + w.y1) / 2);
+      this.add(mesh, w.mat !== "glass");
+    }
+  }
+}
+
+/* ---------- the rooms (coordinates: see the header) ---------- */
+
+const ROOMS = {
+  // Deluxe Queen 4 (4th floor; 3 is identical). Bed against the north wall, window at the rear.
+  "deluxe-queen": {
+    view: { az: 32, el: 56 },
+    build(b) {
+      b.floor([[150, 45], [655, 45], [655, 280], [877, 280], [877, 405], [128, 405], [128, 160], [150, 160]]);
+      b.floor([[680, 45], [963, 45], [963, 262], [680, 262]], "stone", 0.004);
+      b.wall(128, 20, 680, 45);
+      b.wall(680, 20, 985, 45, { faces: { s: "marble" } });
+      b.wall(150, 45, 180, 160);
+      b.wall(128, 160, 180, 195);
+      b.window(128, 195, 160, 405, { mullions: [300] });
+      b.wall(128, 405, 768, 432);
+      b.door(768, 405, 862, 432);
+      b.wall(862, 405, 898, 432);
+      b.wall(877, 280, 898, 405);
+      b.wall(655, 45, 680, 280, { faces: { e: "marble" } });
+      b.wall(680, 262, 783, 280, { faces: { n: "marble" } });
+      b.door(783, 262, 877, 280, { faces: { n: "marble" } });
+      b.wall(877, 262, 985, 280, { faces: { n: "marble" } });
+      b.wall(963, 45, 985, 262, { faces: { w: "marble" } });
+      b.wall(180, 45, 585, 58, { h1: 1.2, mat: "walnut" });          // headboard panelling
+      b.wall(180, 398, 583, 405, { mat: "walnut" });                   // TV wall panelling
+      b.wall(290, 385, 463, 392, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.wall(684, 45, 770, 47, { h0: 1.15, h1: 2.1, mat: "mirror" });
+      b.ledge(680, 47, 857, 90);
+      b.vanity(682, 92, 772, 152, [696, 106, 756, 142]);
+      b.toilet(792, 95, 836, 175);
+      b.glass(857, 90, 862, 262, 0, 2.0);
+      b.wardrobe(585, 47, 655, 280, "w");
+      b.bed([287, 62, 470, 295], "n");
+      b.nightstand(472, 62, 527, 110);
+      b.desk(180, 62, 282, 130, "w");
+      b.stool(236, 150);
+      b.rug(248, 163, 505, 348);
+      b.curtain(161, 197, 177, 237);
+      b.curtain(161, 364, 177, 404);
+    },
+  },
+
+  // Deluxe Twin 4 (4th floor; 3 is identical). Beds against the south wall, window at the rear.
+  "deluxe-twin": {
+    view: { az: 148, el: 56 },
+    build(b) {
+      b.floor([[118, 432], [723, 432], [723, 563], [597, 563], [597, 770], [90, 770], [90, 530], [118, 530]]);
+      b.floor([[615, 582], [898, 582], [898, 770], [615, 770]], "stone", 0.004);
+      b.wall(88, 405, 763, 432);
+      b.wall(723, 432, 740, 452);
+      b.door(723, 452, 740, 545);
+      b.wall(723, 545, 740, 563);
+      b.wall(88, 432, 118, 530);
+      b.wall(65, 530, 118, 565);
+      b.window(65, 565, 90, 770, { mullions: [665] });
+      b.wall(20, 770, 598, 800);
+      b.wall(598, 770, 928, 800, { faces: { n: "marble" } });
+      b.wall(597, 563, 617, 770, { faces: { e: "marble" } });
+      b.wall(617, 563, 622, 582);
+      b.door(622, 563, 717, 582, { faces: { s: "marble" } });
+      b.wall(717, 563, 900, 582, { faces: { s: "marble" } });
+      b.wall(898, 563, 928, 800, { faces: { w: "marble" } });
+      b.wall(863, 752, 898, 770, { faces: { n: "marble", w: "marble" } });
+      b.wall(90, 758, 527, 770, { h1: 1.2, mat: "walnut" });          // headboard panelling
+      b.wall(180, 432, 520, 440, { mat: "walnut" });
+      b.wall(233, 440, 405, 447, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.wall(619, 768, 703, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
+      b.ledge(617, 752, 863, 770);
+      b.vanity(617, 687, 705, 752, [632, 697, 690, 733]);
+      b.toilet(727, 672, 772, 752);
+      b.glass(793, 582, 799, 752, 0, 2.0);
+      b.wardrobe(527, 563, 597, 770, "w");
+      b.bed([175, 540, 290, 758], "s", { pillows: 1, headboard: "upholstery" });
+      b.bed([348, 540, 462, 758], "s", { pillows: 1, headboard: "upholstery" });
+      b.nightstand(112, 712, 170, 758);
+      b.desk(118, 445, 215, 482, "w");
+      b.stool(168, 500);
+      b.rug(138, 492, 500, 680);
+      b.curtain(91, 567, 107, 607);
+      b.curtain(91, 728, 107, 768);
+    },
+  },
+
+  // Elysia Suite 4 (4th floor, queen). Full-height glass door to a Juliet balcony at the front.
+  "elysia-4": { view: { az: -32, el: 56 }, build: (b) => elysia(b, "queen") },
+  // Elysia Suite 3 (3rd floor, twin): the same plan.
+  "elysia-3": { view: { az: -32, el: 56 }, build: (b) => elysia(b, "twin") },
+
+  // Aurelia Suite (5th floor). Glass sliding doors onto the private balcony at the rear.
+  aurelia: {
+    view: { az: 30, el: 56 },
+    build(b) {
+      b.floor([[500, 45], [963, 45], [963, 255], [880, 255], [880, 545], [500, 545]]);
+      b.floor([[500, 565], [900, 565], [900, 770], [500, 770]], "stone", 0.004);
+      b.floor([[215, 45], [485, 45], [485, 780], [140, 780], [140, 408], [215, 408]], "deck", -0.03);
+      b.wall(180, 20, 500, 45);
+      b.wall(500, 20, 985, 45);
+      b.wall(120, 780, 485, 812);
+      b.wall(485, 770, 925, 800, { faces: { n: "marble" } });
+      b.wall(485, 45, 515, 75);
+      b.window(485, 75, 500, 400, { sill: 0, mullions: [185, 290] });
+      b.wall(485, 400, 515, 430);
+      b.wall(485, 430, 500, 565);
+      b.wall(485, 565, 500, 575, { faces: { e: "marble" } });
+      b.window(485, 575, 500, 690, { sill: 1.6, head: 2.25, faces: { e: "marble" } });
+      b.wall(485, 690, 500, 770, { faces: { e: "marble" } });
+      b.wall(960, 45, 985, 255);
+      b.wall(880, 255, 985, 385);
+      b.wall(880, 385, 900, 430);
+      b.door(880, 430, 900, 525);
+      b.wall(880, 525, 900, 545);
+      b.wall(500, 545, 610, 565, { faces: { s: "marble" } });
+      b.door(610, 545, 725, 565, { faces: { s: "marble" } });
+      b.wall(725, 545, 925, 565, { faces: { s: "marble" } });
+      b.wall(900, 565, 925, 770, { faces: { w: "marble" } });
+      b.balustrade(205, 45, 213, 408);
+      b.balustrade(140, 400, 213, 408);
+      b.balustrade(140, 408, 148, 780);
+      b.wall(500, 45, 890, 57, { h1: 1.2, mat: "walnut" });          // headboard panelling
+      b.wall(628, 538, 742, 545, { h0: 1.0, h1: 1.7, mat: "tv" });
+      b.wall(504, 768, 684, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
+      b.bed([595, 65, 775, 295], "n");
+      b.nightstand(535, 65, 593, 115);
+      b.nightstand(777, 65, 835, 115);
+      b.wardrobe(890, 47, 960, 253, "w");
+      b.rug(540, 180, 830, 362);
+      b.curtain(501, 77, 515, 117);
+      b.curtain(501, 358, 515, 398);
+      b.ledge(500, 752, 795, 770);
+      b.vanity(500, 687, 686, 752, [540, 698, 605, 735]);
+      b.toilet(715, 667, 762, 752);
+      b.glass(795, 565, 800, 752, 0, 2.0);
+      b.plant(290, 140, 55);
+      b.plant(228, 700, 55);
+    },
+  },
+};
+
+function elysia(b, beds) {
+  b.floor([[1291, 45], [1716, 45], [1716, 562], [1412, 562], [1412, 782], [1147, 782], [1147, 582], [1291, 582]]);
+  b.floor([[1432, 582], [1715, 582], [1715, 770], [1432, 770]], "stone", 0.004);
+  b.wall(1266, 20, 1745, 45);
+  b.wall(1269, 45, 1291, 582);
+  b.wall(1147, 562, 1167, 582);
+  b.door(1167, 562, 1260, 582);
+  b.wall(1120, 562, 1147, 800);
+  b.wall(1120, 782, 1412, 800);
+  b.wall(1412, 770, 1745, 800, { faces: { n: "marble" } });
+  b.wall(1412, 562, 1432, 582);
+  b.door(1412, 582, 1432, 682, { faces: { e: "marble" } });
+  b.wall(1412, 682, 1432, 782, { faces: { e: "marble" } });
+  b.wall(1432, 562, 1716, 582, { faces: { s: "marble" } });
+  b.wall(1716, 45, 1745, 90);
+  b.window(1716, 90, 1745, 390, { sill: 0, mullions: [240] });
+  b.wall(1716, 390, 1745, 582);
+  b.window(1716, 582, 1745, 750, { sill: 1.0, faces: { w: "marble" } });
+  b.wall(1715, 750, 1745, 800, { faces: { w: "marble" } });
+  b.wall(1677, 752, 1715, 770, { faces: { n: "marble", w: "marble" } });
+  b.balustrade(1747, 92, 1751, 388);
+  if (beds === "queen") b.planter(1754, 85, 1801, 400);
+  b.wall(1291, 45, 1716, 56, { h1: 1.2, mat: "walnut" });          // headboard panelling
+  b.wall(1291, 56, 1299, 562, { mat: "walnut" });                    // panelled side wall
+  b.wall(1299, 78, 1335, 290, { h0: 1.8, h1: 2.4, mat: "walnut" });  // cabinets over the desk
+  b.wall(1299, beds === "queen" ? 320 : 330, 1308, 460, { h0: 1.0, h1: 1.8, mat: "tv" });
+  b.wall(1434, 768, 1518, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
+  b.ledge(1432, 752, 1677, 770);
+  b.vanity(1432, 687, 1520, 752, [1446, 698, 1506, 734]);
+  b.toilet(1540, 672, 1587, 752);
+  b.glass(1607, 582, 1613, 752, 0, 2.0);
+  b.wardrobe(1414, 492, 1712, 562, "n");
+  b.wardrobe(1149, 710, 1410, 782, "n");
+  if (beds === "queen") {
+    b.bed([1466, 82, 1651, 305], "n");
+    b.bench(1470, 312, 1647, 358);
+    b.nightstand(1361, 80, 1462, 125, 0.55);
+    b.nightstand(1655, 80, 1700, 125);
+    b.desk(1299, 78, 1361, 290, "n");
+    b.stool(1384, 186);
+  } else {
+    b.bed([1381, 82, 1491, 305], "n", { pillows: 1 });
+    b.bed([1541, 82, 1651, 305], "n", { pillows: 1 });
+    b.nightstand(1496, 80, 1536, 122);
+    b.nightstand(1656, 80, 1696, 122);
+    b.desk(1299, 80, 1361, 240, "n");
+    b.stool(1384, 170);
+  }
+  if (beds === "queen") b.rug(1411, 185, 1706, 430);   // the twin suite's plan has no rug
+  b.curtain(1699, 92, 1715, 132);
+  b.curtain(1699, 348, 1715, 388);
+}
+
+/* ---------- render ---------- */
+
+const params = new URLSearchParams(location.search);
+const id = params.get("room") || "deluxe-queen";
+const top = params.has("top");
+const room = ROOMS[id];
+// Canvas size in CSS px (render_rooms_3d.py passes it: headless Chrome's viewport is shorter than its window).
+const CW = +params.get("w") || innerWidth, CH = +params.get("h") || innerHeight;
+
+// Transparent canvas over the page colour (rooms_3d.html), so tone mapping leaves the background alone
+// and it matches figure.render's background on the site exactly.
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setClearColor(0x000000, 0);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(CW, CH);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+
+const b = new Builder(materials());
+room.build(b);
+b.buildWalls(top ? { az: 0, cut: false } : room.view);
+scene.add(b.group);
+b.group.traverse((o) => { if (o.material) [].concat(o.material).forEach((m) => { m.envMapIntensity = 0.6; }); });
+
+const box = new THREE.Box3().setFromObject(b.group);
+const centre = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
+
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.ShadowMaterial({ opacity: 0.16 }));
+ground.rotation.x = -Math.PI / 2;
+ground.position.set(centre.x, -SLAB - 0.002, centre.z);
+ground.receiveShadow = true;
+scene.add(ground);
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0xcdbfae, 0.35));
+const sun = new THREE.DirectionalLight(0xfff1e0, 2.6);
+// Sun from just left of the camera: both far walls are lit and the cut walls cast short shadows inwards.
+const az = ((top ? 0 : room.view.az) - 20) * deg, el = 48 * deg;
+sun.position.copy(centre).add(new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)).multiplyScalar(20));
+sun.target.position.copy(centre);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+const sc = sun.shadow.camera, ext = size.length() * 0.75;
+sc.left = sc.bottom = -ext; sc.right = sc.top = ext; sc.near = 1; sc.far = 50;
+sc.updateProjectionMatrix();
+sun.shadow.bias = -0.0004;
+sun.shadow.normalBias = 0.02;
+sun.shadow.radius = 4;
+scene.add(sun, sun.target);
+
+let camera;
+if (top) {
+  // 1 canvas px per plan px, north (up the plan) at the top: for overlaying on the plan.
+  const w = size.x / M, h = size.z / M;
+  renderer.setPixelRatio(1);
+  renderer.setSize(Math.round(w), Math.round(h));
+  camera = new THREE.OrthographicCamera(-size.x / 2, size.x / 2, size.z / 2, -size.z / 2, 0.1, 100);
+  camera.position.set(centre.x, 50, centre.z);
+  camera.up.set(0, 0, -1);
+  camera.lookAt(centre.x, 0, centre.z);
+  document.title = `top ${Math.round(box.min.x / M)} ${Math.round(box.min.z / M)} ${Math.round(w)} ${Math.round(h)}`;
+} else {
+  camera = new THREE.PerspectiveCamera(24, CW / CH, 0.1, 200);
+  frame(camera, b.group, box, room.view.az * deg, room.view.el * deg);
+}
+
+// Place the camera on the view direction and fit the model (every vertex, not the looser bounding box) to the frame.
+function frame(cam, group, bbox, az, el, fill = 0.9) {
+  const dir = new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el));
+  const target = bbox.getCenter(new THREE.Vector3());
+  const corners = [];
+  group.updateMatrixWorld(true);
+  group.traverse((o) => {
+    if (!o.isMesh) return;
+    const pos = o.geometry.attributes.position;
+    for (let i = 0; i < pos.count; i++) corners.push(new THREE.Vector3().fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld));
+  });
+  let dist = bbox.getSize(new THREE.Vector3()).length() * 2;
+  for (let i = 0; i < 12; i++) {
+    cam.position.copy(target).addScaledVector(dir, dist);
+    cam.lookAt(target);
+    cam.updateMatrixWorld();
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (const c of corners) {
+      const p = c.clone().project(cam);
+      x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); y0 = Math.min(y0, p.y); y1 = Math.max(y1, p.y);
+    }
+    const halfH = Math.tan(cam.fov * deg / 2) * dist, halfW = halfH * cam.aspect;
+    target.addScaledVector(new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld, 0), (x0 + x1) / 2 * halfW);
+    target.addScaledVector(new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld, 1), (y0 + y1) / 2 * halfH);
+    dist *= Math.max((x1 - x0) / 2, (y1 - y0) / 2) / fill;
+  }
+}
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+if (!top) {
+  const w = renderer.domElement.width, h = renderer.domElement.height;
+  const ao = new GTAOPass(scene, camera, w, h);
+  ao.updateGtaoMaterial({ radius: 0.8, distanceExponent: 1, thickness: 3, scale: 1.6, samples: 24 });
+  ao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 16 });
+  ao.blendIntensity = 1;
+  composer.addPass(ao);
+}
+composer.addPass(new OutputPass());
+composer.render();
+if (!top) document.title = "done";

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Room 3D renders</title>
+  <!-- Renders one room: rooms_3d.html?room=deluxe-queen (ids in rooms_3d.js).
+       Serve the repo over http (python3 -m http.server) — modules don't load from file://.
+       render_rooms_3d.py runs this headless for every room and saves the WebP files. -->
+  <style>html, body { margin: 0; overflow: hidden; background: #f3ede4; /* = figure.render in style.css */ }</style>
+  <script type="importmap">
+    {"imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }}
+  </script>
+</head>
+<body>
+  <script type="module" src="rooms_3d.js"></script>
+</body>
+</html>
