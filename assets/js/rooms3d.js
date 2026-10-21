@@ -194,6 +194,8 @@ export function materials() {
     tile: std({ map: tex.tile, roughness: 0.5 }),
     paving: std({ map: tex.paving, roughness: 0.8 }),
     carPaint: std({ color: 0x3b4044, roughness: 0.25, metalness: 0.6 }),
+    appliance: std({ color: 0x2c2e31, roughness: 0.35, metalness: 0.45 }),
+    display: new THREE.MeshStandardMaterial({ color: 0x9fd7ff, emissive: 0x6fbfff, emissiveIntensity: 1.2 }),
     interior: std({ color: 0x8f8b86, roughness: 0.8 }),
     ceiling: std({ color: 0xf2efea, roughness: 0.95, emissive: 0xf2efea, emissiveIntensity: 0.35 }),
     pot: std({ color: 0x4f4b47, roughness: 0.8 }),
@@ -469,10 +471,33 @@ export class Builder {
     this.box(...basin, h - 0.1, h + 0.002, "porcelain");
   }
 
-  toilet(x0, y0, x1, y1) {
+  /* A TOTO Neorest-style toilet, its back to the `back` side of the rectangle: a one-piece skirted
+     body with an egg-shaped footprint, a soft domed seat and lid, and a low rounded hump behind. */
+  toilet(x0, y0, x1, y1, back) {
     this.solid(x0, y0, x1, y1);
-    this.box(x0, y0, x1, y1, 0, 0.4, "porcelain", { round: 0.14 });
-    this.box(x0 + 3, y0 + 3, x1 - 3, y1 - 3, 0.36, 0.43, "porcelain", { round: 0.12 });
+    const across = back === "n" || back === "s";
+    const W = px(across ? x1 - x0 : y1 - y0), L = px(across ? y1 - y0 : x1 - x0);
+    const part = this.piece((x0 + x1) / 2, (y0 + y1) / 2, { n: 180, s: 0, e: 270, w: 90 }[back]);
+    // Footprint in shape space: front (the bowl) towards +y, which ends up facing the room.
+    const egg = (w, l, inset, from = -l / 2) => {
+      const hw = w / 2 - inset, r = Math.min(0.09, hw), b = from + inset, sh = new THREE.Shape();
+      sh.moveTo(-hw, 0);
+      sh.lineTo(-hw, b + r);
+      sh.quadraticCurveTo(-hw, b, -hw + r, b);
+      sh.lineTo(hw - r, b);
+      sh.quadraticCurveTo(hw, b, hw, b + r);
+      sh.lineTo(hw, 0);
+      sh.absellipse(0, 0, hw, l / 2 - inset, 0, Math.PI, false);
+      return sh;
+    };
+    const solidOf = (shape, depth, bevel) => {
+      const geo = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 5, curveSegments: 32 });
+      geo.rotateX(-Math.PI / 2);
+      return geo;
+    };
+    part(solidOf(egg(W, L, 0.035), 0.3, 0.035), "porcelain", 0, 0.035, 0);                       // body, skirted to the floor
+    part(solidOf(egg(W * 0.94, L * 0.9, 0.025, -L * 0.25), 0.012, 0.025), "porcelain", 0, 0.395, -L * 0.03);   // seat and lid
+    part(new RoundedBoxGeometry(W * 0.88, 0.2, L * 0.26, 4, 0.08), "porcelain", 0, 0.37, L * 0.37);  // rear hump
   }
 
   // A run of base cabinets with a stone top.
@@ -548,6 +573,22 @@ export class Builder {
     this.box(...s(0, 0, 0.07, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     this.box(...s(0.93, 0, 1, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     for (let i = 0; i < 3; i++) this.box(...s(0.07 + i * 0.86 / 3 + 0.005, 0.24, 0.07 + (i + 1) * 0.86 / 3 - 0.005, 0.98), 0.4, 0.55, "sofa", { round: 0.06 });
+  }
+
+  // A stacked washer-dryer (washer below, dryer above, controls between), doors facing `front`.
+  washerDryer(x0, y0, x1, y1, front) {
+    this.solid(x0, y0, x1, y1);
+    const across = front === "n" || front === "s";
+    const W = px(across ? x1 - x0 : y1 - y0), D = px(across ? y1 - y0 : x1 - x0);
+    const part = this.piece((x0 + x1) / 2, (y0 + y1) / 2, { n: 0, s: 180, e: 90, w: 270 }[front]);
+    part(new RoundedBoxGeometry(W, 1.9, D, 4, 0.03), "appliance", 0, 0.95, 0);
+    const z = -D / 2 - 0.012;                                      // just proud of the front face
+    for (const h of [0.5, 1.4]) {
+      part(new THREE.TorusGeometry(0.2, 0.025, 12, 48), "chrome", 0, h, z);           // door rim
+      part(new THREE.CylinderGeometry(0.19, 0.19, 0.01, 48), "tv", 0, h, z).rotation.x = Math.PI / 2;
+    }
+    part(new THREE.BoxGeometry(W * 0.86, 0.12, 0.02), "tv", 0, 0.95, z);                // control panel
+    part(new THREE.BoxGeometry(0.1, 0.03, 0.006), "display", 0, 0.95, z - 0.012);       // its display
   }
 
   // A car parked along x (the plan draws one in the car porch), for scale.
@@ -742,7 +783,7 @@ export const ROOMS = {
       b.wall(684, 45, 770, 47, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(680, 47, 857, 90);
       b.vanity(682, 92, 772, 152, [696, 106, 756, 142]);
-      b.toilet(792, 95, 836, 175);
+      b.toilet(792, 95, 836, 175, "n");
       b.shower(857, 862, 90, 262, { door: [186, 262], hinge: "s" });
       b.wardrobe(585, 47, 655, 280, "w");
       b.bed([287, 62, 470, 295], "n");
@@ -782,7 +823,7 @@ export const ROOMS = {
       b.wall(619, 768, 703, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(617, 752, 863, 770);
       b.vanity(617, 687, 705, 752, [632, 697, 690, 733]);
-      b.toilet(727, 672, 772, 752);
+      b.toilet(727, 672, 772, 752, "s");
       b.shower(793, 799, 582, 752, { door: [582, 657], hinge: "n" });
       b.wardrobe(527, 563, 597, 770, "w");
       b.bed([175, 540, 290, 758], "s", { pillows: 1, headboard: "upholstery" });
@@ -826,7 +867,7 @@ export const ROOMS = {
       b.wall(776, 74, 860, 76, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(774, 76, 1022, 91);
       b.vanity(774, 91, 862, 156, [789, 111, 847, 147]);
-      b.toilet(884, 93, 930, 173);
+      b.toilet(884, 93, 930, 173, "n");
       b.shower(951, 957, 91, 261, { door: [185, 261], hinge: "s" });
       b.wardrobe(677, 52, 750, 279, "w");
       b.bed([400, 64, 585, 295], "n");
@@ -868,7 +909,7 @@ export const ROOMS = {
       b.wall(712, 768, 795, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(710, 752, 957, 770);
       b.vanity(710, 687, 797, 752, [724, 696, 782, 732]);
-      b.toilet(819, 670, 865, 752);
+      b.toilet(819, 670, 865, 752, "s");
       b.shower(885, 892, 581, 752, { door: [581, 657], hinge: "n" });
       b.wardrobe(619, 563, 691, 770, "w");
       b.bed([280, 540, 394, 770], "s", { pillows: 1, headboard: "upholstery" });
@@ -906,7 +947,7 @@ export const ROOMS = {
 
   // The 5th floor's shared part: the open-air laundry (utility area and terrace) and the foyer.
   "floor-5": {
-    view: { az: -35, el: 56 },
+    view: { az: 150, el: 56 },
     walk: { at: [1060, 480], face: 90 },
     build: floor5,
   },
@@ -957,7 +998,7 @@ export const ROOMS = {
       b.curtain(501, 358, 515, 398);
       b.ledge(500, 752, 795, 770);
       b.vanity(500, 687, 686, 752, [540, 698, 605, 735]);
-      b.toilet(715, 667, 762, 752);
+      b.toilet(715, 667, 762, 752, "s");
       b.shower(795, 800, 640, 752);                                   // walk-in: fixed glass, open at the north end
       b.plant(290, 140, 55);
       b.plant(228, 700, 55);
@@ -1046,7 +1087,7 @@ function floor2(b) {
 
   // powder room
   b.ledge(739, 757, 951, 775);
-  b.toilet(769, 675, 815, 757);
+  b.toilet(769, 675, 815, 757, "s");
   b.vanity(845, 692, 951, 757, [868, 702, 928, 740]);
 
   // living room, as in the photos (not the plan): walnut panelling across the TV wall, a floating
@@ -1076,13 +1117,25 @@ function floor2(b) {
 // The 1st floor's shared part (1st-floor plan). Bedroom 1, its bathroom and the store are private
 // and left out: their doors are drawn closed.
 function floor1(b) {
-  b.floor([[990, 442], [1090, 442], [1090, 388], [1838, 388], [1838, 563], [990, 563]], "limestone");   // foyer
+  b.floor([[832, 434], [1087, 434], [1087, 388], [1838, 388], [1838, 563], [832, 563]], "limestone");   // foyer and corridor
   b.floor([[1246, 592], [1515, 592], [1515, 770], [1246, 770]], "limestone");    // luggage room
   b.floor([[1022, 590], [1195, 590], [1195, 773], [1022, 773]], "deck", 0.004);  // lift car
   b.floor([[1838, 375], [1979, 375], [1979, 800], [1838, 800]], "paving");       // at the front door
   b.floor([[1979, 404], [2660, 404], [2660, 800], [1979, 800]], "paving", -0.12); // car porch
   b.floor([[1840, 44], [2410, 44], [2410, 375], [1840, 375]], "deck");           // front terrace
   b.floor([[2410, 44], [2660, 44], [2660, 404], [2410, 404]], "paving", -0.12);
+
+  // corridor to Deluxe Queen 1 and Deluxe Twin 1 (their doors closed), past the service shaft
+  b.wall(815, 404, 857, 434);
+  b.wall(857, 416, 957, 422, { h1: 2.1, mat: "walnut" });
+  b.door(857, 404, 957, 434);
+  b.wall(957, 404, 992, 434);
+  b.wall(992, 280, 1087, 434);
+  b.wall(815, 434, 832, 454);
+  b.wall(820, 454, 827, 546, { h1: 2.1, mat: "walnut" });
+  b.door(815, 454, 832, 546);
+  b.wall(815, 546, 832, 563);
+  b.wall(810, 563, 990, 581);
 
   // foyer, north side: the store's doors, the stairs up, Bedroom 1 and its bathroom (closed)
   b.wall(1087, 380, 1092, 388);
@@ -1182,14 +1235,7 @@ function floor5(b) {
   b.balustrade(1662, 52, 1670, 782);
   b.wardrobe(1177, 400, 1257, 434, "s", 2.3);
   b.wardrobe(1300, 400, 1450, 434, "s", 2.3);
-  b.solid(1167, 695, 1237, 767);
-  b.box(1167, 695, 1237, 767, 0, 1.75, "pot", { round: 0.03 });      // stacked washer and dryer
-  for (const h of [0.45, 1.25]) {
-    const door = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.02, 32), b.m.tv);
-    door.rotation.x = Math.PI / 2;
-    door.position.set(px(1202), h, px(695) - 0.01);
-    b.add(door);
-  }
+  b.washerDryer(1167, 695, 1237, 767, "n");
   b.solid(1249, 699, 1356, 770);
   b.box(1249, 699, 1356, 770, 0, 0.9, "concrete");                   // utility sink
   b.box(1262, 710, 1343, 760, 0.7, 0.902, "pot");
@@ -1226,7 +1272,7 @@ function elysia(b, beds) {
   b.wall(1434, 768, 1518, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
   b.ledge(1432, 752, 1677, 770);
   b.vanity(1432, 687, 1520, 752, [1446, 698, 1506, 734]);
-  b.toilet(1540, 672, 1587, 752);
+  b.toilet(1540, 672, 1587, 752, "s");
   b.shower(1607, 1613, 582, 752, { door: [582, 657], hinge: "n" });
   b.wardrobe(1414, 492, 1712, 562, "n");
   b.wardrobe(1149, 710, 1410, 782, "n");
