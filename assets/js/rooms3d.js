@@ -347,6 +347,13 @@ export class Builder {
     this.box(...end, 0, h - 0.035, "walnut");
   }
 
+  // A wall-hung desk: a top over a shallow drawer, nothing to the floor.
+  hungDesk(x0, y0, x1, y1, h = 0.75) {
+    this.solid(x0, y0, x1, y1);
+    this.box(x0, y0, x1, y1, h - 0.035, h, "walnut");
+    this.box(x0 + 2, y0, x1 - 2, y1 - 4, h - 0.16, h - 0.035, "walnutDark");
+  }
+
   stool(cx, cy) {
     const r = 24;   // 40 cm seat
     this.box(cx - r, cy - r, cx + r, cy + r, 0.42, 0.49, "seat", { round: 0.03 });
@@ -588,7 +595,8 @@ export const ROOMS = {
       b.wardrobe(527, 563, 597, 770, "w");
       b.bed([175, 540, 290, 758], "s", { pillows: 1, headboard: "upholstery" });
       b.bed([348, 540, 462, 758], "s", { pillows: 1, headboard: "upholstery" });
-      b.nightstand(112, 712, 170, 758);
+      b.nightstand(112, 712, 170, 758);                               // by the window
+      b.nightstand(292, 712, 346, 758);                               // between the beds
       b.desk(118, 445, 215, 482, "w");
       b.stool(168, 500);
       b.rug(138, 492, 500, 680);
@@ -676,7 +684,6 @@ function elysia(b, beds) {
   if (beds === "queen") b.planter(1754, 85, 1801, 400);
   b.wall(1291, 45, 1716, 56, { h1: 1.2, mat: "walnut" });          // headboard panelling
   b.wall(1291, 56, 1299, 562, { mat: "walnut" });                    // panelled side wall
-  b.wall(1299, 78, 1335, 290, { h0: 1.8, h1: 2.4, mat: "walnut" });  // cabinets over the desk
   b.wall(1299, beds === "queen" ? 320 : 330, 1308, 460, { h0: 1.0, h1: 1.8, mat: "tv" });
   b.wall(1434, 768, 1518, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
   b.ledge(1432, 752, 1677, 770);
@@ -691,14 +698,15 @@ function elysia(b, beds) {
     b.nightstand(1361, 80, 1462, 125, 0.55);
     b.nightstand(1655, 80, 1700, 125);
     b.desk(1299, 78, 1361, 290, "n");
+    b.wall(1299, 78, 1335, 290, { h0: 1.8, h1: 2.4, mat: "walnut" });  // cabinets over the desk
     b.stool(1384, 186);
   } else {
     b.bed([1381, 82, 1491, 305], "n", { pillows: 1 });
     b.bed([1541, 82, 1651, 305], "n", { pillows: 1 });
     b.nightstand(1496, 80, 1536, 122);
     b.nightstand(1656, 80, 1696, 122);
-    b.desk(1299, 80, 1361, 240, "n");
-    b.stool(1384, 170);
+    b.hungDesk(1299, 58, 1377, 146);   // the twin suite has only a small desk beside the bed
+    b.stool(1335, 158);
   }
   if (beds === "queen") b.rug(1411, 185, 1706, 430);   // the twin suite's plan has no rug
   b.curtain(1699, 92, 1715, 132);
