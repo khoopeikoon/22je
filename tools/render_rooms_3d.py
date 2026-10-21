@@ -29,6 +29,8 @@ OUT = {
     "elysia-3": "assets/img/elysia/elysia-3-3d.webp",
     "deluxe-queen": "assets/img/deluxe-queen/deluxe-queen-3d.webp",
     "deluxe-twin": "assets/img/deluxe-twin/deluxe-twin-3d.webp",
+    "deluxe-queen-1": "assets/img/deluxe-queen/deluxe-queen-1-3d.webp",
+    "deluxe-twin-1": "assets/img/deluxe-twin/deluxe-twin-1-3d.webp",
 }
 
 

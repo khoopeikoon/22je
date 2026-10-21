@@ -244,6 +244,18 @@ export class Builder {
     return w;
   }
 
+  // A wall that isn't square to the house (the plot's rear boundary), t px thick along the line a-b.
+  wallLine(xa, ya, xb, yb, t, opt = {}) {
+    const w = this.wall(Math.min(xa, xb), Math.min(ya, yb), Math.max(xa, xb), Math.max(ya, yb), { ...opt, walkable: true });
+    w.line = [xa, ya, xb, yb, t];
+    const n = Math.ceil(Math.hypot(xb - xa, yb - ya) / 8);
+    for (let i = 0; i <= n; i++) {
+      const x = xa + (xb - xa) * i / n, y = ya + (yb - ya) * i / n;
+      this.solid(x - t / 2, y - t / 2, x + t / 2, y + t / 2);
+    }
+    return w;
+  }
+
   door(x0, y0, x1, y1, opt = {}) {
     this.wall(x0, y0, x1, y1, { ...opt, h0: DOOR });
     this.thresholds.push([x0, y0, x1, y1]);
@@ -462,10 +474,13 @@ export class Builder {
     if (h0 === 0 && w.mat === "wall") h0 = -SLAB;
     const side = (k) => this.m[w.faces[k] || w.mat];
     const top = cutTop && !w.furniture && w.mat !== "glass" && w.mat !== "black" ? this.m.poche : side("top");
-    const geo = new THREE.BoxGeometry(px(w.x1 - w.x0), h1 - h0, px(w.y1 - w.y0));
-    metricUV(geo, px(w.x1 - w.x0), h1 - h0, px(w.y1 - w.y0));
+    const [xa, ya, xb, yb, t] = w.line || [];
+    const len = w.line ? px(Math.hypot(xb - xa, yb - ya)) : px(w.x1 - w.x0), d = w.line ? px(t) : px(w.y1 - w.y0);
+    const geo = new THREE.BoxGeometry(len, h1 - h0, d);
+    metricUV(geo, len, h1 - h0, d);
     const mesh = new THREE.Mesh(geo, [side("e"), side("w"), top, side("w"), side("s"), side("n")]);
     mesh.position.set(px(w.x0 + w.x1) / 2, (h0 + h1) / 2, px(w.y0 + w.y1) / 2);
+    if (w.line) mesh.rotation.y = -Math.atan2(yb - ya, xb - xa);
     return this.add(mesh, w.mat !== "glass");
   }
 
@@ -523,7 +538,7 @@ export class Builder {
 export const ROOMS = {
   // view: the still image's camera (az: from which side, 0 = south, 90 = east; el: elevation).
   // walk: where walking around starts (plan px) and the way it faces (0 = up the plan, 90 = right).
-  // Deluxe Queen 4 (4th floor; 3 is identical). Bed against the north wall, window at the rear.
+  // Deluxe Queen 4 (4th floor; 3 is identical; 1 is below). Bed against the north wall, window at the rear.
   "deluxe-queen": {
     view: { az: 32, el: 56 },
     walk: { at: [830, 345], face: 285 },
@@ -602,6 +617,95 @@ export const ROOMS = {
       b.rug(138, 492, 500, 680);
       b.curtain(91, 567, 107, 607);
       b.curtain(91, 728, 107, 768);
+    },
+  },
+
+  // Deluxe Queen 1 (1st floor): the same room as 3 and 4, with glass doors onto its own rear terrace.
+  "deluxe-queen-1": {
+    view: { az: 32, el: 56 },
+    walk: { at: [925, 345], face: 285 },
+    build(b) {
+      b.floor([[273, 44], [750, 44], [750, 280], [962, 280], [962, 409], [261, 409], [261, 97], [273, 97]]);
+      b.floor([[774, 74], [1057, 74], [1057, 261], [774, 261]], "stone", 0.004);
+      b.floor([[160, 33], [243, 33], [243, 404], [98, 404]], "deck", -0.03);          // rear terrace
+      b.wall(150, 21, 243, 33, { h1: 1.8 });                           // terrace: plot boundary walls
+      b.wallLine(155, 27, 93, 410, 12, { h1: 1.8 });
+      b.wall(243, 21, 1087, 44);
+      b.wall(243, 44, 273, 97);
+      b.window(243, 97, 261, 404, { sill: 0, mullions: [203, 298] });
+      b.wall(180, 404, 857, 434);
+      b.door(857, 409, 957, 434);
+      b.wall(957, 409, 992, 434);
+      b.wall(962, 280, 992, 409);
+      b.wall(750, 44, 803, 74);
+      b.wall(803, 44, 1057, 74, { faces: { s: "marble" } });
+      b.wall(750, 74, 774, 280, { faces: { e: "marble" }, keep: true });   // behind the wardrobe: never cut
+      b.door(774, 261, 880, 280, { faces: { n: "marble" } });          // pocket door: opening at the west end
+      b.wall(880, 261, 1087, 280, { faces: { n: "marble" } });
+      b.wall(1057, 44, 1087, 261, { faces: { w: "marble" } });
+      b.wall(1022, 74, 1057, 91, { faces: { s: "marble", w: "marble" } });
+      b.wall(273, 44, 677, 58, { h1: 1.2, mat: "walnut" });           // headboard panelling
+      b.wall(291, 397, 675, 409, { mat: "walnut" });                   // TV wall panelling
+      b.wall(407, 386, 579, 392, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.wall(776, 74, 860, 76, { h0: 1.15, h1: 2.1, mat: "mirror" });
+      b.ledge(774, 76, 1022, 91);
+      b.vanity(774, 91, 862, 156, [789, 111, 847, 147]);
+      b.toilet(884, 93, 930, 173);
+      b.shower(951, 957, 91, 261, { door: [185, 261], hinge: "s" });
+      b.wardrobe(677, 52, 750, 279, "w");
+      b.bed([400, 64, 585, 295], "n");
+      b.nightstand(588, 64, 630, 111);
+      b.desk(291, 64, 397, 135, "w");
+      b.stool(344, 152);
+      b.rug(346, 180, 638, 364);
+      b.curtain(262, 99, 278, 139);
+      b.curtain(262, 362, 278, 402);
+      b.plant(190, 105, 45);
+    },
+  },
+
+  // Deluxe Twin 1 (1st floor): the same room as 3 and 4, with glass doors onto its own rear terrace.
+  "deluxe-twin-1": {
+    view: { az: 148, el: 56 },
+    walk: { at: [785, 500], face: 255 },
+    build(b) {
+      b.floor([[197, 434], [815, 434], [815, 563], [691, 563], [691, 782], [197, 782]]);
+      b.floor([[710, 581], [992, 581], [992, 770], [710, 770]], "stone", 0.004);
+      b.floor([[98, 404], [180, 404], [180, 770], [114, 770], [114, 799], [36, 799]], "deck", -0.03);   // rear terrace
+      b.wallLine(93, 400, 30, 806, 12, { h1: 1.8 });                   // terrace: plot boundary walls
+      b.wall(22, 799, 247, 812, { h1: 1.8 });
+      b.wall(180, 404, 857, 434);
+      b.wall(815, 434, 832, 454);
+      b.door(815, 454, 832, 546);
+      b.wall(815, 546, 832, 563);
+      b.window(180, 434, 197, 770, { sill: 0, mullions: [548, 653] });
+      b.wall(114, 770, 209, 799);
+      b.wall(209, 782, 691, 812);
+      b.wall(691, 770, 1022, 812, { faces: { n: "marble" } });
+      b.wall(691, 563, 710, 770, { faces: { e: "marble" }, keep: true });   // behind the wardrobe: never cut
+      b.door(710, 563, 810, 581, { faces: { s: "marble" } });          // pocket door: opening at the west end
+      b.wall(810, 563, 992, 581, { faces: { s: "marble" } });
+      b.wall(992, 563, 1022, 799, { faces: { w: "marble" } });
+      b.wall(957, 752, 992, 770, { faces: { n: "marble", w: "marble" } });
+      b.wall(197, 770, 619, 782, { h1: 1.2, mat: "walnut" });          // headboard panelling
+      b.wall(227, 434, 620, 440, { mat: "walnut" });
+      b.wall(334, 440, 506, 447, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.wall(712, 768, 795, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
+      b.ledge(710, 752, 957, 770);
+      b.vanity(710, 687, 797, 752, [724, 696, 782, 732]);
+      b.toilet(819, 670, 865, 752);
+      b.shower(885, 892, 581, 752, { door: [581, 657], hinge: "n" });
+      b.wardrobe(619, 563, 691, 770, "w");
+      b.bed([280, 540, 394, 770], "s", { pillows: 1, headboard: "upholstery" });
+      b.bed([446, 540, 560, 770], "s", { pillows: 1, headboard: "upholstery" });
+      b.nightstand(227, 722, 278, 770);                               // by the window
+      b.nightstand(396, 722, 444, 770);                               // between the beds
+      b.desk(227, 440, 327, 482, "w");
+      b.stool(277, 500);
+      b.rug(254, 492, 586, 676);
+      b.curtain(198, 436, 214, 476);
+      b.curtain(198, 728, 214, 768);
+      b.plant(105, 725, 50);
     },
   },
 
