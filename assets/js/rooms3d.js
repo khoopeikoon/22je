@@ -195,6 +195,7 @@ export function materials() {
     paving: std({ map: tex.paving, roughness: 0.8 }),
     carPaint: std({ color: 0x3b4044, roughness: 0.25, metalness: 0.6 }),
     appliance: std({ color: 0x2c2e31, roughness: 0.35, metalness: 0.45 }),
+    satinSilver: std({ color: 0xcfcfcb, roughness: 0.45, metalness: 0.25 }),
     display: new THREE.MeshStandardMaterial({ color: 0x9fd7ff, emissive: 0x6fbfff, emissiveIntensity: 1.2 }),
     interior: std({ color: 0x8f8b86, roughness: 0.8 }),
     ceiling: std({ color: 0xf2efea, roughness: 0.95, emissive: 0xf2efea, emissiveIntensity: 0.35 }),
@@ -573,6 +574,28 @@ export class Builder {
     this.box(...s(0, 0, 0.07, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     this.box(...s(0.93, 0, 1, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     for (let i = 0; i < 3; i++) this.box(...s(0.07 + i * 0.86 / 3 + 0.005, 0.24, 0.07 + (i + 1) * 0.86 / 3 - 0.005, 0.98), 0.4, 0.55, "sofa", { round: 0.06 });
+  }
+
+  // A tall two-part hi-fi speaker: tapered black bass cabinet, tapered silver head with the
+  // drivers, turned to face `deg` (as in the dining room photos).
+  hifiSpeaker(cx, cy, deg) {
+    this.solid(cx - 22, cy - 22, cx + 22, cy + 22);
+    const part = this.piece(cx, cy, deg);
+    // a frustum with a rectangular section: w (across) tapering from w0 to w1, depth = w * ratio
+    const frustum = (w0, w1, ratio, h, y, mat) => {
+      const geo = new THREE.CylinderGeometry(w1 * Math.SQRT1_2, w0 * Math.SQRT1_2, h, 4, 1);
+      geo.rotateY(Math.PI / 4);
+      geo.scale(1, 1, ratio);
+      part(geo, mat, 0, y + h / 2, 0);
+      return (t) => -((w0 + (w1 - w0) * t) * ratio) / 2 - 0.006;   // front face at height fraction t
+    };
+    const driver = (r, y, z) => part(new THREE.CylinderGeometry(r, r, 0.012, 32), "black", 0, y, z).rotation.x = Math.PI / 2;
+    const base = frustum(0.34, 0.27, 1.3, 0.78, 0, "tv");
+    const head = frustum(0.26, 0.15, 1.25, 0.52, 0.78, "satinSilver");
+    driver(0.085, 0.24, base(0.31));
+    driver(0.085, 0.52, base(0.67));
+    driver(0.06, 0.94, head(0.31));
+    driver(0.028, 1.12, head(0.65));
   }
 
   // A stacked washer-dryer (washer below, dryer above, controls between), doors facing `front`.
@@ -1078,8 +1101,11 @@ function floor2(b) {
   b.box(762, 81, 840, 134, 0.86, 0.902, "steel");
   b.wardrobe(742, 330, 933, 420, "n", 2.3);
 
-  // dining: round table for eight, the chairs pushed in, each facing the table
+  // dining: round table for eight, the chairs pushed in, each facing the table; a tall speaker at
+  // each end of the south wall, turned towards the table
   b.roundTable(450, 606, 95);
+  b.hifiSpeaker(682, 750, 302);
+  b.hifiSpeaker(196, 752, 60);
   for (let i = 0; i < 8; i++) {
     const a = i * Math.PI / 4;
     b.chair(450 + Math.cos(a) * 102, 606 + Math.sin(a) * 102, i * 45 - 90);
