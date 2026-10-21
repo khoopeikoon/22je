@@ -777,13 +777,17 @@ export class Builder {
 
 /* ---------- the rooms (coordinates: see the header) ---------- */
 
+const ELYSIA_LABELS = [["ensuite", 1525, 640], ["entry", 1280, 650], ["juliet", 1790, 300]];
+
 export const ROOMS = {
   // view: the still image's camera (az: from which side, 0 = south, 90 = east; el: elevation).
   // walk: where walking around starts (plan px) and the way it faces (0 = up the plan, 90 = right).
+  // labels: names shown on the 3D page, [key, x, y] in plan px; the words are in viewer3d.js.
   // Deluxe Queen 4 (4th floor; 3 is identical; 1 is below). Bed against the north wall, window at the rear.
   "deluxe-queen": {
     view: { az: 32, el: 56 },
     walk: { at: [830, 345], face: 285 },
+    labels: [["ensuite", 820, 200]],
     build(b) {
       b.floor([[150, 45], [655, 45], [655, 280], [877, 280], [877, 405], [128, 405], [128, 160], [150, 160]]);
       b.floor([[680, 45], [963, 45], [963, 262], [680, 262]], "stone", 0.004);
@@ -822,6 +826,7 @@ export const ROOMS = {
   "deluxe-twin": {
     view: { az: 148, el: 56 },
     walk: { at: [680, 500], face: 255 },
+    labels: [["ensuite", 755, 640]],
     build(b) {
       b.floor([[118, 432], [723, 432], [723, 563], [597, 563], [597, 770], [90, 770], [90, 530], [118, 530]]);
       b.floor([[615, 582], [898, 582], [898, 770], [615, 770]], "stone", 0.004);
@@ -864,6 +869,7 @@ export const ROOMS = {
   "deluxe-queen-1": {
     view: { az: 32, el: 56 },
     walk: { at: [925, 345], face: 285 },
+    labels: [["ensuite", 910, 200], ["terrace", 190, 280]],
     build(b) {
       b.floor([[273, 44], [750, 44], [750, 280], [962, 280], [962, 409], [261, 409], [261, 97], [273, 97]]);
       b.floor([[774, 74], [1057, 74], [1057, 261], [774, 261]], "stone", 0.004);
@@ -907,6 +913,7 @@ export const ROOMS = {
   "deluxe-twin-1": {
     view: { az: 148, el: 56 },
     walk: { at: [785, 500], face: 255 },
+    labels: [["ensuite", 850, 640], ["terrace", 120, 560]],
     build(b) {
       b.floor([[197, 434], [815, 434], [815, 563], [691, 563], [691, 782], [197, 782]]);
       b.floor([[710, 581], [992, 581], [992, 770], [710, 770]], "stone", 0.004);
@@ -957,6 +964,8 @@ export const ROOMS = {
       living: { az: -32, el: 56, fit: [1300, 20, 2400, 820], cutAt: [1570, 420] },
     },
     walk: { at: [1230, 480], face: 270 },
+    labels: [["kitchen", 470, 190], ["wetKitchen", 860, 250], ["dining", 450, 470], ["powder", 845, 640],
+      ["lift", 1076, 690], ["stairs", 1185, 300], ["living", 1560, 560], ["openBalcony", 2040, 420]],
     build: floor2,
   },
 
@@ -965,6 +974,8 @@ export const ROOMS = {
   "floor-1": {
     view: { az: 32, el: 58 },
     walk: { at: [1760, 470], face: 270 },
+    labels: [["foyer", 1450, 475], ["luggage", 1380, 640], ["lift", 1108, 680], ["stairs", 1306, 300],
+      ["carporch", 2300, 470], ["frontTerrace", 2120, 210], ["garden", 2545, 150]],
     build: floor1,
   },
 
@@ -972,18 +983,21 @@ export const ROOMS = {
   "floor-5": {
     view: { az: 150, el: 56 },
     walk: { at: [1060, 480], face: 90 },
+    labels: [["laundry", 1320, 590], ["laundryTerrace", 1570, 420], ["lift", 1023, 690], ["stairs", 1130, 300],
+      ["hall", 1025, 470], ["acLedge", 1380, 220]],
     build: floor5,
   },
 
   // Elysia Suite 4 (4th floor, queen). Full-height glass door to a Juliet balcony at the front.
-  "elysia-4": { view: { az: -32, el: 56 }, walk: { at: [1350, 520], face: 25 }, build: (b) => elysia(b, "queen") },
+  "elysia-4": { view: { az: -32, el: 56 }, walk: { at: [1350, 520], face: 25 }, labels: ELYSIA_LABELS, build: (b) => elysia(b, "queen") },
   // Elysia Suite 3 (3rd floor, twin): the same plan.
-  "elysia-3": { view: { az: -32, el: 56 }, walk: { at: [1350, 520], face: 25 }, build: (b) => elysia(b, "twin") },
+  "elysia-3": { view: { az: -32, el: 56 }, walk: { at: [1350, 520], face: 25 }, labels: ELYSIA_LABELS, build: (b) => elysia(b, "twin") },
 
   // Aurelia Suite (5th floor). Glass sliding doors onto the private balcony at the rear.
   aurelia: {
     view: { az: 30, el: 56 },
     walk: { at: [840, 470], face: 290 },
+    labels: [["ensuite", 700, 640], ["balcony", 330, 450]],
     build(b) {
       b.floor([[500, 45], [963, 45], [963, 255], [880, 255], [880, 545], [500, 545]]);
       b.floor([[500, 565], [900, 565], [900, 770], [500, 770]], "stone", 0.004);

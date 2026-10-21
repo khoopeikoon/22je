@@ -28,6 +28,7 @@
     .v-room {
       flex: 0 1 auto; margin-right: auto; min-width: 0; max-width: 100%; font-family: var(--serif); font-size: 1.35rem; color: var(--espresso);
       background: transparent; border: 0; padding: 2px 4px; cursor: pointer; text-overflow: ellipsis;
+      font-variant-numeric: lining-nums;   /* "1st floor", not the serif's old-style "I" */
     }
     .v-modes { display: flex; border: 1px solid var(--espresso); }
     .v-modes button {
@@ -41,6 +42,13 @@
       background: linear-gradient(rgba(243, 237, 228, 0), rgba(243, 237, 228, 0.92) 55%);
     }
     .v-foot small { display: block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .v-labels { position: fixed; inset: 0; z-index: 1; pointer-events: none; transition: opacity 0.3s; }
+    .v-labels.off { opacity: 0; }
+    .v-label {
+      position: absolute; left: 0; top: 0; white-space: nowrap; padding: 3px 8px 2px;
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--umber);
+      background: rgba(248, 243, 235, 0.86); box-shadow: 0 1px 3px rgba(42, 33, 27, 0.12);
+    }
     .v-loading {
       position: fixed; inset: 0; z-index: 3; display: grid; place-items: center;
       background: #f3ede4; font-family: var(--serif); font-size: 1.4rem; color: var(--umber);
@@ -68,6 +76,7 @@
     </div>
   </div>
   <canvas id="c"></canvas>
+  <div class="v-labels" id="labels" aria-hidden="true"></div>
   <div class="v-foot"><span id="hint"></span><small id="note"></small></div>
   <div class="v-loading" id="loading">Loading the room…</div>
   <script type="module" src="../assets/js/viewer3d.js?v=2026102104"></script>

@@ -17,6 +17,12 @@ const T = {
     hintOrbit: "Drag to turn · scroll or pinch to zoom · right-drag or two fingers to move",
     hintWalk: "Drag to look around · tap the floor to walk there · arrow keys or WASD to move",
     note: "Illustrative 3D view based on the floor plan",
+    labels: { ensuite: "Ensuite", balcony: "Private balcony", juliet: "Juliet balcony", entry: "Entry",
+      terrace: "Rear terrace", foyer: "Entrance foyer", luggage: "Luggage room", lift: "Lift",
+      stairs: "Stairs", carporch: "Car porch", frontTerrace: "Front terrace", garden: "Front garden",
+      kitchen: "Kitchen", wetKitchen: "Wet kitchen", dining: "Dining", powder: "Powder room",
+      living: "Living room", openBalcony: "Open balcony", laundry: "Laundry", laundryTerrace: "Terrace",
+      hall: "Foyer", acLedge: "AC ledge" },
     rooms: { aurelia: "Aurelia Suite", "elysia-4": "Elysia Suite 4 · queen", "elysia-3": "Elysia Suite 3 · twin",
       "deluxe-queen": "Deluxe Queen 3 & 4", "deluxe-twin": "Deluxe Twin 3 & 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terrace", "deluxe-twin-1": "Deluxe Twin 1 · terrace",
@@ -25,6 +31,10 @@ const T = {
     hintOrbit: "拖动旋转 · 滚轮或双指缩放 · 右键拖动或双指平移",
     hintWalk: "拖动环顾四周 · 点按地面走过去 · 方向键或 WASD 移动",
     note: "3D 示意图，依据平面图绘制",
+    labels: { ensuite: "独立卫浴", balcony: "私人阳台", juliet: "法式阳台", entry: "玄关", terrace: "后露台", foyer: "入口门厅",
+      luggage: "行李存放室", lift: "电梯", stairs: "楼梯", carporch: "车廊", frontTerrace: "前庭露台", garden: "前花园",
+      kitchen: "厨房", wetKitchen: "湿厨房", dining: "餐厅", powder: "化妆间", living: "客厅", openBalcony: "开放式阳台",
+      laundry: "洗衣区", laundryTerrace: "露台", hall: "门厅", acLedge: "空调机位" },
     rooms: { aurelia: "Aurelia 金曦套房", "elysia-4": "Elysia 怡境套房 4 · 大床", "elysia-3": "Elysia 怡境套房 3 · 双床",
       "deluxe-queen": "豪华大床房 3 和 4", "deluxe-twin": "豪华双床房 3 和 4",
       "deluxe-queen-1": "豪华大床房 1 · 后露台", "deluxe-twin-1": "豪华双床房 1 · 后露台",
@@ -33,6 +43,11 @@ const T = {
     hintOrbit: "ドラッグで回転 · スクロールまたはピンチで拡大縮小 · 右ドラッグまたは2本指で移動",
     hintWalk: "ドラッグで見回す · 床をタップしてその場所へ · 矢印キーまたは WASD で移動",
     note: "間取り図をもとにした3Dイメージです",
+    labels: { ensuite: "専用バスルーム", balcony: "専用バルコニー", juliet: "ジュリエットバルコニー", entry: "玄関", terrace: "リアテラス",
+      foyer: "エントランスホール", luggage: "荷物置き場", lift: "エレベーター", stairs: "階段", carporch: "カーポーチ",
+      frontTerrace: "フロントテラス", garden: "フロントガーデン", kitchen: "キッチン", wetKitchen: "ウェットキッチン", dining: "ダイニング",
+      powder: "パウダールーム", living: "リビング", openBalcony: "オープンバルコニー", laundry: "ランドリー", laundryTerrace: "テラス",
+      hall: "ホール", acLedge: "室外機置き場" },
     rooms: { aurelia: "Aurelia スイート", "elysia-4": "Elysia スイート 4 · クイーン", "elysia-3": "Elysia スイート 3 · ツイン",
       "deluxe-queen": "デラックスクイーン 3・4", "deluxe-twin": "デラックスツイン 3・4",
       "deluxe-queen-1": "デラックスクイーン 1 · リアテラス", "deluxe-twin-1": "デラックスツイン 1 · リアテラス",
@@ -41,6 +56,12 @@ const T = {
     hintOrbit: "Arrastre para girar · rueda o pellizco para acercar · clic derecho o dos dedos para desplazar",
     hintWalk: "Arrastre para mirar alrededor · toque el suelo para ir allí · flechas o WASD para moverse",
     note: "Vista 3D orientativa basada en el plano",
+    labels: { ensuite: "Baño privado", balcony: "Balcón privado", juliet: "Balcón francés", entry: "Recibidor",
+      terrace: "Terraza trasera", foyer: "Vestíbulo de entrada", luggage: "Consigna de equipaje",
+      lift: "Ascensor", stairs: "Escalera", carporch: "Porche", frontTerrace: "Terraza delantera",
+      garden: "Jardín delantero", kitchen: "Cocina", wetKitchen: "Cocina de servicio", dining: "Comedor",
+      powder: "Aseo", living: "Salón", openBalcony: "Balcón abierto", laundry: "Lavandería",
+      laundryTerrace: "Terraza", hall: "Vestíbulo", acLedge: "Aire acondicionado" },
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · dos camas",
       "deluxe-queen": "Deluxe Queen 3 y 4", "deluxe-twin": "Deluxe Twin 3 y 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terraza", "deluxe-twin-1": "Deluxe Twin 1 · terraza",
@@ -49,6 +70,12 @@ const T = {
     hintOrbit: "Faites glisser pour tourner · molette ou pincement pour zoomer · clic droit ou deux doigts pour déplacer",
     hintWalk: "Faites glisser pour regarder autour · touchez le sol pour y aller · flèches ou WASD pour avancer",
     note: "Vue 3D indicative d'après le plan",
+    labels: { ensuite: "Salle de bains", balcony: "Balcon privé", juliet: "Balcon à la française", entry: "Entrée",
+      terrace: "Terrasse arrière", foyer: "Hall d'entrée", luggage: "Rangement des bagages",
+      lift: "Ascenseur", stairs: "Escalier", carporch: "Abri à voiture", frontTerrace: "Terrasse avant",
+      garden: "Jardin avant", kitchen: "Cuisine", wetKitchen: "Arrière-cuisine", dining: "Salle à manger",
+      powder: "Toilettes", living: "Salon", openBalcony: "Balcon ouvert", laundry: "Buanderie",
+      laundryTerrace: "Terrasse", hall: "Palier", acLedge: "Climatisation" },
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · lits jumeaux",
       "deluxe-queen": "Deluxe Queen 3 et 4", "deluxe-twin": "Deluxe Twin 3 et 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terrasse", "deluxe-twin-1": "Deluxe Twin 1 · terrasse",
@@ -155,6 +182,7 @@ function draw(now) {
   const moving = mode === "orbit" ? controls.update() : walkStep(now);
   if (mode === "orbit") updateCut();
   renderer.render(scene, camera);
+  placeLabels();
   clearTimeout(idle);
   if (moving) request();
   else idle = setTimeout(() => composer.render(), 250);
@@ -163,6 +191,32 @@ function draw(now) {
 function updateCut() {
   const off = camera.position.clone().sub(controls.target);
   if (b.setCut(Math.atan2(off.x, off.z) / deg)) renderer.shadowMap.needsUpdate = true;
+}
+
+/* ---------- labels: the names of the spaces, over the dollhouse (not when walking around) ---------- */
+
+const labelLayer = $("#labels");
+const labels = (room.labels || []).map(([key, x, y]) => {
+  const el = document.createElement("div");
+  el.className = "v-label";
+  el.textContent = t.labels[key];
+  labelLayer.append(el);
+  return { el, at: new THREE.Vector3(x * M, 0.1, y * M) };
+});
+// Labels are listed most important first; one that would overlap a label already placed is hidden
+// until zooming in makes room for it.
+function placeLabels() {
+  labelLayer.classList.toggle("off", mode !== "orbit");
+  if (mode !== "orbit") return;
+  const r = canvas.getBoundingClientRect(), placed = [];
+  for (const l of labels) {
+    const p = l.at.clone().project(camera), x = (p.x + 1) / 2 * r.width, y = (1 - p.y) / 2 * r.height;
+    const w = l.el.offsetWidth / 2 + 4, h = l.el.offsetHeight / 2 + 3;
+    const clear = p.z < 1 && !placed.some((q) => Math.abs(q.x - x) < q.w + w && Math.abs(q.y - y) < q.h + h);
+    l.el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    l.el.style.visibility = clear ? "visible" : "hidden";
+    if (clear) placed.push({ x, y, w, h });
+  }
 }
 
 /* ---------- modes ---------- */
@@ -184,6 +238,7 @@ function setMode(m) {
     camera.updateProjectionMatrix();
     b.setCut(room.view.az);
     controls.target.copy(frame(camera, b.group, room.view.az * deg, room.view.el * deg, 0.85));
+    controls.maxDistance = Math.max(30, camera.position.distanceTo(controls.target) * 1.6);   // a whole floor on a phone is far out
     controls.update();
   } else {
     b.setCut(null);
