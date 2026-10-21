@@ -152,7 +152,6 @@ export function materials() {
     walnut: texture(1024, 1.2, veneer({ seed: 5, dark: 0x3a2619, light: 0x6e4a32 })),
     marble: texture(1024, 1.2, marble({ seed: 11, base: 0x9a948d, vein: 0xd9d4cc })),
     granite: texture(512, 0.6, speckle({ seed: 13, base: 0x2d2c2b, amount: 0.04 })),
-    rug: texture(512, 0.8, cloth({ seed: 17, base: 0xd3c8b8, amp: 9 })),
     limestone: texture(1024, 2.4, tiles({ seed: 23, base: 0xe4ddd1, vein: 0xf1ece4, cols: 2, rows: 4 })),
     darkStone: texture(1024, 1.2, marble({ seed: 29, base: 0x3a3836, vein: 0xbdb8b0 })),
     tile: texture(1024, 2.4, tiles({ seed: 31, base: 0x8d8a85, vein: 0x9b9893, cols: 2, rows: 4 })),
@@ -183,7 +182,6 @@ export function materials() {
     upholstery: std({ color: 0x55504b, roughness: 0.95 }),
     seat: std({ color: 0x8f8a83, roughness: 0.95 }),
     oak: std({ color: 0xc8a57a, roughness: 0.6 }),
-    rug: std({ map: tex.rug, roughness: 1 }),
     curtain: std({ color: 0x9b948b, roughness: 1 }),
     black: std({ color: 0x1c1c1c, roughness: 0.35, metalness: 0.3 }),
     chrome: std({ color: 0xd8d8d8, roughness: 0.15, metalness: 1 }),
@@ -416,8 +414,6 @@ export class Builder {
       this.wall(...g, { h0: 0.02, h1: h - 0.02, mat: "black", furniture: true, follow: body });
     }
   }
-
-  rug(x0, y0, x1, y1) { this.box(x0, y0, x1, y1, 0, 0.012, "rug"); }
 
   // Curtain gathered at the side of a window: a row of vertical folds.
   curtain(x0, y0, x1, y1) {
@@ -719,7 +715,6 @@ export const ROOMS = {
       b.nightstand(472, 62, 527, 110);
       b.desk(180, 62, 282, 130, "w");
       b.stool(236, 150);
-      b.rug(248, 163, 505, 348);
       b.curtain(161, 197, 177, 237);
       b.curtain(161, 364, 177, 404);
     },
@@ -762,7 +757,6 @@ export const ROOMS = {
       b.nightstand(292, 712, 346, 758);                               // between the beds
       b.desk(118, 445, 215, 482, "w");
       b.stool(168, 500);
-      b.rug(138, 492, 500, 680);
       b.curtain(91, 567, 107, 607);
       b.curtain(91, 728, 107, 768);
     },
@@ -805,7 +799,6 @@ export const ROOMS = {
       b.nightstand(588, 64, 630, 111);
       b.desk(291, 64, 397, 135, "w");
       b.stool(344, 152);
-      b.rug(346, 180, 638, 364);
       b.curtain(262, 99, 278, 139);
       b.curtain(262, 362, 278, 402);
       b.plant(190, 105, 45);
@@ -850,7 +843,6 @@ export const ROOMS = {
       b.nightstand(396, 722, 444, 770);                               // between the beds
       b.desk(227, 440, 327, 482, "w");
       b.stool(277, 500);
-      b.rug(254, 492, 586, 676);
       b.curtain(198, 436, 214, 476);
       b.curtain(198, 728, 214, 768);
       b.plant(105, 725, 50);
@@ -927,7 +919,6 @@ export const ROOMS = {
       b.nightstand(535, 65, 593, 115);
       b.nightstand(777, 65, 835, 115);
       b.wardrobe(890, 47, 960, 253, "w");
-      b.rug(540, 180, 830, 362);
       b.curtain(501, 77, 515, 117);
       b.curtain(501, 358, 515, 398);
       b.ledge(500, 752, 795, 770);
@@ -1222,7 +1213,6 @@ function elysia(b, beds) {
     b.hungDesk(1299, 58, 1377, 146);   // the twin suite has only a small desk beside the bed
     b.stool(1335, 158);
   }
-  if (beds === "queen") b.rug(1411, 185, 1706, 430);   // the twin suite's plan has no rug
   b.curtain(1699, 92, 1715, 132);
   b.curtain(1699, 348, 1715, 388);
 }
