@@ -1037,11 +1037,11 @@ function floor2(b) {
   b.box(762, 81, 840, 134, 0.86, 0.902, "steel");
   b.wardrobe(742, 330, 933, 420, "n", 2.3);
 
-  // dining: round table for eight
+  // dining: round table for eight, the chairs pushed in, each facing the table
   b.roundTable(450, 606, 95);
   for (let i = 0; i < 8; i++) {
     const a = i * Math.PI / 4;
-    b.chair(450 + Math.cos(a) * 132, 606 + Math.sin(a) * 132, 270 - i * 45);
+    b.chair(450 + Math.cos(a) * 102, 606 + Math.sin(a) * 102, i * 45 - 90);
   }
 
   // powder room
