@@ -149,6 +149,7 @@ export function materials() {
   const tex = {
     floor: texture(1024, 2.4, planks({ seed: 3, dark: 0x3e2517, light: 0x7a4b2f, rows: 13 })),   // 18 cm boards
     deck: texture(1024, 2.4, planks({ seed: 9, dark: 0x8a7766, light: 0xb7a48f, rows: 12, seam: 0.7 })),
+    deckWarm: texture(1024, 2.4, planks({ seed: 41, dark: 0x5e4535, light: 0x8f6f58, rows: 12, seam: 0.7 })),
     walnut: texture(1024, 1.2, veneer({ seed: 5, dark: 0x3a2619, light: 0x6e4a32 })),
     marble: texture(1024, 1.2, marble({ seed: 11, base: 0x9a948d, vein: 0xd9d4cc })),
     granite: texture(512, 0.6, speckle({ seed: 13, base: 0x2d2c2b, amount: 0.04 })),
@@ -163,6 +164,7 @@ export function materials() {
     poche: std({ color: 0x3b3129, roughness: 1 }),
     floor: std({ map: tex.floor, roughness: 0.5 }),
     deck: std({ map: tex.deck, roughness: 0.85 }),
+    deckWarm: std({ map: tex.deckWarm, roughness: 0.85 }),
     stone: std({ map: tex.granite, roughness: 0.45 }),
     limestone: std({ map: tex.limestone, roughness: 0.35 }),
     darkStone: std({ map: tex.darkStone, roughness: 0.3 }),
@@ -192,6 +194,7 @@ export function materials() {
     tile: std({ map: tex.tile, roughness: 0.5 }),
     paving: std({ map: tex.paving, roughness: 0.8 }),
     carPaint: std({ color: 0x3b4044, roughness: 0.25, metalness: 0.6 }),
+    interior: std({ color: 0x8f8b86, roughness: 0.8 }),
     ceiling: std({ color: 0xf2efea, roughness: 0.95, emissive: 0xf2efea, emissiveIntensity: 0.35 }),
     pot: std({ color: 0x4f4b47, roughness: 0.8 }),
     leaf: std({ color: 0x4a6636, roughness: 0.8, flatShading: true }),
@@ -251,7 +254,7 @@ export class Builder {
     const mesh = new THREE.Mesh(geo, [this.m[mat], this.m.poche]);
     mesh.position.y = lift;
     this.floors.push(poly);
-    if (mat !== "deck") this.roofed.push(poly);
+    if (!mat.startsWith("deck")) this.roofed.push(poly);   // outdoor decks have no ceiling
     return this.add(mesh);
   }
 
@@ -401,18 +404,48 @@ export class Builder {
     this.box(x0 + 4, y0 + 4, x1 - 4, y1 - 4, 0, 0.14, "black");
   }
 
-  // Full height, so it is cut with the walls when it stands on the camera side.
+  // Full height, so it is cut with the walls when it stands on the camera side; cut, it shows as a
+  // wardrobe sliced open (openCarcass) rather than a low solid box, which would read as a bench.
   wardrobe(x0, y0, x1, y1, front, h = this.H - 0.05) {
     const body = this.wall(x0, y0, x1, y1, { h1: h, mat: "walnutDark", furniture: true });
     const alongY = front === "e" || front === "w";
     const [a, b] = alongY ? [y0, y1] : [x0, x1];
     const doors = Math.max(2, Math.round(px(b - a) / 0.5));
+    body.cutAs = () => this.openCarcass(x0, y0, x1, y1, alongY, doors);
     for (let i = 1; i < doors; i++) {
       const p = a + (b - a) * i / doors;
       const g = { n: [p - 0.6, y0 - 0.6, p + 0.6, y0 + 1], s: [p - 0.6, y1 - 1, p + 0.6, y1 + 0.6],
         w: [x0 - 0.6, p - 0.6, x0 + 1, p + 0.6], e: [x1 - 1, p - 0.6, x1 + 0.6, p + 0.6] }[front];
       this.wall(...g, { h0: 0.02, h1: h - 0.02, mat: "black", furniture: true, follow: body });
     }
+  }
+
+  // A wardrobe cut at LOW: panels and doors in section (dark tops, like the cut walls), its grey
+  // interior with a shelf, and a partition between every second pair of doors.
+  openCarcass(x0, y0, x1, y1, alongY, doors) {
+    const group = new THREE.Group(), t = 2.5;   // 2 cm panels
+    const cut = [this.m.walnutDark, this.m.walnutDark, this.m.poche, this.m.walnutDark, this.m.walnutDark, this.m.walnutDark];
+    const panel = (a, b, c, d, h0, h1, mat) => {
+      const w = px(c - a), dd = px(d - b), geo = new THREE.BoxGeometry(w, h1 - h0, dd);
+      metricUV(geo, w, h1 - h0, dd);
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(px(a + c) / 2, (h0 + h1) / 2, px(b + d) / 2);
+      mesh.castShadow = mesh.receiveShadow = true;
+      group.add(mesh);
+    };
+    panel(x0, y0, x1, y0 + t, 0, LOW, cut);
+    panel(x0, y1 - t, x1, y1, 0, LOW, cut);
+    panel(x0, y0, x0 + t, y1, 0, LOW, cut);
+    panel(x1 - t, y0, x1, y1, 0, LOW, cut);
+    panel(x0 + t, y0 + t, x1 - t, y1 - t, 0, 0.1, this.m.interior);
+    panel(x0 + t, y0 + t, x1 - t, y1 - t, 0.44, 0.46, this.m.interior);
+    for (let i = 2; i < doors; i += 2) {
+      const p = (alongY ? y0 + (y1 - y0) * i / doors : x0 + (x1 - x0) * i / doors);
+      if (alongY) panel(x0 + t, p - t / 2, x1 - t, p + t / 2, 0, LOW, cut);
+      else panel(p - t / 2, y0 + t, p + t / 2, y1 - t, 0, LOW, cut);
+    }
+    this.group.add(group);
+    return group;
   }
 
   // Curtain gathered at the side of a window: a row of vertical folds.
@@ -484,18 +517,21 @@ export class Builder {
     part(new THREE.CylinderGeometry(R * 0.45, R * 0.45, 0.03, 48), "black", 0, 0.015, 0);
   }
 
+  // Round, in tiers: a black glass top on a polished drum, over a wider black glass disc.
   coffeeTable(cx, cy, r) {
     this.solid(cx - r, cy - r, cx + r, cy + r);
     const part = this.piece(cx, cy, 0), R = px(r);
-    part(new THREE.CylinderGeometry(R, R, 0.04, 64), "tv", 0, 0.4, 0);
-    part(new THREE.CylinderGeometry(R * 0.82, R * 0.82, 0.36, 64), "brass", 0, 0.19, 0);
+    part(new THREE.CylinderGeometry(R, R, 0.03, 64), "tv", 0, 0.1, 0);
+    part(new THREE.CylinderGeometry(R * 0.78, R * 0.78, 0.26, 64), "chrome", 0, 0.24, 0);
+    part(new THREE.CylinderGeometry(R * 0.8, R * 0.8, 0.03, 64), "tv", 0, 0.385, 0);
   }
 
-  barStool(cx, cy) {
+  // A tall slim floor speaker: wooden slatted body on a polished stem.
+  speaker(cx, cy) {
+    this.solid(cx - 8, cy - 8, cx + 8, cy + 8);
     const part = this.piece(cx, cy, 0);
-    part(new THREE.CylinderGeometry(0.19, 0.19, 0.07, 32), "chairFabric", 0, 0.68, 0);
-    part(new THREE.CylinderGeometry(0.02, 0.02, 0.64, 12), "chrome", 0, 0.32, 0);
-    part(new THREE.CylinderGeometry(0.2, 0.2, 0.02, 32), "chrome", 0, 0.01, 0);
+    part(new THREE.CylinderGeometry(0.015, 0.06, 0.9, 16), "chrome", 0, 0.45, 0);
+    part(new RoundedBoxGeometry(0.13, 1.05, 0.09, 3, 0.03), "oak", 0, 1.43, 0);
   }
 
   ottoman(cx, cy, s = 25) {
@@ -512,19 +548,6 @@ export class Builder {
     this.box(...s(0, 0, 0.07, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     this.box(...s(0.93, 0, 1, 1), 0.4, 0.64, "sofa", { round: 0.05 });
     for (let i = 0; i < 3; i++) this.box(...s(0.07 + i * 0.86 / 3 + 0.005, 0.24, 0.07 + (i + 1) * 0.86 / 3 - 0.005, 0.98), 0.4, 0.55, "sofa", { round: 0.06 });
-  }
-
-  // A round outdoor lounger.
-  daybed(cx, cy, r) {
-    this.solid(cx - r, cy - r, cx + r, cy + r);
-    const part = this.piece(cx, cy, 0), R = px(r);
-    part(new THREE.CylinderGeometry(R, R * 0.92, 0.32, 48), "pot", 0, 0.16, 0);
-    part(new THREE.CylinderGeometry(R * 0.93, R * 0.93, 0.12, 48), "sofa", 0, 0.38, 0);
-  }
-
-  sideTable(cx, cy, r) {
-    this.solid(cx - r, cy - r, cx + r, cy + r);
-    this.piece(cx, cy, 0)(new THREE.CylinderGeometry(px(r), px(r), 0.45, 32), "pot", 0, 0.225, 0);
   }
 
   // A car parked along x (the plan draws one in the car porch), for scale.
@@ -553,17 +576,28 @@ export class Builder {
     }
   }
 
-  // Black vertical slats along a rectangle's long side: a privacy screen.
-  slats(x0, y0, x1, y1, h = 1.2) {
-    this.solid(x0, y0, x1, y1);
-    const alongY = y1 - y0 > x1 - x0, [a, b] = alongY ? [y0, y1] : [x0, x1], n = Math.round(px(b - a) / 0.1);
-    for (let i = 0; i < n; i++) {
-      const p = a + (b - a) * (i + 0.5) / n;
-      if (alongY) this.box(x0, p - 2, x1, p + 2, 0, h, "black");
-      else this.box(p - 2, y0, p + 2, y1, 0, h, "black");
-    }
-    if (alongY) this.box(x0, y0, x1, y1, h, h + 0.04, "black");
-    else this.box(x0, y0, x1, y1, h, h + 0.04, "black");
+  /* Black vertical bars along a rectangle's long side, with a top rail: a slatted privacy screen,
+     or (bar 2, pitch 0.11 m) a railing. Cut with the walls when it stands on the camera side. */
+  slats(x0, y0, x1, y1, h = 1.2, { bar = 4, pitch = 0.1 } = {}) {
+    const w = this.wall(x0, y0, x1, y1, { h1: h, mat: "black", furniture: true });
+    const build = (top) => {
+      const group = new THREE.Group(), alongY = y1 - y0 > x1 - x0, [a, b] = alongY ? [y0, y1] : [x0, x1];
+      const n = Math.round(px(b - a) / pitch), piece = (r, h0, h1) => {
+        const mesh = new THREE.Mesh(new THREE.BoxGeometry(px(r[2] - r[0]), h1 - h0, px(r[3] - r[1])), this.m.black);
+        mesh.position.set(px(r[0] + r[2]) / 2, (h0 + h1) / 2, px(r[1] + r[3]) / 2);
+        mesh.castShadow = mesh.receiveShadow = true;
+        group.add(mesh);
+      };
+      for (let i = 0; i < n; i++) {
+        const p = a + (b - a) * (i + 0.5) / n;
+        piece(alongY ? [x0, p - bar / 2, x1, p + bar / 2] : [p - bar / 2, y0, p + bar / 2, y1], 0, top);
+      }
+      piece([x0, y0, x1, y1], top, top + 0.04);
+      this.group.add(group);
+      return group;
+    };
+    w.fullAs = () => build(h);
+    w.cutAs = () => build(LOW - 0.04);
   }
 
   ledge(x0, y0, x1, y1, h = 1.0) { this.solid(x0, y0, x1, y1); this.box(x0, y0, x1, y1, 0, h, "marble"); }
@@ -608,8 +642,8 @@ export class Builder {
     const xs = this.floors.flat().map((p) => p[0]), ys = this.floors.flat().map((p) => p[1]);
     this.centre = [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
     for (const w of this.walls) {
-      w.full = this.wallMesh(w, w.h0, w.h1, w.h1 >= this.H - 1e-6);
-      w.low = w.h0 >= LOW ? null : w.h1 > LOW ? this.wallMesh(w, w.h0, LOW, true) : w.full;
+      w.full = w.fullAs ? w.fullAs() : this.wallMesh(w, w.h0, w.h1, w.h1 >= this.H - 1e-6);
+      w.low = w.h0 >= LOW ? null : w.h1 > LOW ? (w.cutAs ? w.cutAs() : this.wallMesh(w, w.h0, LOW, true)) : w.full;
     }
     this.setCut(null);
   }
@@ -932,12 +966,13 @@ export const ROOMS = {
 };
 
 // The 2nd floor (2nd-floor plan). The furniture follows the photos where they differ from the
-// plan: a round marble dining table for eight, a straight sofa and two ottomans.
+// plan (owner, 2026-10-21): a round marble dining table for eight, no stools at the island, the
+// living room as photographed, and an empty balcony with its hedge only along the front.
 function floor2(b) {
   b.floor([[227, 48], [1046, 48], [1046, 387], [1323, 387], [1323, 48], [1787, 48], [1787, 786], [163, 786], [163, 409], [227, 409]], "limestone");
   b.floor([[739, 585], [951, 585], [951, 775], [739, 775]], "stone", 0.004);     // powder room
   b.floor([[981, 585], [1171, 585], [1171, 777], [981, 777]], "deck", 0.004);    // lift car
-  b.floor([[1796, 37], [2285, 37], [2285, 805], [1796, 805]], "deck", -0.03);    // open balcony
+  b.floor([[1796, 37], [2289, 37], [2289, 805], [1796, 805]], "deckWarm", -0.03); // open balcony
 
   // outside walls (in lengths, so each is cut on its own); glazing at the rear and onto the balcony
   b.wall(202, 26, 739, 48);
@@ -996,7 +1031,6 @@ function floor2(b) {
   b.solid(346, 257, 595, 364);
   b.box(352, 257, 589, 340, 0, 0.88, "walnut");                      // island
   b.box(346, 257, 595, 364, 0.88, 0.93, "darkStone");
-  for (const x of [400, 470, 541]) b.barStool(x, 376);
 
   // wet kitchen
   b.counter(739, 57, 1016, 140);
@@ -1015,29 +1049,28 @@ function floor2(b) {
   b.toilet(769, 675, 815, 757);
   b.vanity(845, 692, 951, 757, [868, 702, 928, 740]);
 
-  // living room
-  b.wall(1400, 57, 1700, 64, { mat: "walnut" });                     // TV wall
-  b.wall(1451, 64, 1650, 70, { h0: 0.9, h1: 1.75, mat: "tv" });
-  b.solid(1412, 69, 1690, 110);
-  b.box(1412, 69, 1690, 110, 0.12, 0.42, "walnut");                  // console
-  b.sofa([1410, 600, 1710, 712], "n");
-  b.coffeeTable(1506, 503, 53);
-  b.ottoman(1428, 455);
-  b.ottoman(1428, 395);
+  // living room, as in the photos (not the plan): walnut panelling across the TV wall, a floating
+  // console, two tall speakers; a three-seat sofa facing the TV, round coffee table, two ottomans
+  b.wall(1353, 57, 1730, 64, { h1: 2.4, mat: "walnut" });           // TV wall
+  b.wall(1420, 64, 1650, 70, { h0: 0.95, h1: 2.05, mat: "tv" });
+  b.solid(1380, 64, 1700, 118);
+  b.box(1380, 64, 1700, 118, 0.15, 0.48, "walnut");                  // console
+  for (const x of [1487, 1593]) b.box(x - 0.5, 117.5, x + 0.5, 118.6, 0.17, 0.46, "black");
+  b.speaker(1398, 82);
+  b.speaker(1672, 82);
+  b.coffeeTable(1500, 242, 53);
+  b.ottoman(1606, 214, 29);
+  b.ottoman(1670, 214, 29);
+  b.sofa([1378, 352, 1683, 470], "n");
   b.curtain(1770, 97, 1784, 147);
   b.curtain(1770, 705, 1784, 755);
 
-  // open balcony: slatted screens at the sides, a planted edge at the front
-  b.slats(1796, 26, 2395, 37);
-  b.slats(1796, 805, 2395, 817);
-  b.planter(2285, 55, 2370, 790);
-  b.planter(1830, 40, 2270, 72);
-  b.planter(1830, 770, 2270, 802);
-  b.box(2378, 37, 2386, 805, 1.05, 1.1, "black");
-  for (let y = 37; y <= 805; y += 118) b.box(2377, y - 2, 2387, y + 2, 0, 1.05, "black");
-  b.daybed(2105, 590, 70);
-  b.sideTable(2147, 498, 25);
-  b.sideTable(2010, 635, 25);
+  // open balcony, as in the photos (not the plan): empty, tall slatted screens at the sides, a black
+  // railing along the front with the hedge planted behind it
+  b.slats(1796, 26, 2395, 37, 1.6);
+  b.slats(1796, 805, 2395, 817, 1.6);
+  b.slats(2283, 37, 2289, 805, 1.1, { bar: 2, pitch: 0.11 });
+  b.planter(2289, 45, 2390, 797);
 }
 
 // The 1st floor's shared part (1st-floor plan). Bedroom 1, its bathroom and the store are private
