@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../assets/img/icon/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <title>3D view | 22 Jalan Elok</title>
+  <!-- Explorable 3D view of a room: 3d/?room=<id>&lang=<en|zh|ja|es|fr>[&mode=walk]. Linked from
+       each room's 3D picture on rooms.html. The code is assets/js/viewer3d.js and rooms3d.js;
+       three.js loads from the jsDelivr CDN, on this page only. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026102102">
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    body { background: #f3ede4; }
+    #c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+    .v-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 2;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      padding: 14px 16px; background: rgba(248, 243, 235, 0.92); border-bottom: 1px solid var(--line);
+    }
+    .v-back { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--espresso); white-space: nowrap; }
+    .v-room {
+      flex: 0 1 auto; margin-right: auto; min-width: 0; max-width: 100%; font-family: var(--serif); font-size: 1.35rem; color: var(--espresso);
+      background: transparent; border: 0; padding: 2px 4px; cursor: pointer; text-overflow: ellipsis;
+    }
+    .v-modes { display: flex; border: 1px solid var(--espresso); }
+    .v-modes button {
+      font: inherit; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 8px 12px; border: 0; background: transparent; color: var(--espresso); cursor: pointer;
+    }
+    .v-modes button[aria-pressed="true"] { background: var(--espresso); color: var(--ivory); }
+    .v-foot {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 2; pointer-events: none;
+      padding: 28px 16px 14px; text-align: center; font-size: 0.78rem; line-height: 1.5; color: var(--umber);
+      background: linear-gradient(rgba(243, 237, 228, 0), rgba(243, 237, 228, 0.92) 55%);
+    }
+    .v-foot small { display: block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .v-loading {
+      position: fixed; inset: 0; z-index: 3; display: grid; place-items: center;
+      background: #f3ede4; font-family: var(--serif); font-size: 1.4rem; color: var(--umber);
+    }
+    .v-loading[hidden] { display: none; }
+    @media (max-width: 560px) {
+      .v-room { order: 3; flex-basis: 100%; font-size: 1.2rem; padding: 0; }
+      .v-modes { margin-left: auto; }
+    }
+  </style>
+  <script type="importmap">
+    {"imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }}
+  </script>
+</head>
+<body>
+  <div class="v-bar">
+    <a class="v-back" id="back" href="../rooms.html">← Rooms</a>
+    <select class="v-room" id="room" aria-label="Room"></select>
+    <div class="v-modes" role="group">
+      <button type="button" data-mode="orbit" aria-pressed="true">Dollhouse</button>
+      <button type="button" data-mode="walk" aria-pressed="false">Walk around</button>
+    </div>
+  </div>
+  <canvas id="c"></canvas>
+  <div class="v-foot"><span id="hint"></span><small id="note"></small></div>
+  <div class="v-loading" id="loading">Loading the room…</div>
+  <script type="module" src="../assets/js/viewer3d.js?v=2026102102"></script>
+</body>
+</html>

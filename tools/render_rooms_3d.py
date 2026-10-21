@@ -51,7 +51,7 @@ def main(rooms):
                 f"--window-size={W},{H + 200}", f"--force-device-scale-factor={SCALE}",
                 "--virtual-time-budget=60000", f"--screenshot={png}",
                 f"http://127.0.0.1:{port}/tools/rooms_3d.html?room={room}&w={W}&h={H}",
-            ], check=True, capture_output=True)
+            ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)   # not pipes: Chrome's crash reporter can hold them open
             out = os.path.join(ROOT, OUT[room])
             img = Image.open(png).convert("RGB").crop((0, 0, W * SCALE, H * SCALE))
             img.resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=86, method=6)

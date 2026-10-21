@@ -593,6 +593,13 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
 .gallery__track figure.render { background: #f3ede4; position: relative; }
 .gallery__track figure.render img { object-fit: contain; padding-bottom: 30px; }
 .gallery__track figure.render:hover img { transform: none; }
+.render__explore {
+  position: absolute; top: 14px; left: 14px;
+  padding: 9px 16px; background: var(--espresso); color: var(--ivory); text-decoration: none;
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; transition: background 0.2s;
+}
+.render__explore::after { content: " →"; }
+.render__explore:hover { background: var(--brass-dark); }
 .gallery__track figure.plan figcaption,
 .gallery__track figure.render figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
