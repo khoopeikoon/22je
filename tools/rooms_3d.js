@@ -1,6 +1,7 @@
 /* Still 3D views of the rooms for rooms.html. The rooms themselves are in assets/js/rooms3d.js.
 
    ?room=<id>   one of the ROOMS keys
+   ?view=<name> one of that room's `views` (a framing on part of it), else its `view`
    ?w=&h=       canvas size in CSS px (render_rooms_3d.py passes it)
    ?top=1       straight-down orthographic view at 1 px per plan px, to check against the plan
 */
@@ -30,7 +31,9 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
 const { room, scene, b, box, centre, size } = roomScene(renderer, id);
-b.setCut(top ? null : room.view.az);
+const view = room.views?.[params.get("view")] || room.view;
+if (view.cutAt) b.centre = view.cutAt;   // cut the walls around the part in view
+b.setCut(top ? null : view.az);
 
 let camera;
 if (top) {
@@ -45,7 +48,7 @@ if (top) {
   document.title = `top ${Math.round(box.min.x / M)} ${Math.round(box.min.z / M)} ${Math.round(w)} ${Math.round(h)}`;
 } else {
   camera = new THREE.PerspectiveCamera(24, CW / CH, 0.1, 200);
-  frame(camera, b.group, room.view.az * deg, room.view.el * deg);
+  frame(camera, b.group, view.az * deg, view.el * deg, 0.9, view.fit);
 }
 
 const composer = new EffectComposer(renderer);

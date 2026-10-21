@@ -13,44 +13,52 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js";
 
 const T = {
-  en: { back: "Rooms", orbit: "Dollhouse", walk: "Walk around", loading: "Loading the room…",
+  en: { back: "Rooms", backShared: "Features", orbit: "Dollhouse", walk: "Walk around", loading: "Loading the room…",
     hintOrbit: "Drag to turn · scroll or pinch to zoom · right-drag or two fingers to move",
     hintWalk: "Drag to look around · tap the floor to walk there · arrow keys or WASD to move",
     note: "Illustrative 3D view based on the floor plan",
     rooms: { aurelia: "Aurelia Suite", "elysia-4": "Elysia Suite 4 · queen", "elysia-3": "Elysia Suite 3 · twin",
       "deluxe-queen": "Deluxe Queen 3 & 4", "deluxe-twin": "Deluxe Twin 3 & 4",
-      "deluxe-queen-1": "Deluxe Queen 1 · terrace", "deluxe-twin-1": "Deluxe Twin 1 · terrace" } },
-  zh: { back: "房间", orbit: "俯视", walk: "漫游", loading: "正在载入房间…",
+      "deluxe-queen-1": "Deluxe Queen 1 · terrace", "deluxe-twin-1": "Deluxe Twin 1 · terrace",
+      "floor-1": "1st floor · entrance", "floor-2": "2nd floor · living, dining, kitchen", "floor-5": "5th floor · laundry" } },
+  zh: { back: "房间", backShared: "设施", orbit: "俯视", walk: "漫游", loading: "正在载入房间…",
     hintOrbit: "拖动旋转 · 滚轮或双指缩放 · 右键拖动或双指平移",
     hintWalk: "拖动环顾四周 · 点按地面走过去 · 方向键或 WASD 移动",
     note: "3D 示意图，依据平面图绘制",
     rooms: { aurelia: "Aurelia 金曦套房", "elysia-4": "Elysia 怡境套房 4 · 大床", "elysia-3": "Elysia 怡境套房 3 · 双床",
       "deluxe-queen": "豪华大床房 3 和 4", "deluxe-twin": "豪华双床房 3 和 4",
-      "deluxe-queen-1": "豪华大床房 1 · 后露台", "deluxe-twin-1": "豪华双床房 1 · 后露台" } },
-  ja: { back: "お部屋", orbit: "全体を見る", walk: "歩いて見る", loading: "お部屋を読み込み中…",
+      "deluxe-queen-1": "豪华大床房 1 · 后露台", "deluxe-twin-1": "豪华双床房 1 · 后露台",
+      "floor-1": "1 楼 · 入口", "floor-2": "2 楼 · 客厅、餐厅、厨房", "floor-5": "5 楼 · 洗衣露台" } },
+  ja: { back: "お部屋", backShared: "設備", orbit: "全体を見る", walk: "歩いて見る", loading: "お部屋を読み込み中…",
     hintOrbit: "ドラッグで回転 · スクロールまたはピンチで拡大縮小 · 右ドラッグまたは2本指で移動",
     hintWalk: "ドラッグで見回す · 床をタップしてその場所へ · 矢印キーまたは WASD で移動",
     note: "間取り図をもとにした3Dイメージです",
     rooms: { aurelia: "Aurelia スイート", "elysia-4": "Elysia スイート 4 · クイーン", "elysia-3": "Elysia スイート 3 · ツイン",
       "deluxe-queen": "デラックスクイーン 3・4", "deluxe-twin": "デラックスツイン 3・4",
-      "deluxe-queen-1": "デラックスクイーン 1 · リアテラス", "deluxe-twin-1": "デラックスツイン 1 · リアテラス" } },
-  es: { back: "Habitaciones", orbit: "Vista general", walk: "Recorrer", loading: "Cargando la habitación…",
+      "deluxe-queen-1": "デラックスクイーン 1 · リアテラス", "deluxe-twin-1": "デラックスツイン 1 · リアテラス",
+      "floor-1": "1階 · エントランス", "floor-2": "2階 · リビング、ダイニング、キッチン", "floor-5": "5階 · ランドリー" } },
+  es: { back: "Habitaciones", backShared: "Servicios", orbit: "Vista general", walk: "Recorrer", loading: "Cargando la habitación…",
     hintOrbit: "Arrastre para girar · rueda o pellizco para acercar · clic derecho o dos dedos para desplazar",
     hintWalk: "Arrastre para mirar alrededor · toque el suelo para ir allí · flechas o WASD para moverse",
     note: "Vista 3D orientativa basada en el plano",
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · dos camas",
       "deluxe-queen": "Deluxe Queen 3 y 4", "deluxe-twin": "Deluxe Twin 3 y 4",
-      "deluxe-queen-1": "Deluxe Queen 1 · terraza", "deluxe-twin-1": "Deluxe Twin 1 · terraza" } },
-  fr: { back: "Chambres", orbit: "Vue d'ensemble", walk: "Visite", loading: "Chargement de la chambre…",
+      "deluxe-queen-1": "Deluxe Queen 1 · terraza", "deluxe-twin-1": "Deluxe Twin 1 · terraza",
+      "floor-1": "Planta 1 · entrada", "floor-2": "Planta 2 · salón, comedor, cocina", "floor-5": "Planta 5 · lavandería" } },
+  fr: { back: "Chambres", backShared: "Équipements", orbit: "Vue d'ensemble", walk: "Visite", loading: "Chargement de la chambre…",
     hintOrbit: "Faites glisser pour tourner · molette ou pincement pour zoomer · clic droit ou deux doigts pour déplacer",
     hintWalk: "Faites glisser pour regarder autour · touchez le sol pour y aller · flèches ou WASD pour avancer",
     note: "Vue 3D indicative d'après le plan",
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · lits jumeaux",
       "deluxe-queen": "Deluxe Queen 3 et 4", "deluxe-twin": "Deluxe Twin 3 et 4",
-      "deluxe-queen-1": "Deluxe Queen 1 · terrasse", "deluxe-twin-1": "Deluxe Twin 1 · terrasse" } },
+      "deluxe-queen-1": "Deluxe Queen 1 · terrasse", "deluxe-twin-1": "Deluxe Twin 1 · terrasse",
+      "floor-1": "1er étage · entrée", "floor-2": "2e étage · salon, salle à manger, cuisine", "floor-5": "5e étage · buanderie" } },
 };
-const ANCHOR = { aurelia: "aurelia", "elysia-4": "elysia", "elysia-3": "elysia", "deluxe-queen": "deluxe-queen", "deluxe-twin": "deluxe-twin",
-  "deluxe-queen-1": "deluxe-queen", "deluxe-twin-1": "deluxe-twin" };
+// Where "back" goes: the room's section on rooms.html, or the floor plans on features.html.
+const BACK = { aurelia: "rooms.html#aurelia", "elysia-4": "rooms.html#elysia", "elysia-3": "rooms.html#elysia",
+  "deluxe-queen": "rooms.html#deluxe-queen", "deluxe-twin": "rooms.html#deluxe-twin",
+  "deluxe-queen-1": "rooms.html#deluxe-queen", "deluxe-twin-1": "rooms.html#deluxe-twin",
+  "floor-1": "features.html#floor-plans", "floor-2": "features.html#floor-plans", "floor-5": "features.html#floor-plans" };
 const EYE = 1.6, H = 2.7;
 
 const params = new URLSearchParams(location.search);
@@ -62,14 +70,16 @@ document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
 /* ---------- page ---------- */
 
 const $ = (s) => document.querySelector(s);
-$("#back").textContent = "← " + t.back;
-$("#back").href = `../${lang === "en" ? "" : lang + "/"}rooms.html#${ANCHOR[id]}`;
+$("#back").textContent = "← " + (id.startsWith("floor-") ? t.backShared : t.back);
+$("#back").href = `../${lang === "en" ? "" : lang + "/"}${BACK[id]}`;
 $("#loading").textContent = t.loading;
 $("#note").textContent = t.note;
 $('[data-mode="orbit"]').textContent = t.orbit;
 $('[data-mode="walk"]').textContent = t.walk;
 const select = $("#room");
-for (const key of Object.keys(ROOMS)) select.add(new Option(t.rooms[key], key, false, key === id));
+const shared = (k) => k.startsWith("floor-");   // the rooms first, then the shared floors in order
+const order = Object.keys(ROOMS).sort((a, b) => shared(a) - shared(b) || (shared(a) ? a.localeCompare(b) : 0));
+for (const key of order) select.add(new Option(t.rooms[key], key, false, key === id));
 select.addEventListener("change", () => {
   params.set("room", select.value);
   location.search = params.toString();

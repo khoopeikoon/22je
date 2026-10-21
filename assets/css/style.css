@@ -680,3 +680,4 @@ html[lang^="ja"] {
 .floorplans figure { margin: 0; background: #fff; padding: clamp(12px, 2vw, 24px); border: 1px solid var(--line); }
 .floorplans img { display: block; width: 100%; height: auto; cursor: zoom-in; }
 .floorplans figcaption { margin-top: 12px; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.floorplans figure.render { background: #f3ede4; position: relative; }   /* 3D views: the render's background */
