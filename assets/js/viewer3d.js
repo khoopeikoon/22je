@@ -193,7 +193,10 @@ function updateCut() {
   if (b.setCut(Math.atan2(off.x, off.z) / deg)) renderer.shadowMap.needsUpdate = true;
 }
 
-/* ---------- labels: the names of the spaces, over the dollhouse (not when walking around) ---------- */
+/* ---------- labels: the names of the spaces ----------
+   In Dollhouse they sit on the floor of each space. Walking around, they hang at door height like
+   discreet signs, show only while nothing solid (glass aside) stands between you and the space,
+   and fade out with distance. */
 
 const labelLayer = $("#labels");
 const labels = (room.labels || []).map(([key, x, y]) => {
@@ -201,20 +204,32 @@ const labels = (room.labels || []).map(([key, x, y]) => {
   el.className = "v-label";
   el.textContent = t.labels[key];
   labelLayer.append(el);
-  return { el, at: new THREE.Vector3(x * M, 0.1, y * M) };
+  return { el, floor: new THREE.Vector3(x * M, 0.1, y * M), sign: new THREE.Vector3(x * M, 2.1, y * M) };
 });
-// Labels are listed most important first; one that would overlap a label already placed is hidden
-// until zooming in makes room for it.
+const sight = new THREE.Raycaster();
+const occluders = b.walls.filter((w) => w.mat !== "glass" && w.mat !== "black").map((w) => w.full);
+function inSight(at, d) {
+  sight.set(camera.position, at.clone().sub(camera.position).normalize());
+  sight.far = d - 0.15;
+  return sight.intersectObjects(occluders, true).length === 0;
+}
+// Labels are listed most important first; one that would overlap a label already shown waits
+// until zooming in (or walking closer) makes room for it.
 function placeLabels() {
-  labelLayer.classList.toggle("off", mode !== "orbit");
-  if (mode !== "orbit") return;
-  const r = canvas.getBoundingClientRect(), placed = [];
+  const r = canvas.getBoundingClientRect(), placed = [], walk = mode === "walk";
   for (const l of labels) {
-    const p = l.at.clone().project(camera), x = (p.x + 1) / 2 * r.width, y = (1 - p.y) / 2 * r.height;
+    const at = walk ? l.sign : l.floor;
+    const p = at.clone().project(camera), x = (p.x + 1) / 2 * r.width, y = (1 - p.y) / 2 * r.height;
+    let alpha = p.z < 1 ? 1 : 0;
+    if (walk && alpha) {
+      const d = camera.position.distanceTo(at);
+      alpha = Math.max(0, Math.min(1, 1 - (d - 3) / 5));     // full within 3 m, gone by 8 m
+      if (alpha && !inSight(at, d)) alpha = 0;
+    }
     const w = l.el.offsetWidth / 2 + 4, h = l.el.offsetHeight / 2 + 3;
-    const clear = p.z < 1 && !placed.some((q) => Math.abs(q.x - x) < q.w + w && Math.abs(q.y - y) < q.h + h);
+    const clear = alpha > 0 && !placed.some((q) => Math.abs(q.x - x) < q.w + w && Math.abs(q.y - y) < q.h + h);
     l.el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-    l.el.style.visibility = clear ? "visible" : "hidden";
+    l.el.style.opacity = clear ? alpha : 0;
     if (clear) placed.push({ x, y, w, h });
   }
 }
