@@ -28,7 +28,155 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2026102104">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026102201">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://22je.sg/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chambres",
+          "item": "https://22je.sg/fr/rooms.html"
+        }
+      ]
+    },
+    {
+      "@type": "LodgingBusiness",
+      "@id": "https://22je.sg/#lodging",
+      "name": "22 Jalan Elok",
+      "url": "https://22je.sg/",
+      "telephone": "+65 8016 7691",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "22 Jalan Elok",
+        "addressLocality": "Singapore",
+        "postalCode": "229060",
+        "addressCountry": "SG"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "url": "https://22je.sg/fr/rooms.html#aurelia",
+          "price": 7000,
+          "priceCurrency": "SGD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 7000,
+            "priceCurrency": "SGD",
+            "unitCode": "MON",
+            "unitText": "per month"
+          },
+          "itemOffered": {
+            "@type": "Suite",
+            "@id": "https://22je.sg/fr/rooms.html#aurelia",
+            "name": "Suite Aurelia",
+            "description": "Suite au dernier étage avec balcon privé, vue sur la ville et douche effet pluie dans la salle de bains.",
+            "url": "https://22je.sg/fr/rooms.html#aurelia",
+            "image": "https://22je.sg/assets/img/aurelia/aurelia-balcony-2.webp",
+            "bed": "Lit queen",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 220,
+              "unitCode": "FTK"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://22je.sg/fr/rooms.html#elysia",
+          "price": 5000,
+          "priceCurrency": "SGD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 5000,
+            "priceCurrency": "SGD",
+            "unitCode": "MON",
+            "unitText": "per month"
+          },
+          "itemOffered": {
+            "@type": "Suite",
+            "@id": "https://22je.sg/fr/rooms.html#elysia",
+            "name": "Suite Elysia",
+            "description": "Suite avec porte vitrée toute hauteur sur un balcon à la française ; deux suites, l'une avec lit queen, l'autre avec deux lits simples.",
+            "url": "https://22je.sg/fr/rooms.html#elysia",
+            "image": "https://22je.sg/assets/img/elysia/elysia-main.webp",
+            "bed": "Lit queen ou deux lits simples",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 252,
+              "unitCode": "FTK"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://22je.sg/fr/rooms.html#deluxe-queen",
+          "price": 3000,
+          "priceCurrency": "SGD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 3000,
+            "priceCurrency": "SGD",
+            "unitCode": "MON",
+            "unitText": "per month"
+          },
+          "itemOffered": {
+            "@type": "HotelRoom",
+            "@id": "https://22je.sg/fr/rooms.html#deluxe-queen",
+            "name": "Chambre Deluxe Queen",
+            "description": "Chambre avec salle de bains privative, lit queen et bureau ; trois chambres, dont une avec sa propre terrasse arrière.",
+            "url": "https://22je.sg/fr/rooms.html#deluxe-queen",
+            "image": "https://22je.sg/assets/img/deluxe-queen/deluxe-queen-main.webp",
+            "bed": "Lit queen",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 198,
+              "unitCode": "FTK"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://22je.sg/fr/rooms.html#deluxe-twin",
+          "price": 3000,
+          "priceCurrency": "SGD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 3000,
+            "priceCurrency": "SGD",
+            "unitCode": "MON",
+            "unitText": "per month"
+          },
+          "itemOffered": {
+            "@type": "HotelRoom",
+            "@id": "https://22je.sg/fr/rooms.html#deluxe-twin",
+            "name": "Chambre Deluxe Twin",
+            "description": "Chambre avec salle de bains privative, deux lits simples et bureau ; trois chambres, dont une avec sa propre terrasse arrière.",
+            "url": "https://22je.sg/fr/rooms.html#deluxe-twin",
+            "image": "https://22je.sg/assets/img/deluxe-twin/deluxe-twin-main.webp",
+            "bed": "Deux lits simples",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 187,
+              "unitCode": "FTK"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div data-header></div>
@@ -36,9 +184,9 @@
   <main>
     <header class="page-head">
       <div class="wrap reveal">
-        <span class="eyebrow">Chambres et tarifs</span>
-        <h1>Trouvez votre <em>chambre.</em></h1>
-        <p class="lede">Neuf chambres de quatre types dans une maison rénovée à 5 minutes à pied d'Orchard Road : la Suite Aurelia au dernier étage, deux Suites Elysia, trois chambres Deluxe Queen et trois Deluxe Twin. Toutes ont leur salle de bains, sont meublées et prêtes à habiter. Le loyer est mensuel et comprend les charges et le wifi haut débit. Séjour minimum de trois mois. Les étages sont numérotés à la singapourienne : le 1er étage est le rez-de-chaussée.</p>
+        <h1 class="eyebrow">Chambres à louer près d'Orchard Road</h1>
+        <p class="display">Trouvez votre <em>chambre.</em></p>
+        <p class="lede">Neuf chambres de quatre types dans une maison rénovée <a href="area.html">à 5 minutes à pied d'Orchard Road</a> : la Suite Aurelia au dernier étage, deux Suites Elysia, trois chambres Deluxe Queen et trois Deluxe Twin. Toutes ont leur salle de bains (ce qu'on appelle à Singapour une master room), sont meublées et prêtes à habiter. Le loyer est mensuel et comprend les charges et le wifi haut débit. Séjour minimum de trois mois. Les étages sont numérotés à la singapourienne : le 1er étage est le rez-de-chaussée.</p>
       </div>
     </header>
 
@@ -281,6 +429,6 @@
   </main>
 
   <div data-footer></div>
-  <script src="../assets/js/main.js?v=2026102104"></script>
+  <script src="../assets/js/main.js?v=2026102201"></script>
 </body>
 </html>

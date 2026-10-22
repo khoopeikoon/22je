@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2026102104">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026102201">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,7 +116,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/fr/rooms.html#aurelia",
         "name": "Aurelia Suite",
         "description": "Top-floor suite with a private balcony and rain shower.",
         "bed": "Queen bed",
@@ -124,7 +125,8 @@
           "@type": "QuantitativeValue",
           "value": 220,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/fr/rooms.html#aurelia"
       }
     },
     {
@@ -139,7 +141,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/fr/rooms.html#elysia",
         "name": "Elysia Suite",
         "description": "Suite with a Juliet balcony; 2 suites.",
         "bed": "Queen bed or two single beds",
@@ -147,7 +150,8 @@
           "@type": "QuantitativeValue",
           "value": 252,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/fr/rooms.html#elysia"
       }
     },
     {
@@ -162,7 +166,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/fr/rooms.html#deluxe-queen",
         "name": "Deluxe Queen Room",
         "description": "Ensuite room with a queen bed and desk; 3 rooms of this type.",
         "bed": "Queen bed",
@@ -170,7 +175,8 @@
           "@type": "QuantitativeValue",
           "value": 198,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/fr/rooms.html#deluxe-queen"
       }
     },
     {
@@ -185,7 +191,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/fr/rooms.html#deluxe-twin",
         "name": "Deluxe Twin Room",
         "description": "Ensuite room with two single beds and desk; 3 rooms of this type.",
         "bed": "Two single beds",
@@ -193,7 +200,8 @@
           "@type": "QuantitativeValue",
           "value": 187,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/fr/rooms.html#deluxe-twin"
       }
     }
   ],
@@ -226,8 +234,8 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy reveal">
-          <span class="eyebrow">Près d'Orchard Road · Singapour</span>
-          <h1>Bien vivre au <em>cœur</em> de Singapour.</h1>
+          <h1 class="eyebrow">Location de chambres près d'Orchard Road, Singapour</h1>
+          <p class="display">Bien vivre au <em>cœur</em> de Singapour.</p>
           <p class="lede">Si vous cherchez un pied-à-terre pour profiter de tout ce que Singapour a à offrir, ne cherchez plus : 22 Jalan Elok est fait pour vous. Dans un havre de calme, vous serez idéalement placé pour découvrir le meilleur de la ville la plus dynamique et la plus cosmopolite d'Asie du Sud-Est.</p>
           <div class="btn-row">
             <a class="btn" href="rooms.html">Voir les chambres et les tarifs</a>
@@ -279,7 +287,7 @@
           <h2>Un lieu pour créer des <em>souvenirs.</em></h2>
           <p class="lede">Riches en détails et baignées de lumière, ces résidences offrent tout le confort de la vie moderne dans une maison magnifiquement rénovée.</p>
           <p>Mêlant architecture d'origine, matériaux de récupération et design intérieur de pointe, elles ont des histoires à raconter, mais aussi de la place pour que vous écriviez la vôtre. Chaque chambre a sa salle de bains et est accessible sans marche, un ascenseur privatif dessert chaque étage, et le salon s'ouvre sur un balcon partagé par tous les résidents.</p>
-          <a class="link-arrow" href="features.html">Découvrir les équipements →</a>
+          <a class="link-arrow" href="features.html">Équipements et espaces communs →</a>
         </div>
       </div>
     </section>
@@ -302,7 +310,7 @@
         <div class="center reveal">
           <span class="eyebrow">Les chambres</span>
           <h2>Neuf chambres, <em>une</em> belle maison.</h2>
-          <p class="lede">Trois suites, trois chambres Deluxe Queen et trois chambres Deluxe Twin, chacune avec sa salle de bains, un espace de travail et des rangements. Séjours à partir de trois mois.</p>
+          <p class="lede">Neuf chambres meublées à louer : trois suites, trois chambres Deluxe Queen et trois chambres Deluxe Twin, chacune avec sa salle de bains, un espace de travail et des rangements. Séjours à partir de trois mois.</p>
         </div>
         <div class="cards">
           <a class="card reveal" href="rooms.html#aurelia">
@@ -333,6 +341,74 @@
       </div>
     </section>
 
+    <!-- Renting a room here: the plain facts, for readers and for search -->
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="center reveal" style="margin-bottom:40px">
+          <span class="eyebrow">Location de chambres, l'essentiel</span>
+          <h2>Louer une chambre près d'<em>Orchard Road.</em></h2>
+          <p class="lede">Chaque chambre est une chambre meublée avec salle de bains privative, ce que les annonces singapouriennes appellent une master room, louée au mois. Un seul loyer couvre la chambre, les espaces communs et les charges.</p>
+        </div>
+        <div class="feature-grid feature-grid--4 reveal">
+          <div class="feature-col">
+            <span class="eyebrow">Compris</span>
+            <h3>Dans le loyer</h3>
+            <ul class="ticks">
+              <li class="highlight">Charges et wifi haut débit</li>
+              <li>Meublée, prête à habiter</li>
+              <li>Votre salle de bains, avec WC lavant Toto Neorest</li>
+              <li>Climatisation réglable dans la chambre</li>
+              <li>Laverie en libre-service, lessive fournie</li>
+              <li>Cuisine, salon, salle à manger et balcon ouvert</li>
+              <li>Ascenseur à tous les étages</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">Loyer</span>
+            <h3>Tarifs mensuels</h3>
+            <ul class="ticks">
+              <li class="highlight">Deluxe Queen ou Deluxe Twin : S$3,000</li>
+              <li>Suite Elysia : S$5,000</li>
+              <li>Suite Aurelia : S$7,000</li>
+              <li>Remise pour long séjour ou 2+&nbsp;chambres</li>
+              <li>Le loyer est par chambre, pas par personne</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">Conditions</span>
+            <h3>Comment ça marche</h3>
+            <ul class="ticks">
+              <li class="highlight">Séjour minimum de trois mois</li>
+              <li>Le bail type de la CEA</li>
+              <li>Dépôt d'un mois, remboursé sous 7 jours après votre départ</li>
+              <li class="highlight">Sans frais d'agence</li>
+              <li>Réservez depuis l'étranger, avant votre arrivée</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">Emplacement</span>
+            <h3>Se déplacer</h3>
+            <ul class="ticks">
+              <li class="highlight">Orchard Road à 5 minutes à pied</li>
+              <li>MRT Orchard (NS22 · TE14) à 10 minutes à pied</li>
+              <li>Raffles Place (CBD) : 4 arrêts, sans changement</li>
+              <li>Aéroport de Changi : 25 minutes en voiture</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal" style="max-width:44em;margin:48px auto 0">
+          <h3>En comparaison</h3>
+          <p>Comme une master room en condominium, chaque chambre a sa propre salle de bains. Ici, le loyer comprend en plus les charges, le wifi et le mobilier, un ascenseur dessert tous les étages et il n'y a pas de frais d'agence. Comme un appartement avec services, elle est meublée et prête à habiter ; mais elle se loue avec un bail type à partir de trois mois, et la cuisine, le salon et le balcon sont partagés avec les autres résidents.</p>
+          <p>Pour les actifs et les expatriés, les étudiants titulaires d'un Student's Pass (deux peuvent partager une Deluxe Twin pour un seul loyer) et toute personne qui s'installe à Singapour.</p>
+        </div>
+        <p class="link-row reveal" style="margin-top:32px">
+          <a class="link-arrow" href="rooms.html">Chambres à louer et tarifs →</a>
+          <a class="link-arrow" href="area.html">Vivre près d'Orchard Road →</a>
+          <a class="link-arrow" href="faqs.html">Questions sur la location →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- Banner -->
     <section class="banner">
       <img src="../assets/img/home/home-03.webp" alt="" loading="lazy">
@@ -349,6 +425,6 @@
   </main>
 
   <div data-footer></div>
-  <script src="../assets/js/main.js?v=2026102104"></script>
+  <script src="../assets/js/main.js?v=2026102201"></script>
 </body>
 </html>

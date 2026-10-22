@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2026102104">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026102201">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,7 +116,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/zh/rooms.html#aurelia",
         "name": "Aurelia Suite",
         "description": "Top-floor suite with a private balcony and rain shower.",
         "bed": "Queen bed",
@@ -124,7 +125,8 @@
           "@type": "QuantitativeValue",
           "value": 220,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/zh/rooms.html#aurelia"
       }
     },
     {
@@ -139,7 +141,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/zh/rooms.html#elysia",
         "name": "Elysia Suite",
         "description": "Suite with a Juliet balcony; 2 suites.",
         "bed": "Queen bed or two single beds",
@@ -147,7 +150,8 @@
           "@type": "QuantitativeValue",
           "value": 252,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/zh/rooms.html#elysia"
       }
     },
     {
@@ -162,7 +166,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/zh/rooms.html#deluxe-queen",
         "name": "Deluxe Queen Room",
         "description": "Ensuite room with a queen bed and desk; 3 rooms of this type.",
         "bed": "Queen bed",
@@ -170,7 +175,8 @@
           "@type": "QuantitativeValue",
           "value": 198,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/zh/rooms.html#deluxe-queen"
       }
     },
     {
@@ -185,7 +191,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/zh/rooms.html#deluxe-twin",
         "name": "Deluxe Twin Room",
         "description": "Ensuite room with two single beds and desk; 3 rooms of this type.",
         "bed": "Two single beds",
@@ -193,7 +200,8 @@
           "@type": "QuantitativeValue",
           "value": 187,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/zh/rooms.html#deluxe-twin"
       }
     }
   ],
@@ -226,8 +234,8 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy reveal">
-          <span class="eyebrow">乌节路旁 · 新加坡</span>
-          <h1>在新加坡的<em>中心</em>，安然生活。</h1>
+          <h1 class="eyebrow">新加坡乌节路旁房间出租</h1>
+          <p class="display">在新加坡的<em>中心</em>，安然生活。</p>
           <p class="lede">如果您正在寻找一个家，好尽情享受新加坡的一切，22 Jalan Elok 正是理想之选。这里闹中取静，让您从容体验这座东南亚最具活力、最国际化的城市。</p>
           <div class="btn-row">
             <a class="btn" href="rooms.html">查看房间与月租</a>
@@ -279,7 +287,7 @@
           <h2>留下<em>美好回忆</em>的地方。</h2>
           <p class="lede">细节考究、光线充沛，这些居所位于一栋精心翻新的住宅内，提供现代生活的一切便利。</p>
           <p>原有建筑、回收材料与前沿室内设计在此交融，处处有故事，也为您留下书写自己故事的空间。每个房间都带独立卫浴，全屋无台阶，家用电梯通达各层，客厅外还有一个全体住户共享的阳台。</p>
-          <a class="link-arrow" href="features.html">了解设施 →</a>
+          <a class="link-arrow" href="features.html">设施与公共空间 →</a>
         </div>
       </div>
     </section>
@@ -302,7 +310,7 @@
         <div class="center reveal">
           <span class="eyebrow">房间</span>
           <h2>九个房间，<em>一个</em>美丽的家。</h2>
-          <p class="lede">三间套房、三间豪华大床房和三间豪华双床房，每间都有独立浴室、工作区和储物空间。三个月起租。</p>
+          <p class="lede">九个精装房间出租：三间套房、三间豪华大床房和三间豪华双床房，每间都有独立浴室、工作区和储物空间。三个月起租。</p>
         </div>
         <div class="cards">
           <a class="card reveal" href="rooms.html#aurelia">
@@ -333,6 +341,74 @@
       </div>
     </section>
 
+    <!-- Renting a room here: the plain facts, for readers and for search -->
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="center reveal" style="margin-bottom:40px">
+          <span class="eyebrow">房间出租 · 简介</span>
+          <h2>在<em>乌节路</em>旁租房。</h2>
+          <p class="lede">每个房间都是带独立卫浴的精装房间，也就是新加坡房源常说的“主人房”，按月出租。一份租金，涵盖房间、公共空间和水电网费。</p>
+        </div>
+        <div class="feature-grid feature-grid--4 reveal">
+          <div class="feature-col">
+            <span class="eyebrow">包含</span>
+            <h3>租金包含</h3>
+            <ul class="ticks">
+              <li class="highlight">水电及高速 Wi-Fi</li>
+              <li>家具齐全，可即时入住</li>
+              <li>独立浴室，配 Toto Neorest 智能马桶</li>
+              <li>冷气可独立调控</li>
+              <li>自助洗衣，提供洗涤剂</li>
+              <li>厨房、客厅、餐厅及开放式阳台</li>
+              <li>家用电梯直达每层</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">租金</span>
+            <h3>月租</h3>
+            <ul class="ticks">
+              <li class="highlight">豪华大床房或豪华双床房：S$3,000</li>
+              <li>Elysia 怡境套房：S$5,000</li>
+              <li>Aurelia 金曦套房：S$7,000</li>
+              <li>长租或多间可优惠</li>
+              <li>按房间计租，不按人数</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">条款</span>
+            <h3>租住方式</h3>
+            <ul class="ticks">
+              <li class="highlight">三个月起租</li>
+              <li>采用 CEA 标准租约</li>
+              <li>押金为一个月租金，退租后 7 天内退还</li>
+              <li class="highlight">无中介费</li>
+              <li>人在海外也可预订</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">交通</span>
+            <h3>出行</h3>
+            <ul class="ticks">
+              <li class="highlight">步行 5 分钟到乌节路</li>
+              <li>步行 10 分钟到乌节地铁站（NS22、TE14）</li>
+              <li>莱佛士坊（中央商务区）：4 站直达</li>
+              <li>樟宜机场：车程 25 分钟</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal" style="max-width:44em;margin:48px auto 0">
+          <h3>与其他选择相比</h3>
+          <p>和公寓（condo）的主人房一样，每个房间都有独立浴室。这里的租金还包含水电、Wi-Fi 和家具，家用电梯直达每层，而且无中介费。和服务式公寓一样，这里家具齐全、拎包入住；不同的是，这里签的是三个月起的标准租约，厨房、客厅和阳台与其他住户共用。</p>
+          <p>适合上班族和外派人士、持学生准证的留学生（两人可合住一间豪华双床房，只付一份租金），以及移居新加坡的人士。</p>
+        </div>
+        <p class="link-row reveal" style="margin-top:32px">
+          <a class="link-arrow" href="rooms.html">房间出租与月租 →</a>
+          <a class="link-arrow" href="area.html">乌节路周边生活 →</a>
+          <a class="link-arrow" href="faqs.html">租房常见问题 →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- Banner -->
     <section class="banner">
       <img src="../assets/img/home/home-03.webp" alt="" loading="lazy">
@@ -349,6 +425,6 @@
   </main>
 
   <div data-footer></div>
-  <script src="../assets/js/main.js?v=2026102104"></script>
+  <script src="../assets/js/main.js?v=2026102201"></script>
 </body>
 </html>

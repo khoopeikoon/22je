@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2026102104">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2026102201">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,7 +116,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/ja/rooms.html#aurelia",
         "name": "Aurelia Suite",
         "description": "Top-floor suite with a private balcony and rain shower.",
         "bed": "Queen bed",
@@ -124,7 +125,8 @@
           "@type": "QuantitativeValue",
           "value": 220,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/ja/rooms.html#aurelia"
       }
     },
     {
@@ -139,7 +141,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "Suite",
+        "@id": "https://22je.sg/ja/rooms.html#elysia",
         "name": "Elysia Suite",
         "description": "Suite with a Juliet balcony; 2 suites.",
         "bed": "Queen bed or two single beds",
@@ -147,7 +150,8 @@
           "@type": "QuantitativeValue",
           "value": 252,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/ja/rooms.html#elysia"
       }
     },
     {
@@ -162,7 +166,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/ja/rooms.html#deluxe-queen",
         "name": "Deluxe Queen Room",
         "description": "Ensuite room with a queen bed and desk; 3 rooms of this type.",
         "bed": "Queen bed",
@@ -170,7 +175,8 @@
           "@type": "QuantitativeValue",
           "value": 198,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/ja/rooms.html#deluxe-queen"
       }
     },
     {
@@ -185,7 +191,8 @@
         "unitText": "per month"
       },
       "itemOffered": {
-        "@type": "Room",
+        "@type": "HotelRoom",
+        "@id": "https://22je.sg/ja/rooms.html#deluxe-twin",
         "name": "Deluxe Twin Room",
         "description": "Ensuite room with two single beds and desk; 3 rooms of this type.",
         "bed": "Two single beds",
@@ -193,7 +200,8 @@
           "@type": "QuantitativeValue",
           "value": 187,
           "unitCode": "FTK"
-        }
+        },
+        "url": "https://22je.sg/ja/rooms.html#deluxe-twin"
       }
     }
   ],
@@ -226,8 +234,8 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy reveal">
-          <span class="eyebrow">オーチャード・ロード近く · シンガポール</span>
-          <h1>シンガポールの<em>中心</em>で、心地よく暮らす。</h1>
+          <h1 class="eyebrow">シンガポール・オーチャード・ロード近くの賃貸ルーム</h1>
+          <p class="display">シンガポールの<em>中心</em>で、心地よく暮らす。</p>
           <p class="lede">シンガポールのすべてを楽しむための拠点をお探しなら、22 Jalan Elok がおすすめです。静けさに包まれたこの場所から、東南アジアで最もダイナミックで国際色豊かな都市を存分に味わえます。</p>
           <div class="btn-row">
             <a class="btn" href="rooms.html">お部屋と月額料金</a>
@@ -279,7 +287,7 @@
           <h2>思い出を<em>つくる</em>場所。</h2>
           <p class="lede">細部までこだわり、光にあふれた住まい。美しくリノベーションされた邸宅で、現代的な暮らしの快適さをすべて備えています。</p>
           <p>オリジナルの建築、再生素材、最先端のインテリアデザインが融合したこの住まいには、語るべき物語があり、あなた自身の物語を紡ぐ余白もあります。全室バスルーム付き、全室段差なし。ホームエレベーターで全フロアにアクセスでき、リビングルームは入居者全員で使えるバルコニーにつながっています。</p>
-          <a class="link-arrow" href="features.html">設備を見る →</a>
+          <a class="link-arrow" href="features.html">設備と共用スペース →</a>
         </div>
       </div>
     </section>
@@ -302,7 +310,7 @@
         <div class="center reveal">
           <span class="eyebrow">お部屋</span>
           <h2>9つのお部屋、<em>ひとつ</em>の美しい家。</h2>
-          <p class="lede">スイート3室、デラックスクイーンルーム3室、デラックスツインルーム3室。全室に専用バスルーム、ワークスペース、収納を備えています。3か月からご滞在いただけます。</p>
+          <p class="lede">家具付きの賃貸ルーム9室。スイート3室、デラックスクイーンルーム3室、デラックスツインルーム3室。全室に専用バスルーム、ワークスペース、収納を備えています。3か月からご滞在いただけます。</p>
         </div>
         <div class="cards">
           <a class="card reveal" href="rooms.html#aurelia">
@@ -333,6 +341,74 @@
       </div>
     </section>
 
+    <!-- Renting a room here: the plain facts, for readers and for search -->
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="center reveal" style="margin-bottom:40px">
+          <span class="eyebrow">賃貸ルームのご案内</span>
+          <h2>オーチャード・ロード近くで<em>お部屋を借りる</em>。</h2>
+          <p class="lede">全室、家具付き・バスルーム付きのお部屋（シンガポールの物件情報でいう「マスタールーム」）で、月単位でお貸しします。家賃ひとつで、お部屋、共用スペース、光熱費まですべてまかなえます。</p>
+        </div>
+        <div class="feature-grid feature-grid--4 reveal">
+          <div class="feature-col">
+            <span class="eyebrow">含まれるもの</span>
+            <h3>家賃に含まれるもの</h3>
+            <ul class="ticks">
+              <li class="highlight">光熱費と高速 Wi-Fi</li>
+              <li>家具付き、すぐに入居可能</li>
+              <li>専用バスルーム、Toto Neorest 付き</li>
+              <li>個別に調節できるエアコン</li>
+              <li>セルフサービスの洗濯設備、洗剤付き</li>
+              <li>キッチン、リビング、ダイニング、オープンバルコニー</li>
+              <li>全階に停まるホームエレベーター</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">家賃</span>
+            <h3>月額料金</h3>
+            <ul class="ticks">
+              <li class="highlight">デラックスクイーン／デラックスツイン：S$3,000</li>
+              <li>Elysia スイート：S$5,000</li>
+              <li>Aurelia スイート：S$7,000</li>
+              <li>長期・複数室は割引あり</li>
+              <li>家賃は1人ごとではなく1室ごと</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">条件</span>
+            <h3>ご契約について</h3>
+            <ul class="ticks">
+              <li class="highlight">最短3か月</li>
+              <li>CEA の標準賃貸契約書を使用</li>
+              <li>敷金は家賃1か月分、退去後7日以内に返金</li>
+              <li class="highlight">仲介手数料なし</li>
+              <li>渡航前に海外からご予約可能</li>
+            </ul>
+          </div>
+          <div class="feature-col">
+            <span class="eyebrow">立地</span>
+            <h3>交通</h3>
+            <ul class="ticks">
+              <li class="highlight">オーチャード・ロードまで徒歩5分</li>
+              <li>オーチャード駅（NS22・TE14）まで徒歩10分</li>
+              <li>ラッフルズ・プレイス（CBD）まで乗り換えなしで4駅</li>
+              <li>チャンギ空港まで車で25分</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal" style="max-width:44em;margin:48px auto 0">
+          <h3>ほかの住まいとの比較</h3>
+          <p>コンドミニアムのマスタールームと同じく、各部屋に専用バスルームがあります。さらに家賃には光熱費・Wi-Fi・家具が含まれ、全階にホームエレベーターが停まり、仲介手数料もかかりません。サービスアパートメントと同じく家具付きですぐに入居できますが、こちらは3か月からの標準賃貸契約で、キッチン、リビング、バルコニーはほかの入居者と共用です。</p>
+          <p>駐在員や会社員の方、Student's Pass をお持ちの留学生（2人でデラックスツイン1室を1室分の家賃でシェアできます）、シンガポールへ移住される方に。</p>
+        </div>
+        <p class="link-row reveal" style="margin-top:32px">
+          <a class="link-arrow" href="rooms.html">賃貸ルームと月額料金 →</a>
+          <a class="link-arrow" href="area.html">オーチャード・ロード周辺の暮らし →</a>
+          <a class="link-arrow" href="faqs.html">賃貸についてのよくある質問 →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- Banner -->
     <section class="banner">
       <img src="../assets/img/home/home-03.webp" alt="" loading="lazy">
@@ -349,6 +425,6 @@
   </main>
 
   <div data-footer></div>
-  <script src="../assets/js/main.js?v=2026102104"></script>
+  <script src="../assets/js/main.js?v=2026102201"></script>
 </body>
 </html>

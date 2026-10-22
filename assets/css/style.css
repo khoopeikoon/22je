@@ -38,17 +38,20 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 p { margin: 0 0 1.1em; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .display {
   font-family: var(--serif);
   font-weight: 400;
   line-height: 1.1;
   margin: 0 0 0.5em;
   letter-spacing: 0.005em;
 }
-h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+h1, .display { font-size: clamp(2.6rem, 6vw, 4.8rem); }
 h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
 h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
-h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
+h1 em, h2 em, .display em { font-style: italic; color: var(--brass-dark); }
+/* On the home and rooms pages the h1 is the small line above the slogan, saying what the page
+   is (for search); the slogan under it is a <p class="display"> that looks like an h1. */
+h1.eyebrow { line-height: 1.6; }
 
 .eyebrow {
   font-family: var(--sans);
@@ -114,6 +117,7 @@ h1 em, h2 em { font-style: italic; color: var(--brass-dark); }
   padding-bottom: 4px;
 }
 .link-arrow:hover { color: var(--brass-dark); }
+.link-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 36px; }
 
 /* Header */
 .site-header {
@@ -669,10 +673,10 @@ html[lang^="ja"] {
   --sans: "Jost", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif;
 }
 :is(html[lang^="zh"], html[lang^="ja"]) body { font-weight: 400; line-height: 1.85; }
-:is(html[lang^="zh"], html[lang^="ja"]) :is(h1, h2, h3) { line-height: 1.3; letter-spacing: 0.04em; }
-:is(html[lang^="zh"], html[lang^="ja"]) h1 { font-size: clamp(2.1rem, 4.8vw, 3.8rem); }
+:is(html[lang^="zh"], html[lang^="ja"]) :is(h1:not(.eyebrow), h2, h3, .display) { line-height: 1.3; letter-spacing: 0.04em; }
+:is(html[lang^="zh"], html[lang^="ja"]) :is(h1:not(.eyebrow), .display) { font-size: clamp(2.1rem, 4.8vw, 3.8rem); }
 :is(html[lang^="zh"], html[lang^="ja"]) h2 { font-size: clamp(1.7rem, 3.4vw, 2.7rem); }
-:is(html[lang^="zh"], html[lang^="ja"]) :is(h1, h2) em { font-style: normal; }
+:is(html[lang^="zh"], html[lang^="ja"]) :is(h1, h2, .display) em { font-style: normal; }
 :is(html[lang^="zh"], html[lang^="ja"]) :is(.eyebrow, .nav a, .site-footer h4) { letter-spacing: 0.14em; }
 
 /* Whole-floor plans with the shared spaces highlighted (features) */
