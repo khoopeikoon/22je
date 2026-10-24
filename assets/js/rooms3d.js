@@ -227,6 +227,7 @@ export function materials() {
     cabinetGrey: std({ color: 0x56585b, roughness: 0.7 }),                       // laundry cabinets
     steelDark: std({ color: 0x4b4d50, roughness: 0.4, metalness: 0.6 }),         // fridge
     glow: std({ color: 0xfff4e2, emissive: 0xffe6bf, emissiveIntensity: 1 }),    // LED strips
+    paintedSteel: std({ color: 0xd8d5cf, roughness: 0.55 }),                    // shelter door and frame
     sheer: new THREE.MeshStandardMaterial({ color: 0xdedad3, roughness: 1, transparent: true, opacity: 0.75 }),
   };
 }
@@ -1340,8 +1341,8 @@ function floor1(b) {
   b.wardrobe(1790, 582, 1838, 767, "e", 2.3);
   b.wall(1837, 600, 1840, 750, { h0: 1.02, h1: 1.28, mat: "marble", furniture: true });
 
-  // lift (bronze surround, glass doors) and luggage room (the household shelter: concrete walls,
-  // steel door shown open)
+  // lift (bronze surround, glass doors) and luggage room: the household shelter, empty for
+  // suitcases as in the photos (2026-10-24), its pale steel door shown open over a raised sill
   b.wall(990, 562, 1022, 800, { faces: { e: "black" } });
   b.wall(1195, 562, 1246, 800, { faces: { w: "black" } });
   b.wall(1022, 773, 1195, 800, { faces: { n: "black" } });
@@ -1349,11 +1350,12 @@ function floor1(b) {
   b.wall(1246, 562, 1545, 592);
   b.wall(1246, 770, 1545, 800);
   b.wall(1515, 592, 1545, 607);
-  b.door(1515, 607, 1545, 702);
+  b.door(1515, 607, 1545, 702, { head: 2.05 });
   b.wall(1515, 702, 1545, 800);
-  b.wall(1545, 699, 1640, 704, { h1: 2.05, mat: "pot", keep: true });   // shelter door, open
-  b.wardrobe(1250, 700, 1512, 768, "n", 2.3);
-  b.wardrobe(1250, 596, 1300, 698, "e", 2.3);
+  for (const [y0, y1] of [[605, 611], [698, 704]]) b.wall(1512, y0, 1548, y1, { h1: 2.05, mat: "paintedSteel" });
+  b.wall(1512, 605, 1548, 704, { h0: 1.99, h1: 2.05, mat: "paintedSteel" });   // steel door frame
+  b.box(1515, 611, 1545, 698, 0, 0.08, "paintedSteel");                         // raised sill
+  b.wall(1548, 699, 1640, 704, { h1: 2.0, mat: "paintedSteel", keep: true });   // shelter door, open
   b.wardrobe(1547, 727, 1685, 797, "n", 2.3);
   b.wardrobe(1687, 727, 1757, 797, "n", 2.3);
   b.wall(1545, 797, 1790, 820);
