@@ -1284,13 +1284,14 @@ function floor2(b) {
 // The 1st floor's shared part (1st-floor plan). Bedroom 1, its bathroom and the store are private
 // and left out: their doors are drawn closed. Outside follows the photos (owner, 2026-10-24): the
 // car porch three steps below the covered front terrace (timber-look tiles, a bar table and four
-// bar chairs, Bedroom 1's glass sliding doors behind sheer curtains), a lawn with a fiddle-leaf fig.
+// bar chairs, Bedroom 1's glass sliding doors behind sheer curtains), a raised stone landing one step
+// up along the front door and shoe cabinet, a lawn with a fiddle-leaf fig.
 function floor1(b) {
-  const PORCH = -0.3;                                                            // car porch level
+  const PORCH = -0.3, LANDING = -0.15;                                           // car porch, landing
   b.floor([[832, 434], [1087, 434], [1087, 388], [1838, 388], [1838, 563], [832, 563]], "limestone");   // foyer and corridor
   b.floor([[1246, 592], [1515, 592], [1515, 770], [1246, 770]], "limestone");    // luggage room
   b.floor([[1022, 590], [1195, 590], [1195, 773], [1022, 773]], "deck", 0.004);  // lift car
-  b.floor([[1838, 375], [1979, 375], [1979, 800], [1838, 800]], "paving", PORCH);       // at the front door
+  b.floor([[1838, 375], [1979, 375], [1979, 800], [1838, 800]], "limestone", LANDING);  // landing at the front door
   b.floor([[1979, 404], [2440, 404], [2440, 800], [1979, 800]], "paving", PORCH);       // car porch, covered
   b.floor([[2440, 404], [2660, 404], [2660, 800], [2440, 800]], "paving", PORCH, false); // ...and in the open
   b.floor([[1840, 44], [2385, 44], [2385, 375], [1840, 375]], "terraceTile");          // front terrace (covered)
@@ -1298,7 +1299,8 @@ function floor1(b) {
   b.floor([[2440, 245], [2510, 245], [2510, 330], [2440, 330]], "paving", 0, false);  // top of the steps
   b.floor([[2440, 44], [2650, 44], [2650, 245], [2440, 245]], "turf", 0.08, false);   // lawn
   b.floor([[2510, 245], [2610, 245], [2610, 385], [2510, 385]], "turf", 0.08, false);
-  b.box(1840, 369, 1979, 375, PORCH, 0, "graniteLight");                        // terrace edges
+  b.box(1973, 404, 1979, 800, PORCH, LANDING, "limestone");                     // the landing's step
+  b.box(1840, 369, 1979, 375, LANDING, 0, "graniteLight");                      // terrace edges
   b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
   b.box(2440, 239, 2610, 245, -0.16, 0.1, "graniteLight");                      // lawn kerbs
   b.box(2440, 72, 2446, 245, -0.16, 0.1, "graniteLight");
@@ -1338,15 +1340,18 @@ function floor1(b) {
   b.wall(1820, 360, 1838, 370);
   b.curtain(1802, 93, 1816, 357, "sheer");
 
-  // front door (closed) with a step up from the porch, the shoe cabinet beside it (a marble-lined
-  // niche across it)
+  // front door (closed) and the shoe cabinet beside it (a marble-lined niche across it), on the
+  // landing
   b.wall(1820, 388, 1838, 420);
   b.wall(1825, 420, 1833, 535, { h1: 2.3, mat: "walnut" });
   b.door(1820, 420, 1838, 535, { head: 2.3 });
-  b.box(1838, 405, 1885, 550, PORCH, -0.15, "limestone");
+  b.box(1818, 388, 1839, 565, LANDING, 0, "limestone");                          // the step up into the house, across the
+                                                                                 // foyer slab's edge
+  for (const r of [[1878, 598, 1940, 600], [1878, 658, 1940, 660], [1878, 600, 1880, 658], [1938, 600, 1940, 658]])
+    b.box(...r, LANDING, LANDING + 0.003, "brushedSteel");                      // access hatch in the landing
   b.wall(1772, 535, 1838, 565);
   b.wall(1772, 565, 1790, 800);
-  b.box(1790, 582, 1838, 767, PORCH, 0, "walnutDark");
+  b.box(1790, 582, 1838, 767, LANDING, 0, "walnutDark");
   b.wardrobe(1790, 582, 1838, 767, "e", 2.3);
   b.wall(1837, 600, 1840, 750, { h0: 1.02, h1: 1.28, mat: "marble", furniture: true });
 
