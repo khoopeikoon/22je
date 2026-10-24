@@ -22,7 +22,9 @@ const T = {
       stairs: "Stairs", carporch: "Car porch", frontTerrace: "Front terrace", garden: "Front garden",
       kitchen: "Kitchen", wetKitchen: "Wet kitchen", dining: "Dining", powder: "Powder room",
       living: "Living room", openBalcony: "Open balcony", laundry: "Laundry", laundryTerrace: "Terrace",
-      hall: "Foyer", acLedge: "AC ledge" },
+      hall: "Foyer", acLedge: "AC ledge", privateRoom: "Private room",
+      deluxeQueen1: "Deluxe Queen 1", deluxeTwin1: "Deluxe Twin 1",
+      aurelia: "Aurelia Suite" },
     rooms: { aurelia: "Aurelia Suite", "elysia-4": "Elysia Suite 4 · queen", "elysia-3": "Elysia Suite 3 · twin",
       "deluxe-queen": "Deluxe Queen 3 & 4", "deluxe-twin": "Deluxe Twin 3 & 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terrace", "deluxe-twin-1": "Deluxe Twin 1 · terrace",
@@ -34,7 +36,8 @@ const T = {
     labels: { ensuite: "独立卫浴", balcony: "私人阳台", juliet: "法式阳台", entry: "玄关", terrace: "后露台", foyer: "入口门厅",
       luggage: "行李存放室", lift: "电梯", stairs: "楼梯", carporch: "车廊", frontTerrace: "前庭露台", garden: "前花园",
       kitchen: "厨房", wetKitchen: "湿厨房", dining: "餐厅", powder: "化妆间", living: "客厅", openBalcony: "开放式阳台",
-      laundry: "洗衣区", laundryTerrace: "露台", hall: "门厅", acLedge: "空调机位" },
+      laundry: "洗衣区", laundryTerrace: "露台", hall: "门厅", acLedge: "空调机位", privateRoom: "私人房间",
+      deluxeQueen1: "豪华大床房 1", deluxeTwin1: "豪华双床房 1", aurelia: "Aurelia 金曦套房" },
     rooms: { aurelia: "Aurelia 金曦套房", "elysia-4": "Elysia 怡境套房 4 · 大床", "elysia-3": "Elysia 怡境套房 3 · 双床",
       "deluxe-queen": "豪华大床房 3 和 4", "deluxe-twin": "豪华双床房 3 和 4",
       "deluxe-queen-1": "豪华大床房 1 · 后露台", "deluxe-twin-1": "豪华双床房 1 · 后露台",
@@ -47,7 +50,9 @@ const T = {
       foyer: "エントランスホール", luggage: "荷物置き場", lift: "エレベーター", stairs: "階段", carporch: "カーポーチ",
       frontTerrace: "フロントテラス", garden: "フロントガーデン", kitchen: "キッチン", wetKitchen: "ウェットキッチン", dining: "ダイニング",
       powder: "パウダールーム", living: "リビング", openBalcony: "オープンバルコニー", laundry: "ランドリー", laundryTerrace: "テラス",
-      hall: "ホール", acLedge: "室外機置き場" },
+      hall: "ホール", acLedge: "室外機置き場",
+      privateRoom: "プライベートルーム", deluxeQueen1: "デラックスクイーン 1", deluxeTwin1: "デラックスツイン 1",
+      aurelia: "Aurelia スイート" },
     rooms: { aurelia: "Aurelia スイート", "elysia-4": "Elysia スイート 4 · クイーン", "elysia-3": "Elysia スイート 3 · ツイン",
       "deluxe-queen": "デラックスクイーン 3・4", "deluxe-twin": "デラックスツイン 3・4",
       "deluxe-queen-1": "デラックスクイーン 1 · リアテラス", "deluxe-twin-1": "デラックスツイン 1 · リアテラス",
@@ -61,7 +66,9 @@ const T = {
       lift: "Ascensor", stairs: "Escalera", carporch: "Porche", frontTerrace: "Terraza delantera",
       garden: "Jardín delantero", kitchen: "Cocina", wetKitchen: "Cocina de servicio", dining: "Comedor",
       powder: "Aseo", living: "Salón", openBalcony: "Balcón abierto", laundry: "Lavandería",
-      laundryTerrace: "Terraza", hall: "Vestíbulo", acLedge: "Aire acondicionado" },
+      laundryTerrace: "Terraza", hall: "Vestíbulo", acLedge: "Aire acondicionado",
+      privateRoom: "Habitación privada", deluxeQueen1: "Deluxe Queen 1", deluxeTwin1: "Deluxe Twin 1",
+      aurelia: "Suite Aurelia" },
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · dos camas",
       "deluxe-queen": "Deluxe Queen 3 y 4", "deluxe-twin": "Deluxe Twin 3 y 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terraza", "deluxe-twin-1": "Deluxe Twin 1 · terraza",
@@ -75,7 +82,9 @@ const T = {
       lift: "Ascenseur", stairs: "Escalier", carporch: "Abri à voiture", frontTerrace: "Terrasse avant",
       garden: "Jardin avant", kitchen: "Cuisine", wetKitchen: "Arrière-cuisine", dining: "Salle à manger",
       powder: "Toilettes", living: "Salon", openBalcony: "Balcon ouvert", laundry: "Buanderie",
-      laundryTerrace: "Terrasse", hall: "Palier", acLedge: "Climatisation" },
+      laundryTerrace: "Terrasse", hall: "Palier", acLedge: "Climatisation",
+      privateRoom: "Chambre privée", deluxeQueen1: "Deluxe Queen 1", deluxeTwin1: "Deluxe Twin 1",
+      aurelia: "Suite Aurelia" },
     rooms: { aurelia: "Suite Aurelia", "elysia-4": "Suite Elysia 4 · queen", "elysia-3": "Suite Elysia 3 · lits jumeaux",
       "deluxe-queen": "Deluxe Queen 3 et 4", "deluxe-twin": "Deluxe Twin 3 et 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terrasse", "deluxe-twin-1": "Deluxe Twin 1 · terrasse",
@@ -196,15 +205,16 @@ function updateCut() {
 /* ---------- labels: the names of the spaces ----------
    In Dollhouse they sit on the floor of each space. Walking around, they hang at door height like
    discreet signs, show only while nothing solid (glass aside) stands between you and the space,
-   and fade out with distance. */
+   and fade out with distance. A room behind a closed door has its sign by the door ([key, x, y,
+   signX, signY]): from inside the room it couldn't be seen. */
 
 const labelLayer = $("#labels");
-const labels = (room.labels || []).map(([key, x, y]) => {
+const labels = (room.labels || []).map(([key, x, y, sx = x, sy = y]) => {
   const el = document.createElement("div");
   el.className = "v-label";
   el.textContent = t.labels[key];
   labelLayer.append(el);
-  return { el, floor: new THREE.Vector3(x * M, 0.1, y * M), sign: new THREE.Vector3(x * M, 2.1, y * M) };
+  return { el, floor: new THREE.Vector3(x * M, 0.1, y * M), sign: new THREE.Vector3(sx * M, 2.1, sy * M) };
 });
 const sight = new THREE.Raycaster();
 const occluders = b.walls.filter((w) => w.mat !== "glass" && w.mat !== "black").map((w) => w.full);

@@ -168,7 +168,8 @@ export function materials() {
     paving: texture(512, 0.6, speckle({ seed: 37, base: 0xa29f9a, amount: 0.05 })),   // light grey granite
     linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
     woodTile: texture(1024, 2.4, planks({ seed: 53, dark: 0x6a5243, light: 0x9a7f6b, rows: 12, seam: 0.7 })),   // 20 cm wood-look tiles
-    terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x4a3328, light: 0x7d5a46, rows: 12, seam: 0.7 })),
+    terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x5a4136, light: 0x8d6d5d, rows: 12, seam: 0.7 })),
+    weatheredOak: texture(1024, 2.4, planks({ seed: 79, dark: 0x6f6152, light: 0xb4a491, rows: 16, seam: 0.75 })),   // bar table top
     turf: texture(512, 0.8, grass({ seed: 59 })),
     greyMarble: texture(1024, 1.2, marble({ seed: 61, base: 0x8a8884, vein: 0xf4f2ee })),   // powder room
     silverStone: texture(1024, 0.7, marble({ seed: 67, base: 0x908f8b, vein: 0x585853 })),  // kitchen splashbacks
@@ -222,7 +223,9 @@ export function materials() {
     greyMarble: std({ map: tex.greyMarble, roughness: 0.2 }),
     silverStone: std({ map: tex.silverStone, roughness: 0.35 }),
     walnutBlack: std({ map: tex.walnut, color: 0x4a3f39, roughness: 0.5 }),
-    weatheredOak: std({ color: 0x9d8b77, roughness: 0.85 }),
+    weatheredOak: std({ map: tex.weatheredOak, roughness: 0.85 }),
+    brushedSteel: std({ color: 0xbfc0c1, roughness: 0.35, metalness: 0.45 }),
+    graniteLight: std({ color: 0xb4b2ae, roughness: 0.6 }),                      // smooth grey granite edges and steps
     bronze: std({ color: 0x6b5444, roughness: 0.4, metalness: 0.6 }),        // lift surrounds
     cabinetGrey: std({ color: 0x56585b, roughness: 0.7 }),                       // laundry cabinets
     steelDark: std({ color: 0x4b4d50, roughness: 0.4, metalness: 0.6 }),         // fridge
@@ -725,28 +728,32 @@ export class Builder {
     this.add(rail);
   }
 
-  // A square bar-height table: weathered timber top on a steel column and base plate.
-  barTable(cx, cy, s, h = 1.05) {
+  // A square bar-height table, as in the photos: a thick weathered timber top on a square brushed
+  // steel column and a wide square base plate.
+  barTable(cx, cy, s, h = 1.08) {
     this.solid(cx - s / 2, cy - s / 2, cx + s / 2, cy + s / 2);
-    this.box(cx - s / 2, cy - s / 2, cx + s / 2, cy + s / 2, h - 0.05, h, "weatheredOak");
-    this.box(cx - 5, cy - 5, cx + 5, cy + 5, 0.02, h - 0.05, "steel");
-    this.box(cx - 32, cy - 32, cx + 32, cy + 32, 0, 0.02, "steel");
+    this.box(cx - s / 2, cy - s / 2, cx + s / 2, cy + s / 2, h - 0.06, h, "weatheredOak");
+    this.box(cx - 6, cy - 6, cx + 6, cy + 6, 0.015, h - 0.06, "brushedSteel");
+    this.box(cx - 33, cy - 33, cx + 33, cy + 33, 0, 0.015, "brushedSteel");
   }
 
-  // A bar chair facing `deg`: brushed steel frame, black mesh seat and back.
+  // A bar chair facing `deg`, as in the photos: brushed steel sled frame (each side a front leg, a
+  // back leg rising into the back and a runner on the floor), black mesh seat and back.
   barChair(cx, cy, deg) {
-    this.solid(cx - 24, cy - 24, cx + 24, cy + 24);
-    const part = this.piece(cx, cy, deg), bar = (w, h, d, x, y, z) => part(new THREE.BoxGeometry(w, h, d), "steel", x, y, z);
-    part(new THREE.BoxGeometry(0.42, 0.012, 0.42), "black", 0, 0.75, 0);
-    part(new THREE.BoxGeometry(0.4, 0.3, 0.01), "black", 0, 0.97, 0.205);
-    for (const x of [-0.2, 0.2]) {
-      bar(0.02, 0.75, 0.02, x, 0.375, -0.2);           // front legs
-      bar(0.02, 1.15, 0.02, x, 0.575, 0.2);            // back legs, up into the back
-      bar(0.02, 0.02, 0.42, x, 0.74, 0);               // seat rails
-      bar(0.02, 0.02, 0.42, x, 0.3, 0);                // footrest
+    this.solid(cx - 28, cy - 30, cx + 28, cy + 30);
+    const part = this.piece(cx, cy, deg), t = 0.022;
+    const bar = (w, h, d, x, y, z) => part(new THREE.BoxGeometry(w, h, d), "brushedSteel", x, y, z);
+    for (const x of [-0.22, 0.22]) {
+      bar(t, 0.77, t, x, 0.385, -0.24);                // front leg
+      bar(t, 1.14, t, x, 0.57, 0.24);                  // back leg, up into the back
+      bar(t, t, 0.5, x, t / 2, 0);                     // floor runner
+      bar(t, t, 0.5, x, 0.76, 0);                      // seat rail
     }
-    bar(0.42, 0.02, 0.02, 0, 0.3, -0.2);
-    bar(0.42, 0.02, 0.02, 0, 1.14, 0.2);
+    bar(0.46, t, t, 0, 0.76, -0.24);
+    bar(0.46, t, t, 0, 0.3, -0.24);                    // footrest
+    bar(0.46, t, t, 0, 1.13, 0.24);
+    part(new THREE.BoxGeometry(0.42, 0.01, 0.46), "black", 0, 0.755, 0);    // mesh seat
+    part(new THREE.BoxGeometry(0.42, 0.3, 0.008), "black", 0, 0.96, 0.24);  // mesh back
   }
 
   // A fiddle-leaf fig planted in the ground: a few slim trunks, big leaves up to about h.
@@ -1071,8 +1078,10 @@ export const ROOMS = {
   "floor-1": {
     view: { az: 32, el: 58 },
     walk: { at: [1760, 470], face: 270 },
+    // rooms behind closed doors: named over the room, and by its door when walking around
     labels: [["foyer", 1450, 475], ["luggage", 1380, 640], ["lift", 1108, 680], ["stairs", 1306, 300],
-      ["carporch", 2300, 470], ["frontTerrace", 2230, 300], ["garden", 2575, 210]],
+      ["carporch", 2300, 470], ["frontTerrace", 2300, 320], ["garden", 2575, 210],
+      ["deluxeQueen1", 905, 320, 907, 442], ["deluxeTwin1", 720, 600, 842, 500], ["privateRoom", 1700, 250, 1601, 396]],
     build: floor1,
   },
 
@@ -1081,7 +1090,7 @@ export const ROOMS = {
     view: { az: -25, el: 56 },
     walk: { at: [1060, 480], face: 90 },
     labels: [["laundry", 1320, 590], ["laundryTerrace", 1570, 420], ["lift", 1023, 690], ["stairs", 1130, 300],
-      ["hall", 1025, 470], ["acLedge", 1380, 220]],
+      ["hall", 1025, 470], ["acLedge", 1380, 220], ["aurelia", 820, 478, 910, 478]],
     build: floor5,
   },
 
@@ -1289,13 +1298,13 @@ function floor1(b) {
   b.floor([[2440, 245], [2510, 245], [2510, 330], [2440, 330]], "paving", 0, false);  // top of the steps
   b.floor([[2440, 44], [2650, 44], [2650, 245], [2440, 245]], "turf", 0.08, false);   // lawn
   b.floor([[2510, 245], [2610, 245], [2610, 385], [2510, 385]], "turf", 0.08, false);
-  b.box(1840, 369, 1979, 375, PORCH, 0, "paving");                              // terrace edges
-  b.box(1979, 398, 2440, 404, PORCH, 0, "paving");
-  b.box(2440, 239, 2610, 245, -0.16, 0.1, "paving");                            // lawn kerbs
-  b.box(2440, 72, 2446, 245, -0.16, 0.1, "paving");
-  b.box(2510, 245, 2516, 385, -0.16, 0.1, "paving");
-  b.box(2510, 379, 2610, 404, PORCH, 0.1, "paving");
-  b.stairs(2440, 330, 2510, 404, "n", 2, 0.1, PORCH, "paving");
+  b.box(1840, 369, 1979, 375, PORCH, 0, "graniteLight");                        // terrace edges
+  b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
+  b.box(2440, 239, 2610, 245, -0.16, 0.1, "graniteLight");                      // lawn kerbs
+  b.box(2440, 72, 2446, 245, -0.16, 0.1, "graniteLight");
+  b.box(2510, 245, 2516, 385, -0.16, 0.1, "graniteLight");
+  b.box(2510, 379, 2610, 404, PORCH, 0.1, "graniteLight");
+  b.stairs(2440, 330, 2510, 404, "n", 2, 0.1, PORCH, "graniteLight");
 
   // corridor to Deluxe Queen 1 and Deluxe Twin 1 (their doors closed, nearly ceiling height), past
   // the service shaft
@@ -1373,9 +1382,9 @@ function floor1(b) {
   b.slats(2650, 44, 2660, 245, 1.6);
   b.tree(2545, 140, 3.4, 0.08);
 
-  // on the terrace: a bar table, four bar chairs pushed in
-  b.barTable(2030, 175, 100);
-  for (const [dx, dy, face] of [[0, -62, 180], [62, 0, 270], [0, 62, 0], [-62, 0, 90]]) b.barChair(2030 + dx, 175 + dy, face);
+  // on the terrace, about midway across: the bar table, its four chairs drawn up around it
+  b.barTable(2045, 195, 106);
+  for (const [dx, dy, face] of [[6, -86, 184], [86, -8, 266], [-5, 86, 356], [-86, 6, 94]]) b.barChair(2045 + dx, 195 + dy, face);
   b.car(2000, 512, 2500, 715, PORCH);
 }
 
