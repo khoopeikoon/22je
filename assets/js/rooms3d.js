@@ -230,6 +230,7 @@ export function materials() {
     cabinetGrey: std({ color: 0x56585b, roughness: 0.7 }),                       // laundry cabinets
     steelDark: std({ color: 0x4b4d50, roughness: 0.4, metalness: 0.6 }),         // fridge
     glow: std({ color: 0xfff4e2, emissive: 0xffe6bf, emissiveIntensity: 1 }),    // LED strips
+    outdoorGrey: std({ color: 0x9b9893, roughness: 0.9 }),                      // car porch walls, columns, gate pillar
     paintedSteel: std({ color: 0xd8d5cf, roughness: 0.55 }),                    // shelter door and frame
     sheer: new THREE.MeshStandardMaterial({ color: 0xdedad3, roughness: 1, transparent: true, opacity: 0.75 }),
   };
@@ -1296,17 +1297,15 @@ function floor1(b) {
   b.floor([[2440, 404], [2660, 404], [2660, 800], [2440, 800]], "paving", PORCH, false); // ...and in the open
   b.floor([[1840, 44], [2385, 44], [2385, 375], [1840, 375]], "terraceTile");          // front terrace (covered)
   b.floor([[1979, 375], [2385, 375], [2385, 72], [2440, 72], [2440, 404], [1979, 404]], "paving");   // its granite edge
-  b.floor([[2440, 245], [2510, 245], [2510, 330], [2440, 330]], "paving", 0, false);  // top of the steps
-  b.floor([[2440, 44], [2650, 44], [2650, 245], [2440, 245]], "turf", 0.08, false);   // lawn
-  b.floor([[2510, 245], [2610, 245], [2610, 385], [2510, 385]], "turf", 0.08, false);
+  // lawn, all turf from the top of the steps (owner, 2026-10-25)
+  b.floor([[2440, 44], [2650, 44], [2650, 245], [2610, 245], [2610, 385], [2510, 385], [2510, 310], [2440, 310]], "turf", 0.08, false);
   b.box(1973, 404, 1979, 800, PORCH, LANDING, "limestone");                     // the landing's step
   b.box(1840, 369, 1979, 375, LANDING, 0, "graniteLight");                      // terrace edges
   b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
-  b.box(2440, 239, 2610, 245, -0.16, 0.1, "graniteLight");                      // lawn kerbs
-  b.box(2440, 72, 2446, 245, -0.16, 0.1, "graniteLight");
-  b.box(2510, 245, 2516, 385, -0.16, 0.1, "graniteLight");
+  b.box(2440, 72, 2446, 310, -0.16, 0.1, "graniteLight");                       // lawn kerbs
+  b.box(2510, 310, 2516, 404, PORCH, 0.1, "graniteLight");
   b.box(2510, 379, 2610, 404, PORCH, 0.1, "graniteLight");
-  b.stairs(2440, 330, 2510, 404, "n", 2, 0.1, PORCH, "graniteLight");
+  b.stairs(2440, 310, 2510, 404, "n", 3, 0.127, PORCH, "graniteLight");           // three steps up, straight onto the lawn
 
   // corridor to Deluxe Queen 1 and Deluxe Twin 1 (their doors closed, nearly ceiling height), past
   // the service shaft
@@ -1374,15 +1373,15 @@ function floor1(b) {
   b.wardrobe(1687, 727, 1757, 797, "n", 2.3);
   b.wall(1545, 797, 1790, 820);
 
-  // outside: party walls (lower and charcoal past the porch), the charcoal porch columns, the
+  // outside: party walls (lower and grey past the porch), the grey porch columns, the
   // gate pillar, a slatted screen along the lawn and the sliding gate (closed)
   b.wall(1838, 21, 2410, 44);
-  b.wall(2410, 21, 2660, 44, { h1: 1.8, mat: "pot" });
+  b.wall(2410, 21, 2660, 44, { h1: 1.8, mat: "outdoorGrey" });
   b.wall(1838, 800, 2440, 820);
   b.wall(2440, 800, 2660, 820, { h1: 2.2 });
-  b.wall(2409, 44, 2439, 72, { mat: "pot" });
-  b.wall(2409, 770, 2439, 800, { mat: "pot" });
-  b.wall(2610, 245, 2660, 457, { h1: 1.8, mat: "pot" });             // gate pillar
+  b.wall(2409, 44, 2439, 72, { mat: "outdoorGrey" });
+  b.wall(2409, 770, 2439, 800, { mat: "outdoorGrey" });
+  b.wall(2610, 245, 2660, 457, { h1: 1.8, mat: "outdoorGrey" });     // gate pillar
   b.slats(2650, 457, 2660, 800, 1.6);
   b.slats(2650, 44, 2660, 245, 1.6);
   b.tree(2545, 140, 3.4, 0.08);
