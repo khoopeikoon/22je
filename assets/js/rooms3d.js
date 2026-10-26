@@ -165,9 +165,9 @@ export function materials() {
     limestone: texture(1024, 2.4, tiles({ seed: 23, base: 0xe4ddd1, vein: 0xf1ece4, cols: 2, rows: 4 })),
     darkStone: texture(1024, 1.2, marble({ seed: 29, base: 0x3a3836, vein: 0xbdb8b0 })),
     tile: texture(1024, 2.4, tiles({ seed: 31, base: 0x8d8a85, vein: 0x9b9893, cols: 2, rows: 4 })),
-    paving: texture(512, 0.6, speckle({ seed: 37, base: 0x8b8985, amount: 0.06 })),   // grey granite (car porch)
+    paving: texture(512, 0.6, speckle({ seed: 37, base: 0x9c9a96, amount: 0.05 })),   // grey granite (car porch)
     linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
-    beigeStone: texture(1024, 2.4, tiles({ seed: 83, base: 0xd8ccb6, vein: 0xe8dfcc, cols: 2, rows: 4 })),   // entrance floor and landing
+    beigeStone: texture(1024, 2.4, tiles({ seed: 83, base: 0xcfc6b6, vein: 0xdcd5c8, cols: 2, rows: 4 })),   // entrance floor and landing
     woodTile: texture(1024, 2.4, planks({ seed: 53, dark: 0x6a5243, light: 0x9a7f6b, rows: 12, seam: 0.7 })),   // 20 cm wood-look tiles
     terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x5a4136, light: 0x8d6d5d, rows: 12, seam: 0.7 })),
     weatheredOak: texture(1024, 2.4, planks({ seed: 79, dark: 0x6f6152, light: 0xb4a491, rows: 16, seam: 0.75 })),   // bar table top
@@ -1309,8 +1309,8 @@ function floor1(b) {
   b.floor([[1979, 375], [2385, 375], [2385, 72], [2440, 72], [2440, 404], [1979, 404]], "paving");   // its granite edge
   // lawn, all turf from the top of the steps, at terrace level inside a granite kerb (owner and photos, 2026-10-25)
   b.floor([[2440, 44], [2650, 44], [2650, 245], [2610, 245], [2610, 385], [2510, 385], [2510, 320], [2440, 320]], "turf", -0.02, false);
-  b.box(1969, 404, 1981, 800, PORCH, LANDING + 0.004, "porcelain");               // the landing's pale stone nosing
-  b.box(1838, 794, 1981, 800, PORCH, LANDING + 0.004, "porcelain");
+  b.box(1969, 404, 1981, 800, PORCH, LANDING + 0.004, "beigeStone");              // the landing's stone nosing
+  b.box(1838, 794, 1981, 800, PORCH, LANDING + 0.004, "beigeStone");
   b.box(1840, 369, 1979, 375, LANDING, 0, "graniteLight");                      // terrace edges
   b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
   b.box(2440, 72, 2446, 320, -0.16, 0.02, "graniteLight");                      // lawn kerbs
