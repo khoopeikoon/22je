@@ -167,6 +167,7 @@ export function materials() {
     tile: texture(1024, 2.4, tiles({ seed: 31, base: 0x8d8a85, vein: 0x9b9893, cols: 2, rows: 4 })),
     paving: texture(512, 0.6, speckle({ seed: 37, base: 0xa29f9a, amount: 0.05 })),   // light grey granite
     linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
+    beigeStone: texture(1024, 2.4, tiles({ seed: 83, base: 0xd8ccb6, vein: 0xe8dfcc, cols: 2, rows: 4 })),   // entrance floor and landing
     woodTile: texture(1024, 2.4, planks({ seed: 53, dark: 0x6a5243, light: 0x9a7f6b, rows: 12, seam: 0.7 })),   // 20 cm wood-look tiles
     terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x5a4136, light: 0x8d6d5d, rows: 12, seam: 0.7 })),
     weatheredOak: texture(1024, 2.4, planks({ seed: 79, dark: 0x6f6152, light: 0xb4a491, rows: 16, seam: 0.75 })),   // bar table top
@@ -218,6 +219,7 @@ export function materials() {
     leaf: std({ color: 0x4a6636, roughness: 0.8, flatShading: true }),
     leaf2: std({ color: 0x6f8f4e, roughness: 0.8, flatShading: true }),
     woodTile: std({ map: tex.woodTile, roughness: 0.7 }),
+    beigeStone: std({ map: tex.beigeStone, roughness: 0.5 }),
     terraceTile: std({ map: tex.terraceTile, roughness: 0.7 }),
     turf: std({ map: tex.turf, roughness: 1 }),
     greyMarble: std({ map: tex.greyMarble, roughness: 0.2 }),
@@ -444,8 +446,8 @@ export class Builder {
 
   // Full height, so it is cut with the walls when it stands on the camera side; cut, it shows as a
   // wardrobe sliced open (openCarcass) rather than a low solid box, which would read as a bench.
-  wardrobe(x0, y0, x1, y1, front, h = this.H - 0.05) {
-    const body = this.wall(x0, y0, x1, y1, { h1: h, mat: "walnutDark", furniture: true });
+  wardrobe(x0, y0, x1, y1, front, h = this.H - 0.05, mat = "walnutDark") {
+    const body = this.wall(x0, y0, x1, y1, { h1: h, mat, furniture: true });
     const alongY = front === "e" || front === "w";
     const [a, b] = alongY ? [y0, y1] : [x0, x1];
     const doors = Math.max(2, Math.round(px(b - a) / 0.5));
@@ -456,6 +458,7 @@ export class Builder {
         w: [x0 - 0.6, p - 0.6, x0 + 1, p + 0.6], e: [x1 - 1, p - 0.6, x1 + 0.6, p + 0.6] }[front];
       this.wall(...g, { h0: 0.02, h1: h - 0.02, mat: "black", furniture: true, follow: body });
     }
+    return body;
   }
 
   // A wardrobe cut at LOW: panels and doors in section (dark tops, like the cut walls), its grey
@@ -1204,8 +1207,13 @@ function floor2(b) {
   b.stairRail(1203, 1207, 387, 181, 0, -1.225, 7);
 
   // dry kitchen
-  b.counter(232, 57, 709, 140);
-  b.wardrobe(258, 57, 329, 140, "s", 2.3);
+  b.counter(329, 57, 612, 140);                                        // between the two tall units
+  for (const [x0, x1] of [[232, 258], [683, 709]]) b.wall(x0, 57, x1, 140, { h1: 2.3, mat: "walnut", furniture: true });   // end panels
+  // tall unit by the back windows: a glass-fronted wine fridge, a walnut cabinet above (photo, 2026-10-26)
+  const wine = b.wall(260, 60, 327, 136, { h1: 1.85, mat: "tv", furniture: true });
+  b.wall(264, 136, 323, 138, { h0: 0.12, h1: 1.78, mat: "glass", furniture: true, follow: wine });
+  for (let i = 0; i < 9; i++) b.wall(266, 128, 321, 136, { h0: 0.3 + i * 0.16, h1: 0.31 + i * 0.16, mat: "oak", furniture: true, follow: wine });
+  b.wall(258, 57, 329, 140, { h0: 1.88, h1: 2.3, mat: "walnut", furniture: true, follow: wine });
   b.wall(614, 60, 681, 138, { h1: 1.85, mat: "tv", furniture: true }); // black fridge (photo), cabinet above
   b.wall(612, 57, 683, 140, { h0: 1.88, h1: 2.3, mat: "walnut", furniture: true });
   b.wall(329, 57, 612, 59, { h0: 0.9, h1: 1.5, mat: "silverStone" });  // stone backsplash
@@ -1289,17 +1297,18 @@ function floor2(b) {
 // up along the front door and shoe cabinet, a lawn with a fiddle-leaf fig.
 function floor1(b) {
   const PORCH = -0.3, LANDING = -0.15;                                           // car porch, landing
-  b.floor([[832, 434], [1087, 434], [1087, 388], [1838, 388], [1838, 563], [832, 563]], "limestone");   // foyer and corridor
-  b.floor([[1246, 592], [1515, 592], [1515, 770], [1246, 770]], "limestone");    // luggage room
+  b.floor([[832, 434], [1087, 434], [1087, 388], [1838, 388], [1838, 563], [832, 563]], "beigeStone");   // foyer and corridor
+  b.floor([[1545, 563], [1772, 563], [1772, 797], [1545, 797]], "beigeStone");   // in front of the luggage room and cabinets
+  b.floor([[1246, 592], [1515, 592], [1515, 770], [1246, 770]], "beigeStone");   // luggage room
   b.floor([[1022, 590], [1195, 590], [1195, 773], [1022, 773]], "deck", 0.004);  // lift car
-  b.floor([[1838, 375], [1979, 375], [1979, 800], [1838, 800]], "limestone", LANDING);  // landing at the front door
+  b.floor([[1838, 375], [1979, 375], [1979, 800], [1838, 800]], "beigeStone", LANDING); // landing at the front door
   b.floor([[1979, 404], [2440, 404], [2440, 800], [1979, 800]], "paving", PORCH);       // car porch, covered
   b.floor([[2440, 404], [2660, 404], [2660, 800], [2440, 800]], "paving", PORCH, false); // ...and in the open
   b.floor([[1840, 44], [2385, 44], [2385, 375], [1840, 375]], "terraceTile");          // front terrace (covered)
   b.floor([[1979, 375], [2385, 375], [2385, 72], [2440, 72], [2440, 404], [1979, 404]], "paving");   // its granite edge
   // lawn, all turf from the top of the steps, at terrace level inside a granite kerb (owner and photos, 2026-10-25)
   b.floor([[2440, 44], [2650, 44], [2650, 245], [2610, 245], [2610, 385], [2510, 385], [2510, 320], [2440, 320]], "turf", -0.02, false);
-  b.box(1973, 404, 1979, 800, PORCH, LANDING, "limestone");                     // the landing's step
+  b.box(1973, 404, 1979, 800, PORCH, LANDING, "beigeStone");                    // the landing's step
   b.box(1840, 369, 1979, 375, LANDING, 0, "graniteLight");                      // terrace edges
   b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
   b.box(2440, 72, 2446, 320, -0.16, 0.02, "graniteLight");                      // lawn kerbs
@@ -1342,17 +1351,22 @@ function floor1(b) {
   // front door (closed) and the shoe cabinet beside it (a marble-lined niche across it), on the
   // landing
   b.wall(1820, 388, 1838, 420);
-  b.wall(1825, 420, 1833, 535, { h1: 2.3, mat: "walnut" });
-  b.door(1820, 420, 1838, 535, { head: 2.3 });
-  b.box(1818, 388, 1839, 565, LANDING, 0, "limestone");                          // the step up into the house, across the
+  b.wall(1825, 420, 1833, 535, { h1: 2.4, mat: "walnut" });
+  b.door(1820, 420, 1838, 535, { head: 2.4 });
+  b.box(1818, 388, 1839, 565, LANDING, 0, "beigeStone");                          // the step up into the house, across the
                                                                                  // foyer slab's edge
-  for (const r of [[1878, 598, 1940, 600], [1878, 658, 1940, 660], [1878, 600, 1880, 658], [1938, 600, 1940, 658]])
+  for (const r of [[1852, 690, 1922, 692], [1852, 758, 1922, 760], [1852, 692, 1854, 758], [1920, 692, 1922, 758]])
     b.box(...r, LANDING, LANDING + 0.003, "brushedSteel");                      // access hatch in the landing
-  b.wall(1772, 535, 1838, 565);
-  b.wall(1772, 565, 1790, 800);
+  b.wall(1772, 535, 1838, 565, { faces: { w: "walnut", n: "walnut" } });    // walnut-clad pier beside the front door
+  b.wall(1772, 565, 1790, 800, { faces: { w: "beigeStone" } });
+  // full-height walnut panelling (concealed doors, two tiers) along that wall, a stone strip left beside the pier
+  const panels = b.wall(1762, 585, 1772, 727, { mat: "walnut" });
+  b.wall(1761, 585, 1762, 727, { h0: 1.1, h1: 1.11, mat: "black", follow: panels });
   b.box(1790, 582, 1838, 767, LANDING, 0, "walnutDark");
-  b.wardrobe(1790, 582, 1838, 767, "e", 2.3);
-  b.wall(1837, 600, 1840, 750, { h0: 1.02, h1: 1.28, mat: "marble", furniture: true });
+  const shoes = b.wardrobe(1790, 582, 1838, 674, "e", undefined, "walnut");
+  b.wardrobe(1790, 675, 1838, 767, "e", undefined, "walnut");
+  b.wall(1836, 590, 1840, 759, { h0: 1.0, h1: 1.3, mat: "silverStone", furniture: true, follow: shoes });
+  for (const [y0, y1] of [[600, 640], [710, 750]]) b.wall(1838, y0, 1840, y1, { h0: 2.25, h1: 2.3, mat: "black", furniture: true, follow: shoes });
 
   // lift (bronze surround, glass doors) and luggage room: the household shelter, empty for
   // suitcases as in the photos (2026-10-24), its pale steel door shown open over a raised sill
@@ -1369,8 +1383,10 @@ function floor1(b) {
   b.wall(1512, 605, 1548, 704, { h0: 1.99, h1: 2.05, mat: "paintedSteel" });   // steel door frame
   b.box(1515, 611, 1545, 698, 0, 0.08, "paintedSteel");                         // raised sill
   b.wall(1548, 699, 1640, 704, { h1: 2.0, mat: "paintedSteel", keep: true });   // shelter door, open
-  b.wardrobe(1547, 727, 1685, 797, "n", 2.3);
-  b.wardrobe(1687, 727, 1757, 797, "n", 2.3);
+  for (const [x0, x1] of [[1547, 1685], [1687, 1757]]) {
+    const c = b.wardrobe(x0, 727, x1, 797, "n");
+    b.wall(x0, 726, x1, 727.5, { h0: 1.1, h1: 1.11, mat: "black", furniture: true, follow: c });
+  }
   b.wall(1545, 797, 1790, 820);
 
   // outside: party walls (lower and grey past the porch), the grey porch columns, the
