@@ -165,7 +165,7 @@ export function materials() {
     limestone: texture(1024, 2.4, tiles({ seed: 23, base: 0xe4ddd1, vein: 0xf1ece4, cols: 2, rows: 4 })),
     darkStone: texture(1024, 1.2, marble({ seed: 29, base: 0x3a3836, vein: 0xbdb8b0 })),
     tile: texture(1024, 2.4, tiles({ seed: 31, base: 0x8d8a85, vein: 0x9b9893, cols: 2, rows: 4 })),
-    paving: texture(512, 0.6, speckle({ seed: 37, base: 0xa29f9a, amount: 0.05 })),   // light grey granite
+    paving: texture(512, 0.6, speckle({ seed: 37, base: 0x8b8985, amount: 0.06 })),   // grey granite (car porch)
     linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
     beigeStone: texture(1024, 2.4, tiles({ seed: 83, base: 0xd8ccb6, vein: 0xe8dfcc, cols: 2, rows: 4 })),   // entrance floor and landing
     woodTile: texture(1024, 2.4, planks({ seed: 53, dark: 0x6a5243, light: 0x9a7f6b, rows: 12, seam: 0.7 })),   // 20 cm wood-look tiles
@@ -1208,12 +1208,13 @@ function floor2(b) {
 
   // dry kitchen
   b.counter(329, 57, 612, 140);                                        // between the two tall units
-  for (const [x0, x1] of [[232, 258], [683, 709]]) b.wall(x0, 57, x1, 140, { h1: 2.3, mat: "walnut", furniture: true });   // end panels
+  b.wall(683, 57, 709, 140, { h1: 2.3, mat: "walnut", furniture: true });   // end panel by the fridge
   // tall unit by the back windows: a glass-fronted wine fridge, a walnut cabinet above (photo, 2026-10-26)
-  const wine = b.wall(260, 60, 327, 136, { h1: 1.85, mat: "tv", furniture: true });
-  b.wall(264, 136, 323, 138, { h0: 0.12, h1: 1.78, mat: "glass", furniture: true, follow: wine });
-  for (let i = 0; i < 9; i++) b.wall(266, 128, 321, 136, { h0: 0.3 + i * 0.16, h1: 0.31 + i * 0.16, mat: "oak", furniture: true, follow: wine });
-  b.wall(258, 57, 329, 140, { h0: 1.88, h1: 2.3, mat: "walnut", furniture: true, follow: wine });
+  // ...filling the space right up to the curtain, no panel beside it
+  const wine = b.wall(232, 60, 327, 136, { h1: 1.85, mat: "tv", furniture: true });
+  b.wall(238, 136, 321, 138, { h0: 0.12, h1: 1.78, mat: "glass", furniture: true, follow: wine });
+  for (let i = 0; i < 9; i++) b.wall(240, 128, 319, 136, { h0: 0.3 + i * 0.16, h1: 0.31 + i * 0.16, mat: "oak", furniture: true, follow: wine });
+  b.wall(232, 57, 329, 140, { h0: 1.88, h1: 2.3, mat: "walnut", furniture: true, follow: wine });
   b.wall(614, 60, 681, 138, { h1: 1.85, mat: "tv", furniture: true }); // black fridge (photo), cabinet above
   b.wall(612, 57, 683, 140, { h0: 1.88, h1: 2.3, mat: "walnut", furniture: true });
   b.wall(329, 57, 612, 59, { h0: 0.9, h1: 1.5, mat: "silverStone" });  // stone backsplash
@@ -1308,7 +1309,8 @@ function floor1(b) {
   b.floor([[1979, 375], [2385, 375], [2385, 72], [2440, 72], [2440, 404], [1979, 404]], "paving");   // its granite edge
   // lawn, all turf from the top of the steps, at terrace level inside a granite kerb (owner and photos, 2026-10-25)
   b.floor([[2440, 44], [2650, 44], [2650, 245], [2610, 245], [2610, 385], [2510, 385], [2510, 320], [2440, 320]], "turf", -0.02, false);
-  b.box(1973, 404, 1979, 800, PORCH, LANDING, "beigeStone");                    // the landing's step
+  b.box(1969, 404, 1981, 800, PORCH, LANDING + 0.004, "porcelain");               // the landing's pale stone nosing
+  b.box(1838, 794, 1981, 800, PORCH, LANDING + 0.004, "porcelain");
   b.box(1840, 369, 1979, 375, LANDING, 0, "graniteLight");                      // terrace edges
   b.box(1979, 398, 2440, 404, PORCH, 0, "graniteLight");
   b.box(2440, 72, 2446, 320, -0.16, 0.02, "graniteLight");                      // lawn kerbs
