@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Dernière mise à jour : 19 octobre 2026_
+_Dernière mise à jour : 29 octobre 2026_
 
 Bienvenue chez vous. Ce guide rassemble tout ce qu'il faut savoir sur la vie quotidienne au 22 Jalan Elok. Si quelque chose n'est pas clair ou n'est plus à jour, écrivez-nous. Mieux vaut demander que deviner.
 
@@ -65,7 +65,7 @@ Vous pouvez profiter du **salon, de la salle à manger et de la cuisine**, du **
 
 Le stationnement n'est pas compris dans le loyer. Si vous souhaitez vous garer sous l'abri à voiture, merci de nous le demander au préalable.
 
-Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirateur tous les jours à 3 h du matin**. Il n'est pas audible depuis le 4e étage ; il ne devrait donc gêner personne. Si toutefois vous l'entendez depuis votre chambre, merci de nous en informer et nous modifierons l'horaire. Afin de permettre un nettoyage complet, nous vous remercions de laisser le sol dégagé (sacs, chaussures, câbles).
+Le salon et la salle à manger (2e étage) sont nettoyés par un **robot aspirateur tous les jours à 3 h du matin**. Il ne s'entend qu'au 2e étage, et depuis aucune chambre ; il ne devrait donc gêner personne. Si toutefois vous l'entendez depuis votre chambre, merci de nous en informer et nous modifierons l'horaire. Afin de permettre un nettoyage complet, nous vous remercions de laisser le sol dégagé (sacs, chaussures, câbles).
 
 - Lavez, séchez et rangez tout ce que vous utilisez dans la cuisine.
 - Il y a **deux réfrigérateurs partagés** et aucun réfrigérateur dans les chambres. Jetez ce qui est périmé. **Nous vérifions les réfrigérateurs une fois par semaine** et jetons ce qui n'est pas étiqueté ou est **périmé depuis plus de 2 semaines**.

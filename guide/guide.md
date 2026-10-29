@@ -16,7 +16,7 @@
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
 
-_Last updated: 19 October 2026_
+_Last updated: 29 October 2026_
 
 Welcome home. This guide covers the everyday things about living at 22 Jalan Elok. If anything here is unclear or out of date, message us. We'd rather you ask than guess.
 
@@ -40,7 +40,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
 
 ![22 Jalan Elok from the street. The house number, 22, is on the gate post on the left.](../assets/img/guide/facade.webp)
 
-- **Main door:** it has a code lock. We'll send you the code together with the Wi-Fi details, closer to your move-in date.
+- **Main door:** it has a code lock. We'll send you the code together with the wifi details, closer to your move-in date.
 - **Keys:** each room gets **two room keys** and **two keycards** for the main door. The gate remote is given to **one resident** only.
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
@@ -51,13 +51,13 @@ Kevin is your first point of contact for anything about the house. In an emergen
   4. Message us so we can replace the lock's batteries.
 - If you lose a key, keycard or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key or keycard** and **S$50 per remote**.
 
-## Wi-Fi
+## Wifi
 
-We'll send you the network name and password, together with the main door code, closer to your move-in date. The house runs on Wi-Fi access points rather than a router you can reach, so if the Wi-Fi drops or is slow, just let us know and we'll sort it out.
+We'll send you the network name and password, together with the main door code, closer to your move-in date. The house runs on wifi access points rather than a router you can reach, so if the wifi drops or is slow, just let us know and we'll sort it out.
 
 ## Your room
 
-- **Air-con:** keep the windows and door closed while it's on, and switch it off when you go out.
+- **Aircon:** keep the windows and door closed while it's on, and switch it off when you go out.
 - **Blackout curtains:** close them fully for a dark room at any hour.
 - **Ensuite bathroom:** the exhaust fan runs whenever the bathroom light is on. After showering, leave the light on for a few minutes (or the door open) to clear the steam and keep mould away. Only toilet paper goes down the toilet.
 - **Night light:** if you'd like one, just ask and we'll provide it.
@@ -68,7 +68,7 @@ You're welcome to use the **living room, dining area and kitchen**, the **open b
 
 Parking is not included in the rent. If you would like to park in the car porch, please ask us first.
 
-The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every day at 3:00 am**. It is not audible from the 4th floor, so we do not expect it to disturb anyone. Should you be able to hear it from your room, please let us know and we will reschedule it. To allow a thorough clean, please keep the floor clear of bags, shoes and cables.
+The living and dining rooms (2nd floor) are cleaned by a **robot vacuum every day at 3:00 am**. It can only be heard on the 2nd floor itself, not from any of the bedrooms, so we do not expect it to disturb anyone. Should you be able to hear it from your room, please let us know and we will reschedule it. To allow a thorough clean, please keep the floor clear of bags, shoes and cables.
 
 - Wash, dry and put away anything you use in the kitchen.
 - There are **two shared fridges** and no fridges in the rooms. Clear out anything expired. **We check the fridges once a week** and throw out anything that isn't labelled or is **more than 2 weeks past its expiry date**.

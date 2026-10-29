@@ -446,8 +446,8 @@ h1.eyebrow { line-height: 1.6; }
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s, transform 0.2s;
+    grid-area: auto; border-top: 0; justify-content: flex-start; align-items: stretch; align-self: auto;
   }
-  .nav { grid-area: auto; border-top: 0; justify-content: flex-start; align-items: stretch; align-self: auto; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
   body.menu-open .nav { opacity: 1; transform: none; pointer-events: auto; }
   body.menu-open .menu-toggle span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }

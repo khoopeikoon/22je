@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Última actualización: 19 de octubre de 2026_
+_Última actualización: 29 de octubre de 2026_
 
 Bienvenido a casa. Esta guía recoge todo lo cotidiano de vivir en 22 Jalan Elok. Si algo no está claro o está desactualizado, escríbanos. Preferimos que pregunte antes que adivinar.
 
@@ -65,7 +65,7 @@ Puede usar el **salón, el comedor y la cocina**, el **balcón abierto junto al 
 
 El aparcamiento no está incluido en el alquiler. Si desea aparcar en el porche, consúltenos antes.
 
-El salón y el comedor (planta 2) se limpian con un **robot aspirador todos los días a las 3:00 de la madrugada**. No se oye desde la planta 4, por lo que no prevemos que cause molestias. Si lo oye desde su habitación, le rogamos que nos lo comunique y cambiaremos el horario. Para permitir una limpieza a fondo, le pedimos que mantenga el suelo libre de bolsas, zapatos y cables.
+El salón y el comedor (planta 2) se limpian con un **robot aspirador todos los días a las 3:00 de la madrugada**. Solo se oye en la propia planta 2, no desde ninguna habitación, por lo que no prevemos que cause molestias. Si lo oye desde su habitación, le rogamos que nos lo comunique y cambiaremos el horario. Para permitir una limpieza a fondo, le pedimos que mantenga el suelo libre de bolsas, zapatos y cables.
 
 - Lave, seque y guarde todo lo que use en la cocina.
 - Hay **dos neveras compartidas** y no hay nevera en las habitaciones. Retire lo que esté caducado. **Revisamos las neveras una vez por semana** y tiramos lo que no esté marcado o lleve **más de 2 semanas caducado**.
