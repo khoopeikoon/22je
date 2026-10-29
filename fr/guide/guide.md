@@ -46,6 +46,7 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
   2. Appuyez les deux bornes de la pile contre les **contacts de secours en bas du clavier extérieur**.
   3. Maintenez-la en place et déverrouillez comme d'habitude avec votre code.
   4. Écrivez-nous pour que nous changions les piles de la serrure.
+- **Si la serrure ne fonctionne plus du tout** (par exemple si l'astuce de la pile ne marche pas) : une **clé manuelle se trouve dans une boîte à clés** à la maison. Nous vous montrerons où à votre arrivée. Écrivez-nous et nous vous enverrons le code de la boîte. À toute heure, vous pouvez aussi obtenir le code grâce à notre réponse automatique WhatsApp : envoyez au numéro de Kevin la phrase que nous vous avons donnée à votre arrivée.
 - Si vous perdez une clé, une carte d'accès ou la télécommande, prévenez-nous immédiatement pour que nous puissions sécuriser la maison. Le remplacement coûte **S$10 par clé ou carte** et **S$50 par télécommande**.
 
 ## Wifi
