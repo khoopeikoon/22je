@@ -37,13 +37,13 @@ const CAL_END_MONTH = 11; // 0 = Jan ... 11 = Dec
    ------------------------------------------------------------ */
 const CAL = {
   en: {
-    locale: "en-SG", checked: "Availability last checked: ", dows: ["S", "M", "T", "W", "T", "F", "S"],
+    locale: "en-SG", checked: "Availability last confirmed: ", dows: ["S", "M", "T", "W", "T", "F", "S"],
     name: (r) => r.name, sub: (r) => r.sub, through: `availability through December ${CAL_END_YEAR}`,
     checkout: "Now tap a check-out date", nights: (n) => `${n} night${n === 1 ? "" : "s"}`,
     wa: (r, a, b) => `Hello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
   },
   zh: {
-    locale: "zh-CN", checked: "空房情况最后核对：", dows: ["日", "一", "二", "三", "四", "五", "六"],
+    locale: "zh-CN", checked: "空房情况最后确认：", dows: ["日", "一", "二", "三", "四", "五", "六"],
     name: (r) => r.zh, sub: (r) => ({ Suite: "套房", "Deluxe Queen": "豪华大床房", "Deluxe Twin": "豪华双床房" })[r.sub],
     through: `显示至 ${CAL_END_YEAR} 年 12 月`,
     checkout: "请再点击退房日期", nights: (n) => `${n} 晚`,
@@ -58,7 +58,7 @@ const CAL = {
     wa: (r, a, b) => `こんにちは。${r.ja}の ${a} から ${b} までの空室状況を確認したいです。\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
   },
   es: {
-    locale: "es-ES", checked: "Disponibilidad revisada por última vez: ", dows: ["D", "L", "M", "X", "J", "V", "S"],
+    locale: "es-ES", checked: "Disponibilidad confirmada por última vez: ", dows: ["D", "L", "M", "X", "J", "V", "S"],
     name: (r) => r.es, sub: (r) => r.sub,
     through: `disponibilidad hasta diciembre de ${CAL_END_YEAR}`,
     checkout: "Ahora toque la fecha de salida", nights: (n) => `${n} noche${n === 1 ? "" : "s"}`,
@@ -66,7 +66,7 @@ const CAL = {
     wa: (r, a, b) => `¡Hola! Me gustaría consultar la disponibilidad de la ${r.es} del ${a} al ${b}.\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,
   },
   fr: {
-    locale: "fr-FR", checked: "Disponibilités vérifiées le ", dows: ["D", "L", "M", "M", "J", "V", "S"],
+    locale: "fr-FR", checked: "Disponibilités confirmées le ", dows: ["D", "L", "M", "M", "J", "V", "S"],
     name: (r) => r.fr, sub: (r) => r.sub,
     through: `disponibilités jusqu'en décembre ${CAL_END_YEAR}`,
     checkout: "Touchez maintenant la date de départ", nights: (n) => `${n} nuit${n > 1 ? "s" : ""}`,
