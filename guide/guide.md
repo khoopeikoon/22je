@@ -49,7 +49,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
   2. Hold the battery's two terminals against the **emergency contacts at the bottom of the outer keypad**.
   3. Keep it there and unlock as usual with your code.
   4. Message us so we can replace the lock's batteries.
-- **If the door lock fails completely** (for example, the battery trick above doesn't work): there's a **manual key in a lock box** at the house. We'll show you where it is when you move in. Message us and we'll send you the lock box code. At any hour, you can also get the code from our automated WhatsApp reply: send Kevin's number the phrase we gave you at move-in.
+- **If the door lock fails completely** (for example, the battery trick above doesn't work): there's a **manual key in a lock box** at the house. We'll show you where it is when you move in, and you'll already have its code: we send it with the main door code before you arrive, so keep it somewhere you can reach without the house wifi. Forgotten it? Get it at any hour from our automated WhatsApp reply (send Kevin's number the phrase we gave you at move-in), or message or call Kevin.
 - If you lose a key, keycard or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key or keycard** and **S$50 per remote**.
 
 ## Wifi

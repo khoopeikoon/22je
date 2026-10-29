@@ -46,7 +46,7 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
   2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
   3. Manténgala ahí y abra como siempre con su código.
   4. Escríbanos para que cambiemos las pilas de la cerradura.
-- **Si la cerradura falla del todo** (por ejemplo, si el truco de la pila no funciona): hay una **llave manual en una caja de seguridad** en la casa. Le enseñaremos dónde está cuando entre a vivir. Escríbanos y le enviaremos el código de la caja. A cualquier hora, también puede obtener el código con nuestra respuesta automática de WhatsApp: envíe al número de Kevin la frase que le dimos al entrar.
+- **Si la cerradura falla del todo** (por ejemplo, si el truco de la pila no funciona): hay una **llave manual en una caja de seguridad** en la casa. Le enseñaremos dónde está cuando entre a vivir, y ya tendrá su código: se lo enviamos con el de la puerta principal antes de su llegada, así que guárdelo donde pueda consultarlo sin el wifi de la casa. ¿Lo ha olvidado? Puede obtenerlo a cualquier hora con nuestra respuesta automática de WhatsApp (envíe al número de Kevin la frase que le dimos al entrar), o escribir o llamar a Kevin.
 - Si pierde una llave, una tarjeta o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave o tarjeta** y **S$50 por mando**.
 
 ## Wifi
