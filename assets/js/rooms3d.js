@@ -679,8 +679,9 @@ export class Builder {
   }
 
   /* Black vertical bars along a rectangle's long side, with a top rail: a slatted privacy screen,
-     or (bar 2, pitch 0.11 m) a railing. Cut with the walls when it stands on the camera side. */
-  slats(x0, y0, x1, y1, h = 1.2, { bar = 4, pitch = 0.1 } = {}) {
+     or (bar 2, pitch 0.11 m) a railing; across: horizontal louvres in a frame, a gate. Cut with
+     the walls when it stands on the camera side. */
+  slats(x0, y0, x1, y1, h = 1.2, { bar = 4, pitch = 0.1, across = false } = {}) {
     const w = this.wall(x0, y0, x1, y1, { h1: h, mat: "black", furniture: true });
     const build = (top) => {
       const group = new THREE.Group(), alongY = y1 - y0 > x1 - x0, [a, b] = alongY ? [y0, y1] : [x0, x1];
@@ -690,7 +691,10 @@ export class Builder {
         mesh.castShadow = mesh.receiveShadow = true;
         group.add(mesh);
       };
-      for (let i = 0; i < n; i++) {
+      if (across) {   // horizontal louvres in a frame (a gate)
+        for (let z = 0.1; z < top - 0.02; z += pitch) piece([x0, y0, x1, y1], z, z + px(bar));
+        for (const p of [a, (a + b) / 2, b - 4]) piece(alongY ? [x0, p, x1, p + 4] : [p, y0, p + 4, y1], 0, top);
+      } else for (let i = 0; i < n; i++) {
         const p = a + (b - a) * (i + 0.5) / n;
         piece(alongY ? [x0, p - bar / 2, x1, p + bar / 2] : [p - bar / 2, y0, p + bar / 2, y1], 0, top);
       }
@@ -1451,8 +1455,7 @@ function floor5(b) {
   b.wall(1271, 52, 1300, 435);
   b.wall(1164, 382, 1480, 400, { faces: { s: "tile" } });
   b.wall(1462, 52, 1480, 72);
-  b.wall(1466, 72, 1476, 377, { h1: 2.2, mat: "pot" });               // AC ledge doors
-  b.wall(1462, 72, 1480, 377, { h0: 2.2 });
+  b.slats(1466, 72, 1476, 377, 1.9, { bar: 3, pitch: 0.06, across: true });   // AC ledge: black louvred gates, open above (photo, 2026-10-31)
   b.wall(1462, 377, 1480, 382);
   b.wall(1164, 770, 1491, 800, { faces: { n: "tile" } });
   b.wall(1491, 782, 1692, 812);

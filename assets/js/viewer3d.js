@@ -10,7 +10,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { GTAOPass } from "three/addons/postprocessing/GTAOPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026102903";
+import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026103101";
 
 const T = {
   en: { back: "Rooms", backShared: "Features", orbit: "Dollhouse", walk: "Walk around", loading: "Loading the room…",
