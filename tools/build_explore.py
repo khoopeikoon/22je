@@ -45,12 +45,13 @@ SPOTS = {
     "sungei-buloh-wetland-reserve": ("nature", "Sungei Buloh Wetland Reserve, Singapore", NPARKS + "visit/parks/sungei-buloh-wetland-reserve"),
     "pulau-ubin": ("nature", "Changi Point Ferry Terminal, Singapore", "https://pulau-ubin.nparks.gov.sg/visitubin/"),
     "east-coast-park": ("nature", "East Coast Park, Singapore", NPARKS + "visit/parks/east-coast-park"),
+    "lucky-plaza-food-court": ("food", "Lucky Plaza, 304 Orchard Rd, Singapore", None),
     "newton-food-centre": ("food", "Newton Food Centre, Singapore", None),
     "maxwell-food-centre": ("food", "Maxwell Food Centre, Singapore", None),
     "lau-pa-sat": ("food", "Lau Pa Sat, Singapore", "https://www.laupasat.sg/"),
     "tiong-bahru-market": ("food", "Tiong Bahru Market, Singapore", None),
     "old-airport-road-food-centre": ("food", "Old Airport Road Food Centre, 51 Old Airport Rd, Singapore", None),
-    "kaya-toast": ("food", "Killiney Kopitiam, Killiney Road, Singapore", None),
+    "kaya-toast": ("food", "Ya Kun Kaya Toast, Paragon, 290 Orchard Rd, Singapore", None),
     "national-gallery-singapore": ("culture", "National Gallery Singapore, Singapore", "https://www.nationalgallery.sg/"),
     "asian-civilisations-museum": ("culture", "Asian Civilisations Museum, Singapore", "https://www.nhb.gov.sg/acm"),
     "peranakan-museum": ("culture", "Peranakan Museum, Singapore", "https://www.nhb.gov.sg/peranakanmuseum"),
@@ -91,12 +92,13 @@ SOURCES = {
     "sungei-buloh-wetland-reserve": [("NParks", NPARKS + "visit/parks/sungei-buloh-wetland-reserve"), ("Wikipedia", WIKI + "Sungei_Buloh_Wetland_Reserve")],
     "pulau-ubin": [("NParks: Visit Ubin", "https://pulau-ubin.nparks.gov.sg/visitubin/"), ("Wikipedia", WIKI + "Pulau_Ubin"), ("Homejourney guide", "https://www.homejourney.sg/blog/pulau-ubin-day-trip-guide-tickets-prices-opening-hours-homejourney")],
     "east-coast-park": [("NParks", NPARKS + "visit/parks/east-coast-park"), ("Wikipedia", WIKI + "East_Coast_Park")],
+    "lucky-plaza-food-court": [("Mothership", "https://mothership.sg/2024/05/lucky-plaza-food-court-kimly"), ("Eatbook", "https://eatbook.sg/lucky-plaza/"), ("TheSmartLocal", "https://thesmartlocal.com/read/lucky-plaza-guide/")],
     "newton-food-centre": [("Wikipedia", WIKI + "Newton_Food_Centre"), ("Eatbook", "https://eatbook.sg/newton-food-centre/")],
     "maxwell-food-centre": [("Wikipedia", WIKI + "Maxwell_Food_Centre"), ("Eatbook", "https://eatbook.sg/maxwell-food/"), ("City Nomads", "https://citynomads.com/maxwell-food-centre-hawker-guide-stalls-you-need-to-try-while-theyre-still-around/")],
     "lau-pa-sat": [("Lau Pa Sat", "https://www.laupasat.sg/"), ("Wikipedia", WIKI + "Lau_Pa_Sat")],
     "tiong-bahru-market": [("Wikipedia", WIKI + "Tiong_Bahru")],
     "old-airport-road-food-centre": [("Roots (National Heritage Board)", "https://www.roots.gov.sg/stories-landing/stories/hawker-centres/blk-51-old-airport-road"), ("Eatbook", "https://eatbook.sg/old-airport-road-food/")],
-    "kaya-toast": [("Wikipedia", WIKI + "Kaya_toast"), ("Visit Singapore: order kopi", VISIT + "editorials/order-kopi-like-a-local/")],
+    "kaya-toast": [("Wikipedia", WIKI + "Kaya_toast"), ("Visit Singapore: order kopi", VISIT + "editorials/order-kopi-like-a-local/"), ("Toast Box at Paragon", "https://paragon.com.sg/store-detail/toast-box"), ("Ya Kun at Paragon", "https://burpple.com/ya-kun-kaya-toast-paragon")],
     "national-gallery-singapore": [("National Gallery Singapore", "https://www.nationalgallery.sg/"), ("Wikipedia", WIKI + "National_Gallery_Singapore")],
     "asian-civilisations-museum": [("Wikipedia: the museum", WIKI + "Asian_Civilisations_Museum"), ("Wikipedia: Tang Shipwreck", WIKI + "Belitung_shipwreck"), ("Wikipedia: Cavenagh Bridge", WIKI + "Cavenagh_Bridge")],
     "peranakan-museum": [("Wikipedia: the museum", WIKI + "Peranakan_Museum"), ("Wikipedia: the building", WIKI + "Old_Tao_Nan_School")],
@@ -129,6 +131,15 @@ CHECK_NO_MAPS = {
     "ja": "2026 年 11 月に下記の出典と照合しました。営業時間、料金、経路は変わることがあるので、お出かけ前にご確認ください。",
     "es": "Comprobado con las fuentes siguientes en noviembre de 2026. Los horarios, los precios y las rutas cambian: compruébelos antes de ir.",
     "fr": "Vérifié d’après les sources ci-dessous en novembre 2026. Horaires, prix et itinéraires changent : vérifiez avant de partir.",
+}
+CHOPE_URL = "https://chinatown.sg/article/foodie-culture/"
+# Shown on every food page, and as a link in the Foodie list on the Area page.
+CHOPE = {
+    "en": ("Good to know: at busy food courts and hawker centres, people often reserve (“chope”) a table by leaving something on it, such as a tissue packet, a card or a water bottle. Keep anything valuable with you.", "Read about chope culture →", "How “choping” a table works"),
+    "zh": ("小提示：在拥挤的美食广场和小贩中心，人们常把纸巾包、卡片或水瓶放在桌上来“占位”（chope）。贵重物品请随身携带。", "了解占位文化（英文）→", "如何“占位”（chope）"),
+    "ja": ("豆知識：混雑したフードコートやホーカーセンターでは、ティッシュ、カード、水のボトルなどをテーブルに置いて席を取る「チョープ」という習慣があります。貴重品は身につけておきましょう。", "チョープの文化について（英語）→", "席取り文化「チョープ」"),
+    "es": ("Conviene saber: en los centros de comida concurridos, la gente suele reservar (“chope”) una mesa dejando algo encima, como un paquete de pañuelos, una tarjeta o una botella de agua. Lleve consigo los objetos de valor.", "Más sobre la cultura del chope (en inglés) →", "Cómo reservar mesa con “chope”"),
+    "fr": ("Bon à savoir : dans les centres de restauration très fréquentés, on réserve souvent (« chope ») une table en y laissant un objet, comme un paquet de mouchoirs, une carte ou une bouteille d’eau. Gardez vos objets de valeur sur vous.", "En savoir plus sur le « chope » (en anglais) →", "Réserver une table avec le « chope »"),
 }
 LISTS = ["sights", "nature", "food", "culture", "shopping", "night", "away"]
 
@@ -282,6 +293,9 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
         for other, info in SPOTS.items() if info[0] == group and other != slug
     )
     body = "\n".join(f"        <p>{p}</p>" for p in spot["body"])
+    if group == "food":
+        note, link, _ = CHOPE[lang]
+        body += f'\n        <p>{note} <a href="{CHOPE_URL}" target="_blank" rel="noopener">{link}</a></p>'
     refs = SOURCES[slug] + ([LTA_MAP] if " Line " in en_get else [])
     sources = ""
     if refs:
@@ -343,6 +357,8 @@ def area_section(lang, spots):
             f'              <li><a href="explore/{slug}.html">{spots[slug]["name"]}</a></li>'
             for slug, info in SPOTS.items() if info[0] == group
         )
+        if group == "food":
+            items += f'\n              <li><a href="{CHOPE_URL}" target="_blank" rel="noopener">{CHOPE[lang][2]}</a></li>'
         cols.append(f"""          <div class="feature-col">
             <span class="eyebrow">{eyebrow}</span>
             <h3>{persona}</h3>

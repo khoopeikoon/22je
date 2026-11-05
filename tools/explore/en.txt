@@ -93,6 +93,13 @@ body: The park stretches for about 13 km along the shore, with a track for cycli
 body: Finish at East Coast Lagoon Food Village, a hawker centre by the beach.
 get: Thomson–East Coast Line to Marine Parade, no change, then a walk of about 7 minutes.
 
+@lucky-plaza-food-court
+name: Lucky Plaza food court
+lede: A 6th-floor food court on Orchard Road that brings together many of Singapore's best-known dishes. We think it's worth a visit.
+body: The food court (#06-48A) had 12 stalls when it opened in 2024, including Tian Tian Hainanese Chicken Rice, Tenderbest, Nasi Lemak Berlauk Melaka and Lion City Dim Sum, though stalls can change. On the same floor, My Favourite Cafe (#06-046) sells yong tau foo and only accepts cash.
+body: It's busiest at weekday lunchtimes. For the shortest queues and the easiest time, go at the weekend, before 11:30 am or after 1:30 pm. Stall hours vary, so check before you go, and bring cash. On Sundays the food court stays quiet, but the area around the building gets crowded, as many domestic workers spend their day off at Lucky Plaza.
+get: A walk of about 8 minutes (600 m) from the house.
+
 @newton-food-centre
 name: Newton Food Centre
 lede: A hawker centre known for grilled seafood and satay, one stop from Orchard.
@@ -132,8 +139,8 @@ get: North–South Line to Dhoby Ghaut, then the Circle Line to Dakota, followed
 name: Kaya toast and kopi
 lede: A traditional Singapore breakfast: toast, coconut jam, soft-boiled eggs and coffee.
 body: Kaya is a sweet coconut jam, served on toast with butter. Crack two soft-boiled eggs into a saucer, add dark soy sauce and white pepper, and dip.
-body: Order your coffee like a local: kopi comes with condensed milk, kopi-O is black with sugar, and kopi-C has evaporated milk. Ya Kun, Toast Box and Killiney Kopitiam all serve it, as do many hawker centres.
-get: Killiney Kopitiam on Killiney Road is a walk of about 19 minutes (1.4 km) from the house.
+body: Order your coffee like a local: kopi comes with condensed milk, kopi-O is black with sugar, and kopi-C has evaporated milk. Toast Box and Ya Kun are both at Paragon nearby, and we recommend the Ya Kun in Paragon's basement. Killiney Kopitiam on Killiney Road is the classic choice, but it's a walk of about 19 minutes (1.4 km), and we don't think it's worth the walk.
+get: Ya Kun (#B1-38) and Toast Box (#02-08A) at Paragon are a walk of about 8 minutes (600 m) from the house.
 
 @national-gallery-singapore
 name: National Gallery Singapore

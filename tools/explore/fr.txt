@@ -91,6 +91,13 @@ body: Le parc longe le rivage sur environ 13 km, avec une piste pour vélos et r
 body: Terminez à East Coast Lagoon Food Village, un centre de restauration en bord de plage.
 get: Ligne Thomson–East Coast jusqu'à Marine Parade, sans changement, puis environ 7 minutes à pied.
 
+@lucky-plaza-food-court
+name: Food court de Lucky Plaza
+lede: Un food court au 6e étage, sur Orchard Road, qui réunit bon nombre des plats les plus connus de Singapour. Selon nous, il vaut le détour.
+body: Le food court (#06-48A) comptait 12 stands à son ouverture en 2024, dont Tian Tian Hainanese Chicken Rice, Tenderbest, Nasi Lemak Berlauk Melaka et Lion City Dim Sum, mais les stands peuvent changer. Au même étage, My Favourite Cafe (#06-046) vend du yong tau foo et n'accepte que les espèces.
+body: L'affluence est maximale le midi en semaine. Pour moins de queue et plus de tranquillité, venez le week-end, avant 11 h 30 ou après 13 h 30. Les horaires varient selon les stands : vérifiez avant de venir et prévoyez des espèces. Le dimanche, le food court reste calme, mais les abords du bâtiment sont bondés, car de nombreuses employées de maison passent leur jour de repos à Lucky Plaza.
+get: À environ 8 minutes à pied (600 m) de la maison.
+
 @newton-food-centre
 name: Newton Food Centre
 lede: Un centre de restauration réputé pour ses grillades de fruits de mer et son satay, à un arrêt d'Orchard.
@@ -130,8 +137,8 @@ get: Ligne North–South jusqu'à Dhoby Ghaut, ligne Circle jusqu'à Dakota, pui
 name: Kaya toast et kopi
 lede: Un petit-déjeuner traditionnel de Singapour : toast, confiture de coco, œufs mollets et café.
 body: Le kaya est une confiture sucrée de coco, servie sur du toast avec du beurre. Cassez deux œufs mollets dans une soucoupe, ajoutez de la sauce soja noire et du poivre blanc, et trempez.
-body: Commandez votre café comme ici : le kopi se boit au lait concentré sucré, le kopi-O noir avec du sucre, et le kopi-C au lait évaporé. Ya Kun, Toast Box et Killiney Kopitiam en servent, tout comme de nombreux centres de restauration.
-get: Killiney Kopitiam, sur Killiney Road, est à environ 19 minutes à pied (1,4 km) de la maison.
+body: Commandez votre café comme ici : le kopi se boit au lait concentré sucré, le kopi-O noir avec du sucre, et le kopi-C au lait évaporé. Toast Box et Ya Kun se trouvent tout près, à Paragon, et nous vous conseillons le Ya Kun au sous-sol de Paragon. Killiney Kopitiam, sur Killiney Road, est le choix classique, mais il est à environ 19 minutes à pied (1,4 km) et, selon nous, ne vaut pas le trajet.
+get: Ya Kun (#B1-38) et Toast Box (#02-08A), à Paragon, sont à environ 8 minutes à pied (600 m) de la maison.
 
 @national-gallery-singapore
 name: National Gallery Singapore
