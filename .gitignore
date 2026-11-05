@@ -1,0 +1,3 @@
+# macOS files, and the " 2" copies that file syncing can create
+.DS_Store
+* [0-9].*

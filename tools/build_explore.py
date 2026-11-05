@@ -51,7 +51,7 @@ SPOTS = {
     "lau-pa-sat": ("food", "Lau Pa Sat, Singapore", "https://www.laupasat.sg/"),
     "tiong-bahru-market": ("food", "Tiong Bahru Market, Singapore", None),
     "old-airport-road-food-centre": ("food", "Old Airport Road Food Centre, 51 Old Airport Rd, Singapore", None),
-    "kaya-toast": ("food", "Ya Kun Kaya Toast, Paragon, 290 Orchard Rd, Singapore", None),
+    "kaya-toast": ("food", "Ya Kun Kaya Toast Paragon, 290 Orchard Rd, Singapore", None),
     "national-gallery-singapore": ("culture", "National Gallery Singapore, Singapore", "https://www.nationalgallery.sg/"),
     "asian-civilisations-museum": ("culture", "Asian Civilisations Museum, Singapore", "https://www.nhb.gov.sg/acm"),
     "peranakan-museum": ("culture", "Peranakan Museum, Singapore", "https://www.nhb.gov.sg/peranakanmuseum"),
@@ -132,6 +132,14 @@ CHECK_NO_MAPS = {
     "es": "Comprobado con las fuentes siguientes en noviembre de 2026. Los horarios, los precios y las rutas cambian: compruébelos antes de ir.",
     "fr": "Vérifié d’après les sources ci-dessous en novembre 2026. Horaires, prix et itinéraires changent : vérifiez avant de partir.",
 }
+# Pages with more than one place to go get a directions link for each.
+DIRECTIONS = {
+    "kaya-toast": [
+        ({"en": "Ya Kun", "zh": "亚坤", "ja": "ヤクン", "es": "Ya Kun", "fr": "Ya Kun"}, "Ya Kun Kaya Toast Paragon, 290 Orchard Rd, Singapore"),
+        ({"en": "Toast Box", "zh": "土司工坊", "ja": "トーストボックス", "es": "Toast Box", "fr": "Toast Box"}, "Toast Box Paragon, 290 Orchard Rd, Singapore"),
+    ],
+}
+DIRS_TO = {"en": "Directions to {} →", "zh": "前往{}的路线 →", "ja": "{}への経路 →", "es": "Cómo llegar a {} →", "fr": "Itinéraire vers {} →"}
 CHOPE_URL = "https://chinatown.sg/article/foodie-culture/"
 # Shown on every food page, and as a link in the Foodie list on the Area page.
 CHOPE = {
@@ -285,7 +293,8 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + desc, head)
     head = re.sub(r"https://22je\.sg/((?:zh/|ja/|es/|fr/)?)area\.html", lambda m: f"{SITE}{m.group(1)}{path}", head)
 
-    links = [f'<a class="link-arrow" href="https://www.google.com/maps/dir/{HOUSE}/{quote_plus(place)}" target="_blank" rel="noopener">{ui["dirs"]}</a>']
+    stops = [(DIRS_TO[lang].format(names[lang]), dest) for names, dest in DIRECTIONS.get(slug, [])] or [(ui["dirs"], place)]
+    links = [f'<a class="link-arrow" href="https://www.google.com/maps/dir/{HOUSE}/{quote_plus(dest)}" target="_blank" rel="noopener">{label}</a>' for label, dest in stops]
     if website:
         links.append(f'<a class="link-arrow" href="{website}" target="_blank" rel="noopener">{ui["site"]}</a>')
     others = "\n".join(
