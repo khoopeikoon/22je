@@ -1,0 +1,297 @@
+# Write-ups for the explore/ pages. Run tools/build_explore.py after editing.
+# @slug starts a spot. name = heading and list label; lede = opening line;
+# body = one paragraph each; get = how to get there.
+
+@gardens-by-the-bay
+name: Gardens by the Bay
+lede: Giant Supertrees, a misty indoor mountain and some of the best views of Marina Bay.
+body: The Supertree Grove is free to wander. The two big glass conservatories are ticketed: Cloud Forest wraps one of the world's tallest indoor waterfalls in a plant-covered mountain, while Flower Dome holds the Guinness World Record for the largest glass greenhouse, and is pleasantly cool on a hot afternoon.
+body: Arrive in the late afternoon, see the conservatories while it's light, and stay on for the free Garden Rhapsody light show after dark.
+get: Thomson–East Coast Line to Gardens by the Bay, no change.
+
+@merlion-park
+name: Merlion Park
+lede: Singapore's half-lion, half-fish mascot, with the whole Marina Bay skyline behind it.
+body: The 8.6-metre Merlion spouts water into the bay from a small waterfront park in front of The Fullerton Hotel. About 20 minutes is plenty.
+body: Come early in the morning for space to take a photo, or at dusk when the skyline lights up. Then carry on around the bay on foot: the waterfront promenade links up with the Esplanade and Marina Bay Sands.
+get: North–South Line to Raffles Place (4 stops), then a walk of about 11 minutes.
+
+@marina-bay-sands-skypark
+name: Marina Bay Sands SkyPark
+lede: The view from the ship-shaped deck on top of Singapore's most famous hotel.
+body: The SkyPark Observation Deck looks out over the city, Gardens by the Bay and the durian-shaped domes of the Esplanade. Entry is ticketed and open to everyone; the famous infinity pool is for hotel guests only.
+body: Sunset is the most popular time, so book a timed ticket ahead. Afterwards you're right by The Shoppes and the ArtScience Museum.
+get: Thomson–East Coast Line to Marina Bay, then the Circle Line to Bayfront.
+
+@sentosa
+name: Sentosa
+lede: A resort island of beaches and big attractions, just off Singapore's southern shore.
+body: Universal Studios Singapore and Singapore Oceanarium are the headliners, with plenty of smaller rides such as the Skyline Luge. Siloso, Palawan and Tanjong beaches are good for a swim and a sunset drink.
+body: Pick one big attraction for the day rather than several, and buy tickets online first. Walking over from VivoCity on the Sentosa Boardwalk is free. Part of it is closed for construction until about 2030, with a covered linkway in its place.
+get: Thomson–East Coast Line to Outram Park, North East Line to HarbourFront, then the Sentosa Express from VivoCity.
+
+@mandai
+name: Mandai Wildlife Reserve
+lede: Five wildlife parks in one rainforest reserve, including the world-famous Singapore Zoo.
+body: Singapore Zoo, Night Safari, River Wonders, Bird Paradise and Rainforest Wild Adventure sit side by side at Mandai. The zoo is known for its open habitats, and the Night Safari lets you watch nocturnal animals from a tram after dark.
+body: Each park has its own ticket, with bundles if you want more than one. One park takes most of a day, so plan on a dedicated trip.
+get: North–South Line to Khatib, then the M2 Khatib bus. A taxi is simpler at night.
+
+@singapore-flyer
+name: Singapore Flyer
+lede: A giant observation wheel with a slow, air-conditioned view over the bay.
+body: At 165 metres, the Flyer gives you a 30-minute ride in a glass capsule, with 360-degree views from Marina Bay to the Singapore River.
+body: Go around sunset for both day and night views. It's a calmer alternative to the SkyPark.
+get: North–South Line to Dhoby Ghaut, then the Circle Line to Promenade.
+
+@singapore-botanic-gardens
+name: Singapore Botanic Gardens
+lede: A UNESCO World Heritage Site and Singapore's favourite place for a morning walk.
+body: Lawns, lakes, heritage trees and a patch of old rainforest are all free to explore. The one ticketed area, the National Orchid Garden, shows off a huge collection, including orchids named after visiting royals and heads of state.
+body: Go early, when it's cool and the joggers and tai chi groups are out. Then have breakfast at one of the cafés inside the gardens. It's a short ride from home, which makes it easy to return to.
+get: Thomson–East Coast Line to Napier (2 stops), right beside the gardens.
+
+@macritchie-treetop-walk
+name: MacRitchie TreeTop Walk
+lede: A 250-metre suspension bridge through the rainforest canopy, in the middle of a nature reserve.
+body: The bridge is 25 metres up at its highest, between two hills in the reserve. You have to hike there: NParks puts the 7 km loop from Windsor Nature Park at 3 to 4 hours, so wear proper shoes and bring water.
+body: The bridge is closed on Mondays, except public holidays, and NParks says the trail isn't suitable for young children or people with a fear of heights. Keep food out of sight because of the long-tailed macaques.
+get: Easiest by taxi or ride-hailing to Windsor Nature Park, off Venus Drive, as no MRT station is close.
+
+@southern-ridges
+name: The Southern Ridges
+lede: A walk of about 10 km along the green hilltops of the south, much of it above the trees.
+body: The route links Mount Faber, Telok Blangah Hill and Kent Ridge through forest walkways. The highlight is Henderson Waves, Singapore's highest pedestrian bridge at 36 metres, with its wooden curves.
+body: You don't have to walk the whole thing: the stretch from Mount Faber to Henderson Waves makes a good short outing, though part of it has been diverted for maintenance, so check NParks first. Set off early or near sunset, as much of the route is exposed to the sun.
+get: Thomson–East Coast Line to Outram Park, North East Line to HarbourFront, then walk up the Marang Trail to Mount Faber.
+
+@bukit-timah-nature-reserve
+name: Bukit Timah Nature Reserve
+lede: Primary rainforest and Singapore's highest hill, at the edge of the city.
+body: At 163 metres, Bukit Timah Hill is a modest climb, but the primary rainforest around it is rich in wildlife. Several trails lead to the summit.
+body: Go in the morning and bring water. Keep food out of sight because of the macaques, and watch for colugos gliding between the trees. NParks has a notice about demolition works at the summit, so check it before you go.
+get: Thomson–East Coast Line to Stevens, then the Downtown Line to Beauty World, followed by a walk of about 15 minutes.
+
+@sungei-buloh-wetland-reserve
+name: Sungei Buloh Wetland Reserve
+lede: Mangroves and mudflats in the far north, with herons, otters and wild crocodiles.
+body: Boardwalks run through the mangroves. From August to April, migratory shorebirds such as whimbrels and greenshanks stop here, while monitor lizards can be seen all year.
+body: Estuarine crocodiles live here, so stay on the paths. Some areas close at high tide, so check the NParks notices first, and bring binoculars if you have them.
+get: North–South Line to Kranji, then bus 925 (Monday to Saturday) or 925M (Sundays and public holidays).
+
+@pulau-ubin
+name: Pulau Ubin
+lede: Cycle around a small island that still feels like Singapore of the 1960s.
+body: A short bumboat ride from Changi takes you to a world of wooden houses, old quarries and quiet forest tracks. Rent a bicycle by the jetty and ride out to Chek Jawa, a wetland with a boardwalk over the sea.
+body: Bring cash for the boat and bikes, as there are no ATMs on the island. There's no timetable: boats leave once they have enough passengers, usually 9 to 12.
+get: Taxi or bus to Changi Point Ferry Terminal, then a bumboat of about 10 minutes.
+
+@east-coast-park
+name: East Coast Park
+lede: Singapore's long seaside park, for cycling, picnics and a breeze.
+body: The park stretches for about 13 km along the shore, with a track for cycling and skating. You can rent bikes inside the park and watch the ships anchored offshore.
+body: Finish at East Coast Lagoon Food Village, a hawker centre by the beach.
+get: Thomson–East Coast Line to Marine Parade, no change, then a walk of about 7 minutes.
+
+@newton-food-centre
+name: Newton Food Centre
+lede: A hawker centre known for grilled seafood and satay, one stop from Orchard.
+body: Newton appeared in the film Crazy Rich Asians and is at its liveliest in the evening. Try barbecued stingray, chilli crab, oyster omelette and satay.
+body: Seafood is often priced by weight, and overcharging has been a problem here in the past, so agree the price before you order.
+get: North–South Line to Newton, one stop, then a short walk. Or walk from the house in about 18 minutes.
+
+@maxwell-food-centre
+name: Maxwell Food Centre
+lede: Chinatown's classic hawker centre, and home of a famous plate of chicken rice.
+body: Tian Tian Hainanese Chicken Rice has the best-known queue here, but there's plenty to try among the stalls, from fish porridge to Fuzhou oyster cake.
+body: Come before noon or after 2 pm to avoid the lunch crowd. It's easy to combine with a walk through Chinatown.
+get: Thomson–East Coast Line to Maxwell, no change. The food centre is by the station.
+
+@lau-pa-sat
+name: Lau Pa Sat
+lede: A Victorian cast-iron market hall among the office towers of the CBD.
+body: The octagonal hall dates from 1894 and is now a food centre with a wide mix of stalls, busy at weekday lunchtimes.
+body: In the evening, part of Boon Tat Street closes to traffic and fills with satay grills and outdoor tables. That's the time to come.
+get: North–South Line to Raffles Place (4 stops), then a walk of about 5 minutes.
+
+@tiong-bahru-market
+name: Tiong Bahru Market
+lede: A local market and food centre in Singapore's most charming old housing estate.
+body: Downstairs is a wet market; upstairs is a food centre that's popular for breakfast, with favourites such as chwee kueh (steamed rice cakes) and lor mee.
+body: Afterwards, wander the 1930s Art Deco flats around it, with their curved balconies, independent cafés, bakeries and small shops.
+get: Thomson–East Coast Line to Havelock (2 stops), then a walk of about 3 minutes.
+
+@old-airport-road-food-centre
+name: Old Airport Road Food Centre
+lede: One of Singapore's largest hawker centres, and a favourite with locals.
+body: Built in 1972 on the old Kallang Airport estate, this centre has well over a hundred stalls. Regulars come for dishes such as fried Hokkien mee, fried kway teow, lor mee and rojak.
+body: Come hungry and with friends so that you can share several dishes. Some of the best stalls sell out fast, so go early.
+get: North–South Line to Dhoby Ghaut, then the Circle Line to Dakota, followed by a walk of about 4 minutes.
+
+@kaya-toast
+name: Kaya toast and kopi
+lede: Singapore's classic breakfast: crisp toast, coconut jam, soft eggs and strong coffee.
+body: Kaya is a sweet coconut jam, served on toast with butter. Crack two soft-boiled eggs into a saucer, add dark soy sauce and white pepper, and dip.
+body: Order your coffee like a local: kopi comes with condensed milk, kopi-O is black with sugar, and kopi-C has evaporated milk. Ya Kun, Toast Box and Killiney Kopitiam all serve it, as do many hawker centres.
+get: Killiney Kopitiam on Killiney Road is a walk of about 19 minutes (1.4 km) from the house.
+
+@national-gallery-singapore
+name: National Gallery Singapore
+lede: Southeast Asian art, in Singapore's former Supreme Court and City Hall.
+body: The gallery holds the world's largest public collection of modern art from Singapore and Southeast Asia. The two grand colonial buildings, linked by a canopy, are worth seeing in their own right.
+body: Allow at least two hours, and take in the view over the Padang.
+get: North–South Line to City Hall (3 stops), then a walk of about 4 minutes.
+
+@asian-civilisations-museum
+name: Asian Civilisations Museum
+lede: Trade, faith and craftsmanship across Asia, in a handsome building on the Singapore River.
+body: The museum explores how Asia's cultures met and traded, with a highlight in the Tang Shipwreck, the cargo of a ninth-century Arabian ship that sank on its way back from China.
+body: It's beside Cavenagh Bridge, so it's easy to pair with a stroll along Boat Quay or a visit to the Merlion.
+get: North–South Line to Raffles Place (4 stops), then a walk of about 8 minutes.
+
+@peranakan-museum
+name: Peranakan Museum
+lede: The story of Southeast Asia's Straits-born communities, told through jewellery, beadwork and porcelain.
+body: Peranakan culture blends Chinese, Malay, Indian and European influences. This museum, in a 1912 school building on Armenian Street, explores it through dazzling costumes, furniture and family objects.
+body: It's small enough to enjoy in an hour or two, and the National Museum and Fort Canning Park are nearby.
+get: North–South Line to City Hall (3 stops), then a walk of about 6 minutes.
+
+@national-museum-of-singapore
+name: National Museum of Singapore
+lede: Singapore's oldest museum, and the best place to learn how the country came to be.
+body: The Singapore History Gallery takes you from the region's early trading days through colonial rule, the Japanese Occupation and independence. The building itself, with its stained-glass dome, dates from 1887.
+body: Newcomers will find it especially useful: an afternoon here makes much of everyday Singapore easier to understand.
+get: North–South Line to Dhoby Ghaut (2 stops), then a walk of about 6 minutes.
+
+@chinatown
+name: Chinatown
+lede: Temples, shophouses and hawker food, right beside the skyscrapers of the CBD.
+body: Visit the Buddha Tooth Relic Temple, then Sri Mariamman Temple, Singapore's oldest Hindu temple, a short walk away. The market streets around Pagoda Street sell souvenirs, and Chinatown Complex has one of the city's biggest hawker centres.
+body: Before Chinese New Year, the area fills with lanterns and festive stalls. On Telok Ayer Street, nearby, you'll find the historic Thian Hock Keng temple.
+get: Thomson–East Coast Line to Maxwell, no change.
+
+@little-india
+name: Little India
+lede: Spice shops, flower garlands and colourful shophouses along Serangoon Road.
+body: Start at Tekka Centre, for its market and food stalls, then walk up Serangoon Road to Sri Veeramakaliamman Temple. Side streets are full of goldsmiths, sari shops and restaurants serving dishes from across India.
+body: Weekends are at their busiest, and Deepavali brings street lights and bazaars. Dress modestly if you plan to go inside the temples.
+get: North–South Line to Dhoby Ghaut (2 stops), then the North East Line to Little India, one stop.
+
+@kampong-glam
+name: Kampong Glam
+lede: Singapore's historic Malay and Arab quarter, around the golden domes of Sultan Mosque.
+body: Sultan Mosque, rebuilt in 1932, anchors a neighbourhood of shophouses and textile and carpet shops around Arab Street. Bussorah Street, which leads to the mosque, is lined with cafés and restaurants.
+body: Visitors are welcome at the mosque outside prayer times, and should dress modestly. Haji Lane, one block away, adds boutiques and murals.
+get: North–South Line to City Hall (3 stops), then the East–West Line to Bugis, one stop, followed by a walk of about 5 minutes.
+
+@haw-par-villa
+name: Haw Par Villa
+lede: A wonderfully strange park of Chinese folklore statues, built by the Tiger Balm brothers.
+body: Opened in 1937, the park has more than a thousand painted statues and dioramas of myths and moral tales. The Ten Courts of Hell, in Hell's Museum, are as graphic as they sound, so think twice before bringing small children.
+body: Parts of the park have been closed for maintenance since December 2025, while Hell's Museum stays open, so check the official site before you go.
+get: Thomson–East Coast Line to Caldecott, then the Circle Line to Haw Par Villa.
+
+@orchard-road
+name: Orchard Road
+lede: Singapore's famous shopping boulevard, a 5-minute walk from your front door.
+body: Along about two and a half kilometres of malls, you'll find everything from luxury flagships at ION Orchard, Paragon and Ngee Ann City to everyday shops and food courts in the basements. It's also where you'll probably buy most of what you need when you first move in.
+body: Come between mid-November and early January for the Christmas lights. When it's raining, underground links connect many of the malls.
+get: A 5-minute walk from 22 Jalan Elok.
+
+@haji-lane
+name: Haji Lane
+lede: A narrow lane of independent boutiques, murals and small bars in Kampong Glam.
+body: The shophouses here hold small fashion labels, vintage shops and cafés, with brightly painted walls that are popular for photos. It's quiet in the morning and livelier from the afternoon into the evening.
+body: It only takes a short time to walk, so pair it with Sultan Mosque and dinner on Bussorah Street or Arab Street.
+get: North–South Line to City Hall (3 stops), then the East–West Line to Bugis, one stop, followed by a walk of about 6 minutes.
+
+@mustafa-centre
+name: Mustafa Centre
+lede: A huge department store in Little India that sells almost everything, around the clock.
+body: Floor after floor of electronics, gold, spices, luggage, groceries and household goods make it a useful stop when you're setting up in a new country. It's crowded and a little chaotic, which is part of the fun.
+body: It went back to opening 24 hours in 2024, which makes it handy for late errands. You'll find plenty of Indian restaurants nearby.
+get: North–South Line to Dhoby Ghaut (2 stops), then the North East Line to Farrer Park, two stops.
+
+@bugis-street
+name: Bugis Street
+lede: A busy covered market for cheap clothes, snacks and souvenirs.
+body: Billed as Singapore's largest street-shopping location, Bugis Street is a warren of small stalls selling inexpensive fashion, accessories and gifts. It's a good place to pick up souvenirs.
+body: Bugis Junction and Bugis+ are across the road when you want air conditioning, and Kampong Glam is within walking distance.
+get: North–South Line to City Hall (3 stops), then the East–West Line to Bugis, one stop.
+
+@jewel-changi-airport
+name: Jewel Changi Airport
+lede: Shops, restaurants and a 40-metre indoor waterfall, all at the airport.
+body: The Rain Vortex, the world's tallest indoor waterfall, pours through the roof of this glass dome, surrounded by a terraced indoor forest. You don't need a flight to visit.
+body: Come in the evening, when the falls are lit up, or arrive early for a flight and spend the extra time here. Canopy Park, on the top floor, is ticketed. The falls are sometimes switched off for maintenance, so check the website first.
+get: 25 minutes by car or taxi. By MRT: North–South Line to City Hall, East–West Line to Tanah Merah, then the airport branch to Changi Airport.
+
+@emerald-hill
+name: Emerald Hill
+lede: Restored Peranakan terrace houses and easy-going bars, just off Orchard Road.
+body: This short street of early-1900s terrace houses, many in Chinese Baroque style, was once home to Singapore's wealthy Peranakan community. The bars around Peranakan Place, at the foot of the hill, fill up after work.
+body: The houses higher up are private homes, so enjoy them from the street. It's close enough to home to make an easy night out.
+get: A walk of about 13 minutes from the house. Somerset MRT is close by, one stop from Orchard.
+
+@spectra
+name: Spectra at Marina Bay Sands
+lede: A free nightly show of fountains, lasers and projections on the waterfront.
+body: Spectra plays out over the water at the Event Plaza in front of The Shoppes, with music, jets of water and light. It lasts about 15 minutes, and you don't need a ticket.
+body: It runs at 8 pm and 9 pm, with a 10 pm show on Fridays and Saturdays. Arrive 15 minutes early for a spot at the front, and check the official page in case times change.
+get: Thomson–East Coast Line to Marina Bay, then the Circle Line to Bayfront.
+
+@garden-rhapsody
+name: Garden Rhapsody
+lede: The Supertrees light up in time to music, free, every evening.
+body: Every evening at 7:45 pm and 8:45 pm, the Supertree Grove at Gardens by the Bay comes alive with light and sound. The music theme changes through the year.
+body: Lie down on the ground under the trees for the best view, as many locals do. Extra shows run around Christmas, and the Grove itself may charge entry during ticketed events such as Christmas Wonderland, so check before you go.
+get: Thomson–East Coast Line to Gardens by the Bay, no change.
+
+@clarke-quay-robertson-quay
+name: Clarke Quay and Robertson Quay
+lede: Riverside restaurants and bars: lively at one end, relaxed at the other.
+body: Clarke Quay is the busy one, with restored warehouses, big bars and clubs. Follow the river upstream to Robertson Quay for a calmer evening, at tables by the water.
+body: The riverside path joins them on foot, so you can start at one and finish at the other. River cruises also leave from Clarke Quay.
+get: For Clarke Quay: North–South Line to Dhoby Ghaut, then the North East Line one stop. For Robertson Quay: Thomson–East Coast Line to Great World, one stop, then a walk of about 10 minutes.
+
+@keong-saik-ann-siang
+name: Keong Saik Road and Ann Siang Hill
+lede: Cocktail bars and good restaurants in Chinatown's restored shophouses.
+body: Keong Saik Road was once a red-light district. Today its row of restored shophouses is one of the city's best streets for dinner. Ann Siang Hill and Club Street, a short walk away, are lined with bars.
+body: Book ahead on Friday and Saturday nights. Things are quieter earlier in the week, when it's easier to walk in.
+get: Thomson–East Coast Line to Maxwell, no change, then a walk of about 6 minutes.
+
+@rooftop-bars
+name: Rooftop bars
+lede: Singapore's skyline is at its best from above, with a drink in hand.
+body: Marina Bay and the CBD have many rooftop bars, some with views straight across the water. They're especially good at sunset, when the towers begin to light up.
+body: Check the dress code, as many don't allow shorts or slippers, and book a table for weekends. Drinks are expensive in Singapore, and some venues have a minimum spend.
+get: Thomson–East Coast Line to Marina Bay or North–South Line to Raffles Place, depending on the bar.
+
+@batam
+name: Batam
+lede: Indonesia, about an hour away by ferry: spas, seafood and golf at low prices.
+body: Batam is a popular quick getaway for its massages, seafood restaurants, golf courses and resorts. It works as a day trip, though a night is more relaxing. Don't go for the beaches: Bintan's are better.
+body: Bring your passport and check Indonesian entry rules for your nationality. If you're on a Singapore pass, make sure that it's valid for your return.
+get: Thomson–East Coast Line to Outram Park, North East Line to HarbourFront, then a ferry from HarbourFront Ferry Terminal.
+
+@bintan
+name: Bintan
+lede: Beach resorts on an Indonesian island, a little over an hour away by ferry.
+body: Bintan's Lagoi resort area has long beaches, large resorts, golf courses and water sports. It's a good choice for a slow weekend, with most people staying a night or two at one resort.
+body: Bring your passport, and check Indonesian entry rules for your nationality and that your Singapore pass is valid for your return. Book ferries ahead for long weekends.
+get: Taxi to Tanah Merah Ferry Terminal, then a ferry to Bintan.
+
+@malacca
+name: Malacca
+lede: A UNESCO World Heritage city in Malaysia, full of history and Peranakan food.
+body: Malacca's old town has Dutch and Portuguese buildings, Jonker Street's night market, and superb Peranakan cooking and chicken rice balls. It's easy to explore on foot over a weekend.
+body: Coaches from Singapore take about four to five hours, including the border crossing. Bring your passport, and avoid the public holiday rush if you can.
+get: A coach from Singapore. Several operators sell tickets online and leave from different points around the city.
+
+@regional-flights
+name: Bali, Phuket and Bangkok
+lede: Changi Airport is 25 minutes from the house by car, with flights across the region.
+body: Living here puts much of Southeast Asia within a short flight: Phuket is about two hours away, and Bangkok and Bali under three. Long weekends away are easy without taking much leave.
+body: Book early for public holiday weekends, when fares jump. Check visa rules for your nationality, and make sure your Singapore pass is valid for your return.
+get: 25 minutes to Changi Airport by car or taxi.

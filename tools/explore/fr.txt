@@ -1,0 +1,295 @@
+# Textes des pages explore/. Après modification, lancez tools/build_explore.py.
+
+@gardens-by-the-bay
+name: Gardens by the Bay
+lede: Des Supertrees géants, une montagne intérieure dans la brume et certaines des plus belles vues sur Marina Bay.
+body: Le Supertree Grove est en accès libre. Les deux grandes serres sont payantes : Cloud Forest enveloppe l'une des plus hautes cascades intérieures du monde dans une montagne couverte de plantes, et Flower Dome détient le record Guinness de la plus grande serre de verre et reste agréablement frais les après-midi de chaleur.
+body: Arrivez en fin d'après-midi, visitez les serres à la lumière du jour et restez pour le spectacle gratuit Garden Rhapsody une fois la nuit tombée.
+get: Ligne Thomson–East Coast jusqu'à Gardens by the Bay, sans changement.
+
+@merlion-park
+name: Merlion Park
+lede: La mascotte de Singapour, mi-lion, mi-poisson, avec toute la ligne d'horizon de Marina Bay derrière elle.
+body: Haut de 8,6 mètres, le Merlion crache de l'eau dans la baie depuis un petit parc devant l'hôtel The Fullerton. Une vingtaine de minutes suffit.
+body: Venez tôt le matin pour photographier tranquillement, ou au crépuscule quand les tours s'illuminent. Continuez ensuite à pied par la promenade, qui rejoint l'Esplanade et Marina Bay Sands.
+get: Ligne North–South jusqu'à Raffles Place (4 arrêts), puis environ 11 minutes à pied.
+
+@marina-bay-sands-skypark
+name: SkyPark de Marina Bay Sands
+lede: La vue depuis le pont en forme de navire au sommet de l'hôtel le plus célèbre de Singapour.
+body: L'observatoire du SkyPark domine la ville, Gardens by the Bay et les dômes de l'Esplanade en forme de durian. L'accès est payant et ouvert à tous ; la célèbre piscine à débordement est réservée aux clients de l'hôtel.
+body: Le coucher du soleil est le moment le plus demandé : réservez un billet horodaté. En redescendant, vous serez tout près de The Shoppes et de l'ArtScience Museum.
+get: Ligne Thomson–East Coast jusqu'à Marina Bay, puis ligne Circle jusqu'à Bayfront.
+
+@sentosa
+name: Sentosa
+lede: Une île de loisirs avec plages et grandes attractions, juste au large de la côte sud de Singapour.
+body: Universal Studios Singapore et Singapore Oceanarium sont les vedettes, avec de nombreuses attractions plus modestes comme le Skyline Luge. Les plages de Siloso, Palawan et Tanjong sont idéales pour nager et prendre un verre au coucher du soleil.
+body: Choisissez une seule grande attraction par jour et achetez les billets en ligne à l'avance. Rejoindre l'île à pied depuis VivoCity par le Sentosa Boardwalk est gratuit. Une partie est fermée pour travaux jusque vers 2030, remplacée par un passage couvert.
+get: Ligne Thomson–East Coast jusqu'à Outram Park, ligne North East jusqu'à HarbourFront, puis Sentosa Express depuis VivoCity.
+
+@mandai
+name: Réserve animalière de Mandai
+lede: Cinq parcs animaliers dans une même réserve de forêt tropicale, dont le célèbre zoo de Singapour.
+body: Singapore Zoo, Night Safari, River Wonders, Bird Paradise et Rainforest Wild Adventure se trouvent côte à côte à Mandai. Le zoo est réputé pour ses espaces ouverts, et le Night Safari permet d'observer les animaux nocturnes depuis un petit train après la tombée de la nuit.
+body: Chaque parc a son billet, avec des formules groupées si vous en visitez plusieurs. Un parc occupe presque toute une journée : prévoyez une sortie dédiée.
+get: Ligne North–South jusqu'à Khatib, puis bus M2 Khatib. Le soir, le taxi est plus simple.
+
+@singapore-flyer
+name: Singapore Flyer
+lede: Une grande roue géante pour contempler lentement la baie, au frais.
+body: Du haut de ses 165 mètres, le Flyer offre 30 minutes en cabine vitrée, avec une vue à 360 degrés de Marina Bay à la rivière Singapour.
+body: Montez vers le coucher du soleil pour profiter de la vue de jour comme de nuit. C'est une alternative plus calme au SkyPark.
+get: Ligne North–South jusqu'à Dhoby Ghaut, puis ligne Circle jusqu'à Promenade.
+
+@singapore-botanic-gardens
+name: Jardin botanique de Singapour
+lede: Un site du patrimoine mondial de l'UNESCO, et le lieu préféré de Singapour pour la promenade du matin.
+body: Pelouses, lacs, arbres historiques et parcelle de forêt ancienne se découvrent gratuitement. Seul espace payant, le National Orchid Garden présente une immense collection, dont des orchidées baptisées en l'honneur de membres de familles royales et de chefs d'État en visite.
+body: Venez tôt, à la fraîche, à l'heure des joggeurs et des groupes de tai-chi, puis prenez votre petit-déjeuner dans l'un des cafés du jardin. Il est à deux pas de la maison, facile d'y revenir.
+get: Ligne Thomson–East Coast jusqu'à Napier (2 arrêts), juste à côté du jardin.
+
+@macritchie-treetop-walk
+name: TreeTop Walk de MacRitchie
+lede: Un pont suspendu de 250 mètres dans la canopée, en pleine réserve naturelle.
+body: Le pont culmine à 25 mètres, entre deux collines de la réserve. On y accède à pied : selon NParks, la boucle de 7 km depuis Windsor Nature Park prend 3 à 4 heures, alors portez de bonnes chaussures et emportez de l'eau.
+body: Le pont est fermé le lundi, sauf jours fériés, et NParks déconseille ce sentier aux jeunes enfants et aux personnes sujettes au vertige. Gardez votre nourriture hors de vue à cause des macaques à longue queue.
+get: Le plus simple est de prendre un taxi ou un VTC jusqu'à Windsor Nature Park, près de Venus Drive, car aucune station de MRT n'est proche.
+
+@southern-ridges
+name: The Southern Ridges
+lede: Une marche d'environ 10 km sur les collines verdoyantes du sud, souvent à hauteur des arbres.
+body: Le parcours relie Mount Faber, Telok Blangah Hill et Kent Ridge par des passerelles en forêt. Le clou est Henderson Waves et ses courbes de bois : à 36 mètres, c'est le plus haut pont piéton de Singapour.
+body: Inutile de tout faire : le tronçon de Mount Faber à Henderson Waves constitue une belle sortie courte, mais une partie est déviée pour entretien, alors consultez d'abord NParks. Partez tôt ou vers le coucher du soleil, car une grande partie du parcours est en plein soleil.
+get: Ligne Thomson–East Coast jusqu'à Outram Park, ligne North East jusqu'à HarbourFront, puis montée à pied vers Mount Faber par le Marang Trail.
+
+@bukit-timah-nature-reserve
+name: Réserve naturelle de Bukit Timah
+lede: Une forêt primaire et le point culminant de Singapour, aux portes de la ville.
+body: Avec ses 163 mètres, Bukit Timah Hill reste une montée modeste, mais la forêt primaire qui l'entoure est riche en faune. Plusieurs sentiers mènent au sommet.
+body: Venez le matin avec de l'eau. Gardez votre nourriture hors de vue à cause des macaques, et guettez les colugos qui planent entre les arbres. NParks a publié un avis sur des travaux de démolition au sommet : consultez-le avant de partir.
+get: Ligne Thomson–East Coast jusqu'à Stevens, ligne Downtown jusqu'à Beauty World, puis environ 15 minutes à pied.
+
+@sungei-buloh-wetland-reserve
+name: Réserve de Sungei Buloh
+lede: Mangroves et vasières à l'extrême nord, avec hérons, loutres et crocodiles sauvages.
+body: Des passerelles traversent la mangrove. D'août à avril, des limicoles migrateurs comme le courlis corlieu et le chevalier aboyeur font étape ici, et les varans se voient toute l'année.
+body: Des crocodiles marins vivent ici : restez sur les chemins. Certaines zones ferment à marée haute, alors consultez d'abord les avis de NParks, et apportez des jumelles si vous en avez.
+get: Ligne North–South jusqu'à Kranji, puis bus 925 (du lundi au samedi) ou 925M (dimanches et jours fériés).
+
+@pulau-ubin
+name: Pulau Ubin
+lede: Faites le tour à vélo d'une petite île qui rappelle encore le Singapour des années 1960.
+body: Une courte traversée en bateau depuis Changi mène à un monde de maisons en bois, d'anciennes carrières et de chemins forestiers paisibles. Louez un vélo près de l'embarcadère et rejoignez Chek Jawa, une zone humide dotée d'une passerelle sur la mer.
+body: Prévoyez des espèces pour le bateau et le vélo, car il n'y a pas de distributeur sur l'île. Il n'y a pas d'horaires : les bateaux partent quand ils ont assez de passagers, en général 9 à 12.
+get: Taxi ou bus jusqu'à Changi Point Ferry Terminal, puis environ 10 minutes de bateau.
+
+@east-coast-park
+name: East Coast Park
+lede: Le long parc côtier de Singapour, pour le vélo, les pique-niques et la brise.
+body: Le parc longe le rivage sur environ 13 km, avec une piste pour vélos et rollers. On peut y louer des vélos et regarder les navires au mouillage.
+body: Terminez à East Coast Lagoon Food Village, un centre de restauration en bord de plage.
+get: Ligne Thomson–East Coast jusqu'à Marine Parade, sans changement, puis environ 7 minutes à pied.
+
+@newton-food-centre
+name: Newton Food Centre
+lede: Un centre de restauration réputé pour ses grillades de fruits de mer et son satay, à un arrêt d'Orchard.
+body: Newton apparaît dans le film Crazy Rich Asians et s'anime surtout le soir. Goûtez la raie grillée, le crabe au piment, l'omelette aux huîtres et le satay.
+body: Les fruits de mer sont souvent vendus au poids, et des surfacturations ont déjà posé problème ici : convenez du prix avant de commander.
+get: Ligne North–South jusqu'à Newton, un arrêt, puis une courte marche. Ou environ 18 minutes à pied depuis la maison.
+
+@maxwell-food-centre
+name: Maxwell Food Centre
+lede: Le centre de restauration classique de Chinatown, où se trouve un célèbre riz au poulet.
+body: Tian Tian Hainanese Chicken Rice a la file d'attente la plus connue, mais il y a bien d'autres stands à essayer, du porridge de poisson au gâteau d'huîtres de Fuzhou.
+body: Venez avant midi ou après 14 h pour éviter la foule du déjeuner. L'endroit se combine facilement avec une promenade dans Chinatown.
+get: Ligne Thomson–East Coast jusqu'à Maxwell, sans changement. Le centre est à côté de la station.
+
+@lau-pa-sat
+name: Lau Pa Sat
+lede: Une halle victorienne en fonte au milieu des tours du quartier d'affaires.
+body: La halle octogonale date de 1894 et abrite aujourd'hui des stands très variés, particulièrement animés le midi en semaine.
+body: Le soir, une partie de Boon Tat Street est fermée à la circulation et se remplit de grils à satay et de tables en plein air. C'est le meilleur moment pour venir.
+get: Ligne North–South jusqu'à Raffles Place (4 arrêts), puis environ 5 minutes à pied.
+
+@tiong-bahru-market
+name: Tiong Bahru Market
+lede: Un marché local et centre de restauration dans le plus charmant des anciens quartiers de Singapour.
+body: En bas, un marché de produits frais ; en haut, un centre de restauration très prisé au petit-déjeuner, avec des classiques comme le chwee kueh (gâteaux de riz vapeur) et le lor mee.
+body: Promenez-vous ensuite parmi les immeubles Art déco des années 1930, avec leurs balcons arrondis, cafés indépendants, boulangeries et petites boutiques.
+get: Ligne Thomson–East Coast jusqu'à Havelock (2 arrêts), puis environ 3 minutes à pied.
+
+@old-airport-road-food-centre
+name: Old Airport Road Food Centre
+lede: L'un des plus grands centres de restauration de Singapour, très aimé des habitants.
+body: Construit en 1972 dans le quartier de l'ancien aéroport de Kallang, il compte plus d'une centaine de stands. Les habitués viennent pour des plats comme les nouilles Hokkien, le kway teow sauté, le lor mee et le rojak.
+body: Venez le ventre vide et entre amis pour partager plusieurs plats. Certains des meilleurs stands sont vite à court : venez tôt.
+get: Ligne North–South jusqu'à Dhoby Ghaut, ligne Circle jusqu'à Dakota, puis environ 4 minutes à pied.
+
+@kaya-toast
+name: Kaya toast et kopi
+lede: Le petit-déjeuner classique de Singapour : toast croustillant, confiture de coco, œufs mollets et café corsé.
+body: Le kaya est une confiture sucrée de coco, servie sur du toast avec du beurre. Cassez deux œufs mollets dans une soucoupe, ajoutez de la sauce soja noire et du poivre blanc, et trempez.
+body: Commandez votre café comme ici : le kopi se boit au lait concentré sucré, le kopi-O noir avec du sucre, et le kopi-C au lait évaporé. Ya Kun, Toast Box et Killiney Kopitiam en servent, tout comme de nombreux centres de restauration.
+get: Killiney Kopitiam, sur Killiney Road, est à environ 19 minutes à pied (1,4 km) de la maison.
+
+@national-gallery-singapore
+name: National Gallery Singapore
+lede: L'art d'Asie du Sud-Est, dans l'ancienne Cour suprême et l'ancien hôtel de ville de Singapour.
+body: Le musée abrite la plus grande collection publique au monde d'art moderne de Singapour et d'Asie du Sud-Est. Les deux imposants bâtiments coloniaux, reliés par une verrière, méritent à eux seuls le détour.
+body: Prévoyez au moins deux heures, et profitez de la vue sur le Padang.
+get: Ligne North–South jusqu'à City Hall (3 arrêts), puis environ 4 minutes à pied.
+
+@asian-civilisations-museum
+name: Asian Civilisations Museum
+lede: Commerce, foi et artisanat à travers l'Asie, dans un bel édifice au bord de la rivière Singapour.
+body: Le musée montre comment les cultures d'Asie se sont rencontrées et ont commercé. L'un des temps forts est l'épave Tang, la cargaison d'un navire arabe du IXe siècle qui a sombré au retour de Chine.
+body: Il se trouve près du pont Cavenagh : associez-le à une balade sur Boat Quay ou à une visite du Merlion.
+get: Ligne North–South jusqu'à Raffles Place (4 arrêts), puis environ 8 minutes à pied.
+
+@peranakan-museum
+name: Peranakan Museum
+lede: L'histoire des communautés nées dans les Détroits, racontée par les bijoux, les perles et la porcelaine.
+body: La culture peranakan mêle influences chinoises, malaises, indiennes et européennes. Ce musée, dans une école de 1912 sur Armenian Street, la présente à travers des costumes éblouissants, du mobilier et des objets de famille.
+body: Une heure ou deux suffisent pour en profiter, et le National Museum et Fort Canning Park sont tout proches.
+get: Ligne North–South jusqu'à City Hall (3 arrêts), puis environ 6 minutes à pied.
+
+@national-museum-of-singapore
+name: National Museum of Singapore
+lede: Le plus ancien musée de Singapour, et le meilleur endroit pour comprendre comment le pays est né.
+body: La Singapore History Gallery retrace les premiers temps du commerce régional, la période coloniale, l'occupation japonaise et l'indépendance. Le bâtiment et son dôme de vitraux datent de 1887.
+body: C'est particulièrement utile aux nouveaux arrivants : un après-midi ici rend le quotidien de Singapour bien plus compréhensible.
+get: Ligne North–South jusqu'à Dhoby Ghaut (2 arrêts), puis environ 6 minutes à pied.
+
+@chinatown
+name: Chinatown
+lede: Temples, shophouses et cuisine de rue, juste à côté des gratte-ciel du quartier d'affaires.
+body: Visitez le temple de la Relique de la dent de Bouddha puis, à quelques pas, Sri Mariamman, le plus ancien temple hindou de Singapour. Les rues autour de Pagoda Street vendent des souvenirs, et Chinatown Complex abrite l'un des plus grands centres de restauration de la ville.
+body: Avant le Nouvel An chinois, le quartier se couvre de lanternes et de stands festifs. Tout près, sur Telok Ayer Street, se dresse le temple historique Thian Hock Keng.
+get: Ligne Thomson–East Coast jusqu'à Maxwell, sans changement.
+
+@little-india
+name: Little India
+lede: Épiceries, guirlandes de fleurs et shophouses colorées le long de Serangoon Road.
+body: Commencez par Tekka Centre, son marché et ses stands de nourriture, puis remontez Serangoon Road jusqu'au temple Sri Veeramakaliamman. Les rues adjacentes regorgent d'orfèvres, de boutiques de saris et de restaurants aux plats de toute l'Inde.
+body: Les week-ends sont les plus animés, et Deepavali apporte illuminations et bazars. Portez une tenue sobre pour entrer dans les temples.
+get: Ligne North–South jusqu'à Dhoby Ghaut (2 arrêts), puis ligne North East jusqu'à Little India, un arrêt.
+
+@kampong-glam
+name: Kampong Glam
+lede: Le quartier historique malais et arabe de Singapour, autour des dômes dorés de la mosquée du Sultan.
+body: Reconstruite en 1932, la mosquée du Sultan domine un quartier de shophouses et de boutiques de tissus et de tapis autour d'Arab Street. Bussorah Street, qui y mène, est bordée de cafés et de restaurants.
+body: La mosquée se visite en dehors des heures de prière, en tenue sobre. À une rue de là, Haji Lane ajoute boutiques et fresques murales.
+get: Ligne North–South jusqu'à City Hall (3 arrêts), ligne East–West jusqu'à Bugis, un arrêt, puis environ 5 minutes à pied.
+
+@haw-par-villa
+name: Haw Par Villa
+lede: Un parc merveilleusement étrange de statues du folklore chinois, créé par les frères du Tiger Balm.
+body: Ouvert en 1937, il réunit plus d'un millier de statues peintes et de dioramas de mythes et de contes moraux. Les Dix Cours de l'Enfer, au Hell's Museum, sont aussi crus qu'on l'imagine : réfléchissez-y avant de venir avec de jeunes enfants.
+body: Une partie du parc est fermée pour entretien depuis décembre 2025, mais le Hell's Museum reste ouvert : consultez le site officiel avant de partir.
+get: Ligne Thomson–East Coast jusqu'à Caldecott, puis ligne Circle jusqu'à Haw Par Villa.
+
+@orchard-road
+name: Orchard Road
+lede: Le célèbre boulevard commerçant de Singapour, à 5 minutes à pied de chez vous.
+body: Sur environ deux kilomètres et demi de centres commerciaux, on trouve de tout, des grandes enseignes d'ION Orchard, Paragon et Ngee Ann City aux boutiques du quotidien et aires de restauration en sous-sol. C'est sans doute ici que vous achèterez presque tout pour votre installation.
+body: Venez entre la mi-novembre et début janvier pour les illuminations de Noël. S'il pleut, de nombreux centres communiquent en sous-sol.
+get: À 5 minutes à pied de 22 Jalan Elok.
+
+@haji-lane
+name: Haji Lane
+lede: Une ruelle de boutiques indépendantes, de fresques et de petits bars à Kampong Glam.
+body: Les shophouses abritent de petites marques de mode, des boutiques vintage et des cafés, avec des murs colorés très photographiés. C'est calme le matin et plus animé de l'après-midi jusqu'au soir.
+body: Elle se parcourt vite : associez-la à la mosquée du Sultan et à un dîner sur Bussorah Street ou Arab Street.
+get: Ligne North–South jusqu'à City Hall (3 arrêts), ligne East–West jusqu'à Bugis, un arrêt, puis environ 6 minutes à pied.
+
+@mustafa-centre
+name: Mustafa Centre
+lede: Un immense grand magasin de Little India qui vend presque tout, 24 heures sur 24.
+body: Étage après étage d'électronique, d'or, d'épices, de valises, d'épicerie et d'articles de maison : très pratique pour s'installer dans un nouveau pays. C'est bondé et un peu chaotique, ce qui fait partie du plaisir.
+body: Il a repris ses horaires 24 h/24 en 2024, ce qui est pratique pour les courses tardives. Les restaurants indiens ne manquent pas alentour.
+get: Ligne North–South jusqu'à Dhoby Ghaut (2 arrêts), puis ligne North East jusqu'à Farrer Park, deux arrêts.
+
+@bugis-street
+name: Bugis Street
+lede: Un marché couvert animé de vêtements bon marché, d'en-cas et de souvenirs.
+body: Présentée comme le plus grand lieu de shopping de rue de Singapour, Bugis Street est un dédale de petits stands de mode abordable, d'accessoires et de cadeaux. C'est un bon endroit pour les souvenirs.
+body: Pour la climatisation, Bugis Junction et Bugis+ sont juste en face, et Kampong Glam est accessible à pied.
+get: Ligne North–South jusqu'à City Hall (3 arrêts), puis ligne East–West jusqu'à Bugis, un arrêt.
+
+@jewel-changi-airport
+name: Jewel Changi Airport
+lede: Boutiques, restaurants et une cascade intérieure de 40 mètres, à l'aéroport même.
+body: Le Rain Vortex, plus haute cascade intérieure du monde, tombe du toit de ce dôme de verre, entouré d'une forêt intérieure en terrasses. Inutile d'avoir un vol pour venir.
+body: Venez le soir, quand la cascade s'illumine, ou arrivez tôt pour votre vol et passez-y le temps restant. Canopy Park, au dernier étage, est payant. La cascade est parfois coupée pour entretien : consultez d'abord le site.
+get: 25 minutes en voiture ou en taxi. En MRT : ligne North–South jusqu'à City Hall, ligne East–West jusqu'à Tanah Merah, puis branche de l'aéroport jusqu'à Changi Airport.
+
+@emerald-hill
+name: Emerald Hill
+lede: Maisons peranakan restaurées et bars décontractés, juste à côté d'Orchard Road.
+body: Cette courte rue de maisons du début du XXe siècle, souvent de style baroque chinois, a été le foyer de la riche communauté peranakan de Singapour. Les bars autour de Peranakan Place, au pied de la colline, se remplissent après le travail.
+body: Les maisons plus haut sont des résidences privées : admirez-les depuis la rue. C'est assez près de la maison pour une sortie facile le soir.
+get: À environ 13 minutes à pied de la maison. La station Somerset est proche, à un arrêt d'Orchard.
+
+@spectra
+name: Spectra à Marina Bay Sands
+lede: Un spectacle nocturne gratuit de fontaines, de lasers et de projections au bord de l'eau.
+body: Spectra se joue sur l'eau, à l'Event Plaza devant The Shoppes, avec musique, jets d'eau et lumière. Il dure environ 15 minutes et ne nécessite pas de billet.
+body: Il a lieu à 20 h et 21 h, avec une séance à 22 h les vendredis et samedis. Arrivez 15 minutes avant pour être au premier rang, et consultez la page officielle au cas où les horaires changeraient.
+get: Ligne Thomson–East Coast jusqu'à Marina Bay, puis ligne Circle jusqu'à Bayfront.
+
+@garden-rhapsody
+name: Garden Rhapsody
+lede: Les Supertrees s'illuminent en musique, gratuitement, chaque soir.
+body: Chaque soir, à 19 h 45 et 20 h 45, le Supertree Grove de Gardens by the Bay s'anime de lumière et de son. Le thème musical change au fil de l'année.
+body: Allongez-vous au sol sous les arbres pour mieux voir, comme beaucoup d'habitants. Des séances s'ajoutent autour de Noël, et le Grove lui-même peut devenir payant lors d'événements comme Christmas Wonderland : vérifiez avant de partir.
+get: Ligne Thomson–East Coast jusqu'à Gardens by the Bay, sans changement.
+
+@clarke-quay-robertson-quay
+name: Clarke Quay et Robertson Quay
+lede: Restaurants et bars au bord de la rivière : animés d'un côté, détendus de l'autre.
+body: Clarke Quay est le plus vivant, avec ses entrepôts restaurés, ses grands bars et ses clubs. Remontez la rivière jusqu'à Robertson Quay pour une soirée plus calme, à une table au bord de l'eau.
+body: Le chemin longeant la rivière les relie à pied : commencez par l'un et finissez par l'autre. Des croisières fluviales partent aussi de Clarke Quay.
+get: Pour Clarke Quay : ligne North–South jusqu'à Dhoby Ghaut, puis ligne North East, un arrêt. Pour Robertson Quay : ligne Thomson–East Coast jusqu'à Great World, un arrêt, puis environ 10 minutes à pied.
+
+@keong-saik-ann-siang
+name: Keong Saik Road et Ann Siang Hill
+lede: Bars à cocktails et bonnes tables dans les shophouses restaurées de Chinatown.
+body: Autrefois quartier chaud, Keong Saik Road aligne aujourd'hui des shophouses restaurées et compte parmi les meilleures rues de la ville pour dîner. Ann Siang Hill et Club Street, à quelques pas, sont bordées de bars.
+body: Réservez les vendredis et samedis soir. C'est plus calme en début de semaine, quand on entre plus facilement sans réservation.
+get: Ligne Thomson–East Coast jusqu'à Maxwell, sans changement, puis environ 6 minutes à pied.
+
+@rooftop-bars
+name: Bars sur les toits
+lede: La ligne d'horizon de Singapour est à son meilleur vue d'en haut, un verre à la main.
+body: Marina Bay et le quartier d'affaires comptent de nombreux bars sur les toits, certains avec vue directe sur l'eau. Ils sont particulièrement beaux au coucher du soleil, quand les tours commencent à s'éclairer.
+body: Vérifiez le code vestimentaire, car beaucoup refusent shorts et tongs, et réservez pour le week-end. L'alcool est cher à Singapour, et certains lieux imposent une dépense minimale.
+get: Ligne Thomson–East Coast jusqu'à Marina Bay ou ligne North–South jusqu'à Raffles Place, selon le bar.
+
+@batam
+name: Batam
+lede: L'Indonésie à environ une heure de ferry : spas, fruits de mer et golf à petits prix.
+body: Batam est une escapade prisée pour ses massages, ses restaurants de fruits de mer, ses golfs et ses complexes hôteliers. L'aller-retour dans la journée est possible, mais une nuit est plus reposante. N'y allez pas pour les plages : celles de Bintan sont meilleures.
+body: Emportez votre passeport et vérifiez les règles d'entrée en Indonésie pour votre nationalité. Si vous avez un titre de séjour singapourien, assurez-vous qu'il sera valable à votre retour.
+get: Ligne Thomson–East Coast jusqu'à Outram Park, ligne North East jusqu'à HarbourFront, puis ferry depuis HarbourFront Ferry Terminal.
+
+@bintan
+name: Bintan
+lede: Des complexes balnéaires sur une île indonésienne, à un peu plus d'une heure de ferry.
+body: La zone de Lagoi, à Bintan, offre de longues plages, de grands complexes, des golfs et des sports nautiques. C'est idéal pour un week-end tranquille, la plupart des gens restant une ou deux nuits dans le même complexe.
+body: Emportez votre passeport, vérifiez les règles d'entrée en Indonésie pour votre nationalité et la validité de votre titre de séjour singapourien pour le retour. Réservez le ferry à l'avance pour les week-ends prolongés.
+get: Taxi jusqu'à Tanah Merah Ferry Terminal, puis ferry pour Bintan.
+
+@malacca
+name: Malacca
+lede: Une ville malaisienne classée à l'UNESCO, riche d'histoire et de cuisine peranakan.
+body: La vieille ville compte des bâtiments hollandais et portugais, le marché de nuit de Jonker Street et une excellente cuisine peranakan, sans oublier les boulettes de riz au poulet. Elle se découvre facilement à pied en un week-end.
+body: Les cars depuis Singapour mettent environ quatre à cinq heures, passage de la frontière compris. Emportez votre passeport et évitez si possible les jours fériés.
+get: Car depuis Singapour. Plusieurs compagnies vendent des billets en ligne et partent de différents points de la ville.
+
+@regional-flights
+name: Bali, Phuket et Bangkok
+lede: L'aéroport de Changi est à 25 minutes de la maison en voiture, avec des vols vers toute la région.
+body: Vivre ici met une grande partie de l'Asie du Sud-Est à portée de vol court : Phuket est à environ deux heures, Bangkok et Bali à moins de trois heures. Les longs week-ends sont faciles sans poser beaucoup de congés.
+body: Réservez tôt pour les week-ends fériés, quand les prix grimpent. Vérifiez les visas pour votre nationalité et la validité de votre titre de séjour singapourien pour le retour.
+get: 25 minutes jusqu'à l'aéroport de Changi en voiture ou en taxi.

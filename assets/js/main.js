@@ -119,7 +119,7 @@ function renderChrome() {
   // This page's path within its language, e.g. "rooms.html" on rooms.html, zh/rooms.html and ja/rooms.html.
   const here = norm(location.href.replace(/[?#].*$/, "").replace(ROOT, "").replace(/^(zh|ja|es|fr)\//, ""));
   // Pages that exist in every language; anything else (e.g. the 404) switches to that language's home page.
-  const translated = [...NAV.map(([href]) => href), "area.html", "guide/"].some((href) => norm(href) === here);
+  const translated = [...NAV.map(([href]) => href), "area.html", "guide/"].some((href) => norm(href) === here) || here.startsWith("explore/");
   const langHref = (k) => ROOT + LANGS[k].dir + (translated ? here : "");
 
   const header = document.querySelector("[data-header]");
