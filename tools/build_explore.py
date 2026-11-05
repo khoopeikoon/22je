@@ -82,7 +82,7 @@ SOURCES = {
     "merlion-park": [("Visit Singapore", VISIT + "see-do-singapore/recreation-leisure/viewpoints/merlion-park/"), ("Wikipedia", WIKI + "Merlion_Park")],
     "marina-bay-sands-skypark": [("Marina Bay Sands", "https://www.marinabaysands.com/attractions/skypark-observation-deck.html"), ("Wikipedia", WIKI + "Marina_Bay_Sands")],
     "sentosa": [("Sentosa: getting here", "https://www.sentosa.com.sg/en/getting-to-sentosa/"), ("Wikipedia", WIKI + "Sentosa")],
-    "mandai": [("Mandai: getting here", "https://www.mandai.com/en/plan-your-visit/getting-here.html"), ("Night Safari", "https://www.mandai.com/en/night-safari.html")],
+    "mandai": [("Mandai: getting here", "https://www.mandai.com/en/plan-your-visit/getting-to-and-around/getting-to-mandai-wildlife-reserve.html"), ("Night Safari", "https://www.mandai.com/en/night-safari.html")],
     "singapore-flyer": [("Visit Singapore", VISIT + "see-do-singapore/recreation-leisure/viewpoints/singapore-flyer/"), ("Wikipedia", WIKI + "Singapore_Flyer")],
     "singapore-botanic-gardens": [("NParks", NPARKS + "sbg"), ("Wikipedia", WIKI + "Singapore_Botanic_Gardens")],
     "macritchie-treetop-walk": [("NParks", NPARKS + "visit/parks/central-catchment-nature-reserve/activities/hiking-nature-walk"), ("Wikipedia", WIKI + "MacRitchie_Reservoir")],

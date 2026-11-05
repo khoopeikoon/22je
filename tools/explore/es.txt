@@ -2,71 +2,71 @@
 
 @gardens-by-the-bay
 name: Gardens by the Bay
-lede: Superárboles gigantes, una montaña interior envuelta en niebla y algunas de las mejores vistas de Marina Bay.
+lede: Superárboles gigantes y una montaña interior envuelta en niebla, junto a Marina Bay.
 body: El Supertree Grove se puede recorrer gratis. Los dos grandes invernaderos de cristal requieren entrada: Cloud Forest envuelve una de las cascadas interiores más altas del mundo en una montaña cubierta de plantas, y Flower Dome tiene el récord Guinness de mayor invernadero de cristal y resulta agradablemente fresco en una tarde calurosa.
-body: Llegue a última hora de la tarde, visite los invernaderos con luz y quédese después para ver el espectáculo gratuito de luces Garden Rhapsody.
+body: Dese tiempo de sobra: llegue a última hora de la tarde como muy tarde, compruebe la última entrada a los invernaderos y quédese para el espectáculo gratuito Garden Rhapsody.
 get: Línea Thomson–East Coast hasta Gardens by the Bay, sin transbordo.
 
 @merlion-park
 name: Merlion Park
 lede: La mascota de Singapur, mitad león y mitad pez, con todo el perfil de Marina Bay detrás.
-body: El Merlion, de 8,6 metros, lanza agua a la bahía desde un pequeño parque frente al hotel The Fullerton. Con unos 20 minutos basta.
+body: El Merlion, de 8,6 metros, lanza agua a la bahía desde un pequeño parque frente al hotel The Fullerton. Calcule unos 30 minutos, más si hay mucha gente.
 body: Venga temprano para hacer fotos con espacio, o al anochecer, cuando se encienden los rascacielos. Luego siga a pie por el paseo marítimo, que conecta con el Esplanade y Marina Bay Sands.
 get: Línea North–South hasta Raffles Place (4 paradas) y unos 11 minutos a pie.
 
 @marina-bay-sands-skypark
 name: SkyPark de Marina Bay Sands
-lede: La vista desde la cubierta en forma de barco que corona el hotel más famoso de Singapur.
+lede: La vista desde la cubierta en forma de barco que corona Marina Bay Sands.
 body: El mirador SkyPark domina la ciudad, Gardens by the Bay y las cúpulas del Esplanade, con forma de durián. Se accede con entrada y está abierto a todos; la famosa piscina infinita es solo para huéspedes del hotel.
-body: El atardecer es el momento más solicitado, así que reserve antes una entrada con hora. Al bajar, tendrá muy cerca The Shoppes y el ArtScience Museum.
+body: Desde las 17:00 es hora punta y cuesta más, así que reserve antes una entrada con hora. Al bajar, tendrá muy cerca The Shoppes y el ArtScience Museum.
 get: Línea Thomson–East Coast hasta Marina Bay y línea Circle hasta Bayfront.
 
 @sentosa
 name: Sentosa
 lede: Una isla turística con playas y grandes atracciones, justo frente a la costa sur de Singapur.
-body: Universal Studios Singapore y Singapore Oceanarium son las estrellas, con muchas atracciones menores como el Skyline Luge. Las playas de Siloso, Palawan y Tanjong son perfectas para nadar y tomar algo al atardecer.
-body: Elija una gran atracción por día y compre las entradas antes por internet. Ir a pie desde VivoCity por el Sentosa Boardwalk es gratis. Parte del paseo está cerrada por obras hasta aproximadamente 2030, con una pasarela cubierta en su lugar.
+body: Universal Studios Singapore y Singapore Oceanarium están entre sus mayores atracciones, junto a otras menores como el Skyline Luge. Siloso, Palawan y Tanjong son sus principales playas; consulte los avisos antes de bañarse.
+body: Una gran atracción puede ocupar casi todo el día, así que compruebe los horarios y compre las entradas antes por internet. Ir a pie desde VivoCity por el Sentosa Boardwalk es gratis. Parte del paseo está cerrada por obras hasta aproximadamente 2030, con una pasarela cubierta en su lugar.
 get: Línea Thomson–East Coast hasta Outram Park, línea North East hasta HarbourFront y Sentosa Express desde VivoCity.
 
 @mandai
 name: Reserva de Fauna de Mandai
-lede: Cinco parques de fauna en una misma reserva de selva, incluido el célebre Zoo de Singapur.
+lede: Cinco parques de fauna en una misma reserva de selva, incluido el Zoo de Singapur.
 body: Singapore Zoo, Night Safari, River Wonders, Bird Paradise y Rainforest Wild Adventure están uno junto a otro en Mandai. El zoo es conocido por sus hábitats abiertos, y el Night Safari permite ver animales nocturnos desde un tranvía al caer la noche.
-body: Cada parque tiene su entrada, con paquetes si quiere ver más de uno. Un parque ocupa casi todo un día, así que dedíquele una excursión.
-get: Línea North–South hasta Khatib y autobús M2 Khatib. De noche, un taxi es más sencillo.
+body: Cada parque tiene su entrada, con paquetes si quiere ver más de uno. Un parque puede ocupar casi todo un día, así que dese tiempo de sobra.
+get: Línea Thomson–East Coast hasta Springleaf, sin transbordo, y autobús 138. O línea North–South hasta Khatib y autobús M2 Khatib. Compruebe el último autobús si va al Night Safari.
 
 @singapore-flyer
 name: Singapore Flyer
 lede: Una noria gigante con una vista lenta y climatizada sobre la bahía.
 body: Con 165 metros de altura, ofrece un paseo de 30 minutos en una cabina de cristal, con vistas de 360 grados desde Marina Bay hasta el río Singapur.
-body: Vaya hacia el atardecer para ver el paisaje de día y de noche. Es una alternativa más tranquila al SkyPark.
+body: Compruebe en la web oficial la hora del último viaje antes de salir.
 get: Línea North–South hasta Dhoby Ghaut y línea Circle hasta Promenade.
 
 @singapore-botanic-gardens
 name: Jardín Botánico de Singapur
-lede: Patrimonio Mundial de la UNESCO y el lugar favorito de Singapur para pasear por la mañana.
+lede: Patrimonio Mundial de la UNESCO con entrada gratuita, abierto de 5:00 a medianoche.
 body: Se pueden explorar gratis sus céspedes, lagos, árboles históricos y un trozo de selva antigua. La única zona de pago, el National Orchid Garden, muestra una enorme colección que incluye orquídeas con nombres de miembros de la realeza y jefes de Estado visitantes.
-body: Vaya temprano, cuando hace fresco y salen los corredores y los grupos de taichí, y desayune luego en una de sus cafeterías. Está a un corto trayecto de casa, así que es fácil volver.
+body: Por la mañana hace más fresco, así que vaya temprano y lleve agua. Está a un corto trayecto en tren de la casa.
 get: Línea Thomson–East Coast hasta Napier (2 paradas), junto al jardín.
 
 @macritchie-treetop-walk
 name: TreeTop Walk de MacRitchie
 lede: Un puente colgante de 250 metros entre las copas de la selva, en plena reserva natural.
 body: El puente alcanza 25 metros en su punto más alto, entre dos colinas de la reserva. Hay que llegar caminando: según NParks, el circuito de 7 km desde Windsor Nature Park lleva de 3 a 4 horas, así que use calzado adecuado y lleve agua.
-body: El puente cierra los lunes, salvo festivos, y NParks indica que la ruta no es apta para niños pequeños ni personas con vértigo. Guarde la comida por los macacos de cola larga.
+body: El puente cierra los lunes, salvo festivos, y la última entrada es a las 16:45, así que salga temprano. NParks indica que la ruta no es apta para niños pequeños ni personas con vértigo. Guarde la comida por los macacos de cola larga.
 get: Lo más fácil es ir en taxi o VTC a Windsor Nature Park, junto a Venus Drive, ya que no hay MRT cerca.
 
 @southern-ridges
 name: The Southern Ridges
 lede: Un paseo de unos 10 km por las verdes colinas del sur, gran parte a la altura de los árboles.
 body: La ruta une Mount Faber, Telok Blangah Hill y Kent Ridge por pasarelas forestales. Lo más destacado es Henderson Waves, con sus curvas de madera: a 36 metros, es el puente peatonal más alto de Singapur.
-body: No hace falta hacerla entera: el tramo de Mount Faber a Henderson Waves es una buena salida corta, aunque parte está desviada por mantenimiento, así que consulte antes a NParks. Salga temprano o cerca del atardecer, porque gran parte del camino está expuesta al sol.
+body: Si no está seguro de hacer la ruta completa, empiece por el tramo de Mount Faber a Henderson Waves, aunque parte está desviada por mantenimiento, así que consulte antes a NParks. Lleve agua y evite las horas de más calor.
 get: Línea Thomson–East Coast hasta Outram Park, línea North East hasta HarbourFront y subida a pie a Mount Faber por el Marang Trail.
 
 @bukit-timah-nature-reserve
 name: Reserva Natural de Bukit Timah
 lede: Selva primaria y la colina más alta de Singapur, al borde de la ciudad.
-body: Con 163 metros, Bukit Timah Hill es una subida modesta, pero la selva primaria que la rodea es rica en fauna. Varios senderos llevan a la cima.
+body: Con 163 metros, Bukit Timah Hill es el pico natural más alto de Singapur, en una de sus pocas selvas primarias. Varios senderos llevan a la cima.
 body: Vaya por la mañana y lleve agua. Guarde la comida por los macacos, y esté atento a los colugos que planean entre los árboles. NParks tiene un aviso sobre obras de demolición en la cima, así que consúltelo antes de ir.
 get: Línea Thomson–East Coast hasta Stevens, línea Downtown hasta Beauty World y unos 15 minutos a pie.
 
@@ -79,14 +79,14 @@ get: Línea North–South hasta Kranji y autobús 925 (de lunes a sábado) o 925
 
 @pulau-ubin
 name: Pulau Ubin
-lede: Recorra en bicicleta una pequeña isla que aún recuerda al Singapur de los años 60.
-body: Un corto trayecto en barca desde Changi lleva a un mundo de casas de madera, antiguas canteras y tranquilos caminos forestales. Alquile una bicicleta junto al embarcadero y vaya hasta Chek Jawa, un humedal con una pasarela sobre el mar.
-body: Lleve efectivo para la barca y la bicicleta, porque en la isla no hay cajeros. No hay horario: las barcas salen cuando tienen suficientes pasajeros, normalmente de 9 a 12.
+lede: Recorra en bicicleta una pequeña isla de antiguas canteras y caminos forestales.
+body: Un trayecto de unos 10 minutos en barca desde Changi lleva a la isla. Puede alquilar una bicicleta en el pueblo e ir hasta Chek Jawa, un humedal en el extremo sureste.
+body: Lleve efectivo para la barca y la bicicleta, porque en la isla no hay cajeros, además de agua y protección solar. No hay horario: las barcas salen cuando tienen suficientes pasajeros, normalmente de 9 a 12, y funcionan hasta las 19:00 aproximadamente, así que deje tiempo de sobra para volver.
 get: Taxi o autobús hasta Changi Point Ferry Terminal y unos 10 minutos en barca.
 
 @east-coast-park
 name: East Coast Park
-lede: El largo parque costero de Singapur, para ir en bici, hacer pícnic y disfrutar de la brisa.
+lede: El largo parque costero de Singapur, para ir en bici y hacer pícnic.
 body: El parque recorre unos 13 km de costa, con una pista para bicis y patines. Se pueden alquilar bicicletas allí mismo y ver los barcos fondeados frente a la orilla.
 body: Termine en East Coast Lagoon Food Village, un centro de comida junto a la playa.
 get: Línea Thomson–East Coast hasta Marine Parade, sin transbordo, y unos 7 minutos a pie.
@@ -94,41 +94,41 @@ get: Línea Thomson–East Coast hasta Marine Parade, sin transbordo, y unos 7 m
 @newton-food-centre
 name: Newton Food Centre
 lede: Un centro de comida famoso por el marisco a la parrilla y el satay, a una parada de Orchard.
-body: Newton apareció en la película Crazy Rich Asians y está en su momento más animado por la noche. Pruebe la raya a la parrilla, el cangrejo con chile, la tortilla de ostras y el satay.
+body: Newton apareció en la película Crazy Rich Asians. Las guías gastronómicas mencionan platos como la raya a la parrilla, el cangrejo con chile, la tortilla de ostras y el satay.
 body: El marisco suele cobrarse al peso, y aquí ha habido problemas de cobros excesivos en el pasado, así que acuerde el precio antes de pedir.
 get: Línea North–South hasta Newton, una parada, y un corto paseo. O unos 18 minutos a pie desde la casa.
 
 @maxwell-food-centre
 name: Maxwell Food Centre
-lede: El clásico centro de comida de Chinatown, hogar de un famoso plato de arroz con pollo.
-body: Tian Tian Hainanese Chicken Rice tiene la cola más conocida, pero hay mucho más por probar, desde gachas de pescado hasta pastel de ostras de Fuzhou.
-body: Venga antes del mediodía o después de las 14:00 para evitar la multitud del almuerzo. Se combina fácilmente con un paseo por Chinatown.
+lede: Un centro de comida en Chinatown, hogar de Tian Tian Hainanese Chicken Rice.
+body: Tian Tian es su puesto más conocido, y otros sirven desde gachas de pescado hasta pastel de ostras de Fuzhou.
+body: Venga antes del mediodía o después de las 14:00 para evitar la multitud del almuerzo. Chinatown está justo al lado.
 get: Línea Thomson–East Coast hasta Maxwell, sin transbordo. Está junto a la estación.
 
 @lau-pa-sat
 name: Lau Pa Sat
 lede: Un mercado victoriano de hierro fundido entre las torres del distrito financiero.
 body: La nave octogonal data de 1894 y hoy es un centro de comida con puestos muy variados, que se llena al mediodía entre semana.
-body: Por la noche, parte de Boon Tat Street se cierra al tráfico y se llena de parrillas de satay y mesas al aire libre. Es el mejor momento para venir.
+body: Por la noche, parte de Boon Tat Street se cierra al tráfico y se llena de parrillas de satay y mesas al aire libre.
 get: Línea North–South hasta Raffles Place (4 paradas) y unos 5 minutos a pie.
 
 @tiong-bahru-market
 name: Tiong Bahru Market
-lede: Un mercado local y centro de comida en el barrio antiguo con más encanto de Singapur.
-body: Abajo hay un mercado de productos frescos; arriba, un centro de comida muy popular para desayunar, con clásicos como el chwee kueh (pasteles de arroz al vapor) y el lor mee.
+lede: Un mercado local y centro de comida en un barrio de los años 30.
+body: Abajo hay un mercado de productos frescos; arriba, un centro de comida con platos como el chwee kueh (pasteles de arroz al vapor) y el lor mee.
 body: Después, pasee entre los edificios Art Déco de los años 30, con sus balcones curvos, cafeterías independientes, panaderías y pequeñas tiendas.
 get: Línea Thomson–East Coast hasta Havelock (2 paradas) y unos 3 minutos a pie.
 
 @old-airport-road-food-centre
 name: Old Airport Road Food Centre
-lede: Uno de los mayores centros de comida de Singapur, muy querido por los locales.
-body: Construido en 1972 en la urbanización del antiguo aeropuerto de Kallang, tiene más de cien puestos. La clientela habitual viene por platos como los fideos Hokkien, el kway teow frito, el lor mee y el rojak.
-body: Venga con hambre y con amigos para compartir varios platos. Algunos de los mejores puestos se agotan rápido, así que vaya pronto.
+lede: Uno de los mayores centros de comida de Singapur.
+body: Construido en 1972 en la urbanización del antiguo aeropuerto de Kallang, tiene más de cien puestos, con platos como los fideos Hokkien, el kway teow frito, el lor mee y el rojak.
+body: Vaya pronto: algunos puestos se agotan rápido y al menos uno cierra días al azar.
 get: Línea North–South hasta Dhoby Ghaut, línea Circle hasta Dakota y unos 4 minutos a pie.
 
 @kaya-toast
 name: Tostada de kaya y kopi
-lede: El desayuno clásico de Singapur: tostada crujiente, mermelada de coco, huevos tiernos y café fuerte.
+lede: Un desayuno tradicional de Singapur: tostada, mermelada de coco, huevos pasados por agua y café.
 body: La kaya es una mermelada dulce de coco que se sirve en tostada con mantequilla. Casque dos huevos pasados por agua en un platillo, añada salsa de soja oscura y pimienta blanca, y moje.
 body: Pida el café como la gente de aquí: el kopi lleva leche condensada, el kopi-O es solo con azúcar y el kopi-C lleva leche evaporada. Lo sirven Ya Kun, Toast Box y Killiney Kopitiam, además de muchos centros de comida.
 get: Killiney Kopitiam, en Killiney Road, está a unos 19 minutos a pie (1,4 km) de la casa.
@@ -136,29 +136,29 @@ get: Killiney Kopitiam, en Killiney Road, está a unos 19 minutos a pie (1,4 km)
 @national-gallery-singapore
 name: National Gallery Singapore
 lede: Arte del Sudeste Asiático en el antiguo Tribunal Supremo y el antiguo Ayuntamiento de Singapur.
-body: La galería alberga la mayor colección pública del mundo de arte moderno de Singapur y el Sudeste Asiático. Los dos grandiosos edificios coloniales, unidos por una cubierta, merecen la visita por sí mismos.
-body: Reserve al menos dos horas y disfrute de la vista sobre el Padang.
+body: La galería alberga la mayor colección pública del mundo de arte moderno de Singapur y el Sudeste Asiático, en dos monumentos nacionales unidos por una cubierta.
+body: Reserve al menos dos horas. Da al Padang.
 get: Línea North–South hasta City Hall (3 paradas) y unos 4 minutos a pie.
 
 @asian-civilisations-museum
 name: Asian Civilisations Museum
-lede: Comercio, fe y artesanía de toda Asia, en un elegante edificio junto al río Singapur.
+lede: Comercio, fe y artesanía de toda Asia, junto al río Singapur.
 body: El museo explora cómo se encontraron y comerciaron las culturas de Asia. Destaca el Naufragio Tang, la carga de un barco árabe del siglo IX que se hundió al regresar de China.
-body: Está junto al puente Cavenagh, por lo que se combina bien con un paseo por Boat Quay o una visita al Merlion.
+body: Está junto al puente Cavenagh, cerca de Boat Quay y del Merlion.
 get: Línea North–South hasta Raffles Place (4 paradas) y unos 8 minutos a pie.
 
 @peranakan-museum
 name: Peranakan Museum
 lede: La historia de las comunidades nacidas en los Estrechos, contada con joyas, abalorios y porcelana.
-body: La cultura peranakan mezcla influencias chinas, malayas, indias y europeas. Este museo, en una escuela de 1912 en Armenian Street, la explora con trajes deslumbrantes, muebles y objetos familiares.
-body: Se disfruta en una o dos horas, y el National Museum y Fort Canning Park están cerca.
+body: La cultura peranakan mezcla influencias chinas, malayas, indias y europeas. Este museo, en una escuela de 1912 en Armenian Street, la explora con trajes, muebles y objetos familiares.
+body: Calcule unas dos horas. El National Museum y Fort Canning Park están cerca.
 get: Línea North–South hasta City Hall (3 paradas) y unos 6 minutos a pie.
 
 @national-museum-of-singapore
 name: National Museum of Singapore
-lede: El museo más antiguo de Singapur y el mejor lugar para entender cómo nació el país.
+lede: El museo más antiguo de Singapur, que cuenta cómo nació el país.
 body: La Singapore History Gallery recorre los primeros tiempos del comercio regional, el dominio colonial, la ocupación japonesa y la independencia. El edificio, con su cúpula de vidrieras, data de 1887.
-body: Es especialmente útil para quienes acaban de llegar: una tarde aquí hace mucho más comprensible el día a día de Singapur.
+body: Calcule unas horas para ver bien la galería de historia.
 get: Línea North–South hasta Dhoby Ghaut (2 paradas) y unos 6 minutos a pie.
 
 @chinatown
@@ -172,19 +172,19 @@ get: Línea Thomson–East Coast hasta Maxwell, sin transbordo.
 name: Little India
 lede: Tiendas de especias, guirnaldas de flores y coloridas casas-tienda a lo largo de Serangoon Road.
 body: Empiece en Tekka Centre, con su mercado y puestos de comida, y suba por Serangoon Road hasta el templo Sri Veeramakaliamman. Las calles laterales están llenas de orfebres, tiendas de saris y restaurantes con platos de toda la India.
-body: Los fines de semana son lo más animado, y Deepavali trae luces y bazares. Vista con recato si piensa entrar en los templos.
+body: Los fines de semana puede haber mucha gente, y Deepavali trae luces y bazares. Vista con recato si piensa entrar en los templos.
 get: Línea North–South hasta Dhoby Ghaut (2 paradas) y línea North East hasta Little India, una parada.
 
 @kampong-glam
 name: Kampong Glam
 lede: El histórico barrio malayo y árabe de Singapur, en torno a las cúpulas doradas de la mezquita del Sultán.
 body: La mezquita del Sultán, reconstruida en 1932, preside un barrio de casas-tienda y comercios de telas y alfombras en torno a Arab Street. Bussorah Street, que lleva a la mezquita, está llena de cafeterías y restaurantes.
-body: Se puede visitar la mezquita fuera de las horas de oración, con ropa recatada. A una manzana, Haji Lane añade boutiques y murales.
+body: Se puede visitar la mezquita fuera de las horas de oración, con ropa recatada. A una manzana, Haji Lane tiene tiendas independientes y cafeterías.
 get: Línea North–South hasta City Hall (3 paradas), línea East–West hasta Bugis, una parada, y unos 5 minutos a pie.
 
 @haw-par-villa
 name: Haw Par Villa
-lede: Un parque maravillosamente extraño de estatuas del folclore chino, creado por los hermanos del Tiger Balm.
+lede: Un parque de estatuas del folclore chino, creado por los hermanos del Tiger Balm.
 body: Abierto en 1937, reúne más de mil estatuas pintadas y dioramas de mitos y fábulas morales. Los Diez Tribunales del Infierno, en el Hell's Museum, son tan gráficos como suenan, así que piénselo antes de venir con niños pequeños.
 body: Parte del parque está cerrada por mantenimiento desde diciembre de 2025, aunque el Hell's Museum sigue abierto, así que consulte la web oficial antes de ir.
 get: Línea Thomson–East Coast hasta Caldecott y línea Circle hasta Haw Par Villa.
@@ -192,28 +192,28 @@ get: Línea Thomson–East Coast hasta Caldecott y línea Circle hasta Haw Par V
 @orchard-road
 name: Orchard Road
 lede: El famoso bulevar comercial de Singapur, a 5 minutos a pie de su puerta.
-body: En unos dos kilómetros y medio de centros comerciales encontrará desde las grandes marcas de ION Orchard, Paragon y Ngee Ann City hasta tiendas de diario y zonas de comida en los sótanos. Aquí comprará seguramente casi todo lo que necesite al instalarse.
+body: En unos dos kilómetros y medio de centros comerciales encontrará desde las grandes marcas de ION Orchard, Paragon y Ngee Ann City hasta tiendas de diario y zonas de comida en los sótanos.
 body: Venga entre mediados de noviembre y principios de enero para ver las luces de Navidad. Si llueve, muchos centros comerciales se comunican bajo tierra.
 get: A 5 minutos a pie de 22 Jalan Elok.
 
 @haji-lane
 name: Haji Lane
-lede: Un callejón de boutiques independientes, murales y pequeños bares en Kampong Glam.
-body: Las casas-tienda albergan pequeñas marcas de moda, tiendas vintage y cafeterías, con paredes de colores muy populares para las fotos. Es tranquilo por la mañana y se anima de la tarde a la noche.
-body: Se recorre en poco tiempo, así que combínelo con la mezquita del Sultán y una cena en Bussorah Street o Arab Street.
+lede: Un callejón de tiendas independientes y cafeterías en Kampong Glam.
+body: Sus hileras de casas-tienda conservadas albergan tiendas independientes y cafeterías.
+body: Es un callejón corto, cerca de la mezquita del Sultán, Bussorah Street y Arab Street.
 get: Línea North–South hasta City Hall (3 paradas), línea East–West hasta Bugis, una parada, y unos 6 minutos a pie.
 
 @mustafa-centre
 name: Mustafa Centre
 lede: Un enorme gran almacén en Little India que vende casi de todo, las 24 horas.
-body: Planta tras planta de electrónica, oro, especias, maletas, comestibles y artículos para el hogar: muy útil cuando se está instalando en un país nuevo. Hay mucha gente y algo de caos, y eso forma parte de la gracia.
-body: Volvió a abrir las 24 horas en 2024, así que es muy práctico para recados a última hora. Cerca hay muchos restaurantes indios.
+body: Planta tras planta de electrónica, oro, especias, maletas, comestibles y artículos para el hogar. Puede haber mucha gente.
+body: Volvió a abrir las 24 horas en 2024, pero compruébelo antes de ir muy tarde. Cerca hay restaurantes indios.
 get: Línea North–South hasta Dhoby Ghaut (2 paradas) y línea North East hasta Farrer Park, dos paradas.
 
 @bugis-street
 name: Bugis Street
 lede: Un animado mercado cubierto de ropa barata, tentempiés y recuerdos.
-body: Presentada como la mayor zona de compras callejeras de Singapur, Bugis Street es un laberinto de pequeños puestos con moda económica, accesorios y regalos. Es un buen sitio para comprar recuerdos.
+body: Presentada como la mayor zona de compras callejeras de Singapur, Bugis Street es un laberinto de pequeños puestos con moda económica, accesorios y regalos.
 body: Si busca aire acondicionado, Bugis Junction y Bugis+ están al otro lado de la calle, y Kampong Glam queda a poca distancia a pie.
 get: Línea North–South hasta City Hall (3 paradas) y línea East–West hasta Bugis, una parada.
 
@@ -221,75 +221,75 @@ get: Línea North–South hasta City Hall (3 paradas) y línea East–West hasta
 name: Jewel Changi Airport
 lede: Tiendas, restaurantes y una cascada interior de 40 metros, en el propio aeropuerto.
 body: El Rain Vortex, la cascada interior más alta del mundo, cae por el techo de esta cúpula de cristal, rodeado de un bosque interior en terrazas. No hace falta tener vuelo para visitarlo.
-body: Venga por la noche, cuando la cascada se ilumina, o llegue antes de su vuelo y pase aquí el tiempo. Canopy Park, en la planta superior, es de pago. La cascada a veces se apaga por mantenimiento, así que consulte antes la web.
+body: La cascada se ilumina por la noche. Si viene antes de un vuelo, deje tiempo de sobra para llegar a su puerta. Canopy Park, en la planta superior, es de pago. La cascada a veces se apaga por mantenimiento, así que consulte antes la web.
 get: 25 minutos en coche o taxi. En MRT: línea North–South hasta City Hall, línea East–West hasta Tanah Merah y ramal del aeropuerto hasta Changi Airport.
 
 @emerald-hill
 name: Emerald Hill
-lede: Casas adosadas peranakan restauradas y bares tranquilos, a un paso de Orchard Road.
-body: Esta calle corta de casas adosadas de principios del siglo XX, muchas de estilo barroco chino, fue hogar de la acomodada comunidad peranakan de Singapur. Los bares en torno a Peranakan Place, al pie de la colina, se llenan a la salida del trabajo.
-body: Las casas de más arriba son viviendas privadas, así que disfrútelas desde la calle. Está lo bastante cerca de casa para una salida nocturna fácil.
+lede: Casas adosadas peranakan restauradas y bares, a un paso de Orchard Road.
+body: Esta calle corta de casas adosadas de principios del siglo XX, muchas de estilo barroco chino, fue hogar de la acomodada comunidad peranakan de Singapur. Peranakan Place, con sus bares, está al pie de la colina.
+body: Las casas de más arriba son viviendas privadas, así que disfrútelas desde la calle.
 get: A unos 13 minutos a pie de la casa. La estación de Somerset está cerca, a una parada de Orchard.
 
 @spectra
 name: Spectra en Marina Bay Sands
 lede: Un espectáculo nocturno y gratuito de fuentes, láseres y proyecciones junto al agua.
 body: Spectra se desarrolla sobre el agua en la Event Plaza, frente a The Shoppes, con música, chorros de agua y luz. Dura unos 15 minutos y no necesita entrada.
-body: Hay pases a las 20:00 y las 21:00, y otro a las 22:00 los viernes y sábados. Llegue 15 minutos antes para situarse delante, y consulte la página oficial por si cambian los horarios.
+body: Hay pases a las 20:00 y las 21:00, y otro a las 22:00 los viernes y sábados. Llegue al menos 15 minutos antes, y consulte la página oficial por si cambian los horarios.
 get: Línea Thomson–East Coast hasta Marina Bay y línea Circle hasta Bayfront.
 
 @garden-rhapsody
 name: Garden Rhapsody
 lede: Los superárboles se iluminan al ritmo de la música, gratis, cada noche.
 body: Cada noche, a las 19:45 y las 20:45, el Supertree Grove de Gardens by the Bay cobra vida con luz y sonido. El tema musical cambia a lo largo del año.
-body: Túmbese en el suelo bajo los árboles para ver mejor, como hace mucha gente de aquí. En Navidad hay pases adicionales, y el propio Grove puede cobrar entrada durante eventos como Christmas Wonderland, así que consúltelo antes.
+body: Llegue pronto para situarse cerca de los superárboles. En Navidad hay pases adicionales, y el propio Grove puede cobrar entrada durante eventos como Christmas Wonderland, así que consúltelo antes.
 get: Línea Thomson–East Coast hasta Gardens by the Bay, sin transbordo.
 
 @clarke-quay-robertson-quay
 name: Clarke Quay y Robertson Quay
-lede: Restaurantes y bares junto al río: animados en un extremo, relajados en el otro.
-body: Clarke Quay es el más bullicioso, con almacenes restaurados, grandes bares y discotecas. Siga el río aguas arriba hasta Robertson Quay para una noche más tranquila, en mesas junto al agua.
+lede: Restaurantes y bares a lo largo del río Singapur.
+body: Clarke Quay tiene almacenes restaurados, bares y discotecas. Robertson Quay, más arriba en el río, tiene restaurantes, cafeterías y bares.
 body: El paseo fluvial los une a pie, así que puede empezar en uno y terminar en el otro. De Clarke Quay también salen cruceros por el río.
 get: Para Clarke Quay: línea North–South hasta Dhoby Ghaut y línea North East, una parada. Para Robertson Quay: línea Thomson–East Coast hasta Great World, una parada, y unos 10 minutos a pie.
 
 @keong-saik-ann-siang
 name: Keong Saik Road y Ann Siang Hill
-lede: Coctelerías y buenos restaurantes en las casas-tienda restauradas de Chinatown.
-body: Keong Saik Road fue un barrio rojo. Hoy, su hilera de casas-tienda restauradas es una de las mejores calles de la ciudad para cenar. Ann Siang Hill y Club Street, a un corto paseo, están llenas de bares.
-body: Reserve los viernes y sábados por la noche. A principios de semana hay menos gente y es más fácil entrar sin reserva.
+lede: Casas-tienda restauradas y bares en Chinatown.
+body: Keong Saik Road fue un barrio rojo. Hoy es una calle de casas-tienda restauradas. Ann Siang Hill y Club Street están a un corto paseo.
+body: Reserve, sobre todo los viernes y sábados por la noche.
 get: Línea Thomson–East Coast hasta Maxwell, sin transbordo, y unos 6 minutos a pie.
 
 @rooftop-bars
 name: Bares en azoteas
-lede: El perfil de Singapur luce mejor desde arriba, con una copa en la mano.
-body: Marina Bay y el distrito financiero tienen muchos bares en azoteas, algunos con vistas directas sobre el agua. Son especialmente bonitos al atardecer, cuando las torres empiezan a iluminarse.
-body: Compruebe el código de vestimenta, ya que muchos no admiten pantalón corto ni chanclas, y reserve para el fin de semana. Las copas son caras en Singapur, y algunos locales tienen consumo mínimo.
+lede: Una copa con vistas al perfil de Singapur.
+body: Marina Bay y el distrito financiero tienen muchos bares en azoteas, algunos con vistas sobre el agua.
+body: Compruebe el código de vestimenta, ya que algunos no admiten pantalón corto ni chanclas, y reserve para el fin de semana. Mire también los precios, porque algunos locales tienen consumo mínimo.
 get: Línea Thomson–East Coast hasta Marina Bay o línea North–South hasta Raffles Place, según el bar.
 
 @batam
 name: Batam
-lede: Indonesia a una hora en ferri: spas, marisco y golf a buen precio.
-body: Batam es una escapada popular por sus masajes, restaurantes de marisco, campos de golf y complejos turísticos. Se puede ir en el día, aunque una noche resulta más relajante. Eso sí, no vaya por las playas: las de Bintan son mejores.
+lede: Indonesia a una hora en ferri: spas, marisco y golf.
+body: Batam es una escapada popular desde Singapur por sus masajes, restaurantes de marisco, campos de golf y complejos turísticos. Se puede ir en el día, pero deje tiempo para inmigración en ambos lados.
 body: Lleve el pasaporte y consulte las normas de entrada a Indonesia para su nacionalidad. Si tiene un pase de Singapur, asegúrese de que sea válido para su regreso.
 get: Línea Thomson–East Coast hasta Outram Park, línea North East hasta HarbourFront y ferri desde HarbourFront Ferry Terminal.
 
 @bintan
 name: Bintan
 lede: Complejos de playa en una isla indonesia, a poco más de una hora en ferri.
-body: La zona turística de Lagoi, en Bintan, tiene largas playas, grandes complejos, campos de golf y deportes acuáticos. Es ideal para un fin de semana tranquilo, y la mayoría se queda una o dos noches en un mismo complejo.
+body: La zona turística de Lagoi, en Bintan, tiene largas playas, grandes complejos, campos de golf y deportes acuáticos.
 body: Lleve el pasaporte, consulte las normas de entrada a Indonesia para su nacionalidad y compruebe que su pase de Singapur sea válido para el regreso. En puentes, reserve antes el ferri.
 get: Taxi hasta Tanah Merah Ferry Terminal y ferri a Bintan.
 
 @malacca
 name: Malaca
 lede: Una ciudad malasia Patrimonio Mundial de la UNESCO, llena de historia y cocina peranakan.
-body: El casco antiguo tiene edificios holandeses y portugueses, el mercado nocturno de Jonker Street y una excelente cocina peranakan, además de sus bolas de arroz con pollo. Se explora fácilmente a pie en un fin de semana.
-body: Los autocares desde Singapur tardan unas cuatro o cinco horas, incluido el paso de la frontera. Lleve el pasaporte y evite, si puede, los días festivos.
+body: El casco antiguo tiene edificios holandeses y portugueses, el mercado nocturno de Jonker Street, cocina peranakan y bolas de arroz con pollo. Su centro histórico es lo bastante pequeño para recorrerlo a pie.
+body: Los autocares desde Singapur tardan unas cuatro o cinco horas, incluido el paso de la frontera, y pueden tardar más en horas punta. Lleve el pasaporte y evite, si puede, los días festivos.
 get: Autocar desde Singapur. Varias compañías venden billetes en internet y salen de distintos puntos de la ciudad.
 
 @regional-flights
 name: Bali, Phuket y Bangkok
 lede: El aeropuerto de Changi está a 25 minutos de la casa en coche, con vuelos a toda la región.
-body: Vivir aquí pone gran parte del Sudeste Asiático a un vuelo corto: Phuket está a unas dos horas, y Bangkok y Bali a menos de tres. Es fácil hacer escapadas largas de fin de semana sin gastar muchos días de vacaciones.
+body: Gran parte del Sudeste Asiático está a un vuelo corto: Phuket está a unas dos horas de Singapur, y Bangkok y Bali a menos de tres.
 body: Reserve pronto para los puentes, cuando suben las tarifas. Consulte los visados para su nacionalidad y asegúrese de que su pase de Singapur sea válido para el regreso.
 get: 25 minutos hasta el aeropuerto de Changi en coche o taxi.
