@@ -231,7 +231,7 @@ name: Jewel Changi Airport
 lede: Shops, restaurants and a 40-metre indoor waterfall, all at the airport.
 body: The Rain Vortex, the world's tallest indoor waterfall, pours through the roof of this glass dome, surrounded by a terraced indoor forest. You don't need a flight to visit.
 body: The falls are lit up in the evening. If you're visiting before a flight, leave plenty of time to reach your gate. Canopy Park, on the top floor, is ticketed. The falls are sometimes switched off for maintenance, so check the website first.
-get: 25 minutes by car or taxi. By MRT: North–South Line to City Hall, East–West Line to Tanah Merah, then the airport branch to Changi Airport.
+get: 25 minutes by car or taxi. By MRT: walk 10 minutes to Orchard MRT, then take the North–South Line to City Hall, East–West Line to Tanah Merah, then the airport branch to Changi Airport.
 
 @emerald-hill
 name: Emerald Hill

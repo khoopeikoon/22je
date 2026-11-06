@@ -229,7 +229,7 @@ name: Jewel Changi Airport
 lede: Boutiques, restaurants et une cascade intérieure de 40 mètres, à l'aéroport même.
 body: Le Rain Vortex, plus haute cascade intérieure du monde, tombe du toit de ce dôme de verre, entouré d'une forêt intérieure en terrasses. Inutile d'avoir un vol pour venir.
 body: La cascade s'illumine le soir. Si vous venez avant un vol, gardez largement le temps de rejoindre votre porte. Canopy Park, au dernier étage, est payant. La cascade est parfois coupée pour entretien : consultez d'abord le site.
-get: 25 minutes en voiture ou en taxi. En MRT : ligne North–South jusqu'à City Hall, ligne East–West jusqu'à Tanah Merah, puis branche de l'aéroport jusqu'à Changi Airport.
+get: 25 minutes en voiture ou en taxi. En MRT : 10 minutes à pied jusqu'à la station Orchard, ligne North–South jusqu'à City Hall, ligne East–West jusqu'à Tanah Merah, puis branche de l'aéroport jusqu'à Changi Airport.
 
 @emerald-hill
 name: Emerald Hill

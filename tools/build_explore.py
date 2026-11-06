@@ -140,6 +140,14 @@ DIRECTIONS = {
     ],
 }
 DIRS_TO = {"en": "Directions to {} →", "zh": "前往{}的路线 →", "ja": "{}への経路 →", "es": "Cómo llegar a {} →", "fr": "Itinéraire vers {} →"}
+# MRT routes start at the house. Jewel's page says this in its own text, after its taxi time.
+WALK_TO_MRT = {
+    "en": "From the house, walk 10 minutes to Orchard MRT.",
+    "zh": "从住处步行 10 分钟到乌节地铁站。",
+    "ja": "家からオーチャード駅まで徒歩 10 分。",
+    "es": "Desde la casa, 10 minutos a pie hasta la estación de Orchard.",
+    "fr": "Depuis la maison, 10 minutes à pied jusqu’à la station Orchard.",
+}
 CHOPE_URL = "https://chinatown.sg/article/foodie-culture/"
 # Shown on every food page, and as a link in the Foodie list on the Area page.
 CHOPE = {
@@ -162,7 +170,7 @@ UI = {
         "title": "Explore Singapore", "h2": "Out and <em>about.</em>",
         "lede": "Whatever you’re into, here’s where to spend your days off. Tap any spot for a short guide and directions from the house.",
         "note_eyebrow": "Good to know", "note_h3": "Before you go",
-        "notes": ["Routes start at Orchard MRT, a 10-minute walk from the house",
+        "notes": ["Routes start at the house, with a 10-minute walk to Orchard MRT",
                   "Opening hours, prices and routes change, so check before you go",
                   "For trips abroad, bring your passport and make sure your Singapore pass is valid for your return"],
         "get": "Getting there", "dirs": "Directions from the house →", "site": "Official website →",
@@ -180,7 +188,7 @@ UI = {
         "title": "探索新加坡", "h2": "出门<em>走走。</em>",
         "lede": "无论您喜欢什么，这里都有适合您休息日的去处。点击任一地点，查看简短介绍和从住处出发的路线。",
         "note_eyebrow": "温馨提示", "note_h3": "出发之前",
-        "notes": ["路线从乌节地铁站出发，从住处步行 10 分钟即到",
+        "notes": ["路线从住处出发，先步行 10 分钟到乌节地铁站",
                   "开放时间、价格和路线可能变动，请在出发前确认",
                   "出国旅行请携带护照，并确认新加坡准证在返回时仍然有效"],
         "get": "如何前往", "dirs": "从住处出发的路线 →", "site": "官方网站 →",
@@ -198,7 +206,7 @@ UI = {
         "title": "シンガポールを巡る", "h2": "街へ<em>出かけよう。</em>",
         "lede": "お好みに合わせて、休日の過ごし方をご紹介します。各スポットをタップすると、短いガイドと家からの経路をご覧いただけます。",
         "note_eyebrow": "ご参考に", "note_h3": "お出かけの前に",
-        "notes": ["経路は、家から徒歩 10 分のオーチャード駅を起点にしています",
+        "notes": ["経路は家を起点とし、まず徒歩 10 分でオーチャード駅へ向かいます",
                   "営業時間、料金、経路は変わることがあるので、お出かけ前にご確認ください",
                   "海外へ行くときはパスポートを持参し、シンガポールのパスが帰国時に有効であることをご確認ください"],
         "get": "アクセス", "dirs": "家からの経路 →", "site": "公式サイト →",
@@ -216,7 +224,7 @@ UI = {
         "title": "Explorar Singapur", "h2": "A la <em>calle.</em>",
         "lede": "Le guste lo que le guste, aquí tiene dónde pasar sus días libres. Toque cualquier lugar para ver una breve guía y las indicaciones desde la casa.",
         "note_eyebrow": "Conviene saber", "note_h3": "Antes de ir",
-        "notes": ["Las rutas parten de la estación de Orchard, a 10 minutos a pie de la casa",
+        "notes": ["Las rutas empiezan en la casa, con 10 minutos a pie hasta la estación de Orchard",
                   "Los horarios, los precios y las rutas cambian: compruébelos antes de ir",
                   "Para viajes al extranjero, lleve el pasaporte y asegúrese de que su pase de Singapur sea válido para el regreso"],
         "get": "Cómo llegar", "dirs": "Indicaciones desde la casa →", "site": "Web oficial →",
@@ -234,7 +242,7 @@ UI = {
         "title": "Découvrir Singapour", "h2": "Sortir et <em>explorer.</em>",
         "lede": "Quels que soient vos goûts, voici où passer vos jours de repos. Touchez un lieu pour lire un court guide et voir l’itinéraire depuis la maison.",
         "note_eyebrow": "Bon à savoir", "note_h3": "Avant de partir",
-        "notes": ["Les itinéraires partent de la station Orchard, à 10 minutes à pied de la maison",
+        "notes": ["Les itinéraires partent de la maison, avec 10 minutes à pied jusqu’à la station Orchard",
                   "Horaires, prix et itinéraires changent : vérifiez avant de partir",
                   "Pour les voyages à l’étranger, emportez votre passeport et vérifiez que votre titre de séjour singapourien sera valable au retour"],
         "get": "Comment y aller", "dirs": "Itinéraire depuis la maison →", "site": "Site officiel →",
@@ -306,6 +314,9 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
         note, link, _ = CHOPE[lang]
         body += f'\n        <p>{note} <a href="{CHOPE_URL}" target="_blank" rel="noopener">{link}</a></p>'
     refs = SOURCES[slug] + ([LTA_MAP] if " Line " in en_get else [])
+    get = spot["get"]
+    if " Line " in en_get and slug != "jewel-changi-airport":
+        get = WALK_TO_MRT[lang] + ("" if lang in ("zh", "ja") else " ") + get
     sources = ""
     if refs:
         ref_links = " · ".join(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label, quote=False)}</a>' for label, url in refs)
@@ -328,7 +339,7 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
       <div class="wrap reveal" style="max-width:760px">
 {body}
         <ul class="specs" style="grid-template-columns:1fr;margin-top:28px">
-          <li><span>{ui['get']}</span>{spot['get']}</li>
+          <li><span>{ui['get']}</span>{get}</li>
         </ul>
         <div class="btn-row" style="gap:24px">
           {'''
