@@ -168,6 +168,7 @@ export function materials() {
     paving: texture(512, 0.6, speckle({ seed: 37, base: 0x9c9a96, amount: 0.05 })),   // grey granite (car porch)
     linen: texture(512, 0.6, cloth({ seed: 19, base: 0xf1eee8, amp: 4, scale: 300 })),
     beigeStone: texture(1024, 2.4, tiles({ seed: 83, base: 0xcfc6b6, vein: 0xdcd5c8, cols: 2, rows: 4 })),   // entrance floor and landing
+    paleWoodTile: texture(1024, 2.4, planks({ seed: 61, dark: 0x9b9a95, light: 0xc4c3bd, rows: 12, seam: 0.7 })),   // 1st-floor rear terraces
     woodTile: texture(1024, 2.4, planks({ seed: 53, dark: 0x6a5243, light: 0x9a7f6b, rows: 12, seam: 0.7 })),   // 20 cm wood-look tiles
     terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x5a4136, light: 0x8d6d5d, rows: 12, seam: 0.7 })),
     weatheredOak: texture(1024, 2.4, planks({ seed: 79, dark: 0x6f6152, light: 0xb4a491, rows: 16, seam: 0.75 })),   // bar table top
@@ -219,6 +220,7 @@ export function materials() {
     leaf: std({ color: 0x4a6636, roughness: 0.8, flatShading: true }),
     leaf2: std({ color: 0x6f8f4e, roughness: 0.8, flatShading: true }),
     woodTile: std({ map: tex.woodTile, roughness: 0.7 }),
+    paleWoodTile: std({ map: tex.paleWoodTile, roughness: 0.7 }),
     beigeStone: std({ map: tex.beigeStone, roughness: 0.5 }),
     terraceTile: std({ map: tex.terraceTile, roughness: 0.7 }),
     turf: std({ map: tex.turf, roughness: 1 }),
@@ -264,6 +266,7 @@ export class Builder {
     this.roofed = [];     // ...of them, the indoor ones
     this.solids = [];     // plan rectangles you can't walk through
     this.thresholds = []; // ...and door openings you can (they have no floor of their own)
+    this.overhead = [];   // ceiling fittings, shown with the ceiling
     this.r = rng(42);
   }
 
@@ -430,6 +433,46 @@ export class Builder {
     this.solid(x0, y0, x1, y1);
     this.box(x0, y0, x1, y1, h - 0.035, h, "walnut");
     this.box(x0 + 2, y0, x1 - 2, y1 - 4, h - 0.16, h - 0.035, "walnutDark");
+  }
+
+  // The walnut panel opposite the beds in the Deluxe rooms: clear of the floor, well short of the
+  // ceiling, with a small recess (rx0..ry1) on the room side and no TV.
+  floatingPanel(x0, y0, x1, y1, [rx0, ry0, rx1, ry1]) {
+    this.solid(x0, y0, x1, y1);
+    this.wall(x0, y0, x1, y1, { h0: 0.34, h1: 1.75, mat: "walnut" });
+    this.wall(rx0, ry0, rx1, ry1, { h0: 0.8, h1: 1.05, mat: "walnutDark" });
+  }
+
+  // The rear terraces' boundary: dark panels under a stone coping.
+  terraceWall(add) {
+    add({ h1: 1.6, mat: "cabinetGrey" });
+    add({ h0: 1.6, h1: 1.8, mat: "outdoorGrey" });
+  }
+
+  // Ceiling fittings, seen only when walking around inside: a two-blade fan, a lowered strip of ceiling.
+  fan(cx, cy) { this.overhead.push(() => this.fanMesh(cx, cy)); }
+  soffit(x0, y0, x1, y1, drop = 0.25) {
+    this.overhead.push(() => this.box(x0, y0, x1, y1, this.H - drop, this.H, "ceiling"));
+  }
+  fanMesh(cx, cy) {
+    const fan = new THREE.Group(), z = this.H - 0.24;
+    fan.position.set(px(cx), 0, px(cy));
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.07, 0.24, 16), this.m.black);
+    hub.position.y = this.H - 0.12;
+    fan.add(hub);
+    const blade = new THREE.Shape();
+    blade.moveTo(0, 0.05);
+    blade.bezierCurveTo(0.25, 0.17, 0.5, 0.13, 0.68, 0.01);
+    blade.bezierCurveTo(0.45, -0.01, 0.25, -0.06, 0, -0.05);
+    for (const turn of [0.5, 0.5 + Math.PI]) {
+      const geo = new THREE.ExtrudeGeometry(blade, { depth: 0.012, bevelEnabled: false });
+      geo.rotateX(Math.PI / 2);
+      const m = new THREE.Mesh(geo, this.m.black);
+      m.position.y = z;
+      m.rotation.y = turn;
+      fan.add(m);
+    }
+    return fan;
   }
 
   stool(cx, cy) {
@@ -867,6 +910,7 @@ export class Builder {
       mesh.receiveShadow = true;
       group.add(mesh);
     }
+    for (const make of this.overhead) group.add(make());
     this.group.add(group);
     return group;
   }
@@ -897,6 +941,8 @@ export const ROOMS = {
   // walk: where walking around starts (plan px) and the way it faces (0 = up the plan, 90 = right).
   // labels: names shown on the 3D page, [key, x, y] in plan px; the words are in viewer3d.js.
   // Deluxe Queen 4 (4th floor; 3 is identical; 1 is below). Bed against the north wall, window at the rear.
+  // In all four Deluxe rooms the photos (owner, 2026-11-07) show a charcoal wardrobe, a wall-hung desk,
+  // a floating walnut panel with no TV, the aircon on a bulkhead over the passage, and a ceiling fan.
   "deluxe-queen": {
     view: { az: 32, el: 56 },
     walk: { at: [830, 345], face: 285 },
@@ -918,17 +964,20 @@ export const ROOMS = {
       b.wall(785, 262, 985, 280, { faces: { n: "marble" } });          // the door slides east into this wall
       b.wall(963, 45, 985, 262, { faces: { w: "marble" } });
       b.wall(180, 45, 585, 58, { h1: 1.2, mat: "walnut" });          // headboard panelling
-      b.wall(180, 398, 583, 405, { mat: "walnut" });                   // TV wall panelling
-      b.wall(290, 385, 463, 392, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.floatingPanel(180, 393, 583, 405, [355, 392, 395, 393]);
       b.wall(684, 45, 770, 47, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(680, 47, 857, 90);
       b.vanity(682, 92, 772, 152, [696, 106, 756, 142]);
       b.toilet(792, 95, 836, 175, "n");
       b.shower(857, 862, 90, 262, { door: [186, 262], hinge: "s" });
-      b.wardrobe(585, 47, 655, 280, "w");
+      b.wardrobe(585, 47, 655, 280, "w", undefined, "charcoal");
+      b.wall(585, 280, 655, 405, { h0: 2.12, furniture: true });       // bulkhead over the passage, the aircon on it
+      b.wall(573, 298, 585, 388, { h0: 2.14, h1: 2.42, furniture: true });
+      b.soffit(180, 45, 585, 90);
+      b.fan(385, 225);
       b.bed([287, 62, 470, 295], "n");
       b.nightstand(472, 62, 527, 110);
-      b.desk(180, 62, 282, 130, "w");
+      b.hungDesk(180, 58, 282, 130);
       b.stool(236, 150);
       b.curtain(161, 197, 177, 237);
       b.curtain(161, 364, 177, 404);
@@ -959,19 +1008,22 @@ export const ROOMS = {
       b.wall(898, 563, 928, 800, { faces: { w: "marble" } });
       b.wall(863, 752, 898, 770, { faces: { n: "marble", w: "marble" } });
       b.wall(90, 758, 527, 770, { h1: 1.2, mat: "walnut" });          // headboard panelling
-      b.wall(180, 432, 520, 440, { mat: "walnut" });
-      b.wall(233, 440, 405, 447, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.floatingPanel(180, 432, 520, 444, [320, 444, 360, 445]);
       b.wall(619, 768, 703, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(617, 752, 863, 770);
       b.vanity(617, 687, 705, 752, [632, 697, 690, 733]);
       b.toilet(727, 672, 772, 752, "s");
       b.shower(793, 799, 582, 752, { door: [582, 657], hinge: "n" });
-      b.wardrobe(527, 563, 597, 770, "w");
+      b.wardrobe(527, 563, 597, 770, "w", undefined, "charcoal");
+      b.wall(527, 432, 597, 563, { h0: 2.12, furniture: true });       // bulkhead over the passage, the aircon on it
+      b.wall(515, 452, 527, 542, { h0: 2.14, h1: 2.42, furniture: true });
+      b.soffit(90, 725, 527, 770);
+      b.fan(320, 600);
       b.bed([175, 540, 290, 758], "s", { pillows: 1, headboard: "upholstery" });
       b.bed([348, 540, 462, 758], "s", { pillows: 1, headboard: "upholstery" });
       b.nightstand(112, 712, 170, 758);                               // by the window
       b.nightstand(292, 712, 346, 758);                               // between the beds
-      b.desk(118, 445, 215, 482, "w");
+      b.hungDesk(118, 444, 215, 482);
       b.stool(168, 500);
       b.curtain(91, 567, 107, 607);
       b.curtain(91, 728, 107, 768);
@@ -979,6 +1031,7 @@ export const ROOMS = {
   },
 
   // Deluxe Queen 1 (1st floor): the same room as 3 and 4, with glass doors onto its own rear terrace.
+  // Photos (2026-11-07): curtains gathered at the bed end only, pale grey wood-look tiles outside.
   "deluxe-queen-1": {
     view: { az: 32, el: 56 },
     walk: { at: [925, 345], face: 285 },
@@ -986,9 +1039,9 @@ export const ROOMS = {
     build(b) {
       b.floor([[273, 44], [750, 44], [750, 280], [962, 280], [962, 409], [261, 409], [261, 97], [273, 97]]);
       b.floor([[774, 74], [1057, 74], [1057, 261], [774, 261]], "stone", 0.004);
-      b.floor([[160, 33], [243, 33], [243, 404], [98, 404]], "deck", -0.03);          // rear terrace
-      b.wall(150, 21, 243, 33, { h1: 1.8 });                           // terrace: plot boundary walls
-      b.wallLine(155, 27, 93, 410, 12, { h1: 1.8 });
+      b.floor([[160, 33], [243, 33], [243, 404], [98, 404]], "paleWoodTile", -0.03, false);   // rear terrace
+      b.terraceWall((o) => b.wall(150, 21, 243, 33, o));                // terrace: plot boundary walls
+      b.terraceWall((o) => b.wallLine(155, 27, 93, 410, 12, o));
       b.wall(243, 21, 1087, 44);
       b.wall(243, 44, 273, 97);
       b.window(243, 97, 261, 404, { sill: 0, mullions: [203, 298] });
@@ -1004,25 +1057,27 @@ export const ROOMS = {
       b.wall(1057, 44, 1087, 261, { faces: { w: "marble" } });
       b.wall(1022, 74, 1057, 91, { faces: { s: "marble", w: "marble" } });
       b.wall(273, 44, 677, 58, { h1: 1.2, mat: "walnut" });           // headboard panelling
-      b.wall(291, 397, 675, 409, { mat: "walnut" });                   // TV wall panelling
-      b.wall(407, 386, 579, 392, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.floatingPanel(291, 397, 675, 409, [470, 396, 510, 397]);
       b.wall(776, 74, 860, 76, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(774, 76, 1022, 91);
       b.vanity(774, 91, 862, 156, [789, 111, 847, 147]);
       b.toilet(884, 93, 930, 173, "n");
       b.shower(951, 957, 91, 261, { door: [185, 261], hinge: "s" });
-      b.wardrobe(677, 52, 750, 279, "w");
+      b.wardrobe(677, 52, 750, 279, "w", undefined, "charcoal");
+      b.wall(677, 279, 750, 409, { h0: 2.12, furniture: true });       // bulkhead over the passage, the aircon on it
+      b.wall(665, 298, 677, 388, { h0: 2.14, h1: 2.42, furniture: true });
+      b.soffit(273, 44, 677, 90);
+      b.fan(490, 225);
       b.bed([400, 64, 585, 295], "n");
       b.nightstand(588, 64, 630, 111);
-      b.desk(291, 64, 397, 135, "w");
+      b.hungDesk(291, 58, 397, 135);
       b.stool(344, 152);
-      b.curtain(262, 99, 278, 139);
-      b.curtain(262, 362, 278, 402);
-      b.plant(190, 105, 45);
+      b.curtain(262, 99, 278, 198);
     },
   },
 
   // Deluxe Twin 1 (1st floor): the same room as 3 and 4, with glass doors onto its own rear terrace.
+  // Photos (2026-11-07): curtains gathered at the bed end only, pale grey wood-look tiles outside.
   "deluxe-twin-1": {
     view: { az: 148, el: 56 },
     walk: { at: [785, 500], face: 255 },
@@ -1030,9 +1085,9 @@ export const ROOMS = {
     build(b) {
       b.floor([[197, 434], [815, 434], [815, 563], [691, 563], [691, 782], [197, 782]]);
       b.floor([[710, 581], [992, 581], [992, 770], [710, 770]], "stone", 0.004);
-      b.floor([[98, 404], [180, 404], [180, 770], [114, 770], [114, 799], [36, 799]], "deck", -0.03);   // rear terrace
-      b.wallLine(93, 400, 30, 806, 12, { h1: 1.8 });                   // terrace: plot boundary walls
-      b.wall(22, 799, 247, 812, { h1: 1.8 });
+      b.floor([[98, 404], [180, 404], [180, 770], [114, 770], [114, 799], [36, 799]], "paleWoodTile", -0.03, false);   // rear terrace
+      b.terraceWall((o) => b.wallLine(93, 400, 30, 806, 12, o));        // terrace: plot boundary walls
+      b.terraceWall((o) => b.wall(22, 799, 247, 812, o));
       b.wall(180, 404, 857, 434);
       b.wall(815, 434, 832, 454);
       b.door(815, 454, 832, 546);
@@ -1047,23 +1102,24 @@ export const ROOMS = {
       b.wall(992, 563, 1022, 799, { faces: { w: "marble" } });
       b.wall(957, 752, 992, 770, { faces: { n: "marble", w: "marble" } });
       b.wall(197, 770, 619, 782, { h1: 1.2, mat: "walnut" });          // headboard panelling
-      b.wall(227, 434, 620, 440, { mat: "walnut" });
-      b.wall(334, 440, 506, 447, { h0: 1.0, h1: 1.8, mat: "tv" });
+      b.floatingPanel(227, 434, 620, 446, [410, 446, 450, 447]);
       b.wall(712, 768, 795, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
       b.ledge(710, 752, 957, 770);
       b.vanity(710, 687, 797, 752, [724, 696, 782, 732]);
       b.toilet(819, 670, 865, 752, "s");
       b.shower(885, 892, 581, 752, { door: [581, 657], hinge: "n" });
-      b.wardrobe(619, 563, 691, 770, "w");
+      b.wardrobe(619, 563, 691, 770, "w", undefined, "charcoal");
+      b.wall(619, 434, 691, 563, { h0: 2.12, furniture: true });       // bulkhead over the passage, the aircon on it
+      b.wall(607, 452, 619, 542, { h0: 2.14, h1: 2.42, furniture: true });
+      b.soffit(197, 735, 619, 782);
+      b.fan(420, 600);
       b.bed([280, 540, 394, 770], "s", { pillows: 1, headboard: "upholstery" });
       b.bed([446, 540, 560, 770], "s", { pillows: 1, headboard: "upholstery" });
       b.nightstand(227, 722, 278, 770);                               // by the window
       b.nightstand(396, 722, 444, 770);                               // between the beds
-      b.desk(227, 440, 327, 482, "w");
+      b.hungDesk(227, 446, 327, 484);
       b.stool(277, 500);
-      b.curtain(198, 436, 214, 476);
-      b.curtain(198, 728, 214, 768);
-      b.plant(105, 725, 50);
+      b.curtain(198, 655, 214, 768);
     },
   },
 
