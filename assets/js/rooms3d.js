@@ -229,7 +229,8 @@ export function materials() {
     brushedSteel: std({ color: 0xbfc0c1, roughness: 0.35, metalness: 0.45 }),
     graniteLight: std({ color: 0xb4b2ae, roughness: 0.6 }),                      // smooth grey granite edges and steps
     bronze: std({ color: 0x6b5444, roughness: 0.4, metalness: 0.6 }),        // lift surrounds
-    cabinetGrey: std({ color: 0x56585b, roughness: 0.7 }),                       // laundry cabinets
+    cabinetGrey: std({ color: 0x56585b, roughness: 0.7 }),
+    charcoal: std({ color: 0x2e3034, roughness: 0.6 }),                          // Aurelia's bedroom wardrobes                       // laundry cabinets
     steelDark: std({ color: 0x4b4d50, roughness: 0.4, metalness: 0.6 }),         // fridge
     glow: std({ color: 0xfff4e2, emissive: 0xffe6bf, emissiveIntensity: 1 }),    // LED strips
     outdoorGrey: std({ color: 0x777572, roughness: 0.95 }),                      // car porch walls, columns, gate pillar
@@ -1108,51 +1109,62 @@ export const ROOMS = {
   "elysia-3": { view: { az: -32, el: 56 }, walk: { at: [1350, 520], face: 25 }, labels: ELYSIA_LABELS, build: (b) => elysia(b, "twin") },
 
   // Aurelia Suite (5th floor). Glass sliding doors onto the private balcony at the rear.
+  // Follows the photos over the plan (owner, 2026-11-07): the glass and curtains run the suite's
+  // full length, further out than the plan draws them, so the column stands free in the room and a
+  // passage runs behind the ensuite to two grey wardrobes.
   aurelia: {
     view: { az: 30, el: 56 },
     walk: { at: [840, 470], face: 290 },
-    labels: [["ensuite", 700, 640], ["balcony", 330, 450]],
+    labels: [["ensuite", 700, 640], ["balcony", 270, 450]],
     build(b) {
-      b.floor([[500, 45], [963, 45], [963, 255], [880, 255], [880, 545], [500, 545]]);
+      const GLASS = 340;   // the glass line
+      b.floor([[GLASS + 10, 45], [963, 45], [963, 255], [880, 255], [880, 545], [485, 545], [485, 780], [GLASS + 10, 780]]);
       b.floor([[500, 565], [900, 565], [900, 770], [500, 770]], "stone", 0.004);
-      b.floor([[215, 45], [485, 45], [485, 780], [140, 780], [140, 408], [215, 408]], "deck", -0.03);
+      b.floor([[215, 45], [GLASS, 45], [GLASS, 780], [140, 780], [140, 408], [215, 408]], "woodTile", -0.03, false);
       b.wall(180, 20, 500, 45);
       b.wall(500, 20, 985, 45);
       b.wall(120, 780, 485, 812);
       b.wall(485, 770, 925, 800, { faces: { n: "marble" } });
-      b.wall(485, 45, 515, 75);
-      b.window(485, 75, 500, 400, { sill: 0, mullions: [185, 290] });
-      b.wall(485, 400, 515, 430);
-      b.wall(485, 430, 500, 565);
-      b.wall(485, 565, 500, 575, { faces: { e: "marble" } });
+      b.window(GLASS, 45, GLASS + 10, 780, { sill: 0, head: 2.4, mullions: [167, 289, 411, 533, 655] });
+      b.wall(465, 385, 497, 417);                                      // the free-standing column
+      b.wall(485, 545, 500, 575, { faces: { e: "marble" } });
       b.window(485, 575, 500, 690, { sill: 1.6, head: 2.25, faces: { e: "marble" } });
       b.wall(485, 690, 500, 770, { faces: { e: "marble" } });
       b.wall(960, 45, 985, 255);
       b.wall(880, 255, 985, 385);
       b.wall(880, 385, 900, 430);
-      b.door(880, 430, 900, 525);
+      b.door(880, 430, 900, 525, { head: 2.4 });
       b.wall(880, 525, 900, 545);
+      b.wall(790, 520, 880, 525, { h1: 2.4, mat: "walnut" });           // the door, open
       b.door(500, 545, 607, 565, { faces: { s: "marble" } });          // pocket door: opening at the west end,
       b.wall(607, 545, 925, 565, { faces: { s: "marble" } });          // the door slides east into this wall
       b.wall(900, 565, 925, 770, { faces: { w: "marble" } });
       b.balustrade(205, 45, 213, 408);
       b.balustrade(140, 400, 213, 408);
       b.balustrade(140, 408, 148, 780);
-      b.wall(500, 45, 890, 57, { h1: 1.2, mat: "walnut" });          // headboard panelling
-      b.wall(628, 538, 742, 545, { h0: 1.0, h1: 1.7, mat: "tv" });
+      b.wall(GLASS + 28, 45, 890, 57, { h1: 1.15, mat: "walnut" });     // headboard panelling, lit along its top
+      b.wall(GLASS + 28, 55, 890, 57, { h0: 1.15, h1: 1.165, mat: "glow", furniture: true });
+      b.wall(607, 530, 775, 545, { mat: "walnut" });                    // tall walnut panel on the ensuite wall, its small recess
+      b.wall(668, 529, 716, 530, { h0: 0.95, h1: 1.2, mat: "walnutDark" });
+      b.wall(862, 268, 880, 372, { h0: 2.14, h1: 2.42, mat: "wall", furniture: true });  // aircon
       b.wall(504, 768, 684, 770, { h0: 1.15, h1: 2.1, mat: "mirror" });
-      b.bed([595, 65, 775, 295], "n");
-      b.nightstand(535, 65, 593, 115);
-      b.nightstand(777, 65, 835, 115);
-      b.wardrobe(890, 47, 960, 253, "w");
-      b.curtain(501, 77, 515, 117);
-      b.curtain(501, 358, 515, 398);
+      // a queen bed against the panelling; beside it a built-in desk with drawers under wall cabinets
+      b.bed([640, 65, 829, 295], "n");
+      b.nightstand(831, 57, 886, 110);
+      b.hungDesk(GLASS + 30, 57, 620, 125);
+      b.box(562, 57, 620, 125, 0, 0.72, "walnutDark");
+      b.solid(562, 57, 620, 125);
+      const upper = b.wall(GLASS + 30, 45, 602, 88, { h0: 1.55, h1: b.H - 0.03, mat: "walnutDark", furniture: true });
+      b.wall(GLASS + 30, 87, 602, 88, { h0: 1.535, h1: 1.55, mat: "glow", furniture: true, follow: upper });
+      b.wardrobe(890, 47, 960, 253, "w", undefined, "charcoal");
+      b.wardrobe(GLASS + 28, 710, 483, 780, "n", undefined, "cabinetGrey");
+      // curtains drawn back to each end, so the balcony shows through the glass
+      b.curtain(GLASS + 12, 47, GLASS + 26, 190);
+      b.curtain(GLASS + 12, 570, GLASS + 26, 708);
       b.ledge(500, 752, 795, 770);
       b.vanity(500, 687, 686, 752, [540, 698, 605, 735]);
       b.toilet(715, 667, 762, 752, "s");
       b.shower(795, 800, 640, 752);                                   // walk-in: fixed glass, open at the north end
-      b.plant(290, 140, 55);
-      b.plant(228, 700, 55);
     },
   },
 };
