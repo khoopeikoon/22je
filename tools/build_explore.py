@@ -422,6 +422,14 @@ def area_section(lang, spots):
 """
 
 
+ICLOUD_COPY = re.compile(r" \d+$")
+
+
+def write_if_changed(path, text):
+    if not path.exists() or path.read_text(encoding="utf-8") != text:
+        path.write_text(text, encoding="utf-8")
+
+
 def build_lang(lang):
     spots = load(lang)
     assert set(SOURCES) == set(SPOTS)
@@ -432,19 +440,23 @@ def build_lang(lang):
     area = re.sub(re.escape(START) + r".*?" + re.escape(END) + r"\s*", "", area, flags=re.S)
     cta_start = area.rindex('<section class="section">', 0, area.index("</main>"))
     area = area[:cta_start] + area_section(lang, spots) + "    " + area[cta_start:]
-    area_path.write_text(area, encoding="utf-8")
+    write_if_changed(area_path, area)
 
-    head = one_level_down(area[: area.index("<body>")].rstrip())
+    head =one_level_down(area[: area.index("<body>")].rstrip())
     cta_html = area[area.rindex('<section class="section">', 0, area.index("</main>")): area.index("</main>")].rstrip()
     cta = "    " + one_level_down(cta_html)
     footer = one_level_down(area[area.index("<div data-footer>"):]).replace("<div data-footer>", "  <div data-footer>", 1).rstrip()
 
     out = lang_dir(lang) / "explore"
     out.mkdir(exist_ok=True)
+    # Update pages in place: deleting and recreating them in an iCloud folder
+    # leaves "name 2.html" conflict copies behind. Only pages for removed spots
+    # go; iCloud's own copies are left alone (they are gitignored).
     for old in out.glob("*.html"):
-        old.unlink()
+        if old.stem not in spots and not ICLOUD_COPY.search(old.stem):
+            old.unlink()
     for slug, spot in spots.items():
-        (out / f"{slug}.html").write_text(spot_page(lang, slug, spot, spots, head, cta, footer, EN_GET[slug]), encoding="utf-8")
+        write_if_changed(out / f"{slug}.html", spot_page(lang, slug, spot, spots, head, cta, footer, EN_GET[slug]))
 
 
 def build_sitemap():
@@ -456,7 +468,7 @@ def build_sitemap():
         f"  <url><loc>{page_url(lang, f'explore/{slug}.html')}</loc><lastmod>{today}</lastmod></url>\n"
         for lang in UI for slug in SPOTS
     )
-    path.write_text(xml.replace("</urlset>", entries + "</urlset>"), encoding="utf-8")
+    write_if_changed(path, xml.replace("</urlset>", entries + "</urlset>"))
 
 
 if __name__ == "__main__":
