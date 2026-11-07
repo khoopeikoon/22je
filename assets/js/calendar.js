@@ -68,7 +68,7 @@ const CAL = {
   fr: {
     locale: "fr-FR", checked: "Disponibilités confirmées le ", dows: ["D", "L", "M", "M", "J", "V", "S"],
     name: (r) => r.fr, sub: (r) => r.sub,
-    through: `disponibilités jusqu'en décembre ${CAL_END_YEAR}`,
+    through: `disponibilités jusqu’en décembre ${CAL_END_YEAR}`,
     checkout: "Touchez maintenant la date de départ", nights: (n) => `${n} nuit${n > 1 ? "s" : ""}`,
     // Sent in French and English so the manager can always read it.
     wa: (r, a, b) => `Bonjour ! Je souhaiterais connaître les disponibilités de la ${r.fr} du ${a} au ${b}.\nHello! I'd like to check availability for the ${r.name} from ${a} to ${b}.`,

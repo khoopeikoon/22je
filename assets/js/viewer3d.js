@@ -10,7 +10,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { GTAOPass } from "three/addons/postprocessing/GTAOPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026110601";
+import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026110701";
 
 const T = {
   en: { back: "Rooms", backShared: "Features", orbit: "Dollhouse", walk: "Walk around", loading: "Loading the room…",
@@ -73,12 +73,12 @@ const T = {
       "deluxe-queen": "Deluxe Queen 3 y 4", "deluxe-twin": "Deluxe Twin 3 y 4",
       "deluxe-queen-1": "Deluxe Queen 1 · terraza", "deluxe-twin-1": "Deluxe Twin 1 · terraza",
       "floor-1": "Planta 1 · entrada", "floor-2": "Planta 2 · salón, comedor, cocina", "floor-5": "Planta 5 · lavandería" } },
-  fr: { back: "Chambres", backShared: "Équipements", orbit: "Vue d'ensemble", walk: "Visite", loading: "Chargement de la chambre…",
+  fr: { back: "Chambres", backShared: "Équipements", orbit: "Vue d’ensemble", walk: "Visite", loading: "Chargement de la chambre…",
     hintOrbit: "Faites glisser pour tourner · molette ou pincement pour zoomer · clic droit ou deux doigts pour déplacer",
     hintWalk: "Faites glisser pour regarder autour · touchez le sol pour y aller · flèches ou WASD pour avancer",
-    note: "Vue 3D indicative d'après le plan",
+    note: "Vue 3D indicative d’après le plan",
     labels: { ensuite: "Salle de bains", balcony: "Balcon privé", juliet: "Balcon à la française", entry: "Entrée",
-      terrace: "Terrasse arrière", foyer: "Hall d'entrée", luggage: "Rangement des bagages",
+      terrace: "Terrasse arrière", foyer: "Hall d’entrée", luggage: "Rangement des bagages",
       lift: "Ascenseur", stairs: "Escalier", carporch: "Abri à voiture", frontTerrace: "Terrasse avant",
       garden: "Jardin avant", kitchen: "Cuisine", wetKitchen: "Arrière-cuisine", dining: "Salle à manger",
       powder: "Toilettes", living: "Salon", openBalcony: "Balcon ouvert", laundry: "Buanderie",

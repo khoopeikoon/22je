@@ -40,6 +40,7 @@ const STRINGS = {
     visit: "Visit", directions: "Get directions →", contact: "Contact", explore: "Explore",
     area: "The area", guide: "House guide", love: "Powered with love ♥", waAria: "WhatsApp us",
     hello: "Hello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    ask: "The room I'd like, or my budget: ",
     copied: "Link copied", copyPrompt: "Copy this link:",
     subject: "Enquiry — 22 Jalan Elok",
     f: { sep: ": ", name: "Name", email: "Email", room: "Room", movein: "Move-in", flexible: "flexible", length: "Length of stay", pass: "Residency / pass" },
@@ -54,6 +55,7 @@ const STRINGS = {
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
     area: "周边环境", guide: "住户指南", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
     hello: "您好！我想咨询入住 22 Jalan Elok。",
+    ask: "我想要的房间或预算：",
     copied: "链接已复制", copyPrompt: "复制此链接：",
     subject: "咨询 — 22 Jalan Elok",
     f: { sep: "：", name: "姓名", email: "电邮", room: "房间", movein: "入住日期", flexible: "灵活", length: "租期", pass: "居留身份 / 准证" },
@@ -69,6 +71,7 @@ const STRINGS = {
     area: "周辺エリア", guide: "入居者ガイド", love: "心を込めて ♥", waAria: "WhatsApp でお問い合わせ",
     // Messages from Japanese pages carry English too, so the manager can always read them.
     hello: "こんにちは。22 Jalan Elok への滞在について問い合わせたいです。\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    ask: "希望の部屋または予算 / The room I'd like, or my budget: ",
     copied: "リンクをコピーしました", copyPrompt: "このリンクをコピーしてください：",
     subject: "お問い合わせ Enquiry — 22 Jalan Elok",
     f: { sep: ": ", name: "お名前 / Name", email: "メール / Email", room: "お部屋 / Room", movein: "入居希望日 / Move-in", flexible: "未定 / flexible", length: "滞在期間 / Length of stay", pass: "在留資格 / Residency / pass" },
@@ -84,6 +87,7 @@ const STRINGS = {
     area: "La zona", guide: "Guía de la casa", love: "Hecho con cariño ♥", waAria: "Escríbanos por WhatsApp",
     // Messages from Spanish pages carry English too, so the manager can always read them.
     hello: "¡Hola! Me gustaría informarme sobre una estancia en 22 Jalan Elok.\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    ask: "La habitación que me interesa o mi presupuesto / The room I'd like, or my budget: ",
     copied: "Enlace copiado", copyPrompt: "Copie este enlace:",
     subject: "Consulta / Enquiry — 22 Jalan Elok",
     f: { sep: ": ", name: "Nombre / Name", email: "Correo / Email", room: "Habitación / Room", movein: "Entrada / Move-in", flexible: "flexible", length: "Duración / Length of stay", pass: "Residencia / Residency / pass" },
@@ -94,11 +98,12 @@ const STRINGS = {
     enquire: "Nous écrire",
     language: "Langue",
     menu: "Ouvrir le menu",
-    tagline: "Chambres meublées avec salle de bains privative, pour des séjours de trois mois ou plus. Réservez en direct, sans frais d'agence.",
+    tagline: "Chambres meublées avec salle de bains privative, pour des séjours de trois mois ou plus. Réservez en direct, sans frais d’agence.",
     visit: "Adresse", directions: "Itinéraire →", contact: "Contact", explore: "Explorer",
     area: "Le quartier", guide: "Guide de la maison", love: "Fait avec amour ♥", waAria: "Écrivez-nous sur WhatsApp",
     // Messages from French pages carry English too, so the manager can always read them.
     hello: "Bonjour ! Je souhaiterais me renseigner sur un séjour au 22 Jalan Elok.\nHello! I'd like to enquire about a stay at 22 Jalan Elok.",
+    ask: "La chambre qui m’intéresse ou mon budget / The room I'd like, or my budget: ",
     copied: "Lien copié", copyPrompt: "Copiez ce lien :",
     subject: "Demande / Enquiry — 22 Jalan Elok",
     f: { sep: ": ", name: "Nom / Name", email: "E-mail / Email", room: "Chambre / Room", movein: "Arrivée / Move-in", flexible: "flexible", length: "Durée / Length of stay", pass: "Statut / Residency / pass" },
@@ -175,7 +180,7 @@ function renderChrome() {
               <ul>
                 <li><a href="tel:${SITE.phone.replace(/\s/g, "")}">${SITE.phone}</a></li>
                 <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-                <li><a href="${waLink(T.hello)}" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a href="${waLink(`${T.hello}\n\n${T.ask}`)}" target="_blank" rel="noopener">WhatsApp</a></li>
                 <li><a href="https://t.me/${SITE.telegram}" target="_blank" rel="noopener">Telegram</a></li>
               </ul>
             </div>
@@ -194,7 +199,7 @@ function renderChrome() {
           </div>
         </div>
       </footer>
-      <a class="wa-float" href="${waLink(T.hello)}" target="_blank" rel="noopener" aria-label="${T.waAria}">${WA_ICON}</a>
+      <a class="wa-float" href="${waLink(`${T.hello}\n\n${T.ask}`)}" target="_blank" rel="noopener" aria-label="${T.waAria}">${WA_ICON}</a>
       <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
         <button class="lightbox__close" aria-label="Close">×</button>
         <button class="lightbox__prev" aria-label="Previous photo">‹</button>

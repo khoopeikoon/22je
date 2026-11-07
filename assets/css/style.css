@@ -341,6 +341,7 @@ h1.eyebrow { line-height: 1.6; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); }
+.contact-grid > * { min-width: 0; } /* a long dropdown option must not widen the page */
 .contact-card dl { margin: 0 0 32px; }
 .contact-card dt { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-top: 22px; }
 .contact-card dd { margin: 4px 0 0; font-family: var(--serif); font-size: 1.5rem; }
@@ -348,7 +349,7 @@ h1.eyebrow { line-height: 1.6; }
 .contact-card dd a:hover { color: var(--brass-dark); }
 .form { background: var(--linen); padding: clamp(24px, 4vw, 48px); border: 1px solid var(--line); }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.field { margin-bottom: 18px; display: flex; flex-direction: column; }
+.field { margin-bottom: 18px; display: flex; flex-direction: column; min-width: 0; }
 .field label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .field input, .field select, .field textarea {
   font: inherit;
@@ -362,7 +363,7 @@ h1.eyebrow { line-height: 1.6; }
   outline: none;
   transition: border-color 0.2s;
 }
-.field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--umber) 50%), linear-gradient(135deg, var(--umber) 50%, transparent 50%); background-position: calc(100% - 10px) 55%, calc(100% - 5px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
+.field select { appearance: none; width: 100%; min-width: 0; padding-right: 18px; text-overflow: ellipsis; background-image: linear-gradient(45deg, transparent 50%, var(--umber) 50%), linear-gradient(135deg, var(--umber) 50%, transparent 50%); background-position: calc(100% - 10px) 55%, calc(100% - 5px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
 .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--brass-dark); }
 .field textarea { resize: vertical; min-height: 96px; }
 .form__note { font-size: 0.8rem; color: var(--muted); margin-top: 14px; }

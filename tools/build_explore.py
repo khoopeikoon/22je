@@ -105,7 +105,7 @@ SOURCES = {
     "national-museum-of-singapore": [("Wikipedia", WIKI + "National_Museum_of_Singapore")],
     "chinatown": [("Wikipedia: Chinatown", WIKI + "Chinatown,_Singapore"), ("Sri Mariamman Temple", WIKI + "Sri_Mariamman_Temple,_Singapore"), ("Thian Hock Keng", WIKI + "Thian_Hock_Keng"), ("Buddha Tooth Relic Temple", WIKI + "Buddha_Tooth_Relic_Temple_and_Museum")],
     "little-india": [("Wikipedia: Little India", WIKI + "Little_India,_Singapore"), ("Tekka Centre", WIKI + "Tekka_Centre"), ("Sri Veeramakaliamman Temple", WIKI + "Sri_Veeramakaliamman_Temple")],
-    "kampong-glam": [("Wikipedia: Kampong Glam", WIKI + "Kampong_Glam"), ("Sultan Mosque", WIKI + "Sultan_Mosque,_Singapore"), ("Sultan Mosque's website", "https://sultanmosque.sg/")],
+    "kampong-glam": [("Wikipedia: Kampong Glam", WIKI + "Kampong_Glam"), ("Sultan Mosque", WIKI + "Sultan_Mosque,_Singapore"), ("Sultan Mosque’s website", "https://sultanmosque.sg/")],
     "haw-par-villa": [("Haw Par Villa", "https://www.hawparvilla.sg/"), ("Singapore Tourism Board", "https://www.stb.gov.sg/about-stb/media-publications/media-centre/haw-par-villa-to-partially-close-temporarily-for-maintenance-works-/"), ("Wikipedia", WIKI + "Haw_Par_Villa")],
     "orchard-road": [("Orchard Road Business Association", "https://www.orchardroad.org/"), ("Wikipedia", WIKI + "Orchard_Road")],
     "haji-lane": [("Wikipedia", WIKI + "Haji_Lane")],
@@ -132,6 +132,15 @@ CHECK_NO_MAPS = {
     "es": "Comprobado con las fuentes siguientes en noviembre de 2026. Los horarios, los precios y las rutas cambian: compruébelos antes de ir.",
     "fr": "Vérifié d’après les sources ci-dessous en novembre 2026. Horaires, prix et itinéraires changent : vérifiez avant de partir.",
 }
+# The rooftop bars page names no venue, so only its route was checked.
+CHECK_ROUTE_ONLY = {
+    "en": "Route checked against the map below in November 2026, with the walking time from Google Maps. Bars, dress codes and prices vary, so please check with the bar before you go.",
+    "zh": "路线已于 2026 年 11 月对照下方地图核实，步行时间来自 Google 地图。各酒吧的着装要求和价格不尽相同，请在出发前向酒吧确认。",
+    "ja": "経路は 2026 年 11 月に下記の路線図と照合しました。徒歩時間は Google マップによるものです。ドレスコードや料金は店ごとに異なるので、お出かけ前に各店にご確認ください。",
+    "es": "Ruta comprobada con el mapa siguiente en noviembre de 2026; el tiempo a pie es de Google Maps. El código de vestimenta y los precios varían según el bar: compruébelos con el local antes de ir.",
+    "fr": "Itinéraire vérifié d’après le plan ci-dessous en novembre 2026, avec le temps de marche de Google Maps. Code vestimentaire et prix varient selon les bars : renseignez-vous auprès du bar avant de partir.",
+}
+CHECK_ONE_OFF = {"orchard-road": CHECK_NO_MAPS, "rooftop-bars": CHECK_ROUTE_ONLY}
 # Pages with more than one place to go get a directions link for each.
 DIRECTIONS = {
     "kaya-toast": [
@@ -345,7 +354,7 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
           {'''
           '''.join(links)}
         </div>
-        <p style="margin-top:28px;font-size:0.85rem;color:var(--muted)">{CHECK_NO_MAPS[lang] if slug == "orchard-road" else ui['check']}</p>
+        <p style="margin-top:28px;font-size:0.85rem;color:var(--muted)">{CHECK_ONE_OFF[slug][lang] if slug in CHECK_ONE_OFF else ui['check']}</p>
 {sources}
       </div>
     </section>
