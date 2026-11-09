@@ -42,7 +42,7 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 - Refermez toujours le portail et verrouillez la porte d’entrée derrière vous, même pour sortir un instant.
 - Ne communiquez jamais le code de la porte d’entrée à qui que ce soit.
 
-![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés de secours (clé manuelle), à l’intérieur de la porte gauche du meuble du haut. 2 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 3 : la pile 9 V de rechange pour la serrure, debout sur l’étagère du bas, au milieu du meuble, à côté de la charnière de la porte.](../../assets/img/guide/door-cabinet.webp)
+![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés de secours (clé manuelle), à l’intérieur de la porte gauche du meuble du haut. 2 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 3 : la pile 9 V de rechange pour la serrure, debout sur l’étagère du bas, au milieu du meuble, à côté de la charnière de la porte.](../../assets/img/guide/door-cabinet.webp?v=3)
 
 - **Vous arrivez tard ?** Votre carte d’accès pour la porte d’entrée vous attend dans la **boîte à clés d’arrivée (2 sur la photo)** : celle avec **trois autocollants de pingouins**, sur l’étagère du bas à droite du meuble du haut, à côté de la porte d’entrée. Nous vous envoyons son code avant votre arrivée.
 - **Piles de la serrure :** si la serrure signale que les piles sont faibles, prévenez-nous et nous les changerons. Si elles sont complètement vides, le clavier ne répond plus. Pour ouvrir la porte :

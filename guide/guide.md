@@ -45,7 +45,7 @@ Kevin is your first point of contact for anything about the house. In an emergen
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
 
-![The cabinet beside the main door, outside the house. 1: the locked-out lock box (manual key), on the inside of the upper cabinet’s left door. 2: the arrival lock box with three penguin stickers, on the bottom shelf on the right. 3: the spare 9 V battery for the door lock, standing on the bottom shelf in the middle of the cabinet, next to the door hinge.](../assets/img/guide/door-cabinet.webp)
+![The cabinet beside the main door, outside the house. 1: the locked-out lock box (manual key), on the inside of the upper cabinet’s left door. 2: the arrival lock box with three penguin stickers, on the bottom shelf on the right. 3: the spare 9 V battery for the door lock, standing on the bottom shelf in the middle of the cabinet, next to the door hinge.](../assets/img/guide/door-cabinet.webp?v=3)
 
 - **Arriving late?** Your keycard for the main door waits in the **arrival lock box (2 in the photo)**: the one with **three penguin stickers**, on the bottom shelf on the right of the upper cabinet beside the main door. We send you its code before you arrive.
 - **Door lock batteries:** if the lock warns that its batteries are low, let us know and we’ll replace them. If they run out completely, the keypad stops working. To open the door:

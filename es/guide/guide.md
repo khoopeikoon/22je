@@ -42,7 +42,7 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
 - No comparta nunca el código de la puerta principal con nadie.
 
-![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, de pie en el estante de abajo, en el centro del mueble, junto a la bisagra de la puerta.](../../assets/img/guide/door-cabinet.webp)
+![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, de pie en el estante de abajo, en el centro del mueble, junto a la bisagra de la puerta.](../../assets/img/guide/door-cabinet.webp?v=3)
 
 - **¿Llega tarde?** Su tarjeta de acceso para la puerta principal le espera en la **caja de seguridad de llegada (2 en la foto)**: la que tiene **tres pegatinas de pingüinos**, en el estante de abajo a la derecha del mueble superior junto a la puerta principal. Le enviamos su código antes de su llegada.
 - **Pilas de la cerradura:** si la cerradura avisa de que las pilas están bajas, avísenos y las cambiaremos. Si se agotan del todo, el teclado deja de funcionar. Para abrir la puerta:
