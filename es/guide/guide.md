@@ -11,7 +11,7 @@
     alarm codes here.
 -->
 
-_Última actualización: 29 de octubre de 2026_
+_Última actualización: 9 de noviembre de 2026_
 
 Bienvenido a casa. Esta guía recoge todo lo cotidiano de vivir en 22 Jalan Elok. Si algo no está claro o está desactualizado, escríbanos. Preferimos que pregunte antes que adivinar.
 
@@ -41,12 +41,16 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 - **Llaves:** cada habitación recibe **dos llaves** de la habitación y **dos tarjetas de acceso** para la puerta principal. El mando de la verja se entrega a **una sola persona**.
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
 - No comparta nunca el código de la puerta principal con nadie.
+
+![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, en el estante abierto, en el centro, junto a la pared del fondo.](../../assets/img/guide/door-cabinet.webp)
+
+- **¿Llega tarde?** Su tarjeta de acceso para la puerta principal le espera en la **caja de seguridad de llegada (2 en la foto)**: la que tiene **tres pegatinas de pingüinos**, en el estante de abajo a la derecha del mueble superior junto a la puerta principal. Le enviamos su código antes de su llegada.
 - **Pilas de la cerradura:** si la cerradura avisa de que las pilas están bajas, avísenos y las cambiaremos. Si se agotan del todo, el teclado deja de funcionar. Para abrir la puerta:
-  1. Coja la **pila de 9 V** de repuesto del zapatero que hay fuera, junto a la puerta principal: está en el **mueble de abajo a la derecha, esquina superior derecha**. Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
+  1. Coja la **pila de 9 V** de repuesto del **estante abierto** (el del fondo de mármol) del mueble junto a la puerta principal: está **en el centro, junto a la pared del fondo** (3 en la foto). Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
   2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
   3. Manténgala ahí y abra como siempre con su código.
   4. Escríbanos para que cambiemos las pilas de la cerradura.
-- **Si la cerradura falla del todo** (por ejemplo, si el truco de la pila no funciona): hay una **llave manual en una caja de seguridad** en la casa. Le enseñaremos dónde está cuando entre a vivir, y ya tendrá su código: se lo enviamos con el de la puerta principal antes de su llegada, así que guárdelo donde pueda consultarlo sin el wifi de la casa. ¿Lo ha olvidado? Puede obtenerlo a cualquier hora con nuestra respuesta automática de WhatsApp (envíe al número de Kevin la frase que le dimos al entrar), o escribir o llamar a Kevin.
+- **Si la cerradura falla del todo** (por ejemplo, si el truco de la pila no funciona): hay una **llave manual en la caja de seguridad de emergencia** (1 en la foto): abra la puerta izquierda del mueble superior junto a la puerta principal; la caja está en el interior de esa puerta. Ya tendrá su código: se lo enviamos con el de la puerta principal antes de su llegada, así que guárdelo donde pueda consultarlo sin el wifi de la casa. ¿Lo ha olvidado? Puede obtenerlo a cualquier hora con nuestra respuesta automática de WhatsApp (envíe al número de Kevin la frase que le dimos al entrar), o escribir o llamar a Kevin.
 - Si pierde una llave, una tarjeta o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave o tarjeta** y **S$50 por mando**.
 
 ## Wifi

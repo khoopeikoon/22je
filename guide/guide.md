@@ -16,7 +16,7 @@
     alarm codes here; give those to residents in person or by WhatsApp.
 -->
 
-_Last updated: 29 October 2026_
+_Last updated: 9 November 2026_
 
 Welcome home. This guide covers the everyday things about living at 22 Jalan Elok. If anything here is unclear or out of date, message us. We’d rather you ask than guess.
 
@@ -44,12 +44,16 @@ Kevin is your first point of contact for anything about the house. In an emergen
 - **Keys:** each room gets **two room keys** and **two keycards** for the main door. The gate remote is given to **one resident** only.
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
+
+![The cabinet beside the main door, outside the house. 1: the locked-out lock box (manual key), on the inside of the upper cabinet’s left door. 2: the arrival lock box with three penguin stickers, on the bottom shelf on the right. 3: the spare 9 V battery for the door lock, on the open shelf, in the middle against the back wall.](../assets/img/guide/door-cabinet.webp)
+
+- **Arriving late?** Your keycard for the main door waits in the **arrival lock box (2 in the photo)**: the one with **three penguin stickers**, on the bottom shelf on the right of the upper cabinet beside the main door. We send you its code before you arrive.
 - **Door lock batteries:** if the lock warns that its batteries are low, let us know and we’ll replace them. If they run out completely, the keypad stops working. To open the door:
-  1. Take the spare **9 V battery** from the shoe cabinet outside the main door: it’s in the **bottom-right cabinet, top-right corner**. If you can’t get to it, any convenience store sells them (a 9 V alkaline battery, type 6LF22).
+  1. Take the spare **9 V battery** from the **open shelf** (the one with the marble back) in the cabinet beside the main door: it’s **in the middle, against the back wall** (3 in the photo). If you can’t get to it, any convenience store sells them (a 9 V alkaline battery, type 6LF22).
   2. Hold the battery’s two terminals against the **emergency contacts at the bottom of the outer keypad**.
   3. Keep it there and unlock as usual with your code.
   4. Message us so we can replace the lock’s batteries.
-- **If the door lock fails completely** (for example, the battery trick above doesn’t work): there’s a **manual key in a lock box** at the house. We’ll show you where it is when you move in, and you’ll already have its code: we send it with the main door code before you arrive, so keep it somewhere you can reach without the house wifi. Forgotten it? Get it at any hour from our automated WhatsApp reply (send Kevin’s number the phrase we gave you at move-in), or message or call Kevin.
+- **If the door lock fails completely** (for example, the battery trick above doesn’t work): there’s a **manual key in the locked-out lock box** (1 in the photo): open the left door of the upper cabinet beside the main door, and the box is on the inside of that door. You’ll already have its code: we send it with the main door code before you arrive, so keep it somewhere you can reach without the house wifi. Forgotten it? Get it at any hour from our automated WhatsApp reply (send Kevin’s number the phrase we gave you at move-in), or message or call Kevin.
 - If you lose a key, keycard or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key or keycard** and **S$50 per remote**.
 
 ## Wifi
