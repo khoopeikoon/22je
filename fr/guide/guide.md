@@ -42,11 +42,11 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 - Refermez toujours le portail et verrouillez la porte d’entrée derrière vous, même pour sortir un instant.
 - Ne communiquez jamais le code de la porte d’entrée à qui que ce soit.
 
-![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés de secours (clé manuelle), à l’intérieur de la porte gauche du meuble du haut. 2 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 3 : la pile 9 V de rechange pour la serrure, sur l’étagère ouverte, au milieu, contre le mur du fond.](../../assets/img/guide/door-cabinet.webp)
+![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés de secours (clé manuelle), à l’intérieur de la porte gauche du meuble du haut. 2 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 3 : la pile 9 V de rechange pour la serrure, au milieu de la même étagère du bas que la boîte à clés d’arrivée.](../../assets/img/guide/door-cabinet.webp)
 
 - **Vous arrivez tard ?** Votre carte d’accès pour la porte d’entrée vous attend dans la **boîte à clés d’arrivée (2 sur la photo)** : celle avec **trois autocollants de pingouins**, sur l’étagère du bas à droite du meuble du haut, à côté de la porte d’entrée. Nous vous envoyons son code avant votre arrivée.
 - **Piles de la serrure :** si la serrure signale que les piles sont faibles, prévenez-nous et nous les changerons. Si elles sont complètement vides, le clavier ne répond plus. Pour ouvrir la porte :
-  1. Prenez la **pile 9 V** de rechange sur l’**étagère ouverte** (celle au fond en marbre) du meuble à côté de la porte d’entrée : elle se trouve **au milieu, contre le mur du fond** (3 sur la photo). Si vous ne pouvez pas y accéder, on en trouve dans toutes les supérettes (pile alcaline 9 V, type 6LF22).
+  1. Prenez la **pile 9 V** de rechange dans le meuble du haut, à côté de la porte d’entrée : elle se trouve sur l’**étagère du bas à droite, au milieu** (3 sur la photo), la même étagère que la boîte à clés d’arrivée. Si vous ne pouvez pas y accéder, on en trouve dans toutes les supérettes (pile alcaline 9 V, type 6LF22).
   2. Appuyez les deux bornes de la pile contre les **contacts de secours en bas du clavier extérieur**.
   3. Maintenez-la en place et déverrouillez comme d’habitude avec votre code.
   4. Écrivez-nous pour que nous changions les piles de la serrure.
