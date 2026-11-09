@@ -42,11 +42,11 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
 - No comparta nunca el código de la puerta principal con nadie.
 
-![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, en el centro del mismo estante de abajo que la caja de seguridad de llegada.](../../assets/img/guide/door-cabinet.webp)
+![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, de pie en el estante de abajo, en el centro del mueble, junto a la bisagra de la puerta.](../../assets/img/guide/door-cabinet.webp)
 
 - **¿Llega tarde?** Su tarjeta de acceso para la puerta principal le espera en la **caja de seguridad de llegada (2 en la foto)**: la que tiene **tres pegatinas de pingüinos**, en el estante de abajo a la derecha del mueble superior junto a la puerta principal. Le enviamos su código antes de su llegada.
 - **Pilas de la cerradura:** si la cerradura avisa de que las pilas están bajas, avísenos y las cambiaremos. Si se agotan del todo, el teclado deja de funcionar. Para abrir la puerta:
-  1. Coja la **pila de 9 V** de repuesto del mueble superior junto a la puerta principal: está en el **estante de abajo a la derecha, en el centro** (3 en la foto), el mismo estante que la caja de seguridad de llegada. Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
+  1. Coja la **pila de 9 V** de repuesto del mueble superior junto a la puerta principal: está de pie en el **estante de abajo, en el centro del mueble**, en el extremo izquierdo de la parte derecha, junto a la bisagra de la puerta (3 en la foto). Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
   2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
   3. Manténgala ahí y abra como siempre con su código.
   4. Escríbanos para que cambiemos las pilas de la cerradura.
