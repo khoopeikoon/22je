@@ -42,15 +42,14 @@ Kevin est votre premier interlocuteur pour tout ce qui concerne la maison. En ca
 - Refermez toujours le portail et verrouillez la porte d’entrée derrière vous, même pour sortir un instant.
 - Ne communiquez jamais le code de la porte d’entrée à qui que ce soit.
 
-![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés de secours (clé manuelle), à l’intérieur de la porte gauche du meuble du haut. 2 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 3 : la pile 9 V de rechange pour la serrure, debout sur l’étagère du bas, au milieu du meuble, à côté de la charnière de la porte.](../../assets/img/guide/door-cabinet.webp?v=3)
+![Le meuble à côté de la porte d’entrée, à l’extérieur. 1 : la boîte à clés d’arrivée, avec trois autocollants de pingouins, sur l’étagère du bas à droite. 2 : la pile 9 V de rechange pour la serrure, debout sur l’étagère du bas, au milieu du meuble, à côté de la charnière de la porte.](../../assets/img/guide/door-cabinet.webp?v=4)
 
-- **Vous arrivez tard ?** Votre carte d’accès pour la porte d’entrée vous attend dans la **boîte à clés d’arrivée (2 sur la photo)** : celle avec **trois autocollants de pingouins**, sur l’étagère du bas à droite du meuble du haut, à côté de la porte d’entrée. Nous vous envoyons son code avant votre arrivée.
+- **Vous arrivez tard ?** Votre carte d’accès pour la porte d’entrée vous attend dans la **boîte à clés d’arrivée (1 sur la photo)** : celle avec **trois autocollants de pingouins**, sur l’étagère du bas à droite du meuble du haut, à côté de la porte d’entrée. Nous vous envoyons son code avant votre arrivée.
 - **Piles de la serrure :** si la serrure signale que les piles sont faibles, prévenez-nous et nous les changerons. Si elles sont complètement vides, le clavier ne répond plus. Pour ouvrir la porte :
-  1. Prenez la **pile 9 V** de rechange dans le meuble du haut, à côté de la porte d’entrée : elle est debout sur l’**étagère du bas, au milieu du meuble**, à l’extrémité gauche de la partie droite, à côté de la charnière de la porte (3 sur la photo). Si vous ne pouvez pas y accéder, on en trouve dans toutes les supérettes (pile alcaline 9 V, type 6LF22).
+  1. Prenez la **pile 9 V** de rechange dans le meuble du haut, à côté de la porte d’entrée : elle est debout sur l’**étagère du bas, au milieu du meuble**, à l’extrémité gauche de la partie droite, à côté de la charnière de la porte (2 sur la photo). Si vous ne pouvez pas y accéder, on en trouve dans toutes les supérettes (pile alcaline 9 V, type 6LF22).
   2. Appuyez les deux bornes de la pile contre les **contacts de secours en bas du clavier extérieur**.
   3. Maintenez-la en place et déverrouillez comme d’habitude avec votre code.
   4. Écrivez-nous pour que nous changions les piles de la serrure.
-- **Si la serrure ne fonctionne plus du tout** (par exemple si l’astuce de la pile ne marche pas) : une **clé manuelle se trouve dans la boîte à clés de secours** (1 sur la photo) : ouvrez la porte gauche du meuble du haut, à côté de la porte d’entrée ; la boîte est fixée à l’intérieur de cette porte. Vous aurez déjà son code : nous vous l’envoyons avec celui de la porte d’entrée avant votre arrivée, alors gardez-le là où vous pouvez le consulter sans le wifi de la maison. Vous l’avez oublié ? Obtenez-le à toute heure grâce à notre réponse automatique WhatsApp (envoyez au numéro de Kevin la phrase que nous vous avons donnée à votre arrivée), ou écrivez ou appelez Kevin.
 - Si vous perdez une clé, une carte d’accès ou la télécommande, prévenez-nous immédiatement pour que nous puissions sécuriser la maison. Le remplacement coûte **S$10 par clé ou carte** et **S$50 par télécommande**.
 
 ## Wifi

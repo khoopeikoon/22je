@@ -45,15 +45,14 @@ Kevin is your first point of contact for anything about the house. In an emergen
 - Always close the front gate and lock the main door behind you, even when popping out.
 - Never share the main door code with anyone else.
 
-![The cabinet beside the main door, outside the house. 1: the locked-out lock box (manual key), on the inside of the upper cabinet’s left door. 2: the arrival lock box with three penguin stickers, on the bottom shelf on the right. 3: the spare 9 V battery for the door lock, standing on the bottom shelf in the middle of the cabinet, next to the door hinge.](../assets/img/guide/door-cabinet.webp?v=3)
+![The cabinet beside the main door, outside the house. 1: the arrival lock box with three penguin stickers, on the bottom shelf on the right. 2: the spare 9 V battery for the door lock, standing on the bottom shelf in the middle of the cabinet, next to the door hinge.](../assets/img/guide/door-cabinet.webp?v=4)
 
-- **Arriving late?** Your keycard for the main door waits in the **arrival lock box (2 in the photo)**: the one with **three penguin stickers**, on the bottom shelf on the right of the upper cabinet beside the main door. We send you its code before you arrive.
+- **Arriving late?** Your keycard for the main door waits in the **arrival lock box (1 in the photo)**: the one with **three penguin stickers**, on the bottom shelf on the right of the upper cabinet beside the main door. We send you its code before you arrive.
 - **Door lock batteries:** if the lock warns that its batteries are low, let us know and we’ll replace them. If they run out completely, the keypad stops working. To open the door:
-  1. Take the spare **9 V battery** from the upper cabinet beside the main door: it’s standing on the **bottom shelf in the middle of the cabinet**, at the left end of the right-hand section, next to the door hinge (3 in the photo). If you can’t get to it, any convenience store sells them (a 9 V alkaline battery, type 6LF22).
+  1. Take the spare **9 V battery** from the upper cabinet beside the main door: it’s standing on the **bottom shelf in the middle of the cabinet**, at the left end of the right-hand section, next to the door hinge (2 in the photo). If you can’t get to it, any convenience store sells them (a 9 V alkaline battery, type 6LF22).
   2. Hold the battery’s two terminals against the **emergency contacts at the bottom of the outer keypad**.
   3. Keep it there and unlock as usual with your code.
   4. Message us so we can replace the lock’s batteries.
-- **If the door lock fails completely** (for example, the battery trick above doesn’t work): there’s a **manual key in the locked-out lock box** (1 in the photo): open the left door of the upper cabinet beside the main door, and the box is on the inside of that door. You’ll already have its code: we send it with the main door code before you arrive, so keep it somewhere you can reach without the house wifi. Forgotten it? Get it at any hour from our automated WhatsApp reply (send Kevin’s number the phrase we gave you at move-in), or message or call Kevin.
 - If you lose a key, keycard or the remote, tell us straight away so we can secure the house. Replacements cost **S$10 per key or keycard** and **S$50 per remote**.
 
 ## Wifi
@@ -174,6 +173,22 @@ The laundry terrace is an open terrace on the 5th floor, across the lift landing
 
 **Not sure how the machines work?** Just ask us. We’re happy to show you.
 
+### Sharing the machines
+
+Everyone in the house shares one washer and one dryer, so a few habits keep it fair for all:
+
+- **Be there when your cycle ends.** Set a timer on your phone when you start, and take your laundry out as soon as it finishes. Someone may be waiting.
+- **A finished load left for more than 30 minutes** may be moved out by the next person, gently, onto the shelf across from the machines. Never put it on the floor, never move someone’s wet washing into the dryer, and never start a cycle with someone else’s clothes. If yours gets moved, please don’t take it personally.
+- **Never stop or open a machine that’s still running** for someone else.
+- **If someone is waiting, let them go next** rather than starting another load straight away.
+- **Bring your own detergent.** If you keep it on the shelf, label it with your room, and don’t use anyone else’s without asking.
+- **Clean up after yourself:** clean the dryer’s lint filter, wipe up any spilled detergent, leave the washer door slightly open, and rinse out the sink if you used it.
+- **Share the drying rack and lines.** Hang one load at a time, take your clothes in once they’re dry, and bring them in if it starts to rain. Please don’t leave them out for days.
+- **Rinse very dirty items in the sink first**, such as muddy sportswear, and don’t use bleach or fabric dye in the machines.
+- **Leave other people’s laundry alone.** If you find a stray sock or a forgotten item, put it on the shelf for its owner.
+- **The machines are free to use at any time.** During quiet hours (10 pm – 8 am), keep voices low on the terrace, as it’s beside the Aurelia Suite.
+- **If a machine isn’t working, don’t use it.** Message us (see *If something goes wrong* below).
+
 ![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.webp)
 
 Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a 9 kg front-loader, model WW90DB8U94GBSP) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer, model DV10BB9440GBSP) is **on top**. Each has three controls:
@@ -188,7 +203,7 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 
 1. **Prepare:** empty pockets (tissues and coins cause the most trouble), close zips, and put delicates and bras in a mesh bag. Wash darks and whites separately.
 2. **Load:** fill the drum loosely, no more than about **three-quarters full**. Close the door until it clicks.
-3. **Add detergent:** pull out the drawer at the top left of the washer and pour one capful of liquid detergent into the detergent compartment. Don’t use the large Auto Dispense tanks, as we don’t fill them. **Detergent is provided**: use the bottle on the shelf across from the machines. One capful is plenty, because front-loaders need very little.
+3. **Add detergent:** pull out the drawer at the top left of the washer and pour one capful of your own liquid detergent into the detergent compartment. Don’t use the large Auto Dispense tanks, as we don’t fill them. **Please bring your own detergent.** One capful is plenty, because front-loaders need very little.
 4. Press **⏻ Power**.
 5. **Turn the dial** to choose a cycle:
    - **AI Wash** or **Cotton**: everyday clothes, towels and bedding
@@ -217,7 +232,6 @@ Both machines are **Samsung Bespoke AI** models with a single dial. The **washer
 ### Please don’t
 
 - Overload either machine, or wash or dry rubber-backed mats or shoes.
-- Leave your laundry sitting in the machines after the cycle ends. Others may be waiting.
 - Put anything on top of the dryer, or lean on the stacked machines.
 - Open the cover at the bottom front of the dryer. We clean that filter ourselves.
 

@@ -42,15 +42,14 @@ Kevin es su primer contacto para cualquier asunto de la casa. En una emergencia,
 - Cierre siempre la verja y la puerta principal al salir, aunque sea un momento.
 - No comparta nunca el código de la puerta principal con nadie.
 
-![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de emergencia (llave manual), en el interior de la puerta izquierda del mueble superior. 2: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 3: la pila de 9 V de repuesto para la cerradura, de pie en el estante de abajo, en el centro del mueble, junto a la bisagra de la puerta.](../../assets/img/guide/door-cabinet.webp?v=3)
+![El mueble junto a la puerta principal, fuera de la casa. 1: la caja de seguridad de llegada, con tres pegatinas de pingüinos, en el estante de abajo a la derecha. 2: la pila de 9 V de repuesto para la cerradura, de pie en el estante de abajo, en el centro del mueble, junto a la bisagra de la puerta.](../../assets/img/guide/door-cabinet.webp?v=4)
 
-- **¿Llega tarde?** Su tarjeta de acceso para la puerta principal le espera en la **caja de seguridad de llegada (2 en la foto)**: la que tiene **tres pegatinas de pingüinos**, en el estante de abajo a la derecha del mueble superior junto a la puerta principal. Le enviamos su código antes de su llegada.
+- **¿Llega tarde?** Su tarjeta de acceso para la puerta principal le espera en la **caja de seguridad de llegada (1 en la foto)**: la que tiene **tres pegatinas de pingüinos**, en el estante de abajo a la derecha del mueble superior junto a la puerta principal. Le enviamos su código antes de su llegada.
 - **Pilas de la cerradura:** si la cerradura avisa de que las pilas están bajas, avísenos y las cambiaremos. Si se agotan del todo, el teclado deja de funcionar. Para abrir la puerta:
-  1. Coja la **pila de 9 V** de repuesto del mueble superior junto a la puerta principal: está de pie en el **estante de abajo, en el centro del mueble**, en el extremo izquierdo de la parte derecha, junto a la bisagra de la puerta (3 en la foto). Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
+  1. Coja la **pila de 9 V** de repuesto del mueble superior junto a la puerta principal: está de pie en el **estante de abajo, en el centro del mueble**, en el extremo izquierdo de la parte derecha, junto a la bisagra de la puerta (2 en la foto). Si no puede acceder a ella, la venden en cualquier tienda de conveniencia (pila alcalina de 9 V, tipo 6LF22).
   2. Apoye los dos polos de la pila en los **contactos de emergencia de la parte inferior del teclado exterior**.
   3. Manténgala ahí y abra como siempre con su código.
   4. Escríbanos para que cambiemos las pilas de la cerradura.
-- **Si la cerradura falla del todo** (por ejemplo, si el truco de la pila no funciona): hay una **llave manual en la caja de seguridad de emergencia** (1 en la foto): abra la puerta izquierda del mueble superior junto a la puerta principal; la caja está en el interior de esa puerta. Ya tendrá su código: se lo enviamos con el de la puerta principal antes de su llegada, así que guárdelo donde pueda consultarlo sin el wifi de la casa. ¿Lo ha olvidado? Puede obtenerlo a cualquier hora con nuestra respuesta automática de WhatsApp (envíe al número de Kevin la frase que le dimos al entrar), o escribir o llamar a Kevin.
 - Si pierde una llave, una tarjeta o el mando, avísenos enseguida para que podamos proteger la casa. La reposición cuesta **S$10 por llave o tarjeta** y **S$50 por mando**.
 
 ## Wifi
