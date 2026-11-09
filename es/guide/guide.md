@@ -180,11 +180,27 @@ Las dos máquinas son modelos **Samsung Bespoke AI** con un solo mando giratorio
 | **Mando giratorio** | Gírelo para elegir un programa (el nombre aparece en la pantalla); púlselo para ver opciones |
 | **▷‖ Start / Pause (inicio / pausa)** | Inicia el programa o lo pausa |
 
+### Compartir las máquinas
+
+Toda la casa comparte una lavadora y una secadora, así que unos pocos hábitos hacen que sea justo para todos:
+
+- **Esté pendiente de cuándo termina su programa.** Ponga un temporizador en el móvil al empezar y saque la ropa en cuanto termine. Puede haber alguien esperando.
+- **Una carga terminada que lleve más de 30 minutos** puede sacarla la siguiente persona, con cuidado, y dejarla en la estantería frente a las máquinas. Nunca la deje en el suelo, nunca pase a la secadora la ropa mojada de otra persona y nunca inicie un programa con la ropa de otra persona dentro. Si alguien mueve la suya, no se lo tome como algo personal.
+- **Nunca pare ni abra una máquina que otra persona tenga en marcha.**
+- **Si alguien está esperando, déjele pasar primero** en lugar de poner otra carga enseguida.
+- **Traiga su propio detergente.** Si lo deja en la estantería, márquelo con su habitación, y no use el de otros sin preguntar.
+- **Deje todo limpio:** limpie el filtro de pelusa de la secadora, seque el detergente derramado, deje la puerta de la lavadora un poco abierta y enjuague el fregadero si lo ha usado.
+- **Comparta el tendedero y las cuerdas.** Tienda una carga cada vez, recoja la ropa en cuanto esté seca y métala si empieza a llover. Por favor, no la deje fuera durante días.
+- **Enjuague primero en el fregadero la ropa muy sucia**, como ropa deportiva con barro, y no use lejía ni tintes en las máquinas.
+- **No toque la ropa de los demás.** Si encuentra un calcetín suelto o algo olvidado, déjelo en la estantería para su dueño.
+- **Las máquinas se pueden usar gratis a cualquier hora.** Durante las horas de silencio (de 22:00 a 8:00), hable en voz baja en la terraza, porque está junto a la Suite Aurelia.
+- **Si una máquina no funciona, no la use.** Escríbanos (vea *Si algo va mal* más abajo).
+
 ### Cómo usar la lavadora (máquina de abajo)
 
 1. **Prepare la ropa:** vacíe los bolsillos (los pañuelos de papel y las monedas son lo que más problemas da), cierre las cremalleras y meta la ropa delicada y los sujetadores en una bolsa de malla. Lave por separado la ropa oscura y la blanca.
 2. **Cargue:** llene el tambor sin apretar, como mucho **unas tres cuartas partes**. Cierre la puerta hasta oír un clic.
-3. **Añada detergente:** saque el cajón de la parte superior izquierda de la lavadora y vierta un tapón de detergente líquido en el compartimento del detergente. No use los depósitos grandes de Auto Dispense (dosificación automática), porque no los rellenamos. **El detergente está incluido**: use la botella de la estantería frente a las máquinas. Un tapón es suficiente, porque las lavadoras de carga frontal necesitan muy poco.
+3. **Añada detergente:** saque el cajón de la parte superior izquierda de la lavadora y vierta un tapón de su propio detergente líquido en el compartimento del detergente. No use los depósitos grandes de Auto Dispense (dosificación automática), porque no los rellenamos. **Traiga su propio detergente, por favor.** Un tapón es suficiente, porque las lavadoras de carga frontal necesitan muy poco.
 4. Pulse **⏻ Power**.
 5. **Gire el mando** para elegir un programa:
    - **AI Wash** o **Cotton** (algodón): ropa de diario, toallas y ropa de cama
@@ -213,7 +229,6 @@ Las dos máquinas son modelos **Samsung Bespoke AI** con un solo mando giratorio
 ### Por favor, no
 
 - Sobrecargue ninguna de las dos máquinas, ni lave o seque alfombrillas con base de goma o zapatos.
-- Deje la ropa dentro de las máquinas cuando termine el programa. Puede haber alguien esperando.
 - Ponga nada encima de la secadora ni se apoye en las máquinas apiladas.
 - Abra la tapa de la parte inferior delantera de la secadora. Ese filtro lo limpiamos nosotros.
 

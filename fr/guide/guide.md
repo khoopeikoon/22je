@@ -180,11 +180,27 @@ Les deux machines sont des modèles **Samsung Bespoke AI** à molette unique. Le
 | **Molette** | Tournez-la pour choisir un programme (son nom s’affiche à l’écran) ; appuyez dessus pour voir les options |
 | **▷‖ Start / Pause (départ / pause)** | Lance le programme ou le met en pause |
 
+### Partager les machines
+
+Toute la maison partage un lave-linge et un sèche-linge : quelques habitudes permettent que ce soit équitable pour tous.
+
+- **Soyez là à la fin de votre cycle.** Lancez un minuteur sur votre téléphone en démarrant, et sortez votre linge dès qu’il est terminé. Quelqu’un attend peut-être.
+- **Une machine terminée depuis plus de 30 minutes** peut être vidée par la personne suivante, avec soin, sur l’étagère en face des machines. Ne posez jamais le linge par terre, ne mettez jamais le linge mouillé de quelqu’un d’autre au sèche-linge et ne lancez jamais un cycle avec les vêtements de quelqu’un d’autre. Si le vôtre a été déplacé, ne le prenez pas mal.
+- **N’arrêtez et n’ouvrez jamais une machine que quelqu’un d’autre fait tourner.**
+- **Si quelqu’un attend, laissez-le passer** plutôt que de lancer aussitôt une autre machine.
+- **Apportez votre propre lessive.** Si vous la laissez sur l’étagère, indiquez-y votre chambre, et n’utilisez pas celle des autres sans demander.
+- **Laissez la place propre :** nettoyez le filtre à peluches du sèche-linge, essuyez la lessive renversée, laissez la porte du lave-linge entrouverte et rincez l’évier si vous l’avez utilisé.
+- **Partagez l’étendoir et les fils.** Étendez une machine à la fois, rentrez vos vêtements une fois secs, et rentrez-les s’il commence à pleuvoir. Merci de ne pas les laisser dehors pendant des jours.
+- **Rincez d’abord à l’évier le linge très sale**, comme une tenue de sport boueuse, et n’utilisez ni eau de Javel ni teinture dans les machines.
+- **Ne touchez pas au linge des autres.** Si vous trouvez une chaussette égarée ou un objet oublié, posez-le sur l’étagère pour son propriétaire.
+- **Les machines sont gratuites et accessibles à toute heure.** Pendant les heures calmes (de 22 h à 8 h), parlez doucement sur la terrasse, car elle se trouve à côté de la Suite Aurelia.
+- **Si une machine ne fonctionne pas, ne l’utilisez pas.** Écrivez-nous (voir *En cas de problème* ci-dessous).
+
 ### Utiliser le lave-linge (machine du bas)
 
 1. **Préparez le linge :** videz les poches (mouchoirs et pièces sont les pires ennemis), fermez les fermetures éclair et mettez le linge délicat et les soutiens-gorge dans un filet de lavage. Lavez séparément le linge foncé et le blanc.
 2. **Chargez :** remplissez le tambour sans tasser, **aux trois quarts environ** au maximum. Fermez la porte jusqu’au clic.
-3. **Ajoutez la lessive :** tirez le tiroir en haut à gauche du lave-linge et versez un bouchon de lessive liquide dans le compartiment à lessive. N’utilisez pas les grands réservoirs Auto Dispense (dosage automatique), nous ne les remplissons pas. **La lessive est fournie** : utilisez le flacon sur l’étagère en face des machines. Un bouchon suffit largement, les machines à hublot en demandent très peu.
+3. **Ajoutez la lessive :** tirez le tiroir en haut à gauche du lave-linge et versez un bouchon de votre propre lessive liquide dans le compartiment à lessive. N’utilisez pas les grands réservoirs Auto Dispense (dosage automatique), nous ne les remplissons pas. **Merci d’apporter votre propre lessive.** Un bouchon suffit largement, les machines à hublot en demandent très peu.
 4. Appuyez sur **⏻ Power**.
 5. **Tournez la molette** pour choisir un programme :
    - **AI Wash** ou **Cotton** (coton) : vêtements du quotidien, serviettes et linge de lit
@@ -213,7 +229,6 @@ Les deux machines sont des modèles **Samsung Bespoke AI** à molette unique. Le
 ### Merci de ne pas
 
 - Surcharger l’une ou l’autre machine, ni laver ou sécher des tapis à envers caoutchouté ou des chaussures.
-- Laisser votre linge dans les machines après la fin du cycle. D’autres attendent peut-être.
 - Poser quoi que ce soit sur le sèche-linge, ni vous appuyer sur les machines superposées.
 - Ouvrir le capot en bas à l’avant du sèche-linge. Nous nettoyons ce filtre nous-mêmes.
 
