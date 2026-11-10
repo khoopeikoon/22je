@@ -21,7 +21,7 @@ const ROOMS = [
   { id: "dq4",     name: "Deluxe Queen Room 4",    zh: "豪华大床房 4", ja: "デラックスクイーン 4", es: "Habitación Deluxe Queen 4", fr: "Chambre Deluxe Queen 4",         sub: "Deluxe Queen", bookings: [{ start: "2026-11-13", end: "2026-11-15" }] },
   { id: "dt1",     name: "Deluxe Twin Room 1",     zh: "豪华双床房 1", ja: "デラックスツイン 1", es: "Habitación Deluxe Twin 1", fr: "Chambre Deluxe Twin 1",         sub: "Deluxe Twin",  bookings: [] },
   { id: "dt3",     name: "Deluxe Twin Room 3",     zh: "豪华双床房 3", ja: "デラックスツイン 3", es: "Habitación Deluxe Twin 3", fr: "Chambre Deluxe Twin 3",         sub: "Deluxe Twin",  bookings: [{ start: "2026-12-12", end: "2026-12-19" }, { start: "2026-12-30", end: "2027-01-04" }] },
-  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4", ja: "デラックスツイン 4", es: "Habitación Deluxe Twin 4", fr: "Chambre Deluxe Twin 4",         sub: "Deluxe Twin",  bookings: [{ start: "2026-10-09", end: "2026-10-13" }] },
+  { id: "dt4",     name: "Deluxe Twin Room 4",     zh: "豪华双床房 4", ja: "デラックスツイン 4", es: "Habitación Deluxe Twin 4", fr: "Chambre Deluxe Twin 4",         sub: "Deluxe Twin",  bookings: [] },
 ];
 
 /* ============================================================

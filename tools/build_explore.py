@@ -123,6 +123,92 @@ SOURCES = {
     "malacca": [("Wikipedia: Malacca", WIKI + "Malacca_City"), ("Chicken rice balls", WIKI + "Hainanese_chicken_rice"), ("Little Big Red Dot guide", LBRD + "malacca-weekend-getaway-singapore-2026/")],
     "regional-flights": [("Flight times to Bangkok", "https://www.flightroutes.com/SIN-BKK"), ("to Phuket", "https://www.flightsfrom.com/SIN-HKT"), ("to Bali", "https://www.flightroutes.com/SIN-DPS")],
 }
+# Source labels in each language. A label is looked up whole first, then as
+# "site: page" with each half looked up on its own; anything not listed here
+# (a publisher's or place's own English name) stays as written in SOURCES.
+# Place names follow the spelling used in tools/explore/<lang>.txt.
+SOURCE_COLON = {"en": ": ", "zh": "：", "ja": "：", "es": ": ", "fr": " : "}
+SOURCE_LABELS = {
+    "zh": {
+        "Wikipedia": "维基百科", "NParks": "国家公园局", "LTA MRT map": "陆交局地铁图",
+        "Gardens by the Bay": "滨海湾花园", "Cloud Forest": "云雾林", "Flower Dome": "花穹", "Supertree Grove": "擎天树丛",
+        "Marina Bay Sands": "滨海湾金沙", "Sentosa": "圣淘沙", "Mandai": "万礼", "getting here": "交通指南",
+        "Night Safari": "夜间野生动物园", "Mount Faber": "花柏山", "Southern Ridges": "南部山脊", "Henderson Waves": "亨德申波浪桥",
+        "Visit Ubin": "乌敏岛", "Homejourney guide": "Homejourney 指南", "Lau Pa Sat": "老巴刹",
+        "Roots (National Heritage Board)": "Roots（国家文物局）", "order kopi": "如何点咖啡",
+        "Toast Box at Paragon": "百利宫的土司工坊", "Ya Kun at Paragon": "百利宫的亚坤",
+        "National Gallery Singapore": "新加坡国家美术馆", "the museum": "博物馆", "the building": "建筑",
+        "Tang Shipwreck": "“黑石号”沉船", "Cavenagh Bridge": "加文纳桥", "Chinatown": "牛车水",
+        "Sri Mariamman Temple": "马里安曼兴都庙", "Thian Hock Keng": "天福宫", "Buddha Tooth Relic Temple": "佛牙寺",
+        "Little India": "小印度", "Tekka Centre": "竹脚中心", "Sri Veeramakaliamman Temple": "维拉玛卡里亚曼兴都庙",
+        "Kampong Glam": "甘榜格南", "Sultan Mosque": "苏丹回教堂", "Sultan Mosque’s website": "苏丹回教堂官网",
+        "Haw Par Villa": "虎豹别墅", "Singapore Tourism Board": "新加坡旅游局",
+        "Orchard Road Business Association": "乌节路商联会", "Mustafa Centre": "慕斯达法中心",
+        "Jewel": "星耀樟宜", "Rain Vortex": "雨漩涡", "Clarke Quay": "克拉码头", "Robertson Quay": "罗伯逊码头",
+        "Keong Saik Road": "恭锡路", "Ann Siang Hill": "安祥山", "Little Big Red Dot guide": "Little Big Red Dot 指南",
+        "Instarem ferry guide": "Instarem 渡轮指南", "Malacca": "马六甲", "Chicken rice balls": "鸡饭粒",
+        "Flight times to Bangkok": "飞行时间：曼谷", "to Phuket": "普吉岛", "to Bali": "巴厘岛",
+    },
+    "ja": {
+        "Wikipedia": "ウィキペディア", "LTA MRT map": "LTA の MRT 路線図",
+        "Gardens by the Bay": "ガーデンズ・バイ・ザ・ベイ", "Cloud Forest": "クラウドフォレスト", "Flower Dome": "フラワードーム",
+        "Supertree Grove": "スーパーツリー・グローブ", "Marina Bay Sands": "マリーナベイ・サンズ", "Sentosa": "セントーサ",
+        "Mandai": "マンダイ", "getting here": "アクセス", "Night Safari": "ナイトサファリ", "Mount Faber": "マウント・フェーバー",
+        "Southern Ridges": "サザン・リッジズ", "Henderson Waves": "ヘンダーソン・ウェーブス", "Visit Ubin": "ウビン島",
+        "Homejourney guide": "Homejourney のガイド", "Lau Pa Sat": "ラオパサ", "order kopi": "コピの注文方法",
+        "Toast Box at Paragon": "パラゴンのトーストボックス", "Ya Kun at Paragon": "パラゴンのヤクン",
+        "National Gallery Singapore": "ナショナル・ギャラリー・シンガポール", "the museum": "博物館", "the building": "建物",
+        "Tang Shipwreck": "唐の沈没船", "Cavenagh Bridge": "カベナ橋", "Chinatown": "チャイナタウン",
+        "Sri Mariamman Temple": "スリ・マリアマン寺院", "Thian Hock Keng": "天福宮", "Buddha Tooth Relic Temple": "仏牙寺",
+        "Little India": "リトル・インディア", "Tekka Centre": "テッカ・センター",
+        "Sri Veeramakaliamman Temple": "スリ・ヴィラマカリアマン寺院", "Kampong Glam": "カンポン・グラム",
+        "Sultan Mosque": "サルタン・モスク", "Sultan Mosque’s website": "サルタン・モスク公式サイト",
+        "Haw Par Villa": "ハウ・パー・ヴィラ", "Singapore Tourism Board": "シンガポール政府観光局",
+        "Mustafa Centre": "ムスタファ・センター", "Jewel": "ジュエル", "Rain Vortex": "レイン・ボルテックス",
+        "Clarke Quay": "クラークキー", "Robertson Quay": "ロバートソンキー", "Keong Saik Road": "キョンサイク・ロード",
+        "Ann Siang Hill": "アンシャン・ヒル", "Little Big Red Dot guide": "Little Big Red Dot のガイド",
+        "Instarem ferry guide": "Instarem のフェリーガイド", "Malacca": "マラッカ", "Chicken rice balls": "チキンライスボール",
+        "Flight times to Bangkok": "フライト時間：バンコク", "to Phuket": "プーケット", "to Bali": "バリ",
+    },
+    "es": {
+        "LTA MRT map": "Mapa del MRT (LTA)", "getting here": "cómo llegar", "the museum": "el museo", "the building": "el edificio",
+        "Tang Shipwreck": "el Naufragio Tang", "Cavenagh Bridge": "el puente Cavenagh",
+        "Homejourney guide": "Guía de Homejourney", "Little Big Red Dot guide": "Guía de Little Big Red Dot",
+        "Instarem ferry guide": "Guía de ferris de Instarem", "order kopi": "cómo pedir kopi",
+        "Toast Box at Paragon": "Toast Box en Paragon", "Ya Kun at Paragon": "Ya Kun en Paragon",
+        "Sri Mariamman Temple": "Templo Sri Mariamman", "Thian Hock Keng": "Templo Thian Hock Keng",
+        "Buddha Tooth Relic Temple": "Templo de la Reliquia del Diente de Buda",
+        "Sri Veeramakaliamman Temple": "Templo Sri Veeramakaliamman", "Sultan Mosque": "Mezquita del Sultán",
+        "Sultan Mosque’s website": "Web de la mezquita del Sultán", "Singapore Tourism Board": "Oficina de Turismo de Singapur",
+        "Malacca": "Malaca", "Chicken rice balls": "Bolas de arroz con pollo",
+        "Flight times to Bangkok": "Tiempos de vuelo a Bangkok", "to Phuket": "a Phuket", "to Bali": "a Bali",
+    },
+    "fr": {
+        "Wikipedia": "Wikipédia", "LTA MRT map": "Plan du MRT (LTA)", "getting here": "comment s’y rendre",
+        "the museum": "le musée", "the building": "le bâtiment", "Tang Shipwreck": "l’épave Tang", "Cavenagh Bridge": "le pont Cavenagh",
+        "Homejourney guide": "Guide Homejourney", "Little Big Red Dot guide": "Guide Little Big Red Dot",
+        "Instarem ferry guide": "Guide des ferries Instarem", "order kopi": "commander un kopi",
+        "Toast Box at Paragon": "Toast Box à Paragon", "Ya Kun at Paragon": "Ya Kun à Paragon",
+        "Sri Mariamman Temple": "Temple Sri Mariamman", "Thian Hock Keng": "Temple Thian Hock Keng",
+        "Buddha Tooth Relic Temple": "Temple de la Relique de la dent de Bouddha",
+        "Sri Veeramakaliamman Temple": "Temple Sri Veeramakaliamman", "Sultan Mosque": "Mosquée du Sultan",
+        "Sultan Mosque’s website": "Site de la mosquée du Sultan", "Singapore Tourism Board": "Office du tourisme de Singapour",
+        "Chicken rice balls": "Boulettes de riz au poulet",
+        "Flight times to Bangkok": "Temps de vol vers Bangkok", "to Phuket": "vers Phuket", "to Bali": "vers Bali",
+    },
+}
+
+
+def source_label(lang, label):
+    words = SOURCE_LABELS.get(lang, {})
+    if label in words:
+        return words[label]
+    if ": " in label:
+        site, page = label.split(": ", 1)
+        return words.get(site, site) + SOURCE_COLON[lang] + words.get(page, page)
+    return label
+
+
 # The Orchard Road walk is the site's own 5-minute figure (the owner's choice,
 # November 2026; Google Maps gives 6 to 8), so that page's note leaves out Google Maps.
 CHECK_NO_MAPS = {
@@ -328,8 +414,8 @@ def spot_page(lang, slug, spot, spots, head, cta, footer, en_get):
         get = WALK_TO_MRT[lang] + ("" if lang in ("zh", "ja") else " ") + get
     sources = ""
     if refs:
-        ref_links = " · ".join(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label, quote=False)}</a>' for label, url in refs)
-        sources = f'        <p style="font-size:0.85rem;color:var(--muted)">{ui["sources"]}: {ref_links}</p>'
+        ref_links = " · ".join(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(source_label(lang, label), quote=False)}</a>' for label, url in refs)
+        sources = f'        <p style="font-size:0.85rem;color:var(--muted)">{ui["sources"]}{SOURCE_COLON[lang]}{ref_links}</p>'
 
     return f"""{head}
 <body>

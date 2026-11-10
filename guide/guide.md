@@ -173,6 +173,16 @@ The laundry terrace is an open terrace on the 5th floor, across the lift landing
 
 **Not sure how the machines work?** Just ask us. We’re happy to show you.
 
+![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.webp)
+
+Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a 9 kg front-loader, model WW90DB8U94GBSP) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer, model DV10BB9440GBSP) is **on top**. Each has three controls:
+
+| Control | What it does |
+|---|---|
+| **⏻ Power** | Turns the machine on and off |
+| **Dial** | Turn to choose a cycle (the name shows on the display); press to see options |
+| **▷‖ Start / Pause** | Starts the cycle, or pauses it |
+
 ### Sharing the machines
 
 Everyone in the house shares one washer and one dryer, so a few habits keep it fair for all:
@@ -188,16 +198,6 @@ Everyone in the house shares one washer and one dryer, so a few habits keep it f
 - **Leave other people’s laundry alone.** If you find a stray sock or a forgotten item, put it on the shelf for its owner.
 - **The machines are free to use at any time.** During quiet hours (10 pm – 8 am), keep voices low on the terrace, as it’s beside the Aurelia Suite.
 - **If a machine isn’t working, don’t use it.** Message us (see *If something goes wrong* below).
-
-![The dryer (top) and washer (bottom), with the sink for hand-washing and soaking on the left](../assets/img/guide/washer-dryer.webp)
-
-Both machines are **Samsung Bespoke AI** models with a single dial. The **washer** (a 9 kg front-loader, model WW90DB8U94GBSP) is the **bottom machine**, and the **dryer** (a 10 kg heat-pump dryer, model DV10BB9440GBSP) is **on top**. Each has three controls:
-
-| Control | What it does |
-|---|---|
-| **⏻ Power** | Turns the machine on and off |
-| **Dial** | Turn to choose a cycle (the name shows on the display); press to see options |
-| **▷‖ Start / Pause** | Starts the cycle, or pauses it |
 
 ### Using the washer (bottom machine)
 

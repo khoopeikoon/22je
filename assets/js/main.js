@@ -36,6 +36,7 @@ const STRINGS = {
     enquire: "Enquire",
     language: "Language",
     menu: "Open menu",
+    mainNav: "Main", viewer: "Photo viewer", close: "Close", prevPhoto: "Previous photo", nextPhoto: "Next photo",
     tagline: "Furnished ensuite rooms for stays of three months or more. Book direct — no agent fee.",
     visit: "Visit", directions: "Get directions →", contact: "Contact", explore: "Explore",
     area: "The area", guide: "House guide", love: "Powered with love ♥", waAria: "WhatsApp us",
@@ -51,6 +52,7 @@ const STRINGS = {
     enquire: "咨询",
     language: "语言",
     menu: "打开菜单",
+    mainNav: "主导航", viewer: "照片查看器", close: "关闭", prevPhoto: "上一张照片", nextPhoto: "下一张照片",
     tagline: "带独立卫浴的精装房间，三个月起租。直接预订，无中介费。",
     visit: "地址", directions: "获取路线 →", contact: "联系", explore: "浏览",
     area: "周边环境", guide: "住户指南", love: "用心打造 ♥", waAria: "WhatsApp 联系我们",
@@ -66,6 +68,7 @@ const STRINGS = {
     enquire: "お問い合わせ",
     language: "言語",
     menu: "メニューを開く",
+    mainNav: "メインメニュー", viewer: "写真ビューア", close: "閉じる", prevPhoto: "前の写真", nextPhoto: "次の写真",
     tagline: "バスルーム付きの家具付きルーム。3か月以上のご滞在に。直接予約で仲介手数料なし。",
     visit: "所在地", directions: "道順を見る →", contact: "連絡先", explore: "サイト内",
     area: "周辺エリア", guide: "入居者ガイド", love: "心を込めて ♥", waAria: "WhatsApp でお問い合わせ",
@@ -82,6 +85,7 @@ const STRINGS = {
     enquire: "Consultar",
     language: "Idioma",
     menu: "Abrir menú",
+    mainNav: "Navegación principal", viewer: "Visor de fotos", close: "Cerrar", prevPhoto: "Foto anterior", nextPhoto: "Foto siguiente",
     tagline: "Habitaciones amuebladas con baño privado para estancias de tres meses o más. Reserve directamente, sin comisión de agencia.",
     visit: "Dirección", directions: "Cómo llegar →", contact: "Contacto", explore: "Explorar",
     area: "La zona", guide: "Guía de la casa", love: "Hecho con cariño ♥", waAria: "Escríbanos por WhatsApp",
@@ -98,6 +102,7 @@ const STRINGS = {
     enquire: "Nous écrire",
     language: "Langue",
     menu: "Ouvrir le menu",
+    mainNav: "Navigation principale", viewer: "Visionneuse de photos", close: "Fermer", prevPhoto: "Photo précédente", nextPhoto: "Photo suivante",
     tagline: "Chambres meublées avec salle de bains privative, pour des séjours de trois mois ou plus. Réservez en direct, sans frais d’agence.",
     visit: "Adresse", directions: "Itinéraire →", contact: "Contact", explore: "Explorer",
     area: "Le quartier", guide: "Guide de la maison", love: "Fait avec amour ♥", waAria: "Écrivez-nous sur WhatsApp",
@@ -132,7 +137,7 @@ function renderChrome() {
     header.outerHTML = `
       <header class="site-header">
         <div class="wrap">
-          <nav class="nav" id="site-nav" aria-label="Main">
+          <nav class="nav" id="site-nav" aria-label="${T.mainNav}">
             ${NAV.map(([href, label]) =>
               `<a href="${BASE + href}"${norm(href) === here ? ' aria-current="page"' : ""}>${label}</a>`
             ).join("")}
@@ -200,11 +205,11 @@ function renderChrome() {
         </div>
       </footer>
       <a class="wa-float" href="${waLink(T.greeting)}" target="_blank" rel="noopener" aria-label="${T.waAria}">${WA_ICON}</a>
-      <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-        <button class="lightbox__close" aria-label="Close">×</button>
-        <button class="lightbox__prev" aria-label="Previous photo">‹</button>
+      <div class="lightbox" role="dialog" aria-modal="true" aria-label="${T.viewer}">
+        <button class="lightbox__close" aria-label="${T.close}">×</button>
+        <button class="lightbox__prev" aria-label="${T.prevPhoto}">‹</button>
         <img alt="">
-        <button class="lightbox__next" aria-label="Next photo">›</button>
+        <button class="lightbox__next" aria-label="${T.nextPhoto}">›</button>
         <div class="lightbox__count"></div>
       </div>
       <div class="toast" role="status"></div>`;

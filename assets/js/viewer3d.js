@@ -10,7 +10,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { GTAOPass } from "three/addons/postprocessing/GTAOPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026111001";
+import { ROOMS, M, deg, roomScene, frame } from "./rooms3d.js?v=2026111002";
 
 const T = {
   en: { back: "Rooms", backShared: "Features", orbit: "Dollhouse", walk: "Walk around", loading: "Loading the room…",
@@ -113,6 +113,7 @@ $("#note").textContent = t.note;
 $('[data-mode="orbit"]').textContent = t.orbit;
 $('[data-mode="walk"]').textContent = t.walk;
 const select = $("#room");
+select.setAttribute("aria-label", t.back);
 const shared = (k) => k.startsWith("floor-");   // the rooms first, then the shared floors in order
 const order = Object.keys(ROOMS).sort((a, b) => shared(a) - shared(b) || (shared(a) ? a.localeCompare(b) : 0));
 for (const key of order) select.add(new Option(t.rooms[key], key, false, key === id));
