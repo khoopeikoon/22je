@@ -1,0 +1,143 @@
+<!doctype html>
+<!--
+  PRIVATE PAGE for residents who are locked out. Do not link to it from anywhere
+  on the site, and do not add it to sitemap.xml or robots.txt (robots.txt would
+  publish the address). The owner forwards the link by WhatsApp.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Locked out | 22 Jalan Elok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026111002">
+  <style>
+    body { background: var(--ivory, #f8f3eb); }
+    .lo { max-width: 680px; margin: 0 auto; padding: 32px 16px 56px; }
+    .lo__brand { text-align: center; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; margin: 0 0 20px; }
+    .lo__langs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
+    .lo__langs button { font: inherit; font-size: 0.85rem; padding: 6px 12px; border: 1px solid currentColor; background: transparent; color: inherit; border-radius: 999px; cursor: pointer; }
+    .lo__langs button[aria-pressed="true"] { background: var(--espresso, #2b2018); color: var(--ivory, #f8f3eb); border-color: var(--espresso, #2b2018); }
+    .lo h1 { font-size: clamp(2rem, 7vw, 2.8rem); text-align: center; margin: 0 0 8px; }
+    .lo__lede { text-align: center; margin: 0 0 24px; }
+    .lo figure { margin: 0 0 24px; }
+    .lo img { width: 100%; height: auto; display: block; border-radius: 6px; }
+    .lo figcaption { font-size: 0.85rem; margin-top: 8px; opacity: 0.8; }
+    .lo ol { padding-left: 1.4em; margin: 0 0 24px; }
+    .lo li { margin-bottom: 10px; line-height: 1.55; }
+    .lo__help { border-top: 1px solid rgba(0,0,0,0.12); padding-top: 20px; }
+    .lo__help a { font-weight: 500; }
+    [data-l] { display: none; }
+    html[lang="en"] [data-l="en"], html[lang="zh-Hans"] [data-l="zh-Hans"], html[lang="ja"] [data-l="ja"], html[lang="es"] [data-l="es"], html[lang="fr"] [data-l="fr"] { display: block; }
+  </style>
+  <script>
+    (function () {
+      var map = { zh: "zh-Hans", ja: "ja", es: "es", fr: "fr" }, l = "en";
+      try { l = localStorage.getItem("lo-lang") || ""; } catch (e) { l = ""; }
+      if (!l) { var n = (navigator.language || "en").slice(0, 2).toLowerCase(); l = map[n] || "en"; }
+      document.documentElement.lang = l;
+    })();
+  </script>
+</head>
+<body>
+  <main class="lo">
+    <p class="lo__brand">22 Jalan Elok</p>
+    <div class="lo__langs" role="group" aria-label="Language">
+      <button type="button" data-set="en">English</button>
+      <button type="button" data-set="zh-Hans">中文</button>
+      <button type="button" data-set="ja">日本語</button>
+      <button type="button" data-set="es">Español</button>
+      <button type="button" data-set="fr">Français</button>
+    </div>
+
+    <figure>
+      <img src="box.webp" width="1600" height="893" alt="">
+    </figure>
+
+    <section data-l="en">
+      <h1>Locked <em>out?</em></h1>
+      <p class="lo__lede">The spare key for the main door is in a lock box beside the door (circled in the photo).</p>
+      <ol>
+        <li>Open the <strong>left door of the upper cabinet</strong> beside the main door, outside the house.</li>
+        <li>The lock box is <strong>on the inside of that door</strong>. Enter the <strong>lock box code we sent you before you moved in</strong> and take out the key.</li>
+        <li>Unlock the main door with the key.</li>
+        <li>Put the key back in the box straight away, close it and <strong>turn the number wheels</strong> so the code doesn’t show.</li>
+        <li>Message Kevin to let us know, so we can check the lock.</li>
+      </ol>
+      <p class="lo__help">Forgot the code? Send Kevin’s WhatsApp the phrase we gave you at move-in, or contact Kevin: <a href="https://wa.me/6580167691">WhatsApp</a> · <a href="tel:+6580167691">+65 8016 7691</a>. Please don’t share this page or the code with anyone else.</p>
+    </section>
+
+    <section data-l="zh-Hans">
+      <h1>被锁在<em>门外？</em></h1>
+      <p class="lo__lede">大门的备用钥匙放在门旁边的一个密码锁盒里（照片中圈出的位置）。</p>
+      <ol>
+        <li>打开屋外、大门旁边 <strong>上层柜子的左门</strong>。</li>
+        <li>锁盒装在 <strong>这扇门的内侧</strong>。输入 <strong>我们在您入住前发给您的锁盒密码</strong>，取出钥匙。</li>
+        <li>用钥匙打开大门。</li>
+        <li>马上把钥匙放回锁盒，关好，并 <strong>拨乱数字转轮</strong>，不要让密码露出来。</li>
+        <li>给 Kevin 发消息告诉我们，以便我们检查门锁。</li>
+      </ol>
+      <p class="lo__help">忘记密码？把入住时我们告诉您的暗语发到 Kevin 的 WhatsApp，或直接联系 Kevin：<a href="https://wa.me/6580167691">WhatsApp</a> · <a href="tel:+6580167691">+65 8016 7691</a>。请不要把这个页面或密码告诉任何其他人。</p>
+    </section>
+
+    <section data-l="ja">
+      <h1>締め出されて<em>しまったら</em></h1>
+      <p class="lo__lede">玄関ドアの予備の鍵は、ドアの横にあるキーボックスに入っています（写真の丸印）。</p>
+      <ol>
+        <li>屋外、玄関ドア横の <strong>上の棚の左扉</strong> を開けてください。</li>
+        <li>キーボックスは <strong>その扉の内側</strong> にあります。<strong>ご入居前にお送りしたキーボックスの暗証番号</strong> を合わせて、鍵を取り出してください。</li>
+        <li>鍵で玄関ドアを開けてください。</li>
+        <li>鍵はすぐにボックスに戻して閉め、暗証番号が見えないように <strong>ダイヤルを回して</strong> ください。</li>
+        <li>ドアロックを点検しますので、Kevin にご連絡ください。</li>
+      </ol>
+      <p class="lo__help">暗証番号をお忘れの場合は、入居時にお伝えした合言葉を Kevin の WhatsApp に送るか、Kevin に直接ご連絡ください：<a href="https://wa.me/6580167691">WhatsApp</a> · <a href="tel:+6580167691">+65 8016 7691</a>。このページと暗証番号は、他の人に教えないでください。</p>
+    </section>
+
+    <section data-l="es">
+      <h1>¿Se ha quedado <em>fuera?</em></h1>
+      <p class="lo__lede">La llave de repuesto de la puerta principal está en una caja de seguridad junto a la puerta (marcada con un círculo en la foto).</p>
+      <ol>
+        <li>Abra la <strong>puerta izquierda del mueble superior</strong> que hay junto a la puerta principal, fuera de la casa.</li>
+        <li>La caja está <strong>en el interior de esa puerta</strong>. Introduzca el <strong>código de la caja que le enviamos antes de su entrada</strong> y saque la llave.</li>
+        <li>Abra la puerta principal con la llave.</li>
+        <li>Vuelva a dejar la llave en la caja enseguida, ciérrela y <strong>gire las ruedas de números</strong> para que no se vea el código.</li>
+        <li>Escriba a Kevin para avisarnos y que revisemos la cerradura.</li>
+      </ol>
+      <p class="lo__help">¿Ha olvidado el código? Envíe al WhatsApp de Kevin la frase que le dimos al entrar, o contacte con Kevin: <a href="https://wa.me/6580167691">WhatsApp</a> · <a href="tel:+6580167691">+65 8016 7691</a>. No comparta esta página ni el código con nadie.</p>
+    </section>
+
+    <section data-l="fr">
+      <h1>Enfermé <em>dehors ?</em></h1>
+      <p class="lo__lede">La clé de secours de la porte d’entrée se trouve dans une boîte à clés à côté de la porte (entourée sur la photo).</p>
+      <ol>
+        <li>Ouvrez la <strong>porte gauche du meuble du haut</strong>, à côté de la porte d’entrée, à l’extérieur de la maison.</li>
+        <li>La boîte est fixée <strong>à l’intérieur de cette porte</strong>. Composez le <strong>code de la boîte que nous vous avons envoyé avant votre arrivée</strong> et prenez la clé.</li>
+        <li>Ouvrez la porte d’entrée avec la clé.</li>
+        <li>Remettez tout de suite la clé dans la boîte, refermez-la et <strong>tournez les molettes</strong> pour que le code ne soit pas visible.</li>
+        <li>Écrivez à Kevin pour nous prévenir, afin que nous vérifiions la serrure.</li>
+      </ol>
+      <p class="lo__help">Code oublié ? Envoyez au WhatsApp de Kevin la phrase que nous vous avons donnée à votre arrivée, ou contactez Kevin : <a href="https://wa.me/6580167691">WhatsApp</a> · <a href="tel:+6580167691">+65 8016 7691</a>. Ne partagez ni cette page ni le code avec qui que ce soit.</p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var btns = document.querySelectorAll("[data-set]");
+      function mark() { btns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.set === document.documentElement.lang)); }); }
+      btns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          document.documentElement.lang = b.dataset.set;
+          try { localStorage.setItem("lo-lang", b.dataset.set); } catch (e) {}
+          mark();
+        });
+      });
+      mark();
+    })();
+  </script>
+</body>
+</html>
