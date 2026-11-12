@@ -173,6 +173,7 @@ export function materials() {
     terraceTile: texture(1024, 2.4, planks({ seed: 71, dark: 0x5a4136, light: 0x8d6d5d, rows: 12, seam: 0.7 })),
     weatheredOak: texture(1024, 2.4, planks({ seed: 79, dark: 0x6f6152, light: 0xb4a491, rows: 16, seam: 0.75 })),   // bar table top
     turf: texture(512, 0.8, grass({ seed: 59 })),
+    pellicle: texture(64, 0.02, (u, v) => { const c = 52 + 16 * Math.sin(u * 16 * Math.PI) * Math.sin(v * 16 * Math.PI); return [c, c + 1, c + 4]; }),   // Aeron weave
     greyMarble: texture(1024, 1.2, marble({ seed: 61, base: 0x8a8884, vein: 0xf4f2ee })),   // powder room
     silverStone: texture(1024, 0.7, marble({ seed: 67, base: 0x908f8b, vein: 0x585853 })),  // kitchen splashbacks
   };
@@ -188,7 +189,8 @@ export function materials() {
     sofa: std({ color: 0xcfc6b8, roughness: 1 }),
     leather: std({ color: 0x1f1c1a, roughness: 0.55 }),
     chairFabric: std({ color: 0x4a403a, roughness: 0.95 }),
-    aeron: std({ color: 0x2b2c2f, roughness: 0.85 }),                           // Aeron chair mesh
+    aeron: std({ color: 0x2b2c2f, roughness: 0.7 }),                            // Aeron chair: graphite frame,
+    aeronMesh: new THREE.MeshStandardMaterial({ map: tex.pellicle, color: 0xffffff, roughness: 0.9, transparent: true, opacity: 0.86, side: THREE.DoubleSide }),   // and its see-through woven seat and back
     brass: std({ color: 0xb48f58, roughness: 0.3, metalness: 1 }),
     steel: std({ color: 0xa9abad, roughness: 0.35, metalness: 1 }),
     walnut: std({ map: tex.walnut, roughness: 0.55 }),
@@ -253,6 +255,38 @@ function metricUV(geo, w, h, d) {
     const k = f * 4 + i;
     uv.setXY(k, uv.getX(k) * dims[f][0], uv.getY(k) * dims[f][1]);
   }
+}
+
+// A woven panel stretched inside a rounded rim, as on a mesh office chair. `half(v)` is the half-width
+// at v (0..1 along its length `len`), r0 and r1 round its two ends, and `at(x, v)` places each point.
+// Returns the panel and the closed line of its rim.
+function meshPanel(len, half, r0, r1, at, rows = 28, cols = 14) {
+  const pos = [], uv = [], idx = [], grid = [];
+  const round = (d, r) => d < r ? r * Math.sqrt(1 - (1 - d / r) ** 2) - r : 0;
+  for (let i = 0; i <= rows; i++) {
+    const v = (1 - Math.cos(Math.PI * i / rows)) / 2;                 // closer rows towards the rounded ends
+    const hw = half(v) + round(v * len, r0) + round((1 - v) * len, r1), row = [];
+    for (let j = 0; j <= cols; j++) {
+      const x = (2 * j / cols - 1) * hw, p = at(x, v);
+      pos.push(...p); uv.push(x, v * len); row.push(new THREE.Vector3(...p));
+    }
+    grid.push(row);
+  }
+  for (let i = 0; i < rows; i++) for (let j = 0; j < cols; j++) {
+    const a = i * (cols + 1) + j, b = a + 1, c = a + cols + 1, d = c + 1;
+    idx.push(a, c, b, b, c, d);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+  geo.setIndex(idx);
+  geo.computeVertexNormals();
+  const rim = [];
+  for (let i = 0; i <= rows; i++) rim.push(grid[i][cols]);
+  for (let j = cols - 1; j > 0; j--) rim.push(grid[rows][j]);
+  for (let i = rows; i >= 0; i--) rim.push(grid[i][0]);
+  for (let j = 1; j < cols; j++) rim.push(grid[0][j]);
+  return { geo, rim: new THREE.CatmullRomCurve3(rim, true, "centripetal") };
 }
 
 // H: wall height (the top is the cut, or the ceiling when walking around inside).
@@ -618,24 +652,70 @@ export class Builder {
       part(new THREE.CylinderGeometry(0.012, 0.012, 0.42, 6), "black", x, 0.21, z);
   }
 
-  // Herman Miller Aeron office chair facing `deg`: graphite mesh seat and back, arms, five-star base.
+  // Herman Miller Aeron office chair facing `deg`, in graphite: a see-through woven seat and back, each
+  // stretched in a rim, the back wide at the shoulders and narrow at the waist with a lumbar pad behind;
+  // arms on stalks from the back's yoke; a tilt housing on a gas column over a five-star base on twin casters.
   aeronChair(cx, cy, deg) {
     this.solid(cx - 30, cy - 30, cx + 30, cy + 30);
-    const part = this.piece(cx, cy, deg);
+    const part = this.piece(cx, cy, deg);                       // the sitter faces -z; the back is at +z
+    const tube = (pts, r, mat = "aeron") => part(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 24, r, 10), mat, 0, 0, 0);
+    const smooth = (a, b, t) => { t = Math.min(1, Math.max(0, (t - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+    // base: five tapering legs sloping down from the hub, a twin-wheel caster under each tip
     for (let i = 0; i < 5; i++) {
-      const a = i * 2 * Math.PI / 5, leg = part(new THREE.BoxGeometry(0.05, 0.035, 0.3), "black", Math.sin(a) * 0.15, 0.075, Math.cos(a) * 0.15);
-      leg.rotation.y = a;
-      part(new THREE.SphereGeometry(0.03, 10, 8), "black", Math.sin(a) * 0.3, 0.03, Math.cos(a) * 0.3);
+      const a = (i + 0.5) * 2 * Math.PI / 5, s = Math.sin(a), c = Math.cos(a);
+      const legGeo = new THREE.CylinderGeometry(0.014, 0.03, 0.3, 14);
+      legGeo.rotateX(Math.PI / 2); legGeo.scale(1.25, 0.8, 1);
+      const leg = part(legGeo, "aeron", s * 0.18, 0.105, c * 0.18);
+      leg.rotation.order = "YXZ"; leg.rotation.y = a; leg.rotation.x = 0.2;
+      part(new THREE.CylinderGeometry(0.008, 0.008, 0.03, 8), "black", s * 0.325, 0.065, c * 0.325);
+      for (const o of [-0.013, 0.013]) {
+        const wheelGeo = new THREE.CylinderGeometry(0.03, 0.03, 0.02, 20);
+        wheelGeo.rotateZ(Math.PI / 2);
+        const wheel = part(wheelGeo, "black", s * 0.325 + c * o, 0.03, c * 0.325 - s * o);
+        wheel.rotation.y = a;
+      }
     }
-    part(new THREE.CylinderGeometry(0.025, 0.03, 0.34, 12), "chrome", 0, 0.26, 0);
-    part(new THREE.CylinderGeometry(0.05, 0.05, 0.05, 16), "black", 0, 0.08, 0);
-    part(new RoundedBoxGeometry(0.5, 0.07, 0.46, 3, 0.03), "aeron", 0, 0.465, 0);
-    part(new THREE.BoxGeometry(0.06, 0.34, 0.05), "black", 0, 0.62, 0.24);
-    const back = part(new RoundedBoxGeometry(0.46, 0.6, 0.05, 3, 0.025), "aeron", 0, 0.88, 0.27);
-    back.rotation.x = -0.12;
-    for (const x of [-0.27, 0.27]) {
-      part(new THREE.BoxGeometry(0.03, 0.22, 0.05), "black", x, 0.58, 0.06);
-      part(new RoundedBoxGeometry(0.07, 0.03, 0.26, 2, 0.012), "black", x, 0.7, 0.02);
+    part(new THREE.CylinderGeometry(0.042, 0.05, 0.06, 20), "aeron", 0, 0.135, 0);       // hub
+    part(new THREE.CylinderGeometry(0.03, 0.03, 0.14, 16), "black", 0, 0.23, 0);         // gas column and
+    part(new THREE.CylinderGeometry(0.018, 0.018, 0.1, 16), "chrome", 0, 0.33, 0);       // its piston
+    part(new RoundedBoxGeometry(0.2, 0.07, 0.3, 3, 0.025), "aeron", 0, 0.395, 0.03);     // tilt housing
+    const knobGeo = new THREE.CylinderGeometry(0.02, 0.02, 0.1, 14);
+    knobGeo.rotateZ(Math.PI / 2);
+    part(knobGeo, "black", 0.14, 0.395, -0.04);                                            // tension knob
+
+    // seat: dished a little, the front edge rolling down
+    const seat = meshPanel(0.47, (v) => 0.252 - 0.012 * v, 0.07, 0.09, (x, v) => {
+      const u = x / 0.25, front = Math.max(0, 1 - v / 0.25);
+      return [x, 0.462 - 0.014 * (1 - u * u) - 0.05 * front * front + 0.012 * smooth(0.7, 1, v), -0.25 + v * 0.47];
+    });
+    part(seat.geo, "aeronMesh", 0, 0, 0).castShadow = false;
+    part(new THREE.TubeGeometry(seat.rim, 160, 0.015, 10, true), "aeron", 0, 0, 0);
+    for (const x of [-0.11, 0.11]) tube([[x * 0.6, 0.41, -0.1], [x, 0.43, -0.16], [x * 1.9, 0.45, -0.19]], 0.011);   // seat carriers
+    for (const x of [-0.1, 0.1]) part(new THREE.BoxGeometry(0.03, 0.03, 0.34), "aeron", x * 1.6, 0.435, 0.02);
+
+    // back: leaning 13 degrees, hollowed across, pushed forward at the lumbar
+    const B0 = 0.475, BH = 0.565;
+    const backZ = (v) => 0.245 + 0.23 * v * BH - 0.028 * Math.exp(-(((v - 0.27) / 0.2) ** 2));
+    const back = meshPanel(BH, (v) => 0.2 + 0.068 * smooth(0, 0.72, v) - 0.012 * smooth(0.82, 1, v), 0.075, 0.11, (x, v) => {
+      const u = x / 0.268;
+      return [x, B0 + v * BH, backZ(v) - 0.065 * u * u];
+    });
+    part(back.geo, "aeronMesh", 0, 0, 0).castShadow = false;
+    part(new THREE.TubeGeometry(back.rim, 200, 0.012, 10, true), "aeron", 0, 0, 0);
+    const band = new THREE.Shape(), arc = (x, off) => [x, backZ(0.27) - 0.065 * (x / 0.268) ** 2 + off];   // lumbar pad, curved with the back
+    for (let i = 0; i <= 16; i++) band[i ? "lineTo" : "moveTo"](...arc(-0.215 + i * 0.43 / 16, 0.006));
+    for (let i = 16; i >= 0; i--) band.lineTo(...arc(-0.215 + i * 0.43 / 16, 0.022));
+    const bandGeo = new THREE.ExtrudeGeometry(band, { depth: 0.07, bevelEnabled: true, bevelThickness: 0.006, bevelSize: 0.006, bevelSegments: 3 });
+    bandGeo.rotateX(Math.PI / 2);
+    part(bandGeo, "aeron", 0, B0 + 0.27 * BH + 0.035, 0);
+
+    // yoke: from the tilt housing out to the back's rim on each side, carrying the arms
+    for (const k of [-1, 1]) {
+      tube([[k * 0.07, 0.4, 0.15], [k * 0.17, 0.42, 0.23], [k * 0.225, 0.5, 0.235], [k * 0.232, 0.62, backZ(0.26) - 0.04]], 0.016);
+      tube([[k * 0.225, 0.5, 0.235], [k * 0.275, 0.53, 0.2], [k * 0.288, 0.6, 0.165], [k * 0.288, 0.675, 0.15]], 0.014);     // arm stalk
+      const pad = part(new RoundedBoxGeometry(0.085, 0.032, 0.25, 3, 0.015), "black", k * 0.29, 0.69, 0.045);
+      pad.rotation.x = 0.04;
     }
   }
 
