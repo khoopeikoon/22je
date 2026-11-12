@@ -188,6 +188,7 @@ export function materials() {
     sofa: std({ color: 0xcfc6b8, roughness: 1 }),
     leather: std({ color: 0x1f1c1a, roughness: 0.55 }),
     chairFabric: std({ color: 0x4a403a, roughness: 0.95 }),
+    aeron: std({ color: 0x2b2c2f, roughness: 0.85 }),                           // Aeron chair mesh
     brass: std({ color: 0xb48f58, roughness: 0.3, metalness: 1 }),
     steel: std({ color: 0xa9abad, roughness: 0.35, metalness: 1 }),
     walnut: std({ map: tex.walnut, roughness: 0.55 }),
@@ -615,6 +616,36 @@ export class Builder {
     part(new RoundedBoxGeometry(0.46, 0.46, 0.08, 3, 0.035), "chairFabric", 0, 0.73, 0.22);
     for (const [x, z] of [[-0.2, -0.2], [0.2, -0.2], [-0.2, 0.2], [0.2, 0.2]])
       part(new THREE.CylinderGeometry(0.012, 0.012, 0.42, 6), "black", x, 0.21, z);
+  }
+
+  // Herman Miller Aeron office chair facing `deg`: graphite mesh seat and back, arms, five-star base.
+  aeronChair(cx, cy, deg) {
+    this.solid(cx - 30, cy - 30, cx + 30, cy + 30);
+    const part = this.piece(cx, cy, deg);
+    for (let i = 0; i < 5; i++) {
+      const a = i * 2 * Math.PI / 5, leg = part(new THREE.BoxGeometry(0.05, 0.035, 0.3), "black", Math.sin(a) * 0.15, 0.075, Math.cos(a) * 0.15);
+      leg.rotation.y = a;
+      part(new THREE.SphereGeometry(0.03, 10, 8), "black", Math.sin(a) * 0.3, 0.03, Math.cos(a) * 0.3);
+    }
+    part(new THREE.CylinderGeometry(0.025, 0.03, 0.34, 12), "chrome", 0, 0.26, 0);
+    part(new THREE.CylinderGeometry(0.05, 0.05, 0.05, 16), "black", 0, 0.08, 0);
+    part(new RoundedBoxGeometry(0.5, 0.07, 0.46, 3, 0.03), "aeron", 0, 0.465, 0);
+    part(new THREE.BoxGeometry(0.06, 0.34, 0.05), "black", 0, 0.62, 0.24);
+    const back = part(new RoundedBoxGeometry(0.46, 0.6, 0.05, 3, 0.025), "aeron", 0, 0.88, 0.27);
+    back.rotation.x = -0.12;
+    for (const x of [-0.27, 0.27]) {
+      part(new THREE.BoxGeometry(0.03, 0.22, 0.05), "black", x, 0.58, 0.06);
+      part(new RoundedBoxGeometry(0.07, 0.03, 0.26, 2, 0.012), "black", x, 0.7, 0.02);
+    }
+  }
+
+  // Dell U2415: a 24-inch monitor on its stand, the screen facing `deg`, standing on a desk at height h.
+  monitor(cx, cy, deg, h = 0.75) {
+    const part = this.piece(cx, cy, deg);
+    part(new THREE.BoxGeometry(0.24, 0.012, 0.18), "black", 0, h + 0.006, 0.01);
+    part(new THREE.BoxGeometry(0.07, 0.36, 0.03), "black", 0, h + 0.18, 0.07);
+    part(new THREE.BoxGeometry(0.535, 0.36, 0.025), "black", 0, h + 0.3, 0.04);
+    part(new THREE.BoxGeometry(0.518, 0.325, 0.004), "tv", 0, h + 0.302, 0.0265);
   }
 
   roundTable(cx, cy, r, h = 0.75) {
@@ -1208,6 +1239,8 @@ export const ROOMS = {
       b.bed([640, 65, 829, 295], "n");
       b.nightstand(831, 57, 886, 110);
       b.hungDesk(GLASS + 30, 57, 620, 125);
+      b.monitor(468, 80, 180);                                         // Dell U2415 and Herman Miller Aeron (owner, 2026-11-12)
+      b.aeronChair(468, 168, 0);
       b.box(562, 57, 620, 125, 0, 0.72, "walnutDark");
       b.solid(562, 57, 620, 125);
       const upper = b.wall(GLASS + 30, 45, 602, 88, { h0: 1.55, h1: b.H - 0.03, mat: "walnutDark", furniture: true });
